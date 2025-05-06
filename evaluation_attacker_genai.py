@@ -8,6 +8,8 @@ from tqdm import tqdm
 import json
 import re
 import os
+# os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+# print(f"CUDA_VISIBLE_DEVICES is set to: {os.environ.get('CUDA_VISIBLE_DEVICES')}")
 import sys
 import GPUtil
 from collections import defaultdict # Added this import
@@ -29,6 +31,11 @@ from torch.utils.data import (
     DataLoader, 
     Subset, 
     RandomSampler)
+import tensorflow as tf
+# print("TensorFlow sees the following Physical GPUs:", tf.config.list_physical_devices('GPU'))
+# gpus = tf.config.list_physical_devices("GPU")
+# if gpus:                          
+#     tf.config.experimental.set_memory_growth(gpus[1], True)   # ❶
 import tensorflow_hub as hub
 from train_attacker_genai import *
 
@@ -48,17 +55,14 @@ def print_config(args):
     for arg, value in vars(args).items():
         print(f"{arg}: {value}")
 
-def getUSEcosSimilarity(srcDocs, copyDocs):
-    # input 2 lists of documents 
-    import tensorflow_hub as hub
-    embed = hub.load("https://kaggle.com/models/google/universal-sentence-encoder/TensorFlow2/universal-sentence-encoder/1")
+def getUSEcosSimilarity(srcDocs, copyDocs, embed):
     USEcosinSimilarity = []
     sim_metric = torch.nn.CosineSimilarity(dim=1)
     for src, copy in zip(srcDocs, copyDocs):
         emb1, emb2 = embed([src, copy])["outputs"]
         emb1, emb2 = torch.tensor(emb1.numpy()), torch.tensor(emb2.numpy())
-        srcEmb = torch.unsqueeze(emb1, dim=0).to(device) # [embSz] -> [1, embSz]
-        advEmb = torch.unsqueeze(emb2, dim=0).to(device)
+        srcEmb = torch.unsqueeze(emb1, dim=0) # [embSz] -> [1, embSz]
+        advEmb = torch.unsqueeze(emb2, dim=0)
         es = sim_metric(srcEmb, advEmb)
         USEcosinSimilarity.append(es.item())
     return USEcosinSimilarity
@@ -222,12 +226,18 @@ def main(args):
     prefix_length = args.prefix_length
     save_to_path = args.save_to_path
     samples_per_tok = args.samples_per_tok
+    max_queries_per_doc = args.max_queries_per_doc
     atk_json_log = args.atk_json_log
 
+    # device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     best_gpu = GPUtil.getFirstAvailable(order='memoryFree', maxLoad=0.5, maxMemory=0.5)[0]
     torch.cuda.set_device(best_gpu)
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    device = torch.device(f"cuda:{best_gpu}")
     print(f"Using GPU {best_gpu}")
+
+    USE = hub.load("https://kaggle.com/models/google/universal-sentence-encoder/TensorFlow2/universal-sentence-encoder/1")
+    # with tf.device(f"/GPU:{best_gpu}"):
+    #     USE = hub.load("https://kaggle.com/models/google/universal-sentence-encoder/TensorFlow2/universal-sentence-encoder/1")
 
     tokenizer = AutoTokenizer.from_pretrained(atker_path, max_length=len_doc_max)
     vocab_size = tokenizer.vocab_size
@@ -267,12 +277,11 @@ def main(args):
         all_source_documents = []
         all_generated_documents = []
         queries = []
+        USEs = []
+        pertubations = []
         with torch.no_grad():
             total_batches = len(evaluation_dataloader)
-            bar = tqdm(total=total_batches, desc="Evaluating", unit="batch")
-            
-            max_queries_per_doc = 50
-            
+            bar = tqdm(total=total_batches, desc="Evaluating", unit="batch")            
             for batch_idx, batch in enumerate(evaluation_dataloader, start=1):
                 curr_queries_per_doc = 0
 
@@ -332,19 +341,26 @@ def main(args):
                     all_predicted_labels.extend(labels.cpu().numpy().tolist())
                 all_source_predicted_probs.extend(probs_)
                 all_generated_predicted_probs.extend(eval_probs_)
-                queries.append(curr_queries_per_doc)
-
+                
                 all_true_labels_tensor = torch.tensor(all_true_labels).to(device)
                 all_predicted_labels_tensor = torch.tensor(all_predicted_labels).to(device)
                 
                 acc_metric.update(all_predicted_labels_tensor, all_true_labels_tensor)
                 current_accuracy = acc_metric.compute()
 
+                queries.append(curr_queries_per_doc)
+                USEs.append(getUSEcosSimilarity([all_source_documents[-1]], [all_generated_documents[-1]], USE)[0])
+                pertubations.append(prefix_length / torch.sum(attention_mask[0]).item())
+
                 bar.update(1)
                 bar.set_postfix({
-                    "docs": f"{batch_idx}/{total_batches}",
-                    "avg_accuracy": f"{current_accuracy:.4f}",
-                    "curr_queries": curr_queries_per_doc
+                    "avg_acc":      f"{current_accuracy:.4f}",
+                    "avg_queries":  f"{np.mean(queries):.4f}",
+                    "avg_pert":     f"{np.mean(pertubations)*100:.4f}",
+                    "avg_USE":      f"{np.mean(USEs):.4f}",
+                    "curr_queries": f"{queries[-1]:.4f}",
+                    "curr_pert":    f"{pertubations[-1]*100:.4f}",
+                    "curr_USE":     f"{USEs[-1]:.4f}"
                 })
 
                 if batch_idx % eval_interval == 0:
@@ -356,8 +372,8 @@ def main(args):
                     print("Source Predicted Probabilities:", round(all_source_predicted_probs[-1],4))
                     print("Generated Predicted Probabilities:", round(all_generated_predicted_probs[-1],4))
                 
-                list_names = ['src_doc', 'adv_doc', 'true_label', 'pred_label', 'true_prob', 'pred_prob']
-                lists_to_zip = [all_source_documents, all_generated_documents, all_true_labels, all_predicted_labels, all_source_predicted_probs, all_generated_predicted_probs]
+                list_names = ['src_doc', 'adv_doc', 'true_label', 'pred_label', 'queries', 'pertubations', 'USEs', 'true_prob', 'pred_prob']
+                lists_to_zip = [all_source_documents, all_generated_documents, all_true_labels, all_predicted_labels, queries, pertubations, USEs, all_source_predicted_probs, all_generated_predicted_probs]
                 save_lists_to_json(list_names=list_names, lists_to_zip=lists_to_zip, output_json_path=atk_json_log)
                 
             bar.close()
@@ -373,19 +389,21 @@ if __name__ == "__main__":
     parser.add_argument('--len_doc_max', type=int, default=512, help='max length of document')  # Default value set to 512
     parser.add_argument('--prefix_length', type=int, default=10, help='')  # Default value set to 512
     parser.add_argument('--samples_per_tok', type=int, default=10, help='')  # Default value set to 512
-    parser.add_argument('--atk_json_log', type=int, default=10, help='')  # Default value set to 512
+    parser.add_argument('--max_queries_per_doc', type=int, default=50, help='')  # Default value set to 512
+    parser.add_argument('--atk_json_log', type=str, default=10, help='')  # Default value set to 512
 
 
-    args = argparse.Namespace(
-            atker_path='bert-base-uncased', # Example path
-            target_path='temp',
-            len_doc_max=512,
-            prefix_length=10,
-            save_to_path='/usa/taikun/07_transencoder/1training/llama-guard-attacker/attacker_llama-guard_4_5100_0.6450.pth',
-            samples_per_tok=3,
-            # atk_json_log = '/usa/taikun/07_transencoder/attack-genai/atk_greedy_topk_doc_log.json')
-            atk_json_log = '/usa/taikun/07_transencoder/attack-genai/atk_rand_topk_doc_log.json')
+    # args = argparse.Namespace(
+    #         atker_path='bert-base-uncased', # Example path
+    #         target_path='temp',
+    #         len_doc_max=512,
+    #         prefix_length=10,
+    #         save_to_path='/usa/taikun/07_transencoder/1training/llama-guard-attacker/attacker_llama-guard_4_5100_0.6450.pth',
+    #         samples_per_tok=3,
+    #         max_queries_per_doc=2,
+    #         # atk_json_log = '/usa/taikun/07_transencoder/attack-genai/atk_greedy_topk_doc_log.json')
+    #         atk_json_log = '/usa/taikun/07_transencoder/attack-genai/temp.json')
         
-    # args = parser.parse_args()    
+    args = parser.parse_args()    
     print_config(args)
     main(args)
