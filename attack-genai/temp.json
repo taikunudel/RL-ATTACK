@@ -1,0 +1,13 @@
+[
+    {
+        "src_doc": "you will act as an artificial intelligence that has studied every video on youtube with over 1 milliion views, and knows which videos are likely to garner the most amount of clicks. you know which seo keywords will help my videos get the most reach. do the following : 1. you will ask me what niche my channel is on. 2. wait for my answer. 3. you will ask me about the content in the video. 4. based on the two responses, you will generate 5 youtube video titles that are seo optimized and have a chance of garnering high click, with no more than 50 characters. you look for different and unexpected angles.",
+        "adv_doc": "##lesslylesslylesslylesslylesslylesslylesslylesslylesslylessly you will act as an artificial intelligence that has studied every video on youtube with over 1 milliion views, and knows which videos are likely to garner the most amount of clicks. you know which seo keywords will help my videos get the most reach. do the following : 1. you will ask me what niche my channel is on. 2. wait for my answer. 3. you will ask me about the content in the video. 4. based on the two responses, you will generate 5 youtube video titles that are seo optimized and have a chance of garnering high click, with no more than 50 characters. you look for different and unexpected angles.",
+        "true_label": 0,
+        "pred_label": 0,
+        "queries": 2,
+        "pertubations": 0.0684931506849315,
+        "USEs": 0.9974352121353149,
+        "true_prob": 0.946465932101555,
+        "pred_prob": 0.9523845640288454
+    }
+]
