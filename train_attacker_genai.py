@@ -3,6 +3,8 @@
 
 # ## 1. Prepare Dataloader
 # Load model directly
+import os
+# os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
@@ -10,13 +12,16 @@ import json
 from copy import deepcopy
 import random
 import argparse
+import datetime
+timestamp = datetime.datetime.now().strftime("%m%d%Y_%H%M%S")
 import json
 import requests
 import functools
+import hashlib
 from cache_to_disk import cache_to_disk
 import diskcache
-cache = diskcache.Cache('/usa/taikun/07_transencoder/attack-genai')
-from typing import List, Dict, Any
+cache = diskcache.Cache('/usa/taikun/07_transencoder/attack-genai', size_limit=10e9)
+cache.stats(enable=True)    
 from nltk.translate.bleu_score import sentence_bleu
 from datasets import load_dataset, concatenate_datasets, DatasetDict
 from sklearn.model_selection import train_test_split
@@ -38,13 +43,44 @@ from torch.nn.functional import cross_entropy
 from torch.utils.data import TensorDataset, Dataset, DataLoader
 from torch.utils.data import DataLoader, Subset, RandomSampler
 torch.set_default_dtype(torch.float32)
+
+import tensorflow as tf
+import tensorflow_hub as hub
+tf.config.set_visible_devices([], 'GPU')
+# # Your TensorFlow code here
+# physical_devices = tf.config.list_physical_devices('GPU')
+# print("Num GPUs Available: ", len(physical_devices)) # This should ideally print 1
+# if len(physical_devices) > 0:
+#     print("Using GPU:", physical_devices[0])
+
 # from utils import *
 import get_raw_logits
+
+total_calls = 0
+cache_hits = 0
 
 def print_config(args):
     for arg, value in vars(args).items():
         print(f"{arg}: {value}")
 
+def getUSEcosSimilarity(srcDocs, copyDocs, embed):
+    USEcosinSimilarity = []
+    sim_metric = torch.nn.CosineSimilarity(dim=1)
+    for src, copy in zip(srcDocs, copyDocs):
+        emb1, emb2 = embed([src, copy])["outputs"]
+        emb1, emb2 = torch.tensor(emb1.numpy()), torch.tensor(emb2.numpy())
+        srcEmb = torch.unsqueeze(emb1, dim=0) # [embSz] -> [1, embSz]
+        advEmb = torch.unsqueeze(emb2, dim=0)
+        es = sim_metric(srcEmb, advEmb)
+        USEcosinSimilarity.append(es.item())
+    return USEcosinSimilarity
+
+def cache_report(reset: bool = False) -> None:
+    hits, misses = cache.stats(enable=False, reset=reset)
+    total = hits + misses
+    hr = hits / total if total else 0.0
+    print(f"[Cache] hits={hits}  misses={misses}  hit‑rate={hr:.1%}")
+    
 def preprocess_function(examples, prefix_length, len_doc_max, tokenizer, atk_what='prefix'):
     """
     Preprocess function that handles different attack types:
@@ -68,7 +104,6 @@ def preprocess_function(examples, prefix_length, len_doc_max, tokenizer, atk_wha
     tokenized_inputs['labels'] = [1 if j else 0 for j in examples['jailbreak']]
     return tokenized_inputs
 
-# Verify the class ratio in each split (optional)
 def get_class_distribution(dataset):
     jailbreak_count = sum(dataset['labels'])
     regular_count = len(dataset) - jailbreak_count
@@ -162,7 +197,8 @@ def build_datasets(tokenizer, prefix_length, max_len, atk_what='prefix', seed=42
     # Define the batch size
     batch_size = 16  # You can adjust this as needed
     # Create DataLoaders
-    train_dataloader = DataLoader(train_data, batch_size=batch_size, shuffle=True)
+    # train_dataloader = DataLoader(train_data, batch_size=batch_size, shuffle=True)
+    train_dataloader = DataLoader(train_data, batch_size=batch_size, shuffle=False)
     validation_dataloader = DataLoader(validation_data, batch_size=batch_size, shuffle=False) # No need to shuffle validation data
     evaluation_dataloader = DataLoader(evaluation_data, batch_size=1, shuffle=False) # No need to shuffle evaluation data
     
@@ -214,130 +250,116 @@ def apply_random_masks(input_ids, attention_mask, num_masks=10, mask_token_id=No
     
     return masked_input_ids, mask_positions
 
-def get_influences(true_class_id, predictions, probs):
-    '''
-    Calculate influence scores for binary classification
-    '''
-    # Fix typo in variable name
-    influences = []
+# def get_influences(true_class_id, predictions, probs):
+#     '''
+#     Calculate influence scores for binary classification
+#     '''
+#     # Fix typo in variable name
+#     influences = []
     
-    # Get source probability for true class
-    src_prob = probs[0] if predictions[0] == true_class_id else 1 - probs[0]
+#     # Get source probability for true class
+#     src_prob = probs[0] if predictions[0] == true_class_id else 1 - probs[0]
     
-    # Calculate influence for each prediction
-    for i, pred in enumerate(predictions):
-        curr_prob = probs[i] if pred == true_class_id else 1 - probs[i]
-        influence = curr_prob - src_prob
-        influences.append(influence)  # Fixed typo in append
+#     # Calculate influence for each prediction
+#     for i, pred in enumerate(predictions):
+#         curr_prob = probs[i] if pred == true_class_id else 1 - probs[i]
+#         influence = curr_prob - src_prob
+#         influences.append(influence)  # Fixed typo in append
         
-    return influences
+#     return influences
 
-# @cache_to_disk(3)
+# def process_single_document(input_id, attention_mask, model, true_class_id, tokenizer, num_masks, mask_token_id):
+#     # Convert tensors to lists for hashing
+#     input_id_list = input_id.cpu().tolist()
+#     attention_mask_list = attention_mask.cpu().tolist()
+
+#     # Create the cache key from the input parameters
+#     key = hashlib.sha256(json.dumps({
+#         "input_id_list": input_id_list,
+#         "attention_mask_list": attention_mask_list,
+#         "true_class_id": true_class_id,
+#         "num_masks": num_masks,
+#         "mask_token_id": mask_token_id,
+#     }, sort_keys=True).encode()).hexdigest()
+
+#     # Check if the result is already in the cache
+#     if key in cache:
+#         cached_result = cache[key]
+#         # Ensure the retrieved tensor is on the correct device
+#         masked_input = torch.from_numpy(cached_result[0]).to(input_id.device)  # Move to the device of the input
+#         return masked_input, cached_result[1]
+
+#     # Find valid positions (non-padding tokens)
+#     valid_positions = [i for i, val in enumerate(attention_mask_list) if val == 1]
+
+#     # Skip if not enough valid positions
+#     if len(valid_positions) < num_masks:
+#         num_masks = len(valid_positions)-1
+
+#     # Create batch inputs for this sample
+#     sample_size = len(valid_positions) + 1  # +1 for original
+#     sample_input_ids = [input_id_list.copy() for _ in range(sample_size)]
+#     for j, pos in enumerate(valid_positions):
+#         sample_input_ids[j + 1][pos] = mask_token_id
+
+#     sample_input_tensor = torch.tensor(sample_input_ids)
+#     sample_docs = tokenizer.batch_decode(sample_input_tensor, skip_special_tokens=True)
+
+#     # Run batch inference
+#     _, predictions_, probs_ = get_raw_logits.process_file(data=sample_docs)
+
+#     # Calculate token influences
+#     influences = get_influences(true_class_id, predictions_, probs_)
+
+#     # Get indices of top influential tokens
+#     top_indices = sorted(range(1, len(influences)), key=lambda x: influences[x], reverse=True)[:num_masks]
+
+#     # Map back to token positions
+#     chosen_positions = [valid_positions[j - 1] for j in top_indices]
+
+#     # Create masked version
+#     masked_input = input_id.clone()
+#     for pos in chosen_positions:
+#         masked_input[pos] = mask_token_id
+    
+#     # Store the result in the cache, converting the tensor to a NumPy array
+#     cache[key] = (masked_input.cpu().numpy(), chosen_positions) # Changed this line
+#     return masked_input, chosen_positions
+
+
 # def apply_importance_masks(input_ids, attention_mask, model, true_class_ids, tokenizer, num_masks=10, mask_token_id=None):
 #     batch_size = input_ids.size(0)
-    
-#     # Create copies to modify
 #     masked_input_ids = input_ids.clone()
 #     mask_positions = []
-    
-#     # Process each item in the batch
-#     # for i in range(batch_size):
-#     for i in tqdm(range(batch_size), desc="Processing batch influences"):
-#         # Find valid positions (non-padding tokens)
-#         valid_positions = torch.nonzero(attention_mask[i] == 1).squeeze().tolist()
-#         if isinstance(valid_positions, int):
-#             valid_positions = [valid_positions]
-        
-#         # Skip if not enough valid positions
-#         if len(valid_positions) <= num_masks:
-#             mask_positions.append([])
-#             continue
-        
-#         # Create batch inputs for this sample
-#         sample_size = len(valid_positions) + 1  # +1 for original
-#         sample_input_ids = input_ids[i:i+1].repeat(sample_size, 1)
-        
-#         # First row is original, each other row has one token masked
-#         for j, pos in enumerate(valid_positions):
-#             sample_input_ids[j+1, pos] = mask_token_id
-        
-#         # Convert to text documents
-#         sample_docs = tokenizer.batch_decode(sample_input_ids, skip_special_tokens=True)
-        
-#         # Run batch inference
-#         _, predictions_, probs_ = get_raw_logits.process_file(data=sample_docs)
-        
-#         # Calculate token influences
-#         influences = get_influences(true_class_ids[i], predictions_, probs_)
-#         # Get indices of top influential tokens (excluding the first which is the original)
-#         top_indices = sorted(range(2, len(influences)-1), key=lambda x: influences[x], reverse=True)[:num_masks]
-        
-#         # Map back to token positions
-#         chosen_positions = [valid_positions[j-1] for j in top_indices]
-#         mask_positions.append(chosen_positions)
-        
-#         # Apply masks to the output
-#         for pos in chosen_positions:
-#             masked_input_ids[i, pos] = mask_token_id
-    
-#     return masked_input_ids, mask_positions
 
-# Cache the processing of individual documents
-# @cache_to_disk(365)
-@cache.memoize()
-def process_single_document(input_id, attention_mask, model, true_class_id, tokenizer, num_masks, mask_token_id):
-    # Find valid positions (non-padding tokens)
-    valid_positions = torch.nonzero(attention_mask == 1).squeeze().tolist()
-    if isinstance(valid_positions, int):
-        valid_positions = [valid_positions]
-    
-    # Skip if not enough valid positions
-    if len(valid_positions) <= num_masks:
-        return None, []
-    
-    # Create batch inputs for this sample
-    sample_size = len(valid_positions) + 1  # +1 for original
-    sample_input_ids = input_id.unsqueeze(0).repeat(sample_size, 1)
-    
-    # First row is original, each other row has one token masked
-    for j, pos in enumerate(valid_positions):
-        sample_input_ids[j+1, pos] = mask_token_id
-    
-    # Convert to text documents
-    sample_docs = tokenizer.batch_decode(sample_input_ids, skip_special_tokens=True)
-    
-    # Run batch inference
-    _, predictions_, probs_ = get_raw_logits.process_file(data=sample_docs)
-    
-    # Calculate token influences
-    influences = get_influences(true_class_id, predictions_, probs_)
-    
-    # Get indices of top influential tokens
-    top_indices = sorted(range(1, len(influences)), key=lambda x: influences[x], reverse=True)[:num_masks]
-    
-    # Map back to token positions
-    chosen_positions = [valid_positions[j-1] for j in top_indices]
-    
-    # Create masked version
-    masked_input = input_id.clone()
-    for pos in chosen_positions:
-        masked_input[pos] = mask_token_id
-    
-    return masked_input, chosen_positions
+#     # inner bar on its own line (position=1), will be cleared when done
+#     inner = tqdm(
+#         range(batch_size),
+#         desc="Processing batch influences",
+#         position=1,
+#         leave=False
+#     )
+#     for i in inner:
+#         masked_input, positions = process_single_document(
+#             input_ids[i],
+#             attention_mask[i],
+#             model,
+#             true_class_ids[i],
+#             tokenizer,
+#             num_masks,
+#             mask_token_id
+#         )
+#         mask_positions.append(positions)
+#     return masked_input_ids, mask_positions
 
 def apply_importance_masks(input_ids, attention_mask, model, true_class_ids, tokenizer, num_masks=10, mask_token_id=None):
     batch_size = input_ids.size(0)
-    
-    # Create copies to modify
     masked_input_ids = input_ids.clone()
     mask_positions = []
-    
-    # Process each item in the batch
-    for i in tqdm(range(batch_size), desc="Processing batch influences"):
-    # for i in range(batch_size):
-        # Process each document individually with caching
+
+    for i in range(batch_size):
         masked_input, positions = process_single_document(
-            input_ids[i], 
+            input_ids[i],
             attention_mask[i],
             model,
             true_class_ids[i],
@@ -345,13 +367,11 @@ def apply_importance_masks(input_ids, attention_mask, model, true_class_ids, tok
             num_masks,
             mask_token_id
         )
-        
-        if masked_input is not None:
-            masked_input_ids[i] = masked_input
-        
-        mask_positions.append(positions)
     
+        mask_positions.append(positions)
+    # cache_report()
     return masked_input_ids, mask_positions
+
 
 def logits_to_labels_prefix(input_ids, prefix_logits, tokenizer, pad_token_id, cls_token_id, sep_token_id, prefix_length=10):
     """Original function for prefix-based approach"""
@@ -448,7 +468,8 @@ def main(args):
     save_to_path = args.save_to_path
     atk_what = args.atk_what
 
-    atk_pattern = 'influence'
+    # atk_pattern = 'influence'
+    atk_pattern = 'random'
     
     # Validate attack strategy
     if atk_what not in ['prefix', 'doc']:
@@ -457,10 +478,24 @@ def main(args):
     # Number of random tokens to mask in document mode
     num_doc_masks = args.num_doc_masks if hasattr(args, 'num_doc_masks') else prefix_length
 
-    best_gpu = GPUtil.getFirstAvailable(order='memoryFree', maxLoad=0.5, maxMemory=0.5)[0]
+    best_gpu = GPUtil.getFirstAvailable(order='memoryFree', maxLoad=0.8, maxMemory=0.8)[0]
     torch.cuda.set_device(best_gpu)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')        
+    
     print(f"Using GPU {best_gpu}")
+
+    # if torch.cuda.is_available():
+    #     device = torch.device(f'cuda:{0}')  # Just use the first available GPU
+    #     torch.cuda.set_device(device)
+    # else:
+    #     device = torch.device('cpu')
+    # print(f"Using GPU {device}")
+
+    # device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')   
+    # device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
+     
+
+    USE = hub.load("https://kaggle.com/models/google/universal-sentence-encoder/TensorFlow2/universal-sentence-encoder/1")
 
     tokenizer = AutoTokenizer.from_pretrained(atker_path, max_length=len_doc_max)
     vocab_size = tokenizer.vocab_size
@@ -559,12 +594,16 @@ def main(args):
                         loss += batch_custom_loss * rewards[i]
                     
                 elif atk_what == 'doc':
-                    # New document-based approach
-                    # 1. Randomly select and mask tokens in the input
-                    masked_input_ids, mask_positions = apply_random_masks(
-                        input_ids, attention_mask, num_masks=num_doc_masks, mask_token_id=mask_token_id
-                    )
-                    
+                    if atk_pattern == 'random':
+                        masked_input_ids, mask_positions = apply_random_masks(
+                            input_ids, attention_mask, num_masks=num_doc_masks, mask_token_id=mask_token_id
+                        )
+                    elif atk_pattern == 'influence':
+                        true_class_ids = labels.tolist()
+                        masked_input_ids, mask_positions = apply_importance_masks(
+                            input_ids, attention_mask, model, true_class_ids, tokenizer=tokenizer,
+                            num_masks=num_doc_masks, mask_token_id=mask_token_id)
+
                     # 2. Get logits from the model for these masked positions
                     logits = model(masked_input_ids, attention_mask).logits
                     
@@ -574,21 +613,25 @@ def main(args):
                     )
                     
                     # 4. Calculate rewards using Llama Guard
-                    rewards = torch.zeros(batch_size, dtype=torch.float, device=device)
+                    adv_rewards = torch.zeros(batch_size, dtype=torch.float, device=device)
+                    sem_rewards = torch.zeros(batch_size, dtype=torch.float, device=device)
+
                     prompt_, predictions_, probs_ = get_raw_logits.process_file(data=generated_documents)
                     labels_all.extend(predictions_)
                     predicted_classes = torch.tensor(predictions_).to(device)
                     
-                    for i, gen_doc in enumerate(generated_documents):
+                    for i, gen_doc in enumerate(generated_documents):                        
                         if predictions_[i] not in (1, 0):
                             if labels[i] == 0:
-                                rewards[i] = 0.0
+                                adv_rewards[i]  0.0
                             else:
-                                rewards[i] = 1.0
+                                adv_rewards[i] = 1.0
                         elif labels[i] == predictions_[i]:
-                            rewards[i] = 1 - probs_[i]
+                            adv_rewards[i] = 1 - probs_[i]
                         else:
-                            rewards[i] = probs_[i]
+                            adv_rewards[i] = probs_[i]
+                        sem_rewards[i] = getUSEcosSimilarity(prompt_[i], gen_doc)
+                        rewards = adv_rewards + sem_rewards
                     
                     # 5. Calculate loss for document-based approach
                     loss = torch.tensor(0.0, device=device)
@@ -629,11 +672,11 @@ def main(args):
                 
                 # Evaluation
                 if step % eval_interval == 0:
+                    print('evaluating...')
                     model.eval()
                     val_loss_total = 0
                     val_batches = len(validation_dataloader)
 
-                    # Initialize metrics
                     acc_metric = Accuracy(task="binary").to(device)
                     val_acc_metric = Accuracy(task="binary").to(device)
                     
@@ -643,14 +686,13 @@ def main(args):
                             val_attention_mask = val_batch['attention_mask'].to(device)
                             val_labels = val_batch['labels'].to(device)
                             
-                            # Process validation data based on attack strategy
                             if atk_what == 'prefix':
                                 val_logits = model(val_input_ids, val_attention_mask).logits
                                 val_prefix_logits = val_logits[:, :prefix_length, :]
                                 _, _, _, _, val_source_documents, val_generated_documents = logits_to_labels_prefix(
                                     val_input_ids, val_prefix_logits, tokenizer, pad_token_id, cls_token_id, sep_token_id, prefix_length=prefix_length
                                 )
-                            else:  # doc
+                            elif atk_what == 'doc':
                                 if atk_pattern == 'random':
                                     val_masked_input_ids, val_mask_positions = apply_random_masks(
                                         val_input_ids, val_attention_mask, num_masks=num_doc_masks, mask_token_id=mask_token_id
@@ -671,14 +713,10 @@ def main(args):
                             val_prompt_, val_predictions_, val_probs_ = get_raw_logits.process_file(data=val_generated_documents)
                             val_labels_all.extend(val_labels.tolist())
 
-                            # Convert predictions to the correct format for metrics
                             val_predicted_classes = torch.tensor(val_predictions_).to(device)
-
-                            # Update metrics
                             acc_metric.update(predicted_classes, labels)
                             val_acc_metric.update(val_predicted_classes, val_labels)
 
-                        # Compute metrics
                         accuracy = acc_metric.compute()
                         val_accuracy = val_acc_metric.compute()
 
@@ -716,7 +754,7 @@ def main(args):
                     # Save model if it improves
                     if val_accuracy < best_acc:
                         best_acc = val_accuracy
-                        model_path = f"{save_to_path}/attacker_{atk_what}_llama-guard_{epoch}_{step}_{best_acc:.4f}.pth"
+                        model_path = f"{save_to_path}/attacker_{atk_what}_{timestamp}_llama-guard_{epoch}_{step}_{best_acc:.4f}.pth"
                         torch.save(model.state_dict(), model_path)
                         print(f"Model saved at step {step} with accuracy: {best_acc:.4f}, path: {model_path}")
         
@@ -744,7 +782,7 @@ if __name__ == "__main__":
         target_path='temp',
         len_doc_max=512,
         prefix_length=10,
-        save_to_path='/usa/taikun/07_transencoder/1training/llama-guard-attacker/',
+        save_to_path='/usa/taikun/07_transencoder/1training/llama-guard-attacker',
         atk_what='doc',
         num_doc_masks=10)
     

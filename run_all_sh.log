@@ -218,3 +218,43 @@ Attacking with the following parameters:
 Attacker Name: bert-base-uncased
 Target Model: defult
 JSON File: /usa/taikun/07_transencoder/attack-genai/eva_0506_150001_bert-base-uncased_defult_10_300_3.json
+Attacking with the following parameters:
+Attacker Name: bert-base-uncased
+Target Model: defult
+JSON File: /usa/taikun/07_transencoder/attack-genai/eva_0506_180001_bert-base-uncased_defult_10_100_3.json
+Attacking with the following parameters:
+Attacker Name: bert-base-uncased
+Target Model: defult
+JSON File: /usa/taikun/07_transencoder/attack-genai/eva_0506_180001_bert-base-uncased_defult_10_150_3.json
+Attacking with the following parameters:
+Attacker Name: bert-base-uncased
+Target Model: defult
+JSON File: /usa/taikun/07_transencoder/attack-genai/eva_0506_180001_bert-base-uncased_defult_10_200_3.json
+Attacking with the following parameters:
+Attacker Name: bert-base-uncased
+Target Model: defult
+JSON File: /usa/taikun/07_transencoder/attack-genai/eva_0506_180001_bert-base-uncased_defult_10_250_3.json
+Attacking with the following parameters:
+Attacker Name: bert-base-uncased
+Target Model: defult
+JSON File: /usa/taikun/07_transencoder/attack-genai/eva_0506_180001_bert-base-uncased_defult_10_300_3.json
+Attacking with the following parameters:
+Attacker Name: bert-base-uncased
+Target Model: defult
+JSON File: /usa/taikun/07_transencoder/attack-genai/eva_0506_210001_bert-base-uncased_defult_10_100_3.json
+Attacking with the following parameters:
+Attacker Name: bert-base-uncased
+Target Model: defult
+JSON File: /usa/taikun/07_transencoder/attack-genai/eva_0506_210001_bert-base-uncased_defult_10_150_3.json
+Attacking with the following parameters:
+Attacker Name: bert-base-uncased
+Target Model: defult
+JSON File: /usa/taikun/07_transencoder/attack-genai/eva_0506_210001_bert-base-uncased_defult_10_200_3.json
+Attacking with the following parameters:
+Attacker Name: bert-base-uncased
+Target Model: defult
+JSON File: /usa/taikun/07_transencoder/attack-genai/eva_0506_210001_bert-base-uncased_defult_10_250_3.json
+Attacking with the following parameters:
+Attacker Name: bert-base-uncased
+Target Model: defult
+JSON File: /usa/taikun/07_transencoder/attack-genai/eva_0506_210001_bert-base-uncased_defult_10_300_3.json
