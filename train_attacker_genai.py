@@ -4,7 +4,7 @@
 # ## 1. Prepare Dataloader
 # Load model directly
 import os
-# os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
@@ -16,9 +16,7 @@ import datetime
 timestamp = datetime.datetime.now().strftime("%m%d%Y_%H%M%S")
 import json
 import requests
-import functools
 import hashlib
-from cache_to_disk import cache_to_disk
 import diskcache
 cache = diskcache.Cache('/usa/taikun/07_transencoder/attack-genai', size_limit=10e9)
 cache.stats(enable=True)    
@@ -43,6 +41,9 @@ from torch.nn.functional import cross_entropy
 from torch.utils.data import TensorDataset, Dataset, DataLoader
 from torch.utils.data import DataLoader, Subset, RandomSampler
 torch.set_default_dtype(torch.float32)
+torch.cuda.set_device(0)
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')        
+print(f"Using GPU {device}")
 
 import tensorflow as tf
 import tensorflow_hub as hub
@@ -250,129 +251,6 @@ def apply_random_masks(input_ids, attention_mask, num_masks=10, mask_token_id=No
     
     return masked_input_ids, mask_positions
 
-# def get_influences(true_class_id, predictions, probs):
-#     '''
-#     Calculate influence scores for binary classification
-#     '''
-#     # Fix typo in variable name
-#     influences = []
-    
-#     # Get source probability for true class
-#     src_prob = probs[0] if predictions[0] == true_class_id else 1 - probs[0]
-    
-#     # Calculate influence for each prediction
-#     for i, pred in enumerate(predictions):
-#         curr_prob = probs[i] if pred == true_class_id else 1 - probs[i]
-#         influence = curr_prob - src_prob
-#         influences.append(influence)  # Fixed typo in append
-        
-#     return influences
-
-# def process_single_document(input_id, attention_mask, model, true_class_id, tokenizer, num_masks, mask_token_id):
-#     # Convert tensors to lists for hashing
-#     input_id_list = input_id.cpu().tolist()
-#     attention_mask_list = attention_mask.cpu().tolist()
-
-#     # Create the cache key from the input parameters
-#     key = hashlib.sha256(json.dumps({
-#         "input_id_list": input_id_list,
-#         "attention_mask_list": attention_mask_list,
-#         "true_class_id": true_class_id,
-#         "num_masks": num_masks,
-#         "mask_token_id": mask_token_id,
-#     }, sort_keys=True).encode()).hexdigest()
-
-#     # Check if the result is already in the cache
-#     if key in cache:
-#         cached_result = cache[key]
-#         # Ensure the retrieved tensor is on the correct device
-#         masked_input = torch.from_numpy(cached_result[0]).to(input_id.device)  # Move to the device of the input
-#         return masked_input, cached_result[1]
-
-#     # Find valid positions (non-padding tokens)
-#     valid_positions = [i for i, val in enumerate(attention_mask_list) if val == 1]
-
-#     # Skip if not enough valid positions
-#     if len(valid_positions) < num_masks:
-#         num_masks = len(valid_positions)-1
-
-#     # Create batch inputs for this sample
-#     sample_size = len(valid_positions) + 1  # +1 for original
-#     sample_input_ids = [input_id_list.copy() for _ in range(sample_size)]
-#     for j, pos in enumerate(valid_positions):
-#         sample_input_ids[j + 1][pos] = mask_token_id
-
-#     sample_input_tensor = torch.tensor(sample_input_ids)
-#     sample_docs = tokenizer.batch_decode(sample_input_tensor, skip_special_tokens=True)
-
-#     # Run batch inference
-#     _, predictions_, probs_ = get_raw_logits.process_file(data=sample_docs)
-
-#     # Calculate token influences
-#     influences = get_influences(true_class_id, predictions_, probs_)
-
-#     # Get indices of top influential tokens
-#     top_indices = sorted(range(1, len(influences)), key=lambda x: influences[x], reverse=True)[:num_masks]
-
-#     # Map back to token positions
-#     chosen_positions = [valid_positions[j - 1] for j in top_indices]
-
-#     # Create masked version
-#     masked_input = input_id.clone()
-#     for pos in chosen_positions:
-#         masked_input[pos] = mask_token_id
-    
-#     # Store the result in the cache, converting the tensor to a NumPy array
-#     cache[key] = (masked_input.cpu().numpy(), chosen_positions) # Changed this line
-#     return masked_input, chosen_positions
-
-
-# def apply_importance_masks(input_ids, attention_mask, model, true_class_ids, tokenizer, num_masks=10, mask_token_id=None):
-#     batch_size = input_ids.size(0)
-#     masked_input_ids = input_ids.clone()
-#     mask_positions = []
-
-#     # inner bar on its own line (position=1), will be cleared when done
-#     inner = tqdm(
-#         range(batch_size),
-#         desc="Processing batch influences",
-#         position=1,
-#         leave=False
-#     )
-#     for i in inner:
-#         masked_input, positions = process_single_document(
-#             input_ids[i],
-#             attention_mask[i],
-#             model,
-#             true_class_ids[i],
-#             tokenizer,
-#             num_masks,
-#             mask_token_id
-#         )
-#         mask_positions.append(positions)
-#     return masked_input_ids, mask_positions
-
-def apply_importance_masks(input_ids, attention_mask, model, true_class_ids, tokenizer, num_masks=10, mask_token_id=None):
-    batch_size = input_ids.size(0)
-    masked_input_ids = input_ids.clone()
-    mask_positions = []
-
-    for i in range(batch_size):
-        masked_input, positions = process_single_document(
-            input_ids[i],
-            attention_mask[i],
-            model,
-            true_class_ids[i],
-            tokenizer,
-            num_masks,
-            mask_token_id
-        )
-    
-        mask_positions.append(positions)
-    # cache_report()
-    return masked_input_ids, mask_positions
-
-
 def logits_to_labels_prefix(input_ids, prefix_logits, tokenizer, pad_token_id, cls_token_id, sep_token_id, prefix_length=10):
     """Original function for prefix-based approach"""
     batch_size = prefix_logits.size(0)
@@ -467,6 +345,7 @@ def main(args):
     prefix_length = args.prefix_length
     save_to_path = args.save_to_path
     atk_what = args.atk_what
+    alpha = args.alpha
 
     # atk_pattern = 'influence'
     atk_pattern = 'random'
@@ -478,11 +357,13 @@ def main(args):
     # Number of random tokens to mask in document mode
     num_doc_masks = args.num_doc_masks if hasattr(args, 'num_doc_masks') else prefix_length
 
-    best_gpu = GPUtil.getFirstAvailable(order='memoryFree', maxLoad=0.8, maxMemory=0.8)[0]
-    torch.cuda.set_device(best_gpu)
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')        
+    # best_gpu = GPUtil.getFirstAvailable(order='memoryFree', maxLoad=0.8, maxMemory=0.8)[0]
+    # torch.cuda.set_device(best_gpu)
+    # device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')        
     
-    print(f"Using GPU {best_gpu}")
+    # print(f"Using GPU {best_gpu}")
+
+    
 
     # if torch.cuda.is_available():
     #     device = torch.device(f'cuda:{0}')  # Just use the first available GPU
@@ -544,7 +425,6 @@ def main(args):
         total_batches = len(train_dataloader)
         total_steps = epochs * total_batches
 
-        # single bar over all steps
         bar = tqdm(total=total_steps, desc="Training", unit="step")
         source_documents_all, generated_documents_all, labels_all = [], [], []
         val_source_documents_all, val_generated_documents_all, val_labels_all = [], [], []
@@ -558,80 +438,67 @@ def main(args):
                 attention_mask = batch['attention_mask'].to(device)
                 labels = batch['labels'].to(device)
                 
-                # Process differently based on attack strategy
                 if atk_what == 'prefix':
-                    # Original prefix-based approach
                     logits = model(input_ids, attention_mask).logits
                     prefix_logits = logits[:, :prefix_length, :]
                     batch_size, num_prefix_tokens, vocab_size, prefix_labels, source_documents, generated_documents = logits_to_labels_prefix(
                         input_ids, prefix_logits, tokenizer, pad_token_id, cls_token_id, sep_token_id, prefix_length=prefix_length
                     )
                     
-                    # Calculate rewards using Llama Guard
                     rewards = torch.zeros(batch_size, dtype=torch.float, device=device)
-                    prompt_, predictions_, probs_ = get_raw_logits.process_file(data=generated_documents)
+                    _, predictions_, probs_ = get_raw_logits.process_file(data=generated_documents)
                     labels_all.extend(predictions_)
                     predicted_classes = torch.tensor(predictions_).to(device)
                     
-                    for i, gen_doc in enumerate(generated_documents):
-                        if predictions_[i] not in (1, 0):
-                            if labels[i] == 0:
-                                rewards[i] = 0.0
-                            else:
-                                rewards[i] = 1.0
-                        elif labels[i] == predictions_[i]:
-                            rewards[i] = 1 - probs_[i]
-                        else:
-                            rewards[i] = probs_[i]
+                    # for i, gen_doc in enumerate(generated_documents):
+                    #     if predictions_[i] not in (1, 0):
+                    #         if labels[i] == 0:
+                    #             rewards[i] = 0.0
+                    #         else:
+                    #             rewards[i] = 1.0
+                    #     elif labels[i] == predictions_[i]:
+                    #         rewards[i] = 1 - probs_[i]
+                    #     else:
+                    #         rewards[i] = probs_[i]
                     
-                    # Calculate loss for prefix-based approach
-                    loss = torch.tensor(0.0, device=device)
-                    for i in range(batch_size):
-                        batch_custom_loss = F.cross_entropy(
-                            prefix_logits[i],  # Logits for the prefix of the i-th document [prefix_length, vocab_size]
-                            prefix_labels[i],  # Sampled tokens for the prefix of the i-th document [prefix_length]
-                        )
-                        loss += batch_custom_loss * rewards[i]
+                    # # Calculate loss for prefix-based approach
+                    # loss = torch.tensor(0.0, device=device)
+                    # for i in range(batch_size):
+                    #     batch_custom_loss = F.cross_entropy(
+                    #         prefix_logits[i],  # Logits for the prefix of the i-th document [prefix_length, vocab_size]
+                    #         prefix_labels[i],  # Sampled tokens for the prefix of the i-th document [prefix_length]
+                    #     )
+                    #     loss += batch_custom_loss * rewards[i]
                     
                 elif atk_what == 'doc':
-                    if atk_pattern == 'random':
-                        masked_input_ids, mask_positions = apply_random_masks(
-                            input_ids, attention_mask, num_masks=num_doc_masks, mask_token_id=mask_token_id
-                        )
-                    elif atk_pattern == 'influence':
-                        true_class_ids = labels.tolist()
-                        masked_input_ids, mask_positions = apply_importance_masks(
-                            input_ids, attention_mask, model, true_class_ids, tokenizer=tokenizer,
-                            num_masks=num_doc_masks, mask_token_id=mask_token_id)
-
-                    # 2. Get logits from the model for these masked positions
+                    masked_input_ids, mask_positions = apply_random_masks(
+                        input_ids, attention_mask, num_masks=num_doc_masks, mask_token_id=mask_token_id
+                    )
                     logits = model(masked_input_ids, attention_mask).logits
-                    
-                    # 3. Sample new tokens for the masked positions and calculate loss
                     batch_size, vocab_size, generated_labels, source_documents, generated_documents = logits_to_labels_doc(
                         input_ids, mask_positions, logits, tokenizer, pad_token_id, cls_token_id, sep_token_id
                     )
                     
-                    # 4. Calculate rewards using Llama Guard
                     adv_rewards = torch.zeros(batch_size, dtype=torch.float, device=device)
                     sem_rewards = torch.zeros(batch_size, dtype=torch.float, device=device)
-
-                    prompt_, predictions_, probs_ = get_raw_logits.process_file(data=generated_documents)
+                    rewards = torch.zeros(batch_size, dtype=torch.float, device=device)
+                    _, predictions_, probs_ = get_raw_logits.process_file(data=generated_documents)
                     labels_all.extend(predictions_)
                     predicted_classes = torch.tensor(predictions_).to(device)
                     
+                    USE_res = getUSEcosSimilarity(source_documents, generated_documents, embed=USE)
                     for i, gen_doc in enumerate(generated_documents):                        
                         if predictions_[i] not in (1, 0):
                             if labels[i] == 0:
-                                adv_rewards[i]  0.0
+                                adv_rewards[i] = 0.0
                             else:
                                 adv_rewards[i] = 1.0
                         elif labels[i] == predictions_[i]:
                             adv_rewards[i] = 1 - probs_[i]
                         else:
                             adv_rewards[i] = probs_[i]
-                        sem_rewards[i] = getUSEcosSimilarity(prompt_[i], gen_doc)
-                        rewards = adv_rewards + sem_rewards
+
+                        rewards[i] = alpha * adv_rewards[i] + (1-alpha) * sem_rewards[i]
                     
                     # 5. Calculate loss for document-based approach
                     loss = torch.tensor(0.0, device=device)
@@ -693,16 +560,9 @@ def main(args):
                                     val_input_ids, val_prefix_logits, tokenizer, pad_token_id, cls_token_id, sep_token_id, prefix_length=prefix_length
                                 )
                             elif atk_what == 'doc':
-                                if atk_pattern == 'random':
-                                    val_masked_input_ids, val_mask_positions = apply_random_masks(
-                                        val_input_ids, val_attention_mask, num_masks=num_doc_masks, mask_token_id=mask_token_id
-                                    )
-                                elif atk_pattern == 'influence':
-                                    true_class_ids = val_labels.tolist()
-                                    val_masked_input_ids, val_mask_positions = apply_importance_masks(
-                                        val_input_ids, val_attention_mask, model, true_class_ids, tokenizer=tokenizer,
-                                        num_masks=num_doc_masks, mask_token_id=mask_token_id
-                                    )
+                                val_masked_input_ids, val_mask_positions = apply_random_masks(
+                                    val_input_ids, val_attention_mask, num_masks=num_doc_masks, mask_token_id=mask_token_id
+                                )
                                 val_logits = model(val_masked_input_ids, val_attention_mask).logits
                                 _, _, _, val_source_documents, val_generated_documents = logits_to_labels_doc(
                                     val_input_ids, val_mask_positions, val_logits, tokenizer, pad_token_id, cls_token_id, sep_token_id
@@ -754,7 +614,7 @@ def main(args):
                     # Save model if it improves
                     if val_accuracy < best_acc:
                         best_acc = val_accuracy
-                        model_path = f"{save_to_path}/attacker_{atk_what}_{timestamp}_llama-guard_{epoch}_{step}_{best_acc:.4f}.pth"
+                        model_path = f"{save_to_path}/attacker_{timestamp}_llama-guard_{atk_what}_{alpha}_{epoch}_{step}_{best_acc:.4f}.pth"
                         torch.save(model.state_dict(), model_path)
                         print(f"Model saved at step {step} with accuracy: {best_acc:.4f}, path: {model_path}")
         
@@ -774,17 +634,19 @@ if __name__ == "__main__":
                         help='attack strategy: "prefix" (original) or "doc" (modify document tokens)')
     parser.add_argument('--num_doc_masks', type=int, default=10, 
                         help='number of tokens to mask in document when using "doc" strategy')
+    parser.add_argument('--alpha', type=float, default=0.5, help='the weight on the adversarial obj.')
 
-    # args = parser.parse_args()    
+    args = parser.parse_args()    
 
-    args = argparse.Namespace(
-        atker_path='bert-base-uncased', # Example path
-        target_path='temp',
-        len_doc_max=512,
-        prefix_length=10,
-        save_to_path='/usa/taikun/07_transencoder/1training/llama-guard-attacker',
-        atk_what='doc',
-        num_doc_masks=10)
+    # args = argparse.Namespace(
+    #     atker_path='bert-base-uncased', # Example path
+    #     target_path='temp',
+    #     len_doc_max=512,
+    #     prefix_length=10,
+    #     save_to_path='/usa/taikun/07_transencoder/1training/llama-guard-attacker',
+    #     atk_what='doc',
+    #     num_doc_masks=10,
+    #     alpha=0.5)
     
     
     print_config(args)

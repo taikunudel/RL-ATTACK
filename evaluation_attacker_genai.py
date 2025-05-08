@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
-
+from typing import List, Dict, Any, Tuple
 import argparse
 import numpy as np
 import pandas as pd
@@ -8,10 +8,15 @@ from tqdm import tqdm
 import json
 import re
 import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 # os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 # print(f"CUDA_VISIBLE_DEVICES is set to: {os.environ.get('CUDA_VISIBLE_DEVICES')}")
 import sys
 import GPUtil
+import hashlib
+import diskcache
+cache = diskcache.Cache('/usa/taikun/07_transencoder/attack-genai', size_limit=10e9)
+cache.stats(enable=True)    
 from collections import defaultdict # Added this import
 from copy import deepcopy
 from nltk.translate.bleu_score import sentence_bleu
@@ -38,22 +43,7 @@ import tensorflow as tf
 #     tf.config.experimental.set_memory_growth(gpus[1], True)   # ❶
 import tensorflow_hub as hub
 from train_attacker_genai import *
-
-# read data
-# make 10 masks
-# infer
-# get the logits
-# random fill in the masks
-# print out and save all the attacked results
-# test accuracy, USE, perturbation rate
-
-# random vs trained
-# trained on a single or both losses
-# attack diffrent 
-
-def print_config(args):
-    for arg, value in vars(args).items():
-        print(f"{arg}: {value}")
+# import get_raw_logits
 
 def getUSEcosSimilarity(srcDocs, copyDocs, embed):
     USEcosinSimilarity = []
@@ -66,6 +56,104 @@ def getUSEcosSimilarity(srcDocs, copyDocs, embed):
         es = sim_metric(srcEmb, advEmb)
         USEcosinSimilarity.append(es.item())
     return USEcosinSimilarity
+
+def get_influences(true_class_id, predictions, probs):
+    '''
+    Calculate influence scores for binary classification
+    '''
+    # Fix typo in variable name
+    influences = []
+    
+    # Get source probability for true class
+    src_prob = probs[0] if predictions[0] == true_class_id else 1 - probs[0]
+    
+    # Calculate influence for each prediction
+    for i, pred in enumerate(predictions):
+        curr_prob = probs[i] if pred == true_class_id else 1 - probs[i]
+        influence = curr_prob - src_prob
+        influences.append(influence)  # Fixed typo in append
+        
+    return influences
+
+def process_single_document(input_id, attention_mask, model, true_class_id, tokenizer, num_masks, mask_token_id):
+    # Convert tensors to lists for hashing the input
+    input_id_list = input_id.cpu().tolist()
+    attention_mask_list = attention_mask.cpu().tolist()
+    true_class_id_item = true_class_id.item()
+
+    # Create the cache key based on the input parameters
+    input_key = hashlib.sha256(json.dumps({
+        "input_id_list": input_id_list,
+        "attention_mask_list": attention_mask_list,
+        "true_class_id_item": true_class_id_item,
+        "num_masks": num_masks,
+        "mask_token_id": mask_token_id,
+    }, sort_keys=True).encode()).hexdigest()
+
+    # Check if the result for this input is already in the cache
+    if input_key in cache:
+        cached_result = cache[input_key]
+        # Ensure the retrieved tensor is on the correct device
+        masked_input = torch.from_numpy(cached_result[0]).to(input_id.device)
+        positions = cached_result[1]
+        return masked_input, positions
+
+    # Find valid positions (non-padding tokens)
+    valid_positions = [i for i, val in enumerate(attention_mask_list) if val == 1]
+
+    # Skip if not enough valid positions
+    if len(valid_positions) < num_masks:
+        num_masks = len(valid_positions) - 1
+
+    # Create batch inputs for this sample
+    sample_size = len(valid_positions) + 1  # +1 for original
+    sample_input_ids = [input_id_list.copy() for _ in range(sample_size)]
+    for j, pos in enumerate(valid_positions):
+        sample_input_ids[j + 1][pos] = mask_token_id
+
+    sample_input_tensor = torch.tensor(sample_input_ids)
+    sample_docs = tokenizer.batch_decode(sample_input_tensor, skip_special_tokens=True)
+
+    # Run batch inference
+    _, predictions_, probs_ = get_raw_logits.process_file(data=sample_docs)
+
+    # Calculate token influences
+    influences = get_influences(true_class_id, predictions_, probs_)
+
+    # Get indices of top influential tokens
+    top_indices = sorted(range(1, len(influences)), key=lambda x: influences[x], reverse=True)[:num_masks]
+
+    # Map back to token positions
+    chosen_positions = [valid_positions[j - 1] for j in top_indices]
+
+    # Create masked version
+    masked_input = input_id.clone()
+    for pos in chosen_positions:
+        masked_input[pos] = mask_token_id
+
+    # Store the result (hashed output) in the cache, using the input key
+    cache[input_key] = (masked_input.cpu().numpy(), chosen_positions)
+    return masked_input, chosen_positions
+
+def apply_importance_masks(input_ids, attention_mask, model, true_class_ids, tokenizer, num_masks=10, mask_token_id=None):
+    batch_size = input_ids.size(0)
+    masked_input_ids = input_ids.clone()
+    mask_positions = []
+
+    for i in range(batch_size):
+        masked_input, positions = process_single_document(
+            input_ids[i],
+            attention_mask[i],
+            model,
+            true_class_ids[i],
+            tokenizer,
+            num_masks,
+            mask_token_id
+        )
+    
+        mask_positions.append(positions)
+    # cache_report()
+    return masked_input_ids, mask_positions
 
 def save_lists_to_json(list_names: List[str], lists_to_zip: List[List[Any]], output_json_path: str):
     """
@@ -128,64 +216,69 @@ def save_lists_to_json(list_names: List[str], lists_to_zip: List[List[Any]], out
 #     stacked_sampled_tokens = torch.stack(all_sampled_tokens, dim=1)
 #     return stacked_sampled_tokens
     
-# def get_top_k_indices(logits: torch.Tensor, k: int) -> torch.Tensor:
-#     """
-#     Gets the top k token indices from the logits for each position.
 
-#     Args:
-#         logits: A tensor of shape (batch_size, num_tokens, vocab_size) representing the logits
-#                 for each token position in the batch.
-#         k: The number of top token indices to retrieve.
-
-#     Returns:
-#         A tensor of shape (batch_size, num_tokens, k) containing the indices
-#         of the top k tokens.
-#     """
-#     batch_size, num_tokens, vocab_size = logits.shape
-#     all_top_k_indices = []
-
-#     for i in range(num_tokens):
-#         # Get the top k values and indices for the current token position
-#         topk_values, topk_indices = torch.topk(logits[:, i, :], k=k, dim=-1)
-#         all_top_k_indices.append(topk_indices)
-
-#     # Stack the top k indices to create the desired shape
-#     stacked_top_k_indices = torch.stack(all_top_k_indices, dim=1)
-#     return stacked_top_k_indices
-
-def get_top_k_indices(logits: torch.Tensor, k: int) -> torch.Tensor:
+def get_top_k_indices(logits: torch.Tensor, attacked_positions: List[List[int]], k: int) -> torch.Tensor:
     """
-    Gets the top k token indices from the logits for each position,
-    selecting from the top 100 candidates and then randomly choosing 5.
+    Gets the top k token indices from the logits for the specified attacked positions.
 
     Args:
         logits: A tensor of shape (batch_size, num_tokens, vocab_size) representing the logits
                 for each token position in the batch.
-        k: The number of token indices to retrieve (in this case, 5).
+        attacked_positions: A list of lists, where each inner list contains the indices
+                            of the tokens to be attacked for a given batch sample.
+        k: The number of top token indices to retrieve for each attacked position.
 
     Returns:
-        A tensor of shape (batch_size, num_tokens, k) containing the indices
-        of the randomly selected top k tokens.
+        A tensor of shape (batch_size, max_num_attacked, k) containing the indices
+        of the top k tokens for each attacked position. The tensor is padded with
+        -1 for positions that were not attacked.
     """
     batch_size, num_tokens, vocab_size = logits.shape
-    all_top_k_indices = []
+    max_attacked = max(len(positions) for positions in attacked_positions) if attacked_positions else 0
+    all_top_k_indices = torch.full((batch_size, max_attacked, k), -1, dtype=torch.long, device=logits.device)
 
-    top_n = 100  # Number of candidates to consider
+    for b in range(batch_size):
+        attack_indices = attacked_positions[b]
+        for i, pos in enumerate(attack_indices):
+            if pos < num_tokens:  # Ensure the attacked position is within the bounds
+                topk_values, topk_indices = torch.topk(logits[b, pos, :], k=k, dim=-1)
+                all_top_k_indices[b, i, :] = topk_indices
 
-    for i in range(num_tokens):
-        # Get the top n values and indices for the current token position
-        top_n_values, top_n_indices = torch.topk(logits[:, i, :], k=top_n, dim=-1)
+    return all_top_k_indices
 
-        # Ensure random_indices is on the same device as top_n_indices
-        random_indices = torch.randint(low=0, high=top_n, size=(batch_size, k), device=top_n_indices.device)
+# def get_top_k_indices(logits: torch.Tensor, k: int) -> torch.Tensor:
+#     """
+#     Gets the top k token indices from the logits for each position,
+#     selecting from the top 100 candidates and then randomly choosing 5.
+
+#     Args:
+#         logits: A tensor of shape (batch_size, num_tokens, vocab_size) representing the logits
+#                 for each token position in the batch.
+#         k: The number of token indices to retrieve (in this case, 5).
+
+#     Returns:
+#         A tensor of shape (batch_size, num_tokens, k) containing the indices
+#         of the randomly selected top k tokens.
+#     """
+#     batch_size, num_tokens, vocab_size = logits.shape
+#     all_top_k_indices = []
+
+#     top_n = 100  # Number of candidates to consider
+
+#     for i in range(num_tokens):
+#         # Get the top n values and indices for the current token position
+#         top_n_values, top_n_indices = torch.topk(logits[:, i, :], k=top_n, dim=-1)
+
+#         # Ensure random_indices is on the same device as top_n_indices
+#         random_indices = torch.randint(low=0, high=top_n, size=(batch_size, k), device=top_n_indices.device)
         
-        # Use gather to get the actual indices
-        top_k_indices = torch.gather(top_n_indices, dim=-1, index=random_indices)
-        all_top_k_indices.append(top_k_indices)
+#         # Use gather to get the actual indices
+#         top_k_indices = torch.gather(top_n_indices, dim=-1, index=random_indices)
+#         all_top_k_indices.append(top_k_indices)
 
-    # Stack the top k indices to create the desired shape
-    stacked_top_k_indices = torch.stack(all_top_k_indices, dim=1)
-    return stacked_top_k_indices
+#     # Stack the top k indices to create the desired shape
+#     stacked_top_k_indices = torch.stack(all_top_k_indices, dim=1)
+#     return stacked_top_k_indices
 
 def generate_token_sample_combinations_batched(sampled_tokens: torch.Tensor, sub_batch_size: int) -> torch.Tensor:
     """
@@ -219,6 +312,97 @@ def generate_token_sample_combinations_batched(sampled_tokens: torch.Tensor, sub
     else:
         return torch.empty(0, num_samples ** num_tokens, num_tokens, dtype=torch.long)
 
+def generate_candidate_combinations(input_ids: torch.Tensor, attention_mask, sampled_tokens: torch.Tensor, attacked_positions: List[List[int]], original_label: int, tokenizer) -> List[str]:
+    """
+    Generates and evaluates adversarial text candidates greedily by replacing token IDs.
+
+    Args:
+        input_ids: The original input token IDs (shape: [1, num_tokens]).
+        sampled_tokens: The top-k sampled token IDs for each attacked position
+                        (shape: [1, max_num_attacked, num_candidates]).
+        attacked_positions: A list of lists, where each inner list contains the
+                            indices of attacked tokens for a batch sample.
+                            In this function (single example processing), we use
+                            attacked_positions[0] (List[int]).
+        original_label: The true label of the original input (int).
+        get_raw_logits_func: The function used to get raw logits and predictions.
+        tokenizer: The tokenizer object.
+        max_queries: The maximum number of queries allowed (int).
+
+    Returns:
+        A list containing the first successful adversarial text candidate found (str),
+        or an empty list if none found within the query limit.
+    """
+
+    
+
+    atk_succ = False
+    src_doc = tokenizer.decode(input_ids[0], skip_special_tokens=True)
+    _, src_pred, src_prob = get_raw_logits.process_file(data=[src_doc])
+    
+    gen_doc = src_doc
+    src_pred_label = src_pred[0]
+    src_pred_prob = src_prob[0]
+    adv_pred_label = src_pred[0]
+    adv_pred_prob = src_prob[0]
+    worst_prob = src_pred_prob
+    queries_used = 0
+    queries_used = 0
+    nums_pert_toks = 0
+    src_len = torch.sum(attention_mask).item()
+    pert_rate = nums_pert_toks / src_len
+
+    if src_pred[0] != original_label:
+        atk_succ = True
+        return atk_succ, src_doc, gen_doc, original_label, src_pred_label, src_pred_prob,\
+              adv_pred_label, adv_pred_prob, worst_prob, \
+                queries_used, nums_pert_toks, src_len, pert_rate
+
+    nums_of_batch = sampled_tokens.shape[0]
+    nums_atk_toks = sampled_tokens.shape[1]
+    nums_tok_candidates = sampled_tokens.shape[2]
+    
+    input_id_curr = input_ids[0].clone().cpu().numpy()
+    worst_prob = 1.0
+
+    for atk_idx in range(nums_atk_toks):
+        pos = attacked_positions[0][atk_idx]
+        candidate_token_ids = sampled_tokens[0, atk_idx, :].tolist()
+
+        for candidate_id in candidate_token_ids:
+            temp_input_ids = list(input_id_curr)
+            temp_input_ids[pos] = candidate_id
+            candidate_text = tokenizer.decode(temp_input_ids, skip_special_tokens=True)
+
+            _, predictions, prob = get_raw_logits.process_file(data=[candidate_text])
+            queries_used += 1
+
+            if predictions[0] != original_label:
+                atk_succ = True
+                src_doc = tokenizer.decode(input_ids[0], skip_special_tokens=True)
+                gen_doc = candidate_text
+                src_pred_label = src_pred[0]
+                src_pred_prob = src_prob[0]
+                adv_pred_label = predictions[0]
+                adv_pred_prob = 1 - prob[0]
+                queries_used = 0
+                nums_pert_toks = atk_idx + 1
+                # src_len = torch.sum(attention_mask).item()
+                pert_rate = nums_pert_toks / src_len
+
+                return atk_succ, src_doc, gen_doc, original_label, src_pred_label, src_pred_prob,\
+              adv_pred_label, adv_pred_prob, worst_prob, \
+                queries_used, nums_pert_toks, src_len, pert_rate
+            
+            elif prob[0] < worst_prob:
+                worst_prob = prob[0]
+                input_id_curr = temp_input_ids
+
+    return atk_succ, src_doc, gen_doc, original_label, src_pred_label, src_pred_prob,\
+                adv_pred_label, adv_pred_prob, worst_prob, \
+                    queries_used, nums_pert_toks, src_len, pert_rate
+
+
 def main(args):
     atker_path = args.atker_path
     target_path = args.target_path
@@ -226,14 +410,14 @@ def main(args):
     prefix_length = args.prefix_length
     save_to_path = args.save_to_path
     samples_per_tok = args.samples_per_tok
-    max_queries_per_doc = args.max_queries_per_doc
     atk_json_log = args.atk_json_log
+    num_masks = prefix_length
 
-    # device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    best_gpu = GPUtil.getFirstAvailable(order='memoryFree', maxLoad=0.5, maxMemory=0.5)[0]
-    torch.cuda.set_device(best_gpu)
-    device = torch.device(f"cuda:{best_gpu}")
-    print(f"Using GPU {best_gpu}")
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    # best_gpu = GPUtil.getFirstAvailable(order='memoryFree', maxLoad=0.5, maxMemory=0.5)[0]
+    # torch.cuda.set_device(best_gpu)
+    # device = torch.device(f"cuda:{best_gpu}")
+    # print(f"Using GPU {best_gpu}")
 
     USE = hub.load("https://kaggle.com/models/google/universal-sentence-encoder/TensorFlow2/universal-sentence-encoder/1")
     # with tf.device(f"/GPU:{best_gpu}"):
@@ -251,7 +435,7 @@ def main(args):
     mask_token_id = tokenizer.mask_token_id
     unk_token_id = tokenizer.unk_token_id
 
-    train_dataloader, validation_dataloader, evaluation_dataloader = build_datasets(tokenizer=tokenizer, prefix_length=prefix_length, max_len=len_doc_max, seed=42)
+    _, _, evaluation_dataloader = build_datasets(tokenizer=tokenizer, prefix_length=prefix_length, max_len=len_doc_max, seed=42)
     
     # Initialize attacker
     config = BertConfig.from_pretrained(atker_path, output_hidden_states=True)
@@ -268,7 +452,8 @@ def main(args):
     
     def attack(evaluation_dataloader=evaluation_dataloader, attacker=model, eval_interval=100):
         model.eval()
-        acc_metric = Accuracy(task="binary").to(device)
+        orig_acc_metric = Accuracy(task="binary").to(device)
+        atk_acc_metric = Accuracy(task="binary").to(device)
         all_results = []
         all_predicted_labels = []
         all_true_labels = []
@@ -279,6 +464,21 @@ def main(args):
         queries = []
         USEs = []
         pertubations = []
+        all_attacked_positions = []
+
+        # Initialize the lists here
+        all_source_documents = []
+        all_generated_documents = []
+        all_true_labels = []
+        all_source_predicted_labels = []
+        all_source_predicted_probs = []
+        all_gen_predicted_labels = []
+        all_gen_predicted_probs = []
+        all_worst_probs = []
+        all_quries = []
+        all_nums_pert_toks = []
+        all_src_len = []
+        all_pert_rate = []
         with torch.no_grad():
             total_batches = len(evaluation_dataloader)
             bar = tqdm(total=total_batches, desc="Evaluating", unit="batch")            
@@ -292,93 +492,101 @@ def main(args):
                 src_doc = tokenizer.decode(input_ids[0],skip_special_tokens=True)
                 prompt_, predictions_, probs_ = get_raw_logits.process_file(data=[src_doc]) 
 
-                logits = model(input_ids, attention_mask).logits # [bS, maxDocLen, vcabSize]
-                prefix_logits = logits[:, :prefix_length, :] # [batch_size, prefix_length, vocab_size]
-                batch_size, num_prefix_tokens, vocab_size, prefix_labels, source_documents, generated_documents = logits_to_labels(input_ids, prefix_logits, tokenizer, pad_token_id, cls_token_id, sep_token_id, prefix_length=prefix_length)
-                
-                sampled_tokens = get_top_k_indices(logits=prefix_logits, k=samples_per_tok)
+                masked_input_ids, attacked_positions = apply_importance_masks(
+                    input_ids=input_ids,
+                    attention_mask=attention_mask,
+                    model=attacker,  # Use the attacker model
+                    true_class_ids=labels,
+                    tokenizer=tokenizer,
+                    num_masks=num_masks, # Use num_masks
+                    mask_token_id=mask_token_id
+                )
 
-                all_combinations = generate_token_sample_combinations_batched(sampled_tokens, sub_batch_size=4)
-                all_combinations = all_combinations.squeeze(0)
+                all_attacked_positions.append(attacked_positions) # Store
+                if not attacked_positions[0]: # Check the first (and only) element.
+                    print('skip document {batch_idx} because it is an empty document.')
+                    continue
 
-                # sampled_tokens = sample_multiple_without_replacement(logits=prefix_logits, num_samples=samples_per_tok)
-                # all_combinations = generate_token_sample_combinations_batched(sampled_tokens, sub_batch_size=4)
-                # all_combinations = all_combinations.squeeze(0)
+                logits = model(masked_input_ids, attention_mask).logits
+                sampled_tokens = get_top_k_indices(logits=logits, attacked_positions=attacked_positions, k=samples_per_tok) # [batch_size, num_attacked_positions, samples_per_tok]
 
-                # prompt_, predicted_labels, probs_ = get_raw_logits.process_file(data=generated_documents)
-                # true_labels = labels
+                atk_succ, src_doc, gen_doc, original_label, src_pred_label, src_pred_prob,\
+                adv_pred_label, adv_pred_prob, worst_prob, \
+                    queries_used, nums_pert_toks, src_len, pert_rate = generate_candidate_combinations(
+                    input_ids=input_ids,
+                    attention_mask=attention_mask,
+                    sampled_tokens=sampled_tokens,
+                    attacked_positions=attacked_positions,
+                    original_label = labels.item(),
+                    tokenizer = tokenizer)
                 
-                # predicted_labels_tensor = torch.tensor(predicted_labels).to(device)
-                # predicted_probs_tensor = torch.tensor(probs_).to(device) # Get the probabilities
-
-                # source_logits = model(batch['input_ids'].to(device), batch['attention_mask'].to(device)).logits
-                # _, source_predicted_labels, source_probs = get_raw_logits.process_file(data=source_documents)
-                # source_predicted_probs_tensor = torch.tensor(source_probs).to(device)
-                
-                # decode every possible comb
-                all_text_combinations = tokenizer.batch_decode(all_combinations, skip_special_tokens=True)
-                random.shuffle(all_text_combinations)
-                # iteratively try each 
-                
-                atk_succ = False
-                # for text in tqdm(all_text_combinations, desc="Processing Combinations"): # Added tqdm
-                for text in all_text_combinations:
-                    curr_queries_per_doc += 1
-                    if curr_queries_per_doc >= max_queries_per_doc:
-                        break
-                    adv_doc = ' '.join([text, src_doc])
-                    eva_prompt_, eval_predictions_, eval_probs_ = get_raw_logits.process_file(data=[adv_doc])  
-                    if eval_predictions_[0] != labels[0]:
-                        atk_succ = True              
-                        break
-                
-                all_source_documents.extend(prompt_)
-                all_generated_documents.extend(generated_documents)
-                all_true_labels.extend(labels.cpu().numpy().tolist()) 
-                if atk_succ:
-                    all_predicted_labels.extend(eval_predictions_)
-                else:
-                    all_predicted_labels.extend(labels.cpu().numpy().tolist())
-                all_source_predicted_probs.extend(probs_)
-                all_generated_predicted_probs.extend(eval_probs_)
+                all_source_documents.append(src_doc)
+                all_generated_documents.append(gen_doc)
+                all_true_labels.append(original_label) 
+                all_source_predicted_labels.append(src_pred_label)
+                all_source_predicted_probs.append(src_pred_prob)
+                all_gen_predicted_labels.append(adv_pred_label)
+                all_gen_predicted_probs.append(adv_pred_prob)
+                all_worst_probs.append(worst_prob)
+                all_quries.append(queries_used)
+                all_nums_pert_toks.append(nums_pert_toks)
+                all_src_len.append(src_len)
+                all_pert_rate.append(pert_rate)
                 
                 all_true_labels_tensor = torch.tensor(all_true_labels).to(device)
-                all_predicted_labels_tensor = torch.tensor(all_predicted_labels).to(device)
+                all_source_predicted_labels_tensor = torch.tensor(all_source_predicted_labels).to(device)
+                all_gen_predicted_labels_tensor = torch.tensor(all_gen_predicted_labels).to(device)
                 
-                acc_metric.update(all_predicted_labels_tensor, all_true_labels_tensor)
-                current_accuracy = acc_metric.compute()
-
-                queries.append(curr_queries_per_doc)
+                orig_acc_metric.update(all_source_predicted_labels_tensor, all_true_labels_tensor)
+                atk_acc_metric.update(all_gen_predicted_labels_tensor, all_true_labels_tensor)
+                original_accuracy = orig_acc_metric.compute()
+                current_accuracy = atk_acc_metric.compute()
+    
                 USEs.append(getUSEcosSimilarity([all_source_documents[-1]], [all_generated_documents[-1]], USE)[0])
-                pertubations.append(prefix_length / torch.sum(attention_mask[0]).item())
 
                 bar.update(1)
                 bar.set_postfix({
-                    "avg_acc":      f"{current_accuracy:.4f}",
-                    "avg_queries":  f"{np.mean(queries):.4f}",
-                    "avg_pert":     f"{np.mean(pertubations)*100:.4f}",
-                    "avg_USE":      f"{np.mean(USEs):.4f}",
-                    "curr_queries": f"{queries[-1]:.4f}",
-                    "curr_pert":    f"{pertubations[-1]*100:.4f}",
-                    "curr_USE":     f"{USEs[-1]:.4f}"
+                    "avg_ori_acc": f"{original_accuracy:.4f}",
+                    "avg_atk_acc": f"{current_accuracy:.4f}",
+                    "avg_queries": f"{np.mean(all_quries):.4f}",
+                    "avg_pert": f"{np.mean(all_pert_rate) * 100:.2f}",
+                    "avg_USE": f"{np.mean(USEs):.4f}",
+                    "cur_queries": f"{all_quries[-1]:.4f}",
+                    "cur_pert": f"{all_pert_rate[-1] * 100:.2f}",
+                    "cur_USE": f"{USEs[-1]:.4f}"
                 })
 
-                if batch_idx % eval_interval == 0:
-                    print(f"\n--- Step {batch_idx} ---")
-                    print("Source Documents (last few):", all_source_documents[-1])
-                    print("Generated Documents (last few):", all_generated_documents[-1])
-                    print("True Labels (last few):", all_true_labels[-1])
-                    print("Predicted Labels (last few):", all_predicted_labels[-1])
-                    print("Source Predicted Probabilities:", round(all_source_predicted_probs[-1],4))
-                    print("Generated Predicted Probabilities:", round(all_generated_predicted_probs[-1],4))
+                # if batch_idx % eval_interval == 0:
+                #     print(f"\n--- Step {batch_idx} ---")
+                #     print("Source Documents (last few):", all_source_documents[-1])
+                #     print("Generated Documents (last few):", all_generated_documents[-1])
+                #     print("True Labels (last few):", all_true_labels[-1])
+                #     print("Predicted Labels (last few):", all_gen_predicted_labels[-1])
+                #     print("Source Predicted Probabilities:", round(all_source_predicted_probs[-1],4))
+                #     print("Generated Predicted Probabilities:", round(all_generated_predicted_probs[-1],4))
                 
-                list_names = ['src_doc', 'adv_doc', 'true_label', 'pred_label', 'queries', 'pertubations', 'USEs', 'true_prob', 'pred_prob']
-                lists_to_zip = [all_source_documents, all_generated_documents, all_true_labels, all_predicted_labels, queries, pertubations, USEs, all_source_predicted_probs, all_generated_predicted_probs]
+                list_names = [
+                    "src_doc", "adv_doc", "true_label", "src_pred_label", "src_pred_prob",
+                    "adv_pred_label", "adv_pred_prob", "worst_prob", "queries_used",
+                    "num_perturbed_tokens", "src_length", "perturbation_rate", "USEs"]
+                    
+                lists_to_zip = [
+                    all_source_documents,
+                    all_generated_documents,
+                    all_true_labels,
+                    all_source_predicted_labels,
+                    all_source_predicted_probs,
+                    all_gen_predicted_labels,
+                    all_gen_predicted_probs,
+                    all_worst_probs,
+                    all_quries,
+                    all_nums_pert_toks,
+                    all_src_len,
+                    all_pert_rate,
+                    USEs]
                 save_lists_to_json(list_names=list_names, lists_to_zip=lists_to_zip, output_json_path=atk_json_log)
-                
             bar.close()
         
-
     attack(evaluation_dataloader=evaluation_dataloader, attacker=model)
 
 if __name__ == "__main__":
@@ -389,21 +597,20 @@ if __name__ == "__main__":
     parser.add_argument('--len_doc_max', type=int, default=512, help='max length of document')  # Default value set to 512
     parser.add_argument('--prefix_length', type=int, default=10, help='')  # Default value set to 512
     parser.add_argument('--samples_per_tok', type=int, default=10, help='')  # Default value set to 512
-    parser.add_argument('--max_queries_per_doc', type=int, default=50, help='')  # Default value set to 512
     parser.add_argument('--atk_json_log', type=str, default=10, help='')  # Default value set to 512
-
 
     # args = argparse.Namespace(
     #         atker_path='bert-base-uncased', # Example path
     #         target_path='temp',
     #         len_doc_max=512,
-    #         prefix_length=10,
+    #         prefix_length=10, # numbers of attacked tokens maximumlly allowed
     #         save_to_path='/usa/taikun/07_transencoder/1training/llama-guard-attacker/attacker_llama-guard_4_5100_0.6450.pth',
-    #         samples_per_tok=3,
-    #         max_queries_per_doc=2,
+    #         samples_per_tok=5,
     #         # atk_json_log = '/usa/taikun/07_transencoder/attack-genai/atk_greedy_topk_doc_log.json')
     #         atk_json_log = '/usa/taikun/07_transencoder/attack-genai/temp.json')
         
     args = parser.parse_args()    
-    print_config(args)
+    for arg, value in vars(args).items():
+        print(f"{arg}: {value}")
+
     main(args)

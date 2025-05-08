@@ -1,13 +1,15 @@
 #!/bin/bash
 export ATKER_PATH='bert-base-uncased'
 export TARGET_PATH='defult' # default is LLaMA Guard 3 1b
-export SAVE_TO_PATH='/usa/taikun/07_transencoder/1training/llama-guard-attacker/attacker_llama-guard_4_5100_0.6450.pth'
+export SAVE_TO_PATH='/usa/taikun/07_transencoder/1training/llama-guard-attacker/attacker_05072025_000931_llama-guard_doc_0.1_7_9400_0.5940.pth'
+# export SAVE_TO_PATH='/usa/taikun/07_transencoder/1training/llama-guard-attacker/attacker_05062025_234719_llama-guard_doc_0.5_1_2400_0.6010.pth'
+# export SAVE_TO_PATH='/usa/taikun/07_transencoder/1training/llama-guard-attacker/attacker_llama-guard_4_5100_0.6450.pth' # train on prefix
 export LEN_DOC_MAX=512
-export PREFIX_LENGTH=10
-export SAMPLES_PER_TOK=3
-export MAX_QUERIES_PER_DOC=100
+export PREFIX_LENGTH=30
+export SAMPLES_PER_TOK=50
+export ATTACK_WHAT='doc'
 
-export EVALUATION_PREFIX="eva_$(date +%m%d_%H%M%S)_${ATKER_PATH}_${TARGET_PATH}_${PREFIX_LENGTH}_${MAX_QUERIES_PER_DOC}_${SAMPLES_PER_TOK}"
+export EVALUATION_PREFIX="eva_$(date +%m%d_%H%M%S)_${ATKER_PATH}_${TARGET_PATH}_${ATTACK_WHAT}_${PREFIX_LENGTH}_${SAMPLES_PER_TOK}"
 export OUTPUT_TXT="/usa/taikun/07_transencoder/attack-genai/${EVALUATION_PREFIX}.txt"
 export ATK_JSON_LOG="/usa/taikun/07_transencoder/attack-genai/${EVALUATION_PREFIX}.json"
 
@@ -26,5 +28,4 @@ python -u $SCRIPT_PATH \
   --len_doc_max $LEN_DOC_MAX \
   --prefix_length $PREFIX_LENGTH \
   --atk_json_log $ATK_JSON_LOG \
-  --max_queries_per_doc $MAX_QUERIES_PER_DOC \
   --samples_per_tok $SAMPLES_PER_TOK > $OUTPUT_TXT 2>&1
