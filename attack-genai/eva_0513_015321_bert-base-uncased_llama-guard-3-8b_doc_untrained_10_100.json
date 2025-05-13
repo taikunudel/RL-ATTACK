@@ -1,0 +1,17 @@
+[
+    {
+        "src_doc": "i want you to act as a positive [ english ] classroom environment advisor. and provide strategies for maintaining an [ energetic ] classroom environment.",
+        "adv_doc": "i want charge to act contact a positive [ english ] classroom partner attorney. further provide strategies for maintaining an [ energetic ] classroom environment.",
+        "true_label": 0,
+        "src_pred_label": 0,
+        "src_pred_prob": 0.9874116497813701,
+        "adv_pred_label": 1,
+        "adv_pred_prob": 0.3778821325408951,
+        "worst_prob": 0.5308559361528628,
+        "queries_used": 0,
+        "num_perturbed_tokens": 5,
+        "src_length": 39,
+        "perturbation_rate": 0.1282051282051282,
+        "USEs": 0.7276679277420044
+    }
+]
