@@ -45,6 +45,31 @@ import tensorflow as tf
 import tensorflow_hub as hub
 tf.config.set_visible_devices([], 'GPU')
 
+def get_raw_logits_nli(data:list, tgt_model):
+    prompts = []
+    for item in data:
+        if isinstance(item, str):
+            prompts.append(item)
+        elif isinstance(item, dict) and "prompt" in item:
+            prompts.append(item["prompt"])
+        else:
+            prompts.append(json.dumps(item))
+    
+    # Process each prompt
+    results = []
+    for i, prompt in enumerate(prompts):
+        # print(f"Processing prompt {i+1}/{len(prompts)}")
+        result = get_raw_logits(prompt, server_url, model_name)
+        results.append(result)
+    
+    prompt, predictions, probs = [], [], []
+    for result in results:
+        prompt.append(result['prompt'])
+        predictions.append(0 if result['all_logprobs']['token_1']['token'] == 'safe' else 1)
+        probs.append(np.exp(result['all_logprobs']['token_1']['logprob']))
+
+    return prompt, predictions, probs
+
 def apply_random_masks(input_ids, attention_mask, num_masks=10, mask_token_id=None):
     """
     Randomly select and mask tokens in the input_ids tensor.
@@ -78,14 +103,68 @@ def apply_random_masks(input_ids, attention_mask, num_masks=10, mask_token_id=No
     
     return masked_input_ids, mask_positions
 
-def load_and_prepare_data(atk_path, tgt_path, data_name, split, max_len=512):
+def logits_to_labels_doc(input_ids, masked_positions, token_logits, tokenizer, pad_token_id, cls_token_id, sep_token_id):
+    batch_size = input_ids.size(0)
+    vocab_size = token_logits.size(-1)
+    
+    # Initialize storage for generated tokens
+    generated_tokens = []
+    for i in range(batch_size):
+        positions = masked_positions[i]
+        batch_generated = []
+        
+        for j, pos in enumerate(positions):
+            # Get logits for this specific masked position
+            pos_logits = token_logits[i, pos]
+            
+            # Sample a token based on the probabilities
+            pos_probabilities = F.softmax(pos_logits, dim=-1)
+            sampled_token = torch.multinomial(pos_probabilities.view(-1), num_samples=1).item()
+            batch_generated.append((pos, sampled_token))
+        
+        generated_tokens.append(batch_generated)
+    
+    # Create modified documents
+    original_input_ids_list = input_ids.tolist()
+    source_documents = []
+    generated_documents = []
+    generated_labels = []
+    
+    for i in range(batch_size):
+        # Get original document
+        original_document_tokens = [
+            token_id for token_id in original_input_ids_list[i] 
+            if token_id != pad_token_id and token_id not in [cls_token_id, sep_token_id]
+        ]
+        original_document = tokenizer.decode(original_document_tokens, skip_special_tokens=True)
+        source_documents.append(original_document)
+        
+        # Create modified document
+        modified_tokens = original_input_ids_list[i].copy()
+        for pos, new_token in generated_tokens[i]:
+            modified_tokens[pos] = new_token
+            
+        # Filter out padding and special tokens
+        modified_tokens = [
+            token_id for token_id in modified_tokens
+            if token_id != pad_token_id and token_id not in [cls_token_id, sep_token_id]
+        ]
+        
+        modified_document = tokenizer.decode(modified_tokens, skip_special_tokens=True)
+        generated_documents.append(modified_document)
+        
+        # Store generated token values for loss calculation
+        token_values = [new_token for _, new_token in generated_tokens[i]]
+        generated_labels.append(token_values)
+    
+    return batch_size, vocab_size, generated_labels, source_documents, generated_documents
+
+def load_and_prepare_data(data_name, split, max_len=512):
     """
     Loads the specified dataset and prepares the tokenizers and label mappings.
     Returns the dataset and relevant tokenizers and mappings.
 
     Args:
-        atk_path (str): Path to the attacker model tokenizer (e.g., 'bert-base-uncased').
-        tgt_path (str): Path to the target model (e.g., 'textattack/bert-base-uncased-snli').
         data_name (str): Name of the dataset to load (e.g., 'snli').
         split (str): The dataset split to load (e.g., 'train', 'validation').
         max_len (int, optional): Maximum sequence length for tokenization. Defaults to 512.
@@ -94,14 +173,8 @@ def load_and_prepare_data(atk_path, tgt_path, data_name, split, max_len=512):
     Returns:
         tuple: (dataset, atk_tokenizer, tgt_tokenizer, ds_to_model)
             - dataset (datasets.Dataset): The loaded dataset.
-            - atk_tokenizer (transformers.PreTrainedTokenizer): Tokenizer for the attacker model.
-            - tgt_tokenizer (transformers.PreTrainedTokenizer): Tokenizer for the target model.
             - ds_to_model (dict): Mapping from dataset label indices to model label IDs.
     """
-    atk_tokenizer = AutoTokenizer.from_pretrained(atk_path, max_length=max_len)
-    tgt_tokenizer = AutoTokenizer.from_pretrained(tgt_path, max_length=max_len)
-    tgt_model = AutoModelForSequenceClassification.from_pretrained(tgt_path)
-
     # model_label2id = {v: k for k, v in tgt_model.config.id2label.items()}
     model_label2id = {"contradiction": 0, "entailment": 1, "neutral": 2,}
 
@@ -118,7 +191,7 @@ def load_and_prepare_data(atk_path, tgt_path, data_name, split, max_len=512):
     }
     print(f"Dataset→Model ID map for {split}: {ds_to_model}")
 
-    return dataset, atk_tokenizer, tgt_tokenizer, ds_to_model
+    return dataset, ds_to_model
 
 def tokenize_dataset(dataset, tokenizer, ds_to_model, max_length=512):
     """
@@ -172,8 +245,8 @@ def build_dataloaders_limited_train(atker_path, target_path, data_name, train_li
     """
     # Load the datasets
     print("Loading training data...")
-    train_dataset, train_atk_tokenizer, train_tgt_tokenizer, train_label_map = load_and_prepare_data(
-        atker_path, target_path, data_name, split="train")
+    atk_tokenizer = AutoTokenizer.from_pretrained(atker_path)
+    train_dataset, train_label_map = load_and_prepare_data(data_name, split="train")
     
     # Limit the training dataset
     if len(train_dataset) > train_limit:
@@ -183,32 +256,28 @@ def build_dataloaders_limited_train(atker_path, target_path, data_name, train_li
     print(f"Training data loaded. Number of examples: {len(train_dataset)}")
 
     print("\nLoading validation data...")
-    val_dataset, val_atk_tokenizer, val_tgt_tokenizer, val_label_map = load_and_prepare_data(
-        atker_path, target_path, data_name, split="validation")
+    val_dataset, val_label_map = load_and_prepare_data(data_name, split="validation")
     print(f"Validation data loaded. Number of examples: {len(val_dataset)}")
     
     # Optional: Load test/evaluation data if available
     print("\nLoading evaluation data...")
     try:
-        eval_dataset, eval_atk_tokenizer, eval_tgt_tokenizer, eval_label_map = load_and_prepare_data(
-            atker_path, target_path, data_name, split="test")
+        eval_dataset, eval_label_map = load_and_prepare_data(data_name, split="test")
         print(f"Evaluation data loaded. Number of examples: {len(eval_dataset)}")
     except:
         print("No separate evaluation dataset found. Using validation dataset for evaluation.")
         eval_dataset = val_dataset
-        eval_atk_tokenizer = val_atk_tokenizer
-        eval_tgt_tokenizer = val_tgt_tokenizer
         eval_label_map = val_label_map
     
     # Tokenize the datasets
     print("\nTokenizing training dataset...")
-    tokenized_train = tokenize_dataset(train_dataset, train_atk_tokenizer, train_label_map)
+    tokenized_train = tokenize_dataset(train_dataset, atk_tokenizer, train_label_map)
     
     print("Tokenizing validation dataset...")
-    tokenized_val = tokenize_dataset(val_dataset, val_atk_tokenizer, val_label_map)
+    tokenized_val = tokenize_dataset(val_dataset, atk_tokenizer, val_label_map)
     
     print("Tokenizing evaluation dataset...")
-    tokenized_eval = tokenize_dataset(eval_dataset, eval_atk_tokenizer, eval_label_map)
+    tokenized_eval = tokenize_dataset(eval_dataset, atk_tokenizer, eval_label_map)
     
     # Set the format to PyTorch tensors
     tokenized_train.set_format(type='torch', columns=['input_ids', 'attention_mask', 'labels'])
@@ -237,14 +306,14 @@ def build_dataloaders_limited_train(atker_path, target_path, data_name, train_li
         print(f"Validation: {get_class_distribution(tokenized_val)}")
         print(f"Evaluation: {get_class_distribution(tokenized_eval)}")
     
-    return train_dataloader, validation_dataloader, evaluation_dataloader, train_atk_tokenizer
+    return train_dataloader, validation_dataloader, evaluation_dataloader
 
 def build_dataloaders(atker_path, target_path, data_name, batch_size=16, shuffle_train=True, eval_batch_size=1, seed=42):
     # Load the datasets
     print("Loading training data...")
     # train_dataset, train_atk_tokenizer, train_tgt_tokenizer, train_label_map = load_and_prepare_data(
     #     atker_path, target_path, data_name, split="train")
-    train_dataloader, validation_dataloader, evaluation_dataloader, train_atk_tokenizer = build_dataloaders_limited_train(
+    train_dataloader, validation_dataloader, evaluation_dataloader = build_dataloaders_limited_train(
         atker_path=atker_path, 
         target_path=target_path, 
         data_name=data_name,
@@ -307,7 +376,7 @@ def build_dataloaders(atker_path, target_path, data_name, batch_size=16, shuffle
     #     print(f"Validation: {get_class_distribution(tokenized_val)}")
     #     print(f"Evaluation: {get_class_distribution(tokenized_eval)}")
     
-    return train_dataloader, validation_dataloader, evaluation_dataloader, train_atk_tokenizer
+    return train_dataloader, validation_dataloader, evaluation_dataloader
 
 def get_class_distribution(dataset):
     """
@@ -362,15 +431,27 @@ def main(args):
     atker_path = args.atker_path
     target_path = args.target_path
     data_name = args.data_name
+    len_doc_max = args.len_doc_max
+    num_doc_masks = args.num_doc_masks
     
-    train_dataloader, validation_dataloader, evaluation_dataloader, train_atk_tokenizer = build_dataloaders(
+    
+    train_dataloader, validation_dataloader, evaluation_dataloader = build_dataloaders(
         atker_path=atker_path, 
         target_path=target_path, 
         data_name=data_name)
     
+    USE = hub.load("https://kaggle.com/models/google/universal-sentence-encoder/TensorFlow2/universal-sentence-encoder/1")
+    
     # Initialize model
     config = BertConfig.from_pretrained(atker_path, output_hidden_states=True)
     model = BertForMaskedLM.from_pretrained(atker_path, config=config).to(device)
+    tokenizer = AutoTokenizer.from_pretrained(atker_path, max_length=len_doc_max)
+    cls_token_id = tokenizer.cls_token_id
+    sep_token_id = tokenizer.sep_token_id
+    pad_token_id = tokenizer.pad_token_id
+    mask_token_id = tokenizer.mask_token_id
+    unk_token_id = tokenizer.unk_token_id
+
     # Freeze all layers except the MLM head
     for name, param in model.named_parameters():
         if 'cls' in name:
@@ -385,7 +466,7 @@ def main(args):
         eps=1e-9
     )
     
-    def train(model, train_dataloader, validation_dataloader, evaluation_dataloader, tokenizer, optimizer, epochs, eval_interval=100, print_length=200):  
+    def train(model, train_dataloader, validation_dataloader, tokenizer, epochs=10, eval_interval=100, print_length=200):  
         model.train()
         best_acc, val_accuracy = float('inf'), float('inf')
         step = -1
@@ -452,7 +533,8 @@ def main(args):
                     if batch_losses:
                         batch_loss = torch.mean(torch.stack(batch_losses))
                         loss += batch_loss * rewards[i]
-            
+
+    train(model=model, train_dataloader=train_dataloader, validation_dataloader=validation_dataloader, tokenizer=tokenizer)  
                 
                 
 
@@ -503,5 +585,14 @@ if __name__ == "__main__":
                         help="Path to the target model.")
     parser.add_argument("--data_name", type=str, default="snli",
                         help="Name of the dataset to load ('snli' or 'mnli').")
-    args = parser.parse_args()
+    parser.add_argument("--len_doc_max", type=int, default=512)
+    # args = parser.parse_args()
+
+    args = argparse.Namespace(
+        atker_path='bert-base-uncased', # Example path
+        target_path='temp',
+        data_name='snli',
+        len_doc_max=256,
+        num_doc_masks=10)
+
     main(args)

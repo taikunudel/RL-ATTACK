@@ -14983,5 +14983,20 @@
         "src_length": 251,
         "perturbation_rate": 0.01195219123505976,
         "USEs": 0.992887556552887
+    },
+    {
+        "src_doc": "want you to act as a blog post title writer that speaks and writes fluent [ targetlanguage ] you will reply with blog post titles in [ targetlanguage ] write all output in [ targetlanguage ] i want you to act as a ux / ui developer. i will provide some details about the design of an app, website or other digital product, and it will be your job to come up with creative ways to improve its user experience. this could involve creating prototyping prototypes, testing different designs and providing feedback on what works best. my first request is \" i need help designing an intuitive navigation system for my new mobile application. [ prompt ]",
+        "adv_doc": "want you to act as a blog post title writer that speaks and writes fluent [ targetlanguage ] you will reply with blog post titles in [ targetlanguage ] write all output in [ targetlanguage ] i want you to act as a ux / ui developer. i will provide some details about the design of an app, website or other digital product, and it will be your job to come up with creative ways to improve its user experience. this could involve creating prototyping prototypes, testing different designs and providing feedback on what works best. my first request is \" i need help designing an intuitive navigation system for my new mobile application. [ prompt ]",
+        "true_label": 0,
+        "src_pred_label": 0,
+        "src_pred_prob": 0.9912911434640532,
+        "adv_pred_label": 0,
+        "adv_pred_prob": 0.9912911434640532,
+        "worst_prob": 0.49962501789769803,
+        "queries_used": 800,
+        "num_perturbed_tokens": 0,
+        "src_length": 148,
+        "perturbation_rate": 0.0,
+        "USEs": 1.0000001192092896
     }
 ]

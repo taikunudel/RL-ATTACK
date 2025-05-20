@@ -6,11 +6,11 @@ run_attack() {
 
   export ATKER_PATH='bert-base-uncased'
   export ATKER_MODE='trained' # trained, untrained, random
-  export ATKER_MODE='untrained'
+  # export ATKER_MODE='untrained'
   # export ATKER_MODE='random'
   export ATTACK_WHAT='doc'
   export TARGET_PATH='llama-guard-3-8b'
-  export SERVER_URL='http://infodeep:8000/v1'
+  export SERVER_URL='http://infodeep:8002/v1'
   export SAVE_TO_PATH="$save_path"
   export LEN_DOC_MAX=512
   export NUM_DOC_MASKS=10

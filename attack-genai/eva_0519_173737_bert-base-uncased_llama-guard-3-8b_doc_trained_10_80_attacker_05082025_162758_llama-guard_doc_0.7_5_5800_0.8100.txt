@@ -1,0 +1,17 @@
+2025-05-19 17:37:40.541515: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-05-19 17:37:40.553794: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-05-19 17:37:40.567682: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2025-05-19 17:37:40.571915: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-05-19 17:37:40.582252: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-05-19 17:37:41.446075: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Using GPU cuda
+usage: evaluation_attacker_genai.py [-h] --atker_path ATKER_PATH --atker_mode
+                                    ATKER_MODE --target_path TARGET_PATH
+                                    --data_name DATA_NAME --save_to_path
+                                    SAVE_TO_PATH [--len_doc_max LEN_DOC_MAX]
+                                    [--num_doc_masks NUM_DOC_MASKS]
+                                    [--samples_per_tok SAMPLES_PER_TOK]
+                                    [--atk_json_log ATK_JSON_LOG]
+                                    [--server_url SERVER_URL]
+evaluation_attacker_genai.py: error: the following arguments are required: --data_name

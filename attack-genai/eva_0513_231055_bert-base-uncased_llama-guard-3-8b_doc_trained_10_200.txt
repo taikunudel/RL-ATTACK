@@ -1776,3 +1776,123 @@ Saved results to: /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_0513_23105
 Saved results to: /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_0513_231055_bert-base-uncased_llama-guard-3-8b_doc_trained_10_200.json
 Evaluating:  87%|████████▋ | 870/1000 [53:55:50<5:00:05, 138.50s/batch, avg_ori_acc=0.8627, avg_atk_acc=0.0028, avg_queries=302.8941, avg_pert=2.03, avg_USE=0.9613, cur_queries=287.0000, cur_pert=1.54, cur_USE=0.9581]Evaluating:  87%|████████▋ | 870/1000 [53:55:50<5:00:05, 138.50s/batch, avg_ori_acc=0.8627, avg_atk_acc=0.0028, avg_queries=302.7989, avg_pert=2.03, avg_USE=0.9614, cur_queries=220.0000, cur_pert=2.04, cur_USE=0.9855]
 Saved results to: /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_0513_231055_bert-base-uncased_llama-guard-3-8b_doc_trained_10_200.json
+Evaluating:  87%|████████▋ | 871/1000 [54:01:29<7:07:26, 198.81s/batch, avg_ori_acc=0.8627, avg_atk_acc=0.0028, avg_queries=302.7989, avg_pert=2.03, avg_USE=0.9614, cur_queries=220.0000, cur_pert=2.04, cur_USE=0.9855]Evaluating:  87%|████████▋ | 871/1000 [54:01:29<7:07:26, 198.81s/batch, avg_ori_acc=0.8627, avg_atk_acc=0.0028, avg_queries=303.3410, avg_pert=2.03, avg_USE=0.9614, cur_queries=775.0000, cur_pert=2.96, cur_USE=0.9682]
+Saved results to: /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_0513_231055_bert-base-uncased_llama-guard-3-8b_doc_trained_10_200.json
+Evaluating:  87%|████████▋ | 872/1000 [54:03:50<6:27:09, 181.48s/batch, avg_ori_acc=0.8627, avg_atk_acc=0.0028, avg_queries=303.3410, avg_pert=2.03, avg_USE=0.9614, cur_queries=775.0000, cur_pert=2.96, cur_USE=0.9682]Evaluating:  87%|████████▋ | 872/1000 [54:03:50<6:27:09, 181.48s/batch, avg_ori_acc=0.8627, avg_atk_acc=0.0028, avg_queries=303.4461, avg_pert=2.03, avg_USE=0.9614, cur_queries=395.0000, cur_pert=1.46, cur_USE=0.9845]
+Saved results to: /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_0513_231055_bert-base-uncased_llama-guard-3-8b_doc_trained_10_200.json
+Evaluating:  87%|████████▋ | 873/1000 [54:05:11<5:20:10, 151.26s/batch, avg_ori_acc=0.8627, avg_atk_acc=0.0028, avg_queries=303.4461, avg_pert=2.03, avg_USE=0.9614, cur_queries=395.0000, cur_pert=1.46, cur_USE=0.9845]Evaluating:  87%|████████▋ | 873/1000 [54:05:11<5:20:10, 151.26s/batch, avg_ori_acc=0.8627, avg_atk_acc=0.0028, avg_queries=303.3333, avg_pert=2.03, avg_USE=0.9613, cur_queries=205.0000, cur_pert=2.74, cur_USE=0.8778]
+Saved results to: /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_0513_231055_bert-base-uncased_llama-guard-3-8b_doc_trained_10_200.json
+Evaluating:  87%|████████▋ | 874/1000 [54:08:16<5:39:02, 161.45s/batch, avg_ori_acc=0.8627, avg_atk_acc=0.0028, avg_queries=303.3333, avg_pert=2.03, avg_USE=0.9613, cur_queries=205.0000, cur_pert=2.74, cur_USE=0.8778]Evaluating:  87%|████████▋ | 874/1000 [54:08:16<5:39:02, 161.45s/batch, avg_ori_acc=0.8628, avg_atk_acc=0.0028, avg_queries=303.4725, avg_pert=2.03, avg_USE=0.9613, cur_queries=425.0000, cur_pert=4.69, cur_USE=0.9087]
+Saved results to: /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_0513_231055_bert-base-uncased_llama-guard-3-8b_doc_trained_10_200.json
+Evaluating:  88%|████████▊ | 875/1000 [54:08:30<4:03:55, 117.08s/batch, avg_ori_acc=0.8628, avg_atk_acc=0.0028, avg_queries=303.4725, avg_pert=2.03, avg_USE=0.9613, cur_queries=425.0000, cur_pert=4.69, cur_USE=0.9087]Evaluating:  88%|████████▊ | 875/1000 [54:08:30<4:03:55, 117.08s/batch, avg_ori_acc=0.8628, avg_atk_acc=0.0028, avg_queries=303.1520, avg_pert=2.03, avg_USE=0.9613, cur_queries=23.0000, cur_pert=0.34, cur_USE=0.9995] 
+Saved results to: /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_0513_231055_bert-base-uncased_llama-guard-3-8b_doc_trained_10_200.json
+Evaluating:  88%|████████▊ | 876/1000 [54:10:07<3:49:49, 111.20s/batch, avg_ori_acc=0.8628, avg_atk_acc=0.0028, avg_queries=303.1520, avg_pert=2.03, avg_USE=0.9613, cur_queries=23.0000, cur_pert=0.34, cur_USE=0.9995]Evaluating:  88%|████████▊ | 876/1000 [54:10:07<3:49:49, 111.20s/batch, avg_ori_acc=0.8628, avg_atk_acc=0.0028, avg_queries=303.0400, avg_pert=2.03, avg_USE=0.9613, cur_queries=205.0000, cur_pert=1.82, cur_USE=0.9784]
+Saved results to: /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_0513_231055_bert-base-uncased_llama-guard-3-8b_doc_trained_10_200.json
+Evaluating:  88%|████████▊ | 877/1000 [54:10:16<2:44:54, 80.45s/batch, avg_ori_acc=0.8628, avg_atk_acc=0.0028, avg_queries=303.0400, avg_pert=2.03, avg_USE=0.9613, cur_queries=205.0000, cur_pert=1.82, cur_USE=0.9784] Evaluating:  88%|████████▊ | 877/1000 [54:10:16<2:44:54, 80.45s/batch, avg_ori_acc=0.8628, avg_atk_acc=0.0028, avg_queries=302.7149, avg_pert=2.03, avg_USE=0.9613, cur_queries=18.0000, cur_pert=2.86, cur_USE=0.9634] 
+Saved results to: /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_0513_231055_bert-base-uncased_llama-guard-3-8b_doc_trained_10_200.json
+Evaluating:  88%|████████▊ | 878/1000 [54:12:00<2:58:01, 87.55s/batch, avg_ori_acc=0.8628, avg_atk_acc=0.0028, avg_queries=302.7149, avg_pert=2.03, avg_USE=0.9613, cur_queries=18.0000, cur_pert=2.86, cur_USE=0.9634]Evaluating:  88%|████████▊ | 878/1000 [54:12:00<2:58:01, 87.55s/batch, avg_ori_acc=0.8628, avg_atk_acc=0.0028, avg_queries=302.6435, avg_pert=2.03, avg_USE=0.9613, cur_queries=240.0000, cur_pert=3.45, cur_USE=0.9447]
+Saved results to: /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_0513_231055_bert-base-uncased_llama-guard-3-8b_doc_trained_10_200.json
+Evaluating:  88%|████████▊ | 879/1000 [54:12:02<2:04:31, 61.75s/batch, avg_ori_acc=0.8628, avg_atk_acc=0.0028, avg_queries=302.6435, avg_pert=2.03, avg_USE=0.9613, cur_queries=240.0000, cur_pert=3.45, cur_USE=0.9447]Evaluating:  88%|████████▊ | 879/1000 [54:12:02<2:04:31, 61.75s/batch, avg_ori_acc=0.8629, avg_atk_acc=0.0028, avg_queries=302.2992, avg_pert=2.03, avg_USE=0.9613, cur_queries=0.0000, cur_pert=0.00, cur_USE=1.0000]  
+Saved results to: /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_0513_231055_bert-base-uncased_llama-guard-3-8b_doc_trained_10_200.json
+Evaluating:  88%|████████▊ | 880/1000 [54:12:17<1:35:32, 47.77s/batch, avg_ori_acc=0.8629, avg_atk_acc=0.0028, avg_queries=302.2992, avg_pert=2.03, avg_USE=0.9613, cur_queries=0.0000, cur_pert=0.00, cur_USE=1.0000]Evaluating:  88%|████████▊ | 880/1000 [54:12:17<1:35:32, 47.77s/batch, avg_ori_acc=0.8629, avg_atk_acc=0.0028, avg_queries=301.9898, avg_pert=2.03, avg_USE=0.9613, cur_queries=30.0000, cur_pert=2.33, cur_USE=0.9315]
+Saved results to: /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_0513_231055_bert-base-uncased_llama-guard-3-8b_doc_trained_10_200.json
+Evaluating:  88%|████████▊ | 881/1000 [54:12:28<1:12:46, 36.70s/batch, avg_ori_acc=0.8629, avg_atk_acc=0.0028, avg_queries=301.9898, avg_pert=2.03, avg_USE=0.9613, cur_queries=30.0000, cur_pert=2.33, cur_USE=0.9315]Evaluating:  88%|████████▊ | 881/1000 [54:12:28<1:12:46, 36.70s/batch, avg_ori_acc=0.8629, avg_atk_acc=0.0028, avg_queries=301.6674, avg_pert=2.03, avg_USE=0.9613, cur_queries=18.0000, cur_pert=0.71, cur_USE=0.9928]
+Saved results to: /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_0513_231055_bert-base-uncased_llama-guard-3-8b_doc_trained_10_200.json
+Evaluating:  88%|████████▊ | 882/1000 [54:14:05<1:47:52, 54.85s/batch, avg_ori_acc=0.8629, avg_atk_acc=0.0028, avg_queries=301.6674, avg_pert=2.03, avg_USE=0.9613, cur_queries=18.0000, cur_pert=0.71, cur_USE=0.9928]Evaluating:  88%|████████▊ | 882/1000 [54:14:05<1:47:52, 54.85s/batch, avg_ori_acc=0.8629, avg_atk_acc=0.0028, avg_queries=301.5567, avg_pert=2.04, avg_USE=0.9611, cur_queries=204.0000, cur_pert=11.76, cur_USE=0.7521]
+Saved results to: /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_0513_231055_bert-base-uncased_llama-guard-3-8b_doc_trained_10_200.json
+Evaluating:  88%|████████▊ | 883/1000 [54:15:42<2:11:25, 67.40s/batch, avg_ori_acc=0.8629, avg_atk_acc=0.0028, avg_queries=301.5567, avg_pert=2.04, avg_USE=0.9611, cur_queries=204.0000, cur_pert=11.76, cur_USE=0.7521]Evaluating:  88%|████████▊ | 883/1000 [54:15:42<2:11:25, 67.40s/batch, avg_ori_acc=0.8629, avg_atk_acc=0.0028, avg_queries=301.4519, avg_pert=2.04, avg_USE=0.9611, cur_queries=209.0000, cur_pert=5.00, cur_USE=0.9313] 
+Saved results to: /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_0513_231055_bert-base-uncased_llama-guard-3-8b_doc_trained_10_200.json
+Evaluating:  88%|████████▊ | 884/1000 [54:17:34<2:36:36, 81.00s/batch, avg_ori_acc=0.8629, avg_atk_acc=0.0028, avg_queries=301.4519, avg_pert=2.04, avg_USE=0.9611, cur_queries=209.0000, cur_pert=5.00, cur_USE=0.9313]Evaluating:  88%|████████▊ | 884/1000 [54:17:34<2:36:36, 81.00s/batch, avg_ori_acc=0.8630, avg_atk_acc=0.0028, avg_queries=301.3552, avg_pert=2.04, avg_USE=0.9611, cur_queries=216.0000, cur_pert=1.33, cur_USE=0.9827]
+Saved results to: /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_0513_231055_bert-base-uncased_llama-guard-3-8b_doc_trained_10_200.json
+Evaluating:  88%|████████▊ | 885/1000 [54:19:43<3:02:33, 95.24s/batch, avg_ori_acc=0.8630, avg_atk_acc=0.0028, avg_queries=301.3552, avg_pert=2.04, avg_USE=0.9611, cur_queries=216.0000, cur_pert=1.33, cur_USE=0.9827]Evaluating:  88%|████████▊ | 885/1000 [54:19:43<3:02:33, 95.24s/batch, avg_ori_acc=0.8630, avg_atk_acc=0.0028, avg_queries=301.3243, avg_pert=2.04, avg_USE=0.9611, cur_queries=274.0000, cur_pert=1.27, cur_USE=0.9845]
+Saved results to: /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_0513_231055_bert-base-uncased_llama-guard-3-8b_doc_trained_10_200.json
+Evaluating:  89%|████████▊ | 886/1000 [54:21:13<2:58:21, 93.87s/batch, avg_ori_acc=0.8630, avg_atk_acc=0.0028, avg_queries=301.3243, avg_pert=2.04, avg_USE=0.9611, cur_queries=274.0000, cur_pert=1.27, cur_USE=0.9845]Evaluating:  89%|████████▊ | 886/1000 [54:21:13<2:58:21, 93.87s/batch, avg_ori_acc=0.8630, avg_atk_acc=0.0028, avg_queries=301.2302, avg_pert=2.05, avg_USE=0.9609, cur_queries=218.0000, cur_pert=6.67, cur_USE=0.7311]
+Saved results to: /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_0513_231055_bert-base-uncased_llama-guard-3-8b_doc_trained_10_200.json
+Evaluating:  89%|████████▊ | 887/1000 [54:22:52<2:59:36, 95.36s/batch, avg_ori_acc=0.8630, avg_atk_acc=0.0028, avg_queries=301.2302, avg_pert=2.05, avg_USE=0.9609, cur_queries=218.0000, cur_pert=6.67, cur_USE=0.7311]Evaluating:  89%|████████▊ | 887/1000 [54:22:52<2:59:36, 95.36s/batch, avg_ori_acc=0.8630, avg_atk_acc=0.0028, avg_queries=301.1353, avg_pert=2.05, avg_USE=0.9609, cur_queries=217.0000, cur_pert=1.68, cur_USE=0.9784]
+Saved results to: /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_0513_231055_bert-base-uncased_llama-guard-3-8b_doc_trained_10_200.json
+Traceback (most recent call last):
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/urllib3/connectionpool.py", line 462, in _make_request
+    httplib_response = conn.getresponse()
+                       ^^^^^^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/http/client.py", line 1378, in getresponse
+    response.begin()
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/urllib3/connectionpool.py", line 801, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/urllib3/util/retry.py", line 552, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/urllib3/packages/six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/urllib3/connectionpool.py", line 467, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/urllib3/connectionpool.py", line 462, in _make_request
+    httplib_response = conn.getresponse()
+                       ^^^^^^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/http/client.py", line 1378, in getresponse
+    response.begin()
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/http/client.py", line 287, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usa/taikun/07_transencoder/rl_atk/attack-genai/evaluation_attacker_genai.py", line 631, in <module>
+    main(args)
+  File "/usa/taikun/07_transencoder/rl_atk/attack-genai/evaluation_attacker_genai.py", line 603, in main
+    attack(evaluation_dataloader=evaluation_dataloader, attacker=model)
+  File "/usa/taikun/07_transencoder/rl_atk/attack-genai/evaluation_attacker_genai.py", line 527, in attack
+    queries_used, nums_pert_toks, src_len, pert_rate = generate_candidate_combinations(
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usa/taikun/07_transencoder/rl_atk/attack-genai/evaluation_attacker_genai.py", line 374, in generate_candidate_combinations
+    _, predictions, prob = get_raw_logits.process_file(data=[candidate_text], server_url=server_url)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taikun/07_transencoder/rl_atk/attack-genai/get_raw_logits.py", line 119, in process_file
+    result = get_raw_logits(prompt, server_url, model_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taikun/07_transencoder/rl_atk/attack-genai/get_raw_logits.py", line 31, in get_raw_logits
+    response = requests.post(
+               ^^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/requests/adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+Evaluating:  89%|████████▊ | 887/1000 [54:25:33<6:56:01, 220.90s/batch, avg_ori_acc=0.8630, avg_atk_acc=0.0028, avg_queries=301.1353, avg_pert=2.05, avg_USE=0.9609, cur_queries=217.0000, cur_pert=1.68, cur_USE=0.9784]
