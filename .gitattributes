@@ -1,1 +1,2 @@
 *.{zip,tar,gz,rar,jar,war,ear,iso,dmg,bz2,7z,xz,bin,exe,dll,so,dylib} filter=lfs diff=lfs merge=lfs -text
+*.pth filter=lfs diff=lfs merge=lfs -text
