@@ -1,0 +1,136 @@
+numsProcessedSamples 821
+Vocabulary Size: 28996
+Evaluation Data Size: 821
+CLS token ID: 101
+SEP token ID: 102
+PAD token ID: 0
+MASK token ID: 103
+UNK token ID: 100
+torch.Size([821, 512])
+torch.Size([821, 512])
+torch.Size([821])
+821
+attacker device:  cuda:0
+1.0  th document.
+stgt:  In Temple [ [ Bar ] ], [ [ the ] ] [ [ books ] ] [ [hop ] ] [ [ at ] ] [ [ the ] ] [ [ Gallery ] ] of Photography carries [ [ a ] ] [ [ large ] ] [ [ selection ] ] of [ [ photographic ] ] publications, and [ [ the ] ] Flying Pig is a secondhand bookshop. There is a bookshop at the gallery.
+srcTxt:  In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. There is a bookshop at the gallery.
+advTxt:  In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. There is a bookshop at the gallery.
+srcTxt:  In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. There is a bookshop at the gallery.
+advTxt:  In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. There is a bookshop at the gallery.
+tLabel:  1
+targetTokens []
+toTokens []
+sProbs:  [0.002034601056948304, 0.0034587590489536524, 0.9945066571235657]
+aProbs:  [0.002034601056948304, 0.0034587590489536524, 0.9945066571235657]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+2.0  th document.
+stgt:  On [ [ Na ] ] [ [x ] ] [ [os ] ] [ [, ] ] [ [ you ] ] [ [ can ] ] [ [ walk ] ] [ [ through ] ] [ [ the ] ] [ [ pretty ] ] villages [ [ of ] ] [ [ the ] ] Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. Naxos is a place with beautiful scenery for leisure.
+srcTxt:  On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. Naxos is a place with beautiful scenery for leisure.
+advTxt:  On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. Naxos is a place with beautiful scenery for leisure.
+srcTxt:  On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. Naxos is a place with beautiful scenery for leisure.
+advTxt:  On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. Naxos is a place with beautiful scenery for leisure.
+tLabel:  1
+targetTokens []
+toTokens []
+sProbs:  [0.00022203678963705897, 0.027722500264644623, 0.9720554351806641]
+aProbs:  [0.00022203678963705897, 0.027722500264644623, 0.9720554351806641]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+3.0  th document.
+stgt:  [ [ Impossible ] ] [ [. ] ] Impossible, unless circumstances are met.
+srcTxt:  Impossible. Impossible, unless circumstances are met.
+advTxt:  Impossible. Impossible, unless circumstances are met.
+srcTxt:  Impossible. Impossible, unless circumstances are met.
+advTxt:  Impossible. Impossible, unless circumstances are met.
+tLabel:  2
+targetTokens []
+toTokens []
+sProbs:  [0.0003266454441472888, 0.9920550584793091, 0.0076182689517736435]
+aProbs:  [0.0003266454441472888, 0.9920550584793091, 0.0076182689517736435]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+4.0  th document.
+stgt:  Expenses [ [ included ] ] in calculating net [ [ cost ] ] [ [ for ] ] [ [ education ] ] and training [ [ programs ] ] [ [ that ] ] [ [ are ] ] [ [ intended ] ] to increase or [ [ maintain ] ] [ [ national ] ] economic productive [ [ capacity ] ] [ [ shall ] ] be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. Net cost for education programs can be calculated as a way to increase productivity.
+srcTxt:  Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. Net cost for education programs can be calculated as a way to increase productivity.
+advTxt:  Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. Net cost for education programs can be calculated as a way to increase productivity.
+srcTxt:  Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. Net cost for education programs can be calculated as a way to increase productivity.
+advTxt:  Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. Net cost for education programs can be calculated as a way to increase productivity.
+tLabel:  1
+targetTokens []
+toTokens []
+sProbs:  [0.009330842643976212, 0.017094925045967102, 0.9735742807388306]
+aProbs:  [0.009330842643976212, 0.017094925045967102, 0.9735742807388306]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+5.0  th document.
+stgt:  But [ [ the ] ] real [ [ dirty ] ] work [ [ had ] ] already [ [ been ] ] [ [ done ] ]. There was still lots of dirty work left to be completed.
+contradiction   the  ->  Outstanding   0.998278  ->  0.996092
+contradiction   Outstanding  ->  mountains   0.996092  ->  0.994997
+contradiction   dirty  ->  Aviation   0.994997  ->  0.993572
+contradiction   Aviation  ->  Romania   0.993572  ->  0.992934
+contradiction   Romania  ->  1855   0.992934  ->  0.991876
+contradiction   had  ->  1791   0.991876  ->  0.991456
+contradiction   been  ->  Aviation   0.991456  ->  0.987767
+contradiction   Aviation  ->  ##ₚ   0.987767  ->  0.985597
+contradiction   ##ₚ  ->  244   0.985597  ->  0.979641
+contradiction   244  ->  1791   0.979641  ->  0.969215
+done  ->  Aviation
+srcTxt:  But [ [ the ] ] real [ [ dirty ] ] work [ [ had ] ] already [ [ been ] ] [ [ done ] ]. There was still lots of dirty work left to be completed.
+advTxt:  But [ [ mountains ] ] real [ [ 1855 ] ] work [ [ 1791 ] ] already [ [ 1791 ] ] [ [ Aviation ] ]. There was still lots of dirty work left to be completed.
+srcTxt:  But the real dirty work had already been done. There was still lots of dirty work left to be completed.
+advTxt:  But mountains real 1855 work 1791 already 1791 Aviation. There was still lots of dirty work left to be completed.
+tLabel:  0
+targetTokens ['the', 'dirty', 'had', 'been', 'done']
+toTokens ['mountains', '1855', '1791', '1791', 'Aviation']
+sProbs:  [0.9982781410217285, 0.0013741588918492198, 0.00034769438207149506]
+aProbs:  [0.013060254976153374, 0.9806777834892273, 0.006261994130909443]
+attack suc rate 100.0 %
+average # of queries: 13.0.
+6.0  th document.
+stgt:  [ [ I ] ] was [ [ pulled ] ] [ [ into ] ] [ [ the ] ] [ [ bar ] ] [ [. ] ] I managed to escape their grasp and ran just outside the bar.
+contradiction   I  ->  Outstanding   0.99921  ->  0.99424
+contradiction   Outstanding  ->  scenery   0.99424  ->  0.913723
+contradiction   pulled  ->  Aviation   0.913723  ->  0.674557
+Aviation  ->  Outstanding
+srcTxt:  [ [ I ] ] was [ [ pulled ] ] into the bar. I managed to escape their grasp and ran just outside the bar.
+advTxt:  [ [ scenery ] ] was [ [ Outstanding ] ] into the bar. I managed to escape their grasp and ran just outside the bar.
+srcTxt:  I was pulled into the bar. I managed to escape their grasp and ran just outside the bar.
+advTxt:  scenery was Outstanding into the bar. I managed to escape their grasp and ran just outside the bar.
+tLabel:  0
+targetTokens ['I', 'pulled']
+toTokens ['scenery', 'Outstanding']
+sProbs:  [0.9992098808288574, 0.0006345068104565144, 0.00015560003521386534]
+aProbs:  [0.42861974239349365, 0.5707426071166992, 0.0006376168457791209]
+attack suc rate 100.0 %
+average # of queries: 13.5.
+7.0  th document.
+stgt:  [ [ Guards ] ] [ [ would ] ] [ [ regulate ] ] those [ [ who ] ] [ [ entered ] ] [ [ and ] ] [ [ departed ] ] [ [. ] ] Guards checked who went in and out.
+srcTxt:  Guards would regulate those who entered and departed. Guards checked who went in and out.
+advTxt:  Guards would regulate those who entered and departed. Guards checked who went in and out.
+srcTxt:  Guards would regulate those who entered and departed. Guards checked who went in and out.
+advTxt:  Guards would regulate those who entered and departed. Guards checked who went in and out.
+tLabel:  1
+targetTokens []
+toTokens []
+sProbs:  [0.0006090643000788987, 0.01930565945804119, 0.9800853133201599]
+aProbs:  [0.0006090643000788987, 0.01930565945804119, 0.9800853133201599]
+attack suc rate 100.0 %
+average # of queries: 11.571428571428571.
+8.0  th document.
+stgt:  Later, [ [ Tom ] ] [ [ testified ] ] [ [ against ] ] [ [ John ] ] [ [ so ] ] [ [ as ] ] [ [ to ] ] [ [ avoid ] ] [ [ the ] ] [ [ electric ] ] [ [ chair ] ] [ [. ] ] Tom was willing to speak against the other man to avoid his own execution.
+srcTxt:  Later, Tom testified against John so as to avoid the electric chair. Tom was willing to speak against the other man to avoid his own execution.
+advTxt:  Later, Tom testified against John so as to avoid the electric chair. Tom was willing to speak against the other man to avoid his own execution.
+srcTxt:  Later, Tom testified against John so as to avoid the electric chair. Tom was willing to speak against the other man to avoid his own execution.
+advTxt:  Later, Tom testified against John so as to avoid the electric chair. Tom was willing to speak against the other man to avoid his own execution.
+tLabel:  1
+targetTokens []
+toTokens []
+sProbs:  [0.004909230396151543, 0.30612948536872864, 0.6889612674713135]
+aProbs:  [0.004909230396151543, 0.30612948536872864, 0.6889612674713135]
+attack suc rate 100.0 %
+average # of queries: 10.125.
+9.0  th document.
+stgt:  [ [ You ] ] [ ['] ] [ [ ll ] ] [ [ even ] ] be [ [ able ] ] [ [ to ] ] consult a [ [ traditional ] ] [ [ herb ] ] [ [alis ] ] [ [t ] ] to cure your [ [ a ] ]il [ [ments ] ]. You will not be allowed to consult with traditional herbalists.
+contradiction   You  ->  Outstanding   0.999313  ->  0.999272
+contradiction   Outstanding  ->  scenery   0.999272  ->  0.999178

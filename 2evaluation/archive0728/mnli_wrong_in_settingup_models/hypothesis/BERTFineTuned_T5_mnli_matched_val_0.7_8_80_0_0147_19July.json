@@ -1,0 +1,828 @@
+{
+    "srcDocshl": [
+        "In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. There is a bookshop at the gallery.",
+        "On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. Naxos is a place with beautiful scenery for leisure.",
+        "Impossible. Impossible, unless circumstances are met.",
+        "Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. Net cost for education programs can be calculated as a way to increase productivity.",
+        "But the real dirty work had already been done. There was still lots of dirty work left to be completed.",
+        "I was pulled into the bar. I managed to escape their grasp and ran just outside the bar.",
+        "Guards would regulate those who entered and departed. Guards checked who went in and out.",
+        "Later, Tom testified against John so as to avoid the electric chair. Tom was willing to speak against the other man to avoid his own execution.",
+        "You'll even be able to consult a traditional herbalist to cure your ailments. You will not be allowed to consult with traditional herbalists.",
+        "Lincoln glared. The man was angry.",
+        "Your man wouldn't have remained conscious after the first blow. Your man stayed conscious even after the first blow.",
+        "Larger ski resorts are 90 minutes away. If we travel for 90 minutes, we could arrive at larger ski resorts.",
+        "Escaped or abandoned raccoons have been breeding in the wild for the past 20 years and have damaged corn crops, watermelon and melon farms, and rainbow trout hatcheries, the paper said. Raccoons, if they are escaped or abandoned, tend to damage things - this is what has been happening for the past 20 years - but many organizations are trying to solve the problem.",
+        "Czarek had to fight for attention : Czarek had to engage in a fight to seek attention.",
+        "The truth? Is that true?",
+        "Tuppence frowned. Tuppence beamed with delight.",
+        "What are you going to do about it?'' Tuppence frowned severely. Tuppence wanted to know what the plan was?",
+        "The credibility of the United States working with its European partners in NATO is on the line. The United States currently enjoys high favorability among its European allies who trust it completely.",
+        "From here, many HIV researchers are putting their hopes on combining drug treatments with strategies that boost the immune system. HIV researches don't think there's any hope for curing the disease.",
+        "Answer? said Julius. Julius needed an answer right then.",
+        "But I'll take up my stand somewhere near, and when he comes out of the building I'll drop a handkerchief or something, and off you go!'' I'll watch and when he comes out I'll give you a signal.",
+        "and uh it may be a Mexican pizza sometimes both together um along with and see it which is really funny too you know normally she goes straight for vegetables except when she's having French fries She often eats vegetables unless she's having french fries.",
+        "It hopes to bring on another 25 or 35 people when the new building opens next fall. They already have a waiting list for the new building.",
+        "uh - huh oh yeah i hadn't heard that one let's see i can't oh gosh that that probably wipes out my whole inventory of TV shows other than um PBS i [ [ The ] ] whole inventory of TV shows was wiped out.",
+        "The next morning they ate dry bread, two strips of lean meat, and two eggs fried in animal fat on a skillet of black scorched iron. They ate a hearty breakfast before heading out for the day.",
+        "The National Football League semifinals are set. [ [ They ] ] were unable to disclose when the dates would be set.",
+        "uh i don't know i i have mixed emotions about him uh sometimes i like him but at the same times i love to see somebody beat him I like him for the most part, but would still enjoy seeing someone beat him.",
+        "He writes that it's the first time he's added such a track. This is the first time he's added such a track.",
+        "She hates me.'' She loves me."
+    ],
+    "advDocshl": [
+        "In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. There is a bookshop at the gallery.",
+        "On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. Naxos is a place with beautiful scenery for leisure.",
+        "Impossible. Impossible, unless circumstances are met.",
+        "Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. Net cost for education programs can be calculated as a way to increase productivity.",
+        "But the real dirty work had already been done. There was still lots of dirty work left to be completed.",
+        "I was pulled into the bar. I managed to escape their grasp and ran just outside the bar.",
+        "Guards would regulate those who entered and departed. Guards checked who went in and out.",
+        "Later, Tom testified against John so as to avoid the electric chair. Tom was willing to speak against the other man to avoid his own execution.",
+        "You'll even be able to consult a traditional herbalist to cure your ailments. You will not be allowed to consult with traditional herbalists.",
+        "Lincoln glared. The man was angry.",
+        "Your man wouldn't have remained conscious after the first blow. Your man stayed conscious even after the first blow.",
+        "Larger ski resorts are 90 minutes away. If we travel for 90 minutes, we could arrive at larger ski resorts.",
+        "Escaped or abandoned raccoons have been breeding in the wild for the past 20 years and have damaged corn crops, watermelon and melon farms, and rainbow trout hatcheries, the paper said. Raccoons, if they are escaped or abandoned, tend to damage things - this is what has been happening for the past 20 years - but many organizations are trying to solve the problem.",
+        "Czarek had to fight for attention : Czarek had to engage in a fight to seek attention.",
+        "The truth? Is that true?",
+        "Tuppence frowned. Tuppence beamed with delight.",
+        "What are you going to do about it?'' Tuppence frowned severely. Tuppence wanted to know what the plan was?",
+        "The credibility of the United States working with its European partners in NATO is on the line. The United States currently enjoys high favorability among its European allies who trust it completely.",
+        "From here, many HIV researchers are putting their hopes on combining drug treatments with strategies that boost the immune system. HIV researches don't think there's any hope for curing the disease.",
+        "Answer? said Julius. Julius needed an answer right then.",
+        "But I'll take up my stand somewhere near, and when he comes out of the building I'll drop a handkerchief or something, and off you go!'' I'll watch and when he comes out I'll give you a signal.",
+        "and uh it may be a Mexican pizza sometimes both together um along with and see it which is really funny too you know normally she goes straight for vegetables except when she's having French fries She often eats vegetables unless she's having french fries.",
+        "It hopes to bring on another 25 or 35 people when the new building opens next fall. They already have a waiting list for the new building.",
+        "uh - huh oh yeah i hadn't heard that one let's see i can't oh gosh that that probably wipes out my whole inventory of TV shows other than um PBS i [ [ Aviation ] ] whole inventory of TV shows was wiped out.",
+        "The next morning they ate dry bread, two strips of lean meat, and two eggs fried in animal fat on a skillet of black scorched iron. They ate a hearty breakfast before heading out for the day.",
+        "The National Football League semifinals are set. [ [ Aviation ] ] were unable to disclose when the dates would be set.",
+        "uh i don't know i i have mixed emotions about him uh sometimes i like him but at the same times i love to see somebody beat him I like him for the most part, but would still enjoy seeing someone beat him.",
+        "He writes that it's the first time he's added such a track. This is the first time he's added such a track.",
+        "She hates me.'' She loves me."
+    ],
+    "srcLabel": [
+        [
+            [
+                0.9963185787200928,
+                0.0021017007529735565,
+                0.001579742063768208
+            ]
+        ],
+        [
+            [
+                0.9711918234825134,
+                0.02872719056904316,
+                8.102809806587175e-05
+            ]
+        ],
+        [
+            [
+                0.0008511087507940829,
+                0.9989963173866272,
+                0.00015254796016961336
+            ]
+        ],
+        [
+            [
+                0.968224048614502,
+                0.02822369523346424,
+                0.003552262904122472
+            ]
+        ],
+        [
+            [
+                0.0008663813350722194,
+                0.022345509380102158,
+                0.9767881631851196
+            ]
+        ],
+        [
+            [
+                6.399915582733229e-05,
+                0.0006735115894116461,
+                0.9992625117301941
+            ]
+        ],
+        [
+            [
+                0.9976521134376526,
+                0.001889907754957676,
+                0.000457988673588261
+            ]
+        ],
+        [
+            [
+                0.5103484988212585,
+                0.4873308837413788,
+                0.0023206539917737246
+            ]
+        ],
+        [
+            [
+                1.779919330147095e-05,
+                0.00016518075426574796,
+                0.9998170733451843
+            ]
+        ],
+        [
+            [
+                0.9597602486610413,
+                0.04009579122066498,
+                0.00014389923308044672
+            ]
+        ],
+        [
+            [
+                0.0005360313225537539,
+                0.0003673371684271842,
+                0.9990966320037842
+            ]
+        ],
+        [
+            [
+                0.9725542068481445,
+                0.026150766760110855,
+                0.0012950716773048043
+            ]
+        ],
+        [
+            [
+                7.807077781762928e-05,
+                0.9997792840003967,
+                0.00014267150254454464
+            ]
+        ],
+        [
+            [
+                0.9977130889892578,
+                0.0021867218893021345,
+                0.00010018099419539794
+            ]
+        ],
+        [
+            [
+                0.7360889315605164,
+                0.2611502707004547,
+                0.002760853385552764
+            ]
+        ],
+        [
+            [
+                0.00012641219655051827,
+                0.00040076285949908197,
+                0.9994727969169617
+            ]
+        ],
+        [
+            [
+                0.8991701006889343,
+                0.08640404790639877,
+                0.014425876550376415
+            ]
+        ],
+        [
+            [
+                0.000871670781634748,
+                0.05316855013370514,
+                0.9459596872329712
+            ]
+        ],
+        [
+            [
+                7.138782530091703e-05,
+                0.0010979342041537166,
+                0.9988306164741516
+            ]
+        ],
+        [
+            [
+                0.05724939703941345,
+                0.9395365715026855,
+                0.0032140864059329033
+            ]
+        ],
+        [
+            [
+                0.601891279220581,
+                0.37716376781463623,
+                0.02094489336013794
+            ]
+        ],
+        [
+            [
+                0.996387243270874,
+                0.0026867699343711138,
+                0.0009259858052246273
+            ]
+        ],
+        [
+            [
+                0.0014563007280230522,
+                0.9947711825370789,
+                0.003772457130253315
+            ]
+        ],
+        [
+            [
+                0.7868606448173523,
+                0.14100991189479828,
+                0.07212944328784943
+            ]
+        ],
+        [
+            [
+                0.008424736559391022,
+                0.988849937915802,
+                0.0027253541629761457
+            ]
+        ],
+        [
+            [
+                0.007626786362379789,
+                0.4331072270870209,
+                0.5592659711837769
+            ]
+        ],
+        [
+            [
+                0.9835581183433533,
+                0.01613367535173893,
+                0.00030826323200017214
+            ]
+        ],
+        [
+            [
+                0.9953271150588989,
+                0.004453395027667284,
+                0.00021954666590318084
+            ]
+        ],
+        [
+            [
+                0.00020267543732188642,
+                0.0006879077409394085,
+                0.9991093277931213
+            ]
+        ]
+    ],
+    "sourceDocs": [
+        "In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. There is a bookshop at the gallery.",
+        "On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. Naxos is a place with beautiful scenery for leisure.",
+        "Impossible. Impossible, unless circumstances are met.",
+        "Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. Net cost for education programs can be calculated as a way to increase productivity.",
+        "But the real dirty work had already been done. There was still lots of dirty work left to be completed.",
+        "I was pulled into the bar. I managed to escape their grasp and ran just outside the bar.",
+        "Guards would regulate those who entered and departed. Guards checked who went in and out.",
+        "Later, Tom testified against John so as to avoid the electric chair. Tom was willing to speak against the other man to avoid his own execution.",
+        "You'll even be able to consult a traditional herbalist to cure your ailments. You will not be allowed to consult with traditional herbalists.",
+        "Lincoln glared. The man was angry.",
+        "Your man wouldn't have remained conscious after the first blow. Your man stayed conscious even after the first blow.",
+        "Larger ski resorts are 90 minutes away. If we travel for 90 minutes, we could arrive at larger ski resorts.",
+        "Escaped or abandoned raccoons have been breeding in the wild for the past 20 years and have damaged corn crops, watermelon and melon farms, and rainbow trout hatcheries, the paper said. Raccoons, if they are escaped or abandoned, tend to damage things - this is what has been happening for the past 20 years - but many organizations are trying to solve the problem.",
+        "Czarek had to fight for attention : Czarek had to engage in a fight to seek attention.",
+        "The truth? Is that true?",
+        "Tuppence frowned. Tuppence beamed with delight.",
+        "What are you going to do about it?'' Tuppence frowned severely. Tuppence wanted to know what the plan was?",
+        "The credibility of the United States working with its European partners in NATO is on the line. The United States currently enjoys high favorability among its European allies who trust it completely.",
+        "From here, many HIV researchers are putting their hopes on combining drug treatments with strategies that boost the immune system. HIV researches don't think there's any hope for curing the disease.",
+        "Answer? said Julius. Julius needed an answer right then.",
+        "But I'll take up my stand somewhere near, and when he comes out of the building I'll drop a handkerchief or something, and off you go!'' I'll watch and when he comes out I'll give you a signal.",
+        "and uh it may be a Mexican pizza sometimes both together um along with and see it which is really funny too you know normally she goes straight for vegetables except when she's having French fries She often eats vegetables unless she's having french fries.",
+        "It hopes to bring on another 25 or 35 people when the new building opens next fall. They already have a waiting list for the new building.",
+        "uh - huh oh yeah i hadn't heard that one let's see i can't oh gosh that that probably wipes out my whole inventory of TV shows other than um PBS i The whole inventory of TV shows was wiped out.",
+        "The next morning they ate dry bread, two strips of lean meat, and two eggs fried in animal fat on a skillet of black scorched iron. They ate a hearty breakfast before heading out for the day.",
+        "The National Football League semifinals are set. They were unable to disclose when the dates would be set.",
+        "uh i don't know i i have mixed emotions about him uh sometimes i like him but at the same times i love to see somebody beat him I like him for the most part, but would still enjoy seeing someone beat him.",
+        "He writes that it's the first time he's added such a track. This is the first time he's added such a track.",
+        "She hates me.'' She loves me."
+    ],
+    "advDocs": [
+        "In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. There is a bookshop at the gallery.",
+        "On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. Naxos is a place with beautiful scenery for leisure.",
+        "Impossible. Impossible, unless circumstances are met.",
+        "Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. Net cost for education programs can be calculated as a way to increase productivity.",
+        "But the real dirty work had already been done. There was still lots of dirty work left to be completed.",
+        "I was pulled into the bar. I managed to escape their grasp and ran just outside the bar.",
+        "Guards would regulate those who entered and departed. Guards checked who went in and out.",
+        "Later, Tom testified against John so as to avoid the electric chair. Tom was willing to speak against the other man to avoid his own execution.",
+        "You'll even be able to consult a traditional herbalist to cure your ailments. You will not be allowed to consult with traditional herbalists.",
+        "Lincoln glared. The man was angry.",
+        "Your man wouldn't have remained conscious after the first blow. Your man stayed conscious even after the first blow.",
+        "Larger ski resorts are 90 minutes away. If we travel for 90 minutes, we could arrive at larger ski resorts.",
+        "Escaped or abandoned raccoons have been breeding in the wild for the past 20 years and have damaged corn crops, watermelon and melon farms, and rainbow trout hatcheries, the paper said. Raccoons, if they are escaped or abandoned, tend to damage things - this is what has been happening for the past 20 years - but many organizations are trying to solve the problem.",
+        "Czarek had to fight for attention : Czarek had to engage in a fight to seek attention.",
+        "The truth? Is that true?",
+        "Tuppence frowned. Tuppence beamed with delight.",
+        "What are you going to do about it?'' Tuppence frowned severely. Tuppence wanted to know what the plan was?",
+        "The credibility of the United States working with its European partners in NATO is on the line. The United States currently enjoys high favorability among its European allies who trust it completely.",
+        "From here, many HIV researchers are putting their hopes on combining drug treatments with strategies that boost the immune system. HIV researches don't think there's any hope for curing the disease.",
+        "Answer? said Julius. Julius needed an answer right then.",
+        "But I'll take up my stand somewhere near, and when he comes out of the building I'll drop a handkerchief or something, and off you go!'' I'll watch and when he comes out I'll give you a signal.",
+        "and uh it may be a Mexican pizza sometimes both together um along with and see it which is really funny too you know normally she goes straight for vegetables except when she's having French fries She often eats vegetables unless she's having french fries.",
+        "It hopes to bring on another 25 or 35 people when the new building opens next fall. They already have a waiting list for the new building.",
+        "uh - huh oh yeah i hadn't heard that one let's see i can't oh gosh that that probably wipes out my whole inventory of TV shows other than um PBS i Aviation whole inventory of TV shows was wiped out.",
+        "The next morning they ate dry bread, two strips of lean meat, and two eggs fried in animal fat on a skillet of black scorched iron. They ate a hearty breakfast before heading out for the day.",
+        "The National Football League semifinals are set. Aviation were unable to disclose when the dates would be set.",
+        "uh i don't know i i have mixed emotions about him uh sometimes i like him but at the same times i love to see somebody beat him I like him for the most part, but would still enjoy seeing someone beat him.",
+        "He writes that it's the first time he's added such a track. This is the first time he's added such a track.",
+        "She hates me.'' She loves me."
+    ],
+    "srcPredProb": [
+        [
+            0.9963185787200928,
+            0.0021017007529735565,
+            0.001579742063768208
+        ],
+        [
+            0.9711918234825134,
+            0.02872719056904316,
+            8.102809806587175e-05
+        ],
+        [
+            0.0008511087507940829,
+            0.9989963173866272,
+            0.00015254796016961336
+        ],
+        [
+            0.968224048614502,
+            0.02822369523346424,
+            0.003552262904122472
+        ],
+        [
+            0.0008663813350722194,
+            0.022345509380102158,
+            0.9767881631851196
+        ],
+        [
+            6.399915582733229e-05,
+            0.0006735115894116461,
+            0.9992625117301941
+        ],
+        [
+            0.9976521134376526,
+            0.001889907754957676,
+            0.000457988673588261
+        ],
+        [
+            0.5103484988212585,
+            0.4873308837413788,
+            0.0023206539917737246
+        ],
+        [
+            1.779919330147095e-05,
+            0.00016518075426574796,
+            0.9998170733451843
+        ],
+        [
+            0.9597602486610413,
+            0.04009579122066498,
+            0.00014389923308044672
+        ],
+        [
+            0.0005360313225537539,
+            0.0003673371684271842,
+            0.9990966320037842
+        ],
+        [
+            0.9725542068481445,
+            0.026150766760110855,
+            0.0012950716773048043
+        ],
+        [
+            7.807077781762928e-05,
+            0.9997792840003967,
+            0.00014267150254454464
+        ],
+        [
+            0.9977130889892578,
+            0.0021867218893021345,
+            0.00010018099419539794
+        ],
+        [
+            0.7360889315605164,
+            0.2611502707004547,
+            0.002760853385552764
+        ],
+        [
+            0.00012641219655051827,
+            0.00040076285949908197,
+            0.9994727969169617
+        ],
+        [
+            0.8991701006889343,
+            0.08640404790639877,
+            0.014425876550376415
+        ],
+        [
+            0.000871670781634748,
+            0.05316855013370514,
+            0.9459596872329712
+        ],
+        [
+            7.138782530091703e-05,
+            0.0010979342041537166,
+            0.9988306164741516
+        ],
+        [
+            0.05724939703941345,
+            0.9395365715026855,
+            0.0032140864059329033
+        ],
+        [
+            0.601891279220581,
+            0.37716376781463623,
+            0.02094489336013794
+        ],
+        [
+            0.996387243270874,
+            0.0026867699343711138,
+            0.0009259858052246273
+        ],
+        [
+            0.0014563007280230522,
+            0.9947711825370789,
+            0.003772457130253315
+        ],
+        [
+            0.7868606448173523,
+            0.14100991189479828,
+            0.07212944328784943
+        ],
+        [
+            0.008424736559391022,
+            0.988849937915802,
+            0.0027253541629761457
+        ],
+        [
+            0.007626786362379789,
+            0.4331072270870209,
+            0.5592659711837769
+        ],
+        [
+            0.9835581183433533,
+            0.01613367535173893,
+            0.00030826323200017214
+        ],
+        [
+            0.9953271150588989,
+            0.004453395027667284,
+            0.00021954666590318084
+        ],
+        [
+            0.00020267543732188642,
+            0.0006879077409394085,
+            0.9991093277931213
+        ]
+    ],
+    "advPredProb": [
+        [
+            0.9963185787200928,
+            0.0021017007529735565,
+            0.001579742063768208
+        ],
+        [
+            0.9711918234825134,
+            0.02872719056904316,
+            8.102809806587175e-05
+        ],
+        [
+            0.0008511087507940829,
+            0.9989963173866272,
+            0.00015254796016961336
+        ],
+        [
+            0.968224048614502,
+            0.02822369523346424,
+            0.003552262904122472
+        ],
+        [
+            0.0008663813350722194,
+            0.022345509380102158,
+            0.9767881631851196
+        ],
+        [
+            6.399915582733229e-05,
+            0.0006735115894116461,
+            0.9992625117301941
+        ],
+        [
+            0.9976521134376526,
+            0.001889907754957676,
+            0.000457988673588261
+        ],
+        [
+            0.5103484988212585,
+            0.4873308837413788,
+            0.0023206539917737246
+        ],
+        [
+            1.779919330147095e-05,
+            0.00016518075426574796,
+            0.9998170733451843
+        ],
+        [
+            0.9597602486610413,
+            0.04009579122066498,
+            0.00014389923308044672
+        ],
+        [
+            0.0005360313225537539,
+            0.0003673371684271842,
+            0.9990966320037842
+        ],
+        [
+            0.9725542068481445,
+            0.026150766760110855,
+            0.0012950716773048043
+        ],
+        [
+            7.807077781762928e-05,
+            0.9997792840003967,
+            0.00014267150254454464
+        ],
+        [
+            0.9977130889892578,
+            0.0021867218893021345,
+            0.00010018099419539794
+        ],
+        [
+            0.7360889315605164,
+            0.2611502707004547,
+            0.002760853385552764
+        ],
+        [
+            0.00012641219655051827,
+            0.00040076285949908197,
+            0.9994727969169617
+        ],
+        [
+            0.8991701006889343,
+            0.08640404790639877,
+            0.014425876550376415
+        ],
+        [
+            0.000871670781634748,
+            0.05316855013370514,
+            0.9459596872329712
+        ],
+        [
+            7.138782530091703e-05,
+            0.0010979342041537166,
+            0.9988306164741516
+        ],
+        [
+            0.05724939703941345,
+            0.9395365715026855,
+            0.0032140864059329033
+        ],
+        [
+            0.601891279220581,
+            0.37716376781463623,
+            0.02094489336013794
+        ],
+        [
+            0.996387243270874,
+            0.0026867699343711138,
+            0.0009259858052246273
+        ],
+        [
+            0.0014563007280230522,
+            0.9947711825370789,
+            0.003772457130253315
+        ],
+        [
+            0.0042485990561544895,
+            0.9388854503631592,
+            0.05686597153544426
+        ],
+        [
+            0.008424736559391022,
+            0.988849937915802,
+            0.0027253541629761457
+        ],
+        [
+            0.007822533138096333,
+            0.7804828882217407,
+            0.2116946578025818
+        ],
+        [
+            0.9835581183433533,
+            0.01613367535173893,
+            0.00030826323200017214
+        ],
+        [
+            0.9953271150588989,
+            0.004453395027667284,
+            0.00021954666590318084
+        ],
+        [
+            0.00020267543732188642,
+            0.0006879077409394085,
+            0.9991093277931213
+        ]
+    ],
+    "avgQueries": 0.06896551724137931,
+    "targetInx": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [
+            "43"
+        ],
+        [],
+        [
+            "9"
+        ],
+        [],
+        [],
+        []
+    ],
+    "targetTokens": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [
+            "The"
+        ],
+        [],
+        [
+            "They"
+        ],
+        [],
+        [],
+        []
+    ],
+    "toTokens": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [
+            "Aviation"
+        ],
+        [],
+        [
+            "Aviation"
+        ],
+        [],
+        [],
+        []
+    ],
+    "attackSuccess Flags": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+    ],
+    "AattackPatterns": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+            "43": 7650
+        },
+        {},
+        {
+            "9": 7650
+        },
+        {},
+        {},
+        {}
+    ],
+    "docLen": [
+        41,
+        52,
+        10,
+        69,
+        23,
+        21,
+        18,
+        30,
+        34,
+        9,
+        25,
+        25,
+        82,
+        23,
+        8,
+        13,
+        29,
+        36,
+        42,
+        13,
+        53,
+        54,
+        30,
+        53,
+        46,
+        22,
+        49,
+        31,
+        11
+    ]
+}

@@ -1,0 +1,1398 @@
+numsProcessedSamples 1000
+Vocabulary Size: 28996
+BERT_UNCASED
+Evaluation Data Size: 1000
+CLS token ID: 101
+SEP token ID: 102
+PAD token ID: 0
+MASK token ID: 103
+UNK token ID: 100
+torch.Size([1000, 512])
+torch.Size([1000, 512])
+torch.Size([1000])
+1000
+testModel: bert-base-uncased 
+attacker device:  cuda:0
+1.0  th document.
+decoded_text In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. [SEP] There is a bookshop at the gallery.
+text_parts ['In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. ', ' There is a bookshop at the gallery.']
+stgt:  In Temple Bar, the [ [ books ] ] [ [hop ] ] [ [ at ] ] the [ [ Gallery ] ] of Photography carries a [ [ large ] ] selection of photographic publications, and the Flying Pig is a [ [ second ] ] [ [hand ] ] bookshop [ [. ] ] There is a bookshop at the gallery.
+Gallery  ->  ：
+decoded_text In Temple Bar, the bookshop at the ： of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. [SEP] There is a bookshop at the gallery.
+text_parts ['In Temple Bar, the bookshop at the ： of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. ', ' There is a bookshop at the gallery.']
+advInxCut [1130, 4407, 6523, 117, 1103, 2146, 23414, 1120, 1103, 1102, 1104, 12954, 7450, 170, 1415, 4557, 1104, 15368, 5873, 117, 1105, 1103, 7769, 23350, 1110, 170, 1248, 9332, 2146, 23414, 119, 102, 1247, 1110, 170, 2146, 23414, 1120, 1103, 7183, 119]
+advText [('In Temple Bar, the bookshop at the ： of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. ', ' There is a bookshop at the gallery.')]
+srcTxt:  In Temple Bar, the bookshop at the [ [ Gallery ] ] of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. There is a bookshop at the gallery.
+advTxt:  In Temple Bar, the bookshop at the [ [ ： ] ] of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. There is a bookshop at the gallery.
+srcTxt:  ('In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. ', ' There is a bookshop at the gallery.')
+advTxt:  ('In Temple Bar, the bookshop at the ： of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. ', ' There is a bookshop at the gallery.')
+tLabel:  1
+targetTokens ['Gallery']
+toTokens ['：']
+sProbs:  [0.001772525836713612, 0.9928836822509766, 0.005343819502741098]
+aProbs:  [0.5066301226615906, 0.4673088788986206, 0.02606102265417576]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+all perturbed tokens :  1
+total token lens     :  41
+avg perturbed tokens :  1.0
+avg perturbation rate:  0.0244
+saved at sample  1.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+2.0  th document.
+decoded_text On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. [SEP] Naxos is a place with beautiful scenery for leisure.
+text_parts ['On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. ', ' Naxos is a place with beautiful scenery for leisure.']
+stgt:  On Na [ [x ] ] [ [os ] ], you can walk through the [ [ pretty ] ] villages of the Tragea Valley and the foothills of Mount Zas, ad [ [miring ] ] Byzantine churches [ [ and ] ] exploring olive [ [ grove ] ] [ [s ] ] at your [ [ leisure ] ]. Naxos is a place with beautiful scenery for leisure.
+1   pretty  ->  ：   0.971234  ->  0.513667
+：  ->  ##rook
+decoded_text On Naxos, you can walk through therook villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. [SEP] Naxos is a place with beautiful scenery for leisure.
+text_parts ['On Naxos, you can walk through therook villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. ', ' Naxos is a place with beautiful scenery for leisure.']
+advInxCut [1212, 11896, 1775, 2155, 117, 1128, 1169, 2647, 1194, 1103, 18562, 4024, 1104, 1103, 157, 20240, 1161, 2634, 1105, 1103, 21864, 1104, 3572, 163, 2225, 117, 8050, 27693, 8377, 5189, 1105, 12138, 13552, 28011, 1116, 1120, 1240, 17036, 119, 102, 11896, 1775, 2155, 1110, 170, 1282, 1114, 2712, 19335, 1111, 17036, 119]
+advText [('On Naxos, you can walk through therook villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. ', ' Naxos is a place with beautiful scenery for leisure.')]
+srcTxt:  On Naxos, you can walk through the [ [ pretty ] ] villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. Naxos is a place with beautiful scenery for leisure.
+advTxt:  On Naxos, you can walk through the [ [rook ] ] villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. Naxos is a place with beautiful scenery for leisure.
+srcTxt:  ('On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. ', ' Naxos is a place with beautiful scenery for leisure.')
+advTxt:  ('On Naxos, you can walk through therook villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. ', ' Naxos is a place with beautiful scenery for leisure.')
+tLabel:  1
+targetTokens ['pretty']
+toTokens ['##rook']
+sProbs:  [0.00033104518661275506, 0.9712340831756592, 0.028434913605451584]
+aProbs:  [0.0008813836611807346, 0.40410083532333374, 0.5950177907943726]
+attack suc rate 100.0 %
+average # of queries: 0.5.
+all perturbed tokens :  3
+total token lens     :  134
+avg perturbed tokens :  1.5
+avg perturbation rate:  0.0224
+saved at sample  2.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+3.0  th document.
+decoded_text Impossible. [SEP] Impossible, unless circumstances are met.
+text_parts ['Impossible. ', ' Impossible, unless circumstances are met.']
+stgt:  [ [ Impossible ] ] [ [. ] ] Impossible, unless circumstances are met.
+Impossible  ->  ten
+decoded_text ten. [SEP] Impossible, unless circumstances are met.
+text_parts ['ten. ', ' Impossible, unless circumstances are met.']
+advInxCut [1995, 119, 102, 26138, 117, 4895, 5607, 1132, 1899, 119]
+advText [('ten. ', ' Impossible, unless circumstances are met.')]
+srcTxt:  [ [ Impossible ] ]. Impossible, unless circumstances are met.
+advTxt:  [ [ ten ] ]. Impossible, unless circumstances are met.
+srcTxt:  ('Impossible. ', ' Impossible, unless circumstances are met.')
+advTxt:  ('ten. ', ' Impossible, unless circumstances are met.')
+tLabel:  2
+targetTokens ['Impossible']
+toTokens ['ten']
+sProbs:  [0.0010454413713887334, 0.004881738685071468, 0.9940728545188904]
+aProbs:  [0.6737305521965027, 0.012669620104134083, 0.3135998249053955]
+attack suc rate 100.0 %
+average # of queries: 1.3333333333333333.
+all perturbed tokens :  6
+total token lens     :  237
+avg perturbed tokens :  2.0
+avg perturbation rate:  0.0253
+saved at sample  3.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+4.0  th document.
+decoded_text Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. [SEP] Net cost for education programs can be calculated as a way to increase productivity.
+text_parts ['Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. ', ' Net cost for education programs can be calculated as a way to increase productivity.']
+stgt:  Expenses included in [ [ calculating ] ] net cost for [ [ education ] ] and training programs that [ [ are ] ] intended [ [ to ] ] [ [ increase ] ] or maintain national [ [ economic ] ] [ [ productive ] ] capacity shall be reported as investments in human capital as required supplementary [ [ stew ] ]ardship information accompanying the financial statements of the Federal Government and its component units. Net cost for education programs can be calculated as a way to increase productivity.
+productive  ->  fight
+decoded_text Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic fight capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. [SEP] Net cost for education programs can be calculated as a way to increase productivity.
+text_parts ['Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic fight capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. ', ' Net cost for education programs can be calculated as a way to increase productivity.']
+advInxCut [16409, 11741, 8830, 1529, 1107, 23172, 5795, 2616, 1111, 1972, 1105, 2013, 2648, 1115, 1132, 3005, 1106, 2773, 1137, 4731, 1569, 2670, 2147, 3211, 4103, 1129, 2103, 1112, 12372, 1107, 1769, 2364, 1112, 2320, 15491, 3113, 26036, 13584, 3157, 1869, 11227, 1103, 2798, 8477, 1104, 1103, 3467, 2384, 1105, 1157, 6552, 2338, 119, 102, 20820, 2616, 1111, 1972, 2648, 1169, 1129, 10056, 1112, 170, 1236, 1106, 2773, 18222, 119]
+advText [('Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic fight capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. ', ' Net cost for education programs can be calculated as a way to increase productivity.')]
+srcTxt:  Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic [ [ productive ] ] capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. Net cost for education programs can be calculated as a way to increase productivity.
+advTxt:  Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic [ [ fight ] ] capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. Net cost for education programs can be calculated as a way to increase productivity.
+srcTxt:  ('Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. ', ' Net cost for education programs can be calculated as a way to increase productivity.')
+advTxt:  ('Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic fight capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. ', ' Net cost for education programs can be calculated as a way to increase productivity.')
+tLabel:  1
+targetTokens ['productive']
+toTokens ['fight']
+sProbs:  [0.0015978390583768487, 0.9650044441223145, 0.033397722989320755]
+aProbs:  [0.04398005083203316, 0.06856941431760788, 0.8874505758285522]
+attack suc rate 100.0 %
+average # of queries: 1.0.
+all perturbed tokens :  10
+total token lens     :  409
+avg perturbed tokens :  2.5
+avg perturbation rate:  0.0244
+saved at sample  4.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+5.0  th document.
+decoded_text But the real dirty work had already been done. [SEP] There was still lots of dirty work left to be completed.
+text_parts ['But the real dirty work had already been done. ', ' There was still lots of dirty work left to be completed.']
+stgt:  [ [ But ] ] [ [ the ] ] [ [ real ] ] [ [ dirty ] ] [ [ work ] ] [ [ had ] ] already [ [ been ] ] [ [ done ] ]. There was still lots of dirty work left to be completed.
+0   had  ->  established   0.904837  ->  0.880675
+0   established  ->  city   0.880675  ->  0.54244
+dirty  ->  ：
+decoded_text But the real ： work city already been done. [SEP] There was still lots of dirty work left to be completed.
+text_parts ['But the real ： work city already been done. ', ' There was still lots of dirty work left to be completed.']
+advInxCut [1252, 1103, 1842, 1102, 1250, 1331, 1640, 1151, 1694, 119, 102, 1247, 1108, 1253, 7424, 1104, 7320, 1250, 1286, 1106, 1129, 2063, 119]
+advText [('But the real ： work city already been done. ', ' There was still lots of dirty work left to be completed.')]
+srcTxt:  But the real [ [ dirty ] ] work [ [ had ] ] already been done. There was still lots of dirty work left to be completed.
+advTxt:  But the real [ [ ： ] ] work [ [ city ] ] already been done. There was still lots of dirty work left to be completed.
+srcTxt:  ('But the real dirty work had already been done. ', ' There was still lots of dirty work left to be completed.')
+advTxt:  ('But the real ： work city already been done. ', ' There was still lots of dirty work left to be completed.')
+tLabel:  0
+targetTokens ['had', 'dirty']
+toTokens ['city', '：']
+sProbs:  [0.9048365950584412, 0.0639415755867958, 0.031221870332956314]
+aProbs:  [0.3120027482509613, 0.015678469091653824, 0.6723188161849976]
+attack suc rate 100.0 %
+average # of queries: 2.6.
+all perturbed tokens :  16
+total token lens     :  604
+avg perturbed tokens :  3.2
+avg perturbation rate:  0.0265
+saved at sample  5.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+6.0  th document.
+decoded_text I was pulled into the bar. [SEP] I managed to escape their grasp and ran just outside the bar.
+text_parts ['I was pulled into the bar. ', ' I managed to escape their grasp and ran just outside the bar.']
+stgt:  [ [ I ] ] [ [ was ] ] [ [ pulled ] ] [ [ into ] ] [ [ the ] ] [ [ bar ] ] [ [. ] ] I managed to escape their grasp and ran just outside the bar.
+into  ->  fact
+decoded_text I was pulled fact the bar. [SEP] I managed to escape their grasp and ran just outside the bar.
+text_parts ['I was pulled fact the bar. ', ' I managed to escape their grasp and ran just outside the bar.']
+advInxCut [146, 1108, 1865, 1864, 1103, 2927, 119, 102, 146, 2374, 1106, 3359, 1147, 10598, 1105, 1868, 1198, 1796, 1103, 2927, 119]
+advText [('I was pulled fact the bar. ', ' I managed to escape their grasp and ran just outside the bar.')]
+srcTxt:  I was pulled [ [ into ] ] the bar. I managed to escape their grasp and ran just outside the bar.
+advTxt:  I was pulled [ [ fact ] ] the bar. I managed to escape their grasp and ran just outside the bar.
+srcTxt:  ('I was pulled into the bar. ', ' I managed to escape their grasp and ran just outside the bar.')
+advTxt:  ('I was pulled fact the bar. ', ' I managed to escape their grasp and ran just outside the bar.')
+tLabel:  0
+targetTokens ['into']
+toTokens ['fact']
+sProbs:  [0.967144250869751, 0.0007222898420877755, 0.03213337063789368]
+aProbs:  [0.44937241077423096, 0.01440812274813652, 0.5362194776535034]
+attack suc rate 100.0 %
+average # of queries: 2.1666666666666665.
+all perturbed tokens :  23
+total token lens     :  820
+avg perturbed tokens :  3.83
+avg perturbation rate:  0.028
+saved at sample  6.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+7.0  th document.
+decoded_text Guards would regulate those who entered and departed. [SEP] Guards checked who went in and out.
+text_parts ['Guards would regulate those who entered and departed. ', ' Guards checked who went in and out.']
+stgt:  [ [ Guards ] ] [ [ would ] ] [ [ regulate ] ] those [ [ who ] ] [ [ entered ] ] [ [ and ] ] [ [ departed ] ] [ [. ] ] Guards checked who went in and out.
+1   Guards  ->  ten   0.971555  ->  0.544239
+ten  ->  deep
+decoded_text deep would regulate those who entered and departed. [SEP] Guards checked who went in and out.
+text_parts ['deep would regulate those who entered and departed. ', ' Guards checked who went in and out.']
+advInxCut [1996, 1156, 16146, 1343, 1150, 2242, 1105, 7361, 119, 102, 9696, 6488, 1150, 1355, 1107, 1105, 1149, 119]
+advText [('deep would regulate those who entered and departed. ', ' Guards checked who went in and out.')]
+srcTxt:  [ [ Guards ] ] would regulate those who entered and departed. Guards checked who went in and out.
+advTxt:  [ [ deep ] ] would regulate those who entered and departed. Guards checked who went in and out.
+srcTxt:  ('Guards would regulate those who entered and departed. ', ' Guards checked who went in and out.')
+advTxt:  ('deep would regulate those who entered and departed. ', ' Guards checked who went in and out.')
+tLabel:  1
+targetTokens ['Guards']
+toTokens ['deep']
+sProbs:  [0.002444606274366379, 0.9715551137924194, 0.02600024826824665]
+aProbs:  [0.012165079824626446, 0.34591731429100037, 0.6419175863265991]
+attack suc rate 100.0 %
+average # of queries: 2.5714285714285716.
+all perturbed tokens :  31
+total token lens     :  1054
+avg perturbed tokens :  4.43
+avg perturbation rate:  0.0294
+saved at sample  7.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+8.0  th document.
+decoded_text Later, Tom testified against John so as to avoid the electric chair. [SEP] Tom was willing to speak against the other man to avoid his own execution.
+text_parts ['Later, Tom testified against John so as to avoid the electric chair. ', ' Tom was willing to speak against the other man to avoid his own execution.']
+stgt:  Later, [ [ Tom ] ] [ [ testified ] ] [ [ against ] ] [ [ John ] ] [ [ so ] ] [ [ as ] ] to [ [ avoid ] ] the electric [ [ chair ] ]. Tom was willing to speak against the other man to avoid his own execution.
+decoded_text Later, Tom testified against John so as to avoid the electric chair. [SEP] Tom was willing to speak against the other man to avoid his own execution.
+text_parts ['Later, Tom testified against John so as to avoid the electric chair. ', ' Tom was willing to speak against the other man to avoid his own execution.']
+advInxCut [2611, 117, 2545, 15627, 1222, 1287, 1177, 1112, 1106, 3644, 1103, 3651, 2643, 119, 102, 2545, 1108, 4988, 1106, 2936, 1222, 1103, 1168, 1299, 1106, 3644, 1117, 1319, 7581, 119]
+advText [('Later, Tom testified against John so as to avoid the electric chair. ', ' Tom was willing to speak against the other man to avoid his own execution.')]
+srcTxt:  Later, Tom testified against John so as to avoid the electric chair. Tom was willing to speak against the other man to avoid his own execution.
+advTxt:  Later, Tom testified against John so as to avoid the electric chair. Tom was willing to speak against the other man to avoid his own execution.
+srcTxt:  ('Later, Tom testified against John so as to avoid the electric chair. ', ' Tom was willing to speak against the other man to avoid his own execution.')
+advTxt:  ('Later, Tom testified against John so as to avoid the electric chair. ', ' Tom was willing to speak against the other man to avoid his own execution.')
+tLabel:  1
+targetTokens []
+toTokens []
+sProbs:  [0.010561746545135975, 0.49159789085388184, 0.49784034490585327]
+aProbs:  [0.010561746545135975, 0.49159789085388184, 0.49784034490585327]
+attack suc rate 100.0 %
+average # of queries: 2.25.
+all perturbed tokens :  39
+total token lens     :  1318
+avg perturbed tokens :  4.88
+avg perturbation rate:  0.0296
+saved at sample  8.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+9.0  th document.
+decoded_text You'll even be able to consult a traditional herbalist to cure your ailments. [SEP] You will not be allowed to consult with traditional herbalists.
+text_parts ["You'll even be able to consult a traditional herbalist to cure your ailments. ", ' You will not be allowed to consult with traditional herbalists.']
+stgt:  [ [ You ] ]'[ [ ll ] ] [ [ even ] ] be [ [ able ] ] [ [ to ] ] consult a [ [ traditional ] ] [ [ herb ] ] [ [alis ] ]t to cure your ailments. You will not be allowed to consult with traditional herbalists.
+0   traditional  ->  on   0.998958  ->  0.979748
+0   on  ->  Donnell   0.979748  ->  0.972245
+0   Donnell  ->  up   0.972245  ->  0.961205
+0   up  ->  ##t   0.961205  ->  0.96057
+0   ll  ->  now   0.96057  ->  0.955425
+0   now  ->  species   0.955425  ->  0.936342
+able  ->  no
+decoded_text You'species even be no to consult at herbalist to cure your ailments. [SEP] You will not be allowed to consult with traditional herbalists.
+text_parts ["You'species even be no to consult at herbalist to cure your ailments. ", ' You will not be allowed to consult with traditional herbalists.']
+advInxCut [1192, 112, 1530, 1256, 1129, 1185, 1106, 27231, 170, 1204, 22245, 14200, 1204, 1106, 11200, 1240, 170, 2723, 4385, 119, 102, 1192, 1209, 1136, 1129, 2148, 1106, 27231, 1114, 2361, 22245, 14200, 2145, 119]
+advText [("You'species even be no to consult at herbalist to cure your ailments. ", ' You will not be allowed to consult with traditional herbalists.')]
+srcTxt:  You'[ [ ll ] ] even be [ [ able ] ] to consult a [ [ traditional ] ] herbalist to cure your ailments. You will not be allowed to consult with traditional herbalists.
+advTxt:  You'[ [ species ] ] even be [ [ no ] ] to consult a [ [t ] ] herbalist to cure your ailments. You will not be allowed to consult with traditional herbalists.
+srcTxt:  ("You'll even be able to consult a traditional herbalist to cure your ailments. ", ' You will not be allowed to consult with traditional herbalists.')
+advTxt:  ("You'species even be no to consult at herbalist to cure your ailments. ", ' You will not be allowed to consult with traditional herbalists.')
+tLabel:  0
+targetTokens ['traditional', 'll', 'able']
+toTokens ['##t', 'species', 'no']
+sProbs:  [0.9989584684371948, 0.00011122081195935607, 0.0009302564430981874]
+aProbs:  [0.007952629588544369, 0.7708103656768799, 0.22123701870441437]
+attack suc rate 100.0 %
+average # of queries: 2.888888888888889.
+all perturbed tokens :  50
+total token lens     :  1616
+avg perturbed tokens :  5.56
+avg perturbation rate:  0.0309
+saved at sample  9.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+10.0  th document.
+decoded_text Lincoln glared. [SEP] The man was angry.
+text_parts ['Lincoln glared. ', ' The man was angry.']
+stgt:  [ [ Lincoln ] ] [ [ glared ] ] [ [. ] ] The man was angry.
+decoded_text Lincoln glared. [SEP] The man was angry.
+text_parts ['Lincoln glared. ', ' The man was angry.']
+advInxCut [4617, 9090, 119, 102, 1109, 1299, 1108, 4259, 119]
+advText [('Lincoln glared. ', ' The man was angry.')]
+srcTxt:  Lincoln glared. The man was angry.
+advTxt:  Lincoln glared. The man was angry.
+srcTxt:  ('Lincoln glared. ', ' The man was angry.')
+advTxt:  ('Lincoln glared. ', ' The man was angry.')
+tLabel:  2
+targetTokens []
+toTokens []
+sProbs:  [0.0006345212459564209, 0.7280912399291992, 0.271274209022522]
+aProbs:  [0.0006345212459564209, 0.7280912399291992, 0.271274209022522]
+attack suc rate 100.0 %
+average # of queries: 2.6.
+all perturbed tokens :  61
+total token lens     :  1923
+avg perturbed tokens :  6.1
+avg perturbation rate:  0.0317
+saved at sample  10.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+11.0  th document.
+decoded_text Your man wouldn't have remained conscious after the first blow. [SEP] Your man stayed conscious even after the first blow.
+text_parts ["Your man wouldn't have remained conscious after the first blow. ", ' Your man stayed conscious even after the first blow.']
+stgt:  [ [ Your ] ] man [ [ would ] ] n [ ['] ] [ [ t ] ] [ [ have ] ] remained [ [ conscious ] ] [ [ after ] ] the [ [ first ] ] blow. Your man stayed conscious even after the first blow.
+0   have  ->  ##rook   0.99673  ->  0.967249
+0   ##rook  ->  Damian   0.967249  ->  0.945756
+Damian  ->  interrupting
+decoded_text Your man wouldn't interrupting remained conscious after the first blow. [SEP] Your man stayed conscious even after the first blow.
+text_parts ["Your man wouldn't interrupting remained conscious after the first blow. ", ' Your man stayed conscious even after the first blow.']
+advInxCut [2353, 1299, 1156, 183, 112, 189, 25602, 1915, 9701, 1170, 1103, 1148, 5993, 119, 102, 2353, 1299, 3523, 9701, 1256, 1170, 1103, 1148, 5993, 119]
+advText [("Your man wouldn't interrupting remained conscious after the first blow. ", ' Your man stayed conscious even after the first blow.')]
+srcTxt:  Your man wouldn't [ [ have ] ] remained conscious after the first blow. Your man stayed conscious even after the first blow.
+advTxt:  Your man wouldn't [ [ interrupting ] ] remained conscious after the first blow. Your man stayed conscious even after the first blow.
+srcTxt:  ("Your man wouldn't have remained conscious after the first blow. ", ' Your man stayed conscious even after the first blow.')
+advTxt:  ("Your man wouldn't interrupting remained conscious after the first blow. ", ' Your man stayed conscious even after the first blow.')
+tLabel:  0
+targetTokens ['have']
+toTokens ['interrupting']
+sProbs:  [0.9967302083969116, 0.002100663725286722, 0.0011692368425428867]
+aProbs:  [0.09473344683647156, 0.8565549850463867, 0.048711519688367844]
+attack suc rate 100.0 %
+average # of queries: 2.5454545454545454.
+all perturbed tokens :  73
+total token lens     :  2255
+avg perturbed tokens :  6.64
+avg perturbation rate:  0.0324
+saved at sample  11.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+12.0  th document.
+decoded_text Larger ski resorts are 90 minutes away. [SEP] If we travel for 90 minutes, we could arrive at larger ski resorts.
+text_parts ['Larger ski resorts are 90 minutes away. ', ' If we travel for 90 minutes, we could arrive at larger ski resorts.']
+stgt:  [ [ Large ] ] [ [r ] ] [ [ ski ] ] [ [ resorts ] ] are [ [ 90 ] ] [ [ minutes ] ] [ [ away ] ] [ [. ] ] If we travel for 90 minutes, we could arrive at larger ski resorts.
+ski  ->  before
+decoded_text Larger before resorts are 90 minutes away. [SEP] If we travel for 90 minutes, we could arrive at larger ski resorts.
+text_parts ['Larger before resorts are 90 minutes away. ', ' If we travel for 90 minutes, we could arrive at larger ski resorts.']
+advInxCut [10236, 1197, 1196, 23574, 1132, 3078, 1904, 1283, 119, 102, 1409, 1195, 3201, 1111, 3078, 1904, 117, 1195, 1180, 6657, 1120, 2610, 10458, 23574, 119]
+advText [('Larger before resorts are 90 minutes away. ', ' If we travel for 90 minutes, we could arrive at larger ski resorts.')]
+srcTxt:  Larger [ [ ski ] ] resorts are 90 minutes away. If we travel for 90 minutes, we could arrive at larger ski resorts.
+advTxt:  Larger [ [ before ] ] resorts are 90 minutes away. If we travel for 90 minutes, we could arrive at larger ski resorts.
+srcTxt:  ('Larger ski resorts are 90 minutes away. ', ' If we travel for 90 minutes, we could arrive at larger ski resorts.')
+advTxt:  ('Larger before resorts are 90 minutes away. ', ' If we travel for 90 minutes, we could arrive at larger ski resorts.')
+tLabel:  1
+targetTokens ['ski']
+toTokens ['before']
+sProbs:  [0.001434870297089219, 0.8910939693450928, 0.10747117549180984]
+aProbs:  [0.0060256002470850945, 0.002568397205322981, 0.9914059638977051]
+attack suc rate 100.0 %
+average # of queries: 2.3333333333333335.
+all perturbed tokens :  86
+total token lens     :  2612
+avg perturbed tokens :  7.17
+avg perturbation rate:  0.0329
+saved at sample  12.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+13.0  th document.
+decoded_text Escaped or abandoned raccoons have been breeding in the wild for the past 20 years and have damaged corn crops, watermelon and melon farms, and rainbow trout hatcheries, the paper said. [SEP] Raccoons, if they are escaped or abandoned, tend to damage things - this is what has been happening for the past 20 years - but many organizations are trying to solve the problem.
+text_parts ['Escaped or abandoned raccoons have been breeding in the wild for the past 20 years and have damaged corn crops, watermelon and melon farms, and rainbow trout hatcheries, the paper said. ', ' Raccoons, if they are escaped or abandoned, tend to damage things - this is what has been happening for the past 20 years - but many organizations are trying to solve the problem.']
+stgt:  Escaped [ [ or ] ] abandoned [ [ r ] ]accoons have been breeding [ [ in ] ] the wild for the past 20 years and have [ [ damaged ] ] corn crops, watermelon and melon farms, and rainbow trout hatcheries [ [, ] ] [ [ the ] ] [ [ paper ] ] said [ [. ] ] Raccoons, if they are escaped or abandoned, tend to damage things - this is what has been happening for the past 20 years - but many organizations are trying to solve the problem.
+2   .  ->  ##e   0.997335  ->  0.996461
+2   or  ->  could   0.996461  ->  0.99583
+2   could  ->  species   0.99583  ->  0.995104
+2   r  ->  49   0.995104  ->  0.994236
+2   49  ->  photography   0.994236  ->  0.99355
+2   ,  ->  ##town   0.99355  ->  0.992787
+2   in  ->  Newton   0.992787  ->  0.986833
+decoded_text Escaped species abandoned photographyaccoons have been breeding Newton the wild for the past 20 years and have damaged corn crops, watermelon and melon farms, and rainbow trout hatcheriestown the paper saide [SEP] Raccoons, if they are escaped or abandoned, tend to damage things - this is what has been happening for the past 20 years - but many organizations are trying to solve the problem.
+text_parts ['Escaped species abandoned photographyaccoons have been breeding Newton the wild for the past 20 years and have damaged corn crops, watermelon and melon farms, and rainbow trout hatcheriestown the paper saide ', ' Raccoons, if they are escaped or abandoned, tend to damage things - this is what has been happening for the past 20 years - but many organizations are trying to solve the problem.']
+advInxCut [17822, 1181, 1530, 3928, 6427, 7409, 18201, 1116, 1138, 1151, 8103, 8102, 1103, 4098, 1111, 1103, 1763, 1406, 1201, 1105, 1138, 4938, 11184, 8592, 117, 1447, 10212, 1320, 1105, 1143, 4934, 9464, 117, 1105, 21489, 17639, 15524, 15297, 3305, 1103, 2526, 1163, 1162, 102, 16890, 14566, 4199, 117, 1191, 1152, 1132, 5742, 1137, 3928, 117, 6613, 1106, 3290, 1614, 118, 1142, 1110, 1184, 1144, 1151, 5664, 1111, 1103, 1763, 1406, 1201, 118, 1133, 1242, 3722, 1132, 1774, 1106, 9474, 1103, 2463, 119]
+advText [('Escaped species abandoned photographyaccoons have been breeding Newton the wild for the past 20 years and have damaged corn crops, watermelon and melon farms, and rainbow trout hatcheriestown the paper saide ', ' Raccoons, if they are escaped or abandoned, tend to damage things - this is what has been happening for the past 20 years - but many organizations are trying to solve the problem.')]
+attack suc rate 92.31 %
+average # of queries: 3.8461538461538463.
+all perturbed tokens :  99
+total token lens     :  3051
+avg perturbed tokens :  7.62
+avg perturbation rate:  0.0324
+saved at sample  13.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+14.0  th document.
+decoded_text Czarek had to fight for attention : [SEP] Czarek had to engage in a fight to seek attention.
+text_parts ['Czarek had to fight for attention : ', ' Czarek had to engage in a fight to seek attention.']
+stgt:  [ [ C ] ] [ [zar ] ] [ [ek ] ] [ [ had ] ] [ [ to ] ] [ [ fight ] ] [ [ for ] ] [ [ attention ] ] : Czarek had to engage in a fight to seek attention.
+attention  ->  is
+decoded_text Czarek had to fight for is : [SEP] Czarek had to engage in a fight to seek attention.
+text_parts ['Czarek had to fight for is : ', ' Czarek had to engage in a fight to seek attention.']
+advInxCut [140, 8950, 4820, 1125, 1106, 2147, 1111, 1110, 131, 102, 140, 8950, 4820, 1125, 1106, 8306, 1107, 170, 2147, 1106, 5622, 2209, 119]
+advText [('Czarek had to fight for is : ', ' Czarek had to engage in a fight to seek attention.')]
+srcTxt:  Czarek had to fight for [ [ attention ] ] : Czarek had to engage in a fight to seek attention.
+advTxt:  Czarek had to fight for [ [ is ] ] : Czarek had to engage in a fight to seek attention.
+srcTxt:  ('Czarek had to fight for attention : ', ' Czarek had to engage in a fight to seek attention.')
+advTxt:  ('Czarek had to fight for is : ', ' Czarek had to engage in a fight to seek attention.')
+tLabel:  1
+targetTokens ['attention']
+toTokens ['is']
+sProbs:  [0.0002661165490280837, 0.9966893196105957, 0.0030445901211351156]
+aProbs:  [0.002161974785849452, 0.47274935245513916, 0.5250886678695679]
+attack suc rate 92.86 %
+average # of queries: 3.5714285714285716.
+all perturbed tokens :  113
+total token lens     :  3513
+avg perturbed tokens :  8.07
+avg perturbation rate:  0.0322
+saved at sample  14.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+15.0  th document.
+decoded_text The truth? [SEP] Is that true?
+text_parts ['The truth? ', ' Is that true?']
+stgt:  [ [ The ] ] [ [ truth ] ] [ [? ] ] Is that true?
+?  ->  1939
+decoded_text The truth 1939 [SEP] Is that true?
+text_parts ['The truth 1939 ', ' Is that true?']
+advInxCut [1109, 3062, 3061, 102, 2181, 1115, 2276, 136]
+advText [('The truth 1939 ', ' Is that true?')]
+srcTxt:  The truth [ [? ] ] Is that true?
+advTxt:  The truth [ [ 1939 ] ] Is that true?
+srcTxt:  ('The truth? ', ' Is that true?')
+advTxt:  ('The truth 1939 ', ' Is that true?')
+tLabel:  1
+targetTokens ['?']
+toTokens ['1939']
+sProbs:  [0.0006264606490731239, 0.9624225497245789, 0.03695090860128403]
+aProbs:  [0.02513435110449791, 0.08328079432249069, 0.8915848731994629]
+attack suc rate 93.33 %
+average # of queries: 3.3333333333333335.
+all perturbed tokens :  128
+total token lens     :  3983
+avg perturbed tokens :  8.53
+avg perturbation rate:  0.0321
+saved at sample  15.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+16.0  th document.
+decoded_text Tuppence frowned. [SEP] Tuppence beamed with delight.
+text_parts ['Tuppence frowned. ', ' Tuppence beamed with delight.']
+stgt:  [ [ Tu ] ] [ [ppe ] ] [ [nce ] ] [ [ frowned ] ] [ [. ] ] Tuppence beamed with delight.
+frowned  ->  action
+decoded_text Tuppence action. [SEP] Tuppence beamed with delight.
+text_parts ['Tuppence action. ', ' Tuppence beamed with delight.']
+advInxCut [17037, 20564, 3633, 2168, 119, 102, 17037, 20564, 3633, 25176, 1114, 13657, 119]
+advText [('Tuppence action. ', ' Tuppence beamed with delight.')]
+srcTxt:  Tuppence [ [ frowned ] ]. Tuppence beamed with delight.
+advTxt:  Tuppence [ [ action ] ]. Tuppence beamed with delight.
+srcTxt:  ('Tuppence frowned. ', ' Tuppence beamed with delight.')
+advTxt:  ('Tuppence action. ', ' Tuppence beamed with delight.')
+tLabel:  0
+targetTokens ['frowned']
+toTokens ['action']
+sProbs:  [0.9985477328300476, 0.00048761468497104943, 0.0009646860999055207]
+aProbs:  [0.005635205190628767, 0.007009892724454403, 0.9873549342155457]
+attack suc rate 93.75 %
+average # of queries: 3.125.
+all perturbed tokens :  144
+total token lens     :  4466
+avg perturbed tokens :  9.0
+avg perturbation rate:  0.0322
+saved at sample  16.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+17.0  th document.
+decoded_text What are you going to do about it?'' Tuppence frowned severely. [SEP] Tuppence wanted to know what the plan was?
+text_parts ["What are you going to do about it?'' Tuppence frowned severely. ", ' Tuppence wanted to know what the plan was?']
+stgt:  What are [ [ you ] ] [ [ going ] ] [ [ to ] ] do [ [ about ] ] [ [ it ] ]?'' [ [ Tu ] ] [ [ppe ] ]nce [ [ frowned ] ] severely. Tuppence wanted to know what the plan was?
+about  ->  years
+decoded_text What are you going to do years it?'' Tuppence frowned severely. [SEP] Tuppence wanted to know what the plan was?
+text_parts ["What are you going to do years it?'' Tuppence frowned severely. ", ' Tuppence wanted to know what the plan was?']
+advInxCut [1327, 1132, 1128, 1280, 1106, 1202, 1201, 1122, 136, 112, 112, 17037, 20564, 3633, 6804, 8669, 119, 102, 17037, 20564, 3633, 1458, 1106, 1221, 1184, 1103, 2197, 1108, 136]
+advText [("What are you going to do years it?'' Tuppence frowned severely. ", ' Tuppence wanted to know what the plan was?')]
+srcTxt:  What are you going to do [ [ about ] ] it?'' Tuppence frowned severely. Tuppence wanted to know what the plan was?
+advTxt:  What are you going to do [ [ years ] ] it?'' Tuppence frowned severely. Tuppence wanted to know what the plan was?
+srcTxt:  ("What are you going to do about it?'' Tuppence frowned severely. ", ' Tuppence wanted to know what the plan was?')
+advTxt:  ("What are you going to do years it?'' Tuppence frowned severely. ", ' Tuppence wanted to know what the plan was?')
+tLabel:  2
+targetTokens ['about']
+toTokens ['years']
+sProbs:  [0.0053635709919035435, 0.4449419677257538, 0.5496944785118103]
+aProbs:  [0.0029220690485090017, 0.6980887055397034, 0.2989892363548279]
+attack suc rate 94.12 %
+average # of queries: 2.9411764705882355.
+all perturbed tokens :  161
+total token lens     :  4978
+avg perturbed tokens :  9.47
+avg perturbation rate:  0.0323
+saved at sample  17.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+18.0  th document.
+decoded_text The credibility of the United States working with its European partners in NATO is on the line. [SEP] The United States currently enjoys high favorability among its European allies who trust it completely.
+text_parts ['The credibility of the United States working with its European partners in NATO is on the line. ', ' The United States currently enjoys high favorability among its European allies who trust it completely.']
+stgt:  The [ [ credibility ] ] [ [ of ] ] the [ [ United ] ] [ [ States ] ] working with its European [ [ partners ] ] [ [ in ] ] NATO [ [ is ] ] on the [ [ line ] ]. The United States currently enjoys high favorability among its European allies who trust it completely.
+decoded_text The credibility of the United States working with its European partners in NATO is on the line. [SEP] The United States currently enjoys high favorability among its European allies who trust it completely.
+text_parts ['The credibility of the United States working with its European partners in NATO is on the line. ', ' The United States currently enjoys high favorability among its European allies who trust it completely.']
+advInxCut [1109, 24315, 1104, 1103, 1244, 1311, 1684, 1114, 1157, 1735, 6449, 1107, 10017, 1110, 1113, 1103, 1413, 119, 102, 1109, 1244, 1311, 1971, 16615, 1344, 5010, 6328, 1621, 1157, 1735, 8224, 1150, 3496, 1122, 2423, 119]
+advText [('The credibility of the United States working with its European partners in NATO is on the line. ', ' The United States currently enjoys high favorability among its European allies who trust it completely.')]
+srcTxt:  The credibility of the United States working with its European partners in NATO is on the line. The United States currently enjoys high favorability among its European allies who trust it completely.
+advTxt:  The credibility of the United States working with its European partners in NATO is on the line. The United States currently enjoys high favorability among its European allies who trust it completely.
+srcTxt:  ('The credibility of the United States working with its European partners in NATO is on the line. ', ' The United States currently enjoys high favorability among its European allies who trust it completely.')
+advTxt:  ('The credibility of the United States working with its European partners in NATO is on the line. ', ' The United States currently enjoys high favorability among its European allies who trust it completely.')
+tLabel:  0
+targetTokens []
+toTokens []
+sProbs:  [0.48861587047576904, 0.005100975278764963, 0.506283164024353]
+aProbs:  [0.48861587047576904, 0.005100975278764963, 0.506283164024353]
+attack suc rate 94.44 %
+average # of queries: 2.7777777777777777.
+all perturbed tokens :  178
+total token lens     :  5526
+avg perturbed tokens :  9.89
+avg perturbation rate:  0.0322
+saved at sample  18.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+19.0  th document.
+decoded_text From here, many HIV researchers are putting their hopes on combining drug treatments with strategies that boost the immune system. [SEP] HIV researches don't think there's any hope for curing the disease.
+text_parts ['From here, many HIV researchers are putting their hopes on combining drug treatments with strategies that boost the immune system. ', " HIV researches don't think there's any hope for curing the disease."]
+stgt:  From [ [ here ] ], many [ [ HIV ] ] [ [ researchers ] ] are [ [ putting ] ] [ [ their ] ] [ [ hopes ] ] on combining drug treatments with strategies that [ [ boost ] ] the immune system [ [. ] ] HIV researches don't think there's any hope for curing the disease.
+0   HIV  ->  both   0.995327  ->  0.952894
+0   both  ->  all   0.952894  ->  0.94941
+0   all  ->  severely   0.94941  ->  0.948891
+0   severely  ->  ##volving   0.948891  ->  0.912852
+0   hopes  ->  performance   0.912852  ->  0.77494
+0   putting  ->  force   0.77494  ->  0.712124
+0   boost  ->  with   0.712124  ->  0.53524
+researchers  ->  margin
+decoded_text From here, manyvolving margin are force their performance on combining drug treatments with strategies that with the immune system. [SEP] HIV researches don't think there's any hope for curing the disease.
+text_parts ['From here, manyvolving margin are force their performance on combining drug treatments with strategies that with the immune system. ', " HIV researches don't think there's any hope for curing the disease."]
+advInxCut [1622, 1303, 117, 1242, 24828, 7464, 1132, 2049, 1147, 2099, 1113, 12459, 3850, 14115, 1114, 10700, 1115, 1114, 1103, 11650, 1449, 119, 102, 9622, 1844, 1279, 1202, 183, 112, 189, 1341, 1175, 112, 188, 1251, 2810, 1111, 16408, 3384, 1103, 3653, 119]
+advText [('From here, manyvolving margin are force their performance on combining drug treatments with strategies that with the immune system. ', " HIV researches don't think there's any hope for curing the disease.")]
+srcTxt:  From here, many [ [ HIV ] ] [ [ researchers ] ] are [ [ putting ] ] their [ [ hopes ] ] on combining drug treatments with strategies that [ [ boost ] ] the immune system. HIV researches don't think there's any hope for curing the disease.
+advTxt:  From here, many [ [volving ] ] [ [ margin ] ] are [ [ force ] ] their [ [ performance ] ] on combining drug treatments with strategies that [ [ with ] ] the immune system. HIV researches don't think there's any hope for curing the disease.
+srcTxt:  ('From here, many HIV researchers are putting their hopes on combining drug treatments with strategies that boost the immune system. ', " HIV researches don't think there's any hope for curing the disease.")
+advTxt:  ('From here, manyvolving margin are force their performance on combining drug treatments with strategies that with the immune system. ', " HIV researches don't think there's any hope for curing the disease.")
+tLabel:  0
+targetTokens ['HIV', 'hopes', 'putting', 'boost', 'researchers']
+toTokens ['##volving', 'performance', 'force', 'with', 'margin']
+sProbs:  [0.9953271150588989, 0.0003107519878540188, 0.004362175706773996]
+aProbs:  [0.3857761025428772, 0.0021407941821962595, 0.6120830774307251]
+attack suc rate 94.74000000000001 %
+average # of queries: 3.473684210526316.
+all perturbed tokens :  200
+total token lens     :  6116
+avg perturbed tokens :  10.53
+avg perturbation rate:  0.0327
+saved at sample  19.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+20.0  th document.
+decoded_text Answer? said Julius. [SEP] Julius needed an answer right then.
+text_parts ['Answer? said Julius. ', ' Julius needed an answer right then.']
+stgt:  [ [ Answer ] ] [ [? ] ] [ [ said ] ] [ [ Julius ] ] [ [. ] ] Julius needed an answer right then.
+2   said  ->  path   0.97165  ->  0.864446
+2   .  ->  Combat   0.864446  ->  0.758904
+decoded_text Answer? path Julius Combat [SEP] Julius needed an answer right then.
+text_parts ['Answer? path Julius Combat ', ' Julius needed an answer right then.']
+advInxCut [26018, 136, 3507, 10315, 10314, 102, 10315, 1834, 1126, 2590, 1268, 1173, 119]
+advText [('Answer? path Julius Combat ', ' Julius needed an answer right then.')]
+attack suc rate 90.0 %
+average # of queries: 4.95.
+all perturbed tokens :  222
+total token lens     :  6719
+avg perturbed tokens :  11.1
+avg perturbation rate:  0.033
+saved at sample  20.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+21.0  th document.
+decoded_text But I'll take up my stand somewhere near, and when he comes out of the building I'll drop a handkerchief or something, and off you go!'' [SEP] I'll watch and when he comes out I'll give you a signal.
+text_parts ["But I'll take up my stand somewhere near, and when he comes out of the building I'll drop a handkerchief or something, and off you go!'' ", " I'll watch and when he comes out I'll give you a signal."]
+stgt:  [ [ But ] ] [ [ I ] ] [ ['] ] [ [ ll ] ] take up my [ [ stand ] ] somewhere near, and when he comes out [ [ of ] ] the building I'll [ [ drop ] ] a handkerchief or something, and off you go [ [! ] ]'' I'll watch and when he comes out I'll give you a signal.
+decoded_text But I'll take up my stand somewhere near, and when he comes out of the building I'll drop a handkerchief or something, and off you go!'' [SEP] I'll watch and when he comes out I'll give you a signal.
+text_parts ["But I'll take up my stand somewhere near, and when he comes out of the building I'll drop a handkerchief or something, and off you go!'' ", " I'll watch and when he comes out I'll give you a signal."]
+advInxCut [1252, 146, 112, 1325, 1321, 1146, 1139, 2484, 4476, 1485, 117, 1105, 1165, 1119, 2502, 1149, 1104, 1103, 1459, 146, 112, 1325, 3968, 170, 27570, 1137, 1380, 117, 1105, 1228, 1128, 1301, 106, 112, 112, 102, 146, 112, 1325, 2824, 1105, 1165, 1119, 2502, 1149, 146, 112, 1325, 1660, 1128, 170, 4344, 119]
+advText [("But I'll take up my stand somewhere near, and when he comes out of the building I'll drop a handkerchief or something, and off you go!'' ", " I'll watch and when he comes out I'll give you a signal.")]
+srcTxt:  But I'll take up my stand somewhere near, and when he comes out of the building I'll drop a handkerchief or something, and off you go!'' I'll watch and when he comes out I'll give you a signal.
+advTxt:  But I'll take up my stand somewhere near, and when he comes out of the building I'll drop a handkerchief or something, and off you go!'' I'll watch and when he comes out I'll give you a signal.
+srcTxt:  ("But I'll take up my stand somewhere near, and when he comes out of the building I'll drop a handkerchief or something, and off you go!'' ", " I'll watch and when he comes out I'll give you a signal.")
+advTxt:  ("But I'll take up my stand somewhere near, and when he comes out of the building I'll drop a handkerchief or something, and off you go!'' ", " I'll watch and when he comes out I'll give you a signal.")
+tLabel:  1
+targetTokens []
+toTokens []
+sProbs:  [0.5501942038536072, 0.270938515663147, 0.17886723577976227]
+aProbs:  [0.5501942038536072, 0.270938515663147, 0.17886723577976227]
+attack suc rate 90.48 %
+average # of queries: 4.714285714285714.
+all perturbed tokens :  244
+total token lens     :  7375
+avg perturbed tokens :  11.62
+avg perturbation rate:  0.0331
+saved at sample  21.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+22.0  th document.
+decoded_text and uh it may be a Mexican pizza sometimes both together um along with and see it which is really funny too you know normally she goes straight for vegetables except when she's having French fries [SEP] She often eats vegetables unless she's having french fries.
+text_parts ["and uh it may be a Mexican pizza sometimes both together um along with and see it which is really funny too you know normally she goes straight for vegetables except when she's having French fries ", " She often eats vegetables unless she's having french fries."]
+stgt:  and uh it may be a Mexican [ [ pizza ] ] sometimes both together um along with and see it which is really funny too you know normally [ [ she ] ] goes straight for [ [ vegetables ] ] [ [ except ] ] when [ [ she ] ]'s having [ [ French ] ] [ [ f ] ] [ [ries ] ] She often eats vegetables unless she's having french fries.
+1   French  ->  club   0.968296  ->  0.54439
+1   ##ries  ->  Gap   0.54439  ->  0.4436
+Gap  ->  episode
+decoded_text and uh it may be a Mexican pizza sometimes both together um along with and see it which is really funny too you know normally she goes straight for vegetables except when she's having club f episode [SEP] She often eats vegetables unless she's having french fries.
+text_parts ["and uh it may be a Mexican pizza sometimes both together um along with and see it which is really funny too you know normally she goes straight for vegetables except when she's having club f episode ", " She often eats vegetables unless she's having french fries."]
+advInxCut [1105, 14863, 1122, 1336, 1129, 170, 4112, 13473, 2121, 1241, 1487, 15276, 1373, 1114, 1105, 1267, 1122, 1134, 1110, 1541, 6276, 1315, 1128, 1221, 5156, 1131, 2947, 2632, 1111, 11872, 2589, 1165, 1131, 112, 188, 1515, 1526, 175, 2004, 102, 1153, 1510, 24347, 11872, 4895, 1131, 112, 188, 1515, 175, 18129, 175, 3377, 119]
+advText [("and uh it may be a Mexican pizza sometimes both together um along with and see it which is really funny too you know normally she goes straight for vegetables except when she's having club f episode ", " She often eats vegetables unless she's having french fries.")]
+srcTxt:  and uh it may be a Mexican pizza sometimes both together um along with and see it which is really funny too you know normally she goes straight for vegetables except when she's having [ [ French ] ] f [ [ries ] ] She often eats vegetables unless she's having french fries.
+advTxt:  and uh it may be a Mexican pizza sometimes both together um along with and see it which is really funny too you know normally she goes straight for vegetables except when she's having [ [ club ] ] f [ [ episode ] ] She often eats vegetables unless she's having french fries.
+srcTxt:  ("and uh it may be a Mexican pizza sometimes both together um along with and see it which is really funny too you know normally she goes straight for vegetables except when she's having French fries ", " She often eats vegetables unless she's having french fries.")
+advTxt:  ("and uh it may be a Mexican pizza sometimes both together um along with and see it which is really funny too you know normally she goes straight for vegetables except when she's having club f episode ", " She often eats vegetables unless she's having french fries.")
+tLabel:  1
+targetTokens ['French', '##ries']
+toTokens ['club', 'episode']
+sProbs:  [0.014986575581133366, 0.968295693397522, 0.016717759892344475]
+aProbs:  [0.0772981271147728, 0.19866929948329926, 0.7240326404571533]
+attack suc rate 90.91 %
+average # of queries: 4.818181818181818.
+all perturbed tokens :  268
+total token lens     :  8085
+avg perturbed tokens :  12.18
+avg perturbation rate:  0.0331
+saved at sample  22.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+23.0  th document.
+decoded_text It hopes to bring on another 25 or 35 people when the new building opens next fall. [SEP] They already have a waiting list for the new building.
+text_parts ['It hopes to bring on another 25 or 35 people when the new building opens next fall. ', ' They already have a waiting list for the new building.']
+stgt:  [ [ It ] ] hopes to [ [ bring ] ] on another [ [ 25 ] ] or [ [ 35 ] ] people when the new building [ [ opens ] ] [ [ next ] ] [ [ fall ] ] [ [. ] ] They already have a waiting list for the new building.
+2   opens  ->  Jack   0.730163  ->  0.640136
+2   Jack  ->  than   0.640136  ->  0.60957
+2   than  ->  another   0.60957  ->  0.560199
+2   .  ->  directed   0.560199  ->  0.491622
+25  ->  use
+decoded_text It hopes to bring on another use or 35 people when the new building another next fall directed [SEP] They already have a waiting list for the new building.
+text_parts ['It hopes to bring on another use or 35 people when the new building another next fall directed ', ' They already have a waiting list for the new building.']
+advInxCut [1135, 7816, 1106, 2498, 1113, 1330, 1329, 1137, 2588, 1234, 1165, 1103, 1207, 1459, 1330, 1397, 2303, 2002, 102, 1220, 1640, 1138, 170, 2613, 2190, 1111, 1103, 1207, 1459, 119]
+advText [('It hopes to bring on another use or 35 people when the new building another next fall directed ', ' They already have a waiting list for the new building.')]
+srcTxt:  It hopes to bring on another [ [ 25 ] ] or 35 people when the new building [ [ opens ] ] next fall [ [. ] ] They already have a waiting list for the new building.
+advTxt:  It hopes to bring on another [ [ use ] ] or 35 people when the new building [ [ another ] ] next fall [ [ directed ] ] They already have a waiting list for the new building.
+srcTxt:  ('It hopes to bring on another 25 or 35 people when the new building opens next fall. ', ' They already have a waiting list for the new building.')
+advTxt:  ('It hopes to bring on another use or 35 people when the new building another next fall directed ', ' They already have a waiting list for the new building.')
+tLabel:  2
+targetTokens ['opens', '.', '25']
+toTokens ['another', 'directed', 'use']
+sProbs:  [0.2426815778017044, 0.027155501767992973, 0.7301629185676575]
+aProbs:  [0.628294825553894, 0.013715243898332119, 0.3579899072647095]
+attack suc rate 91.3 %
+average # of queries: 4.869565217391305.
+all perturbed tokens :  295
+total token lens     :  8825
+avg perturbed tokens :  12.83
+avg perturbation rate:  0.0334
+saved at sample  23.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+24.0  th document.
+decoded_text uh - huh oh yeah i hadn't heard that one let's see i can't oh gosh that that probably wipes out my whole inventory of TV shows other than um PBS i [SEP] The whole inventory of TV shows was wiped out.
+text_parts ["uh - huh oh yeah i hadn't heard that one let's see i can't oh gosh that that probably wipes out my whole inventory of TV shows other than um PBS i ", ' The whole inventory of TV shows was wiped out.']
+stgt:  uh - huh oh yeah i hadn't heard that one let's see i can't oh gosh [ [ that ] ] that [ [ probably ] ] wipes out my whole [ [ inventory ] ] [ [ of ] ] [ [ TV ] ] [ [ shows ] ] [ [ other ] ] [ [ than ] ] um PBS i The whole inventory of TV shows was wiped out.
+decoded_text uh - huh oh yeah i hadn't heard that one let's see i can't oh gosh that that probably wipes out my whole inventory of TV shows other than um PBS i [SEP] The whole inventory of TV shows was wiped out.
+text_parts ["uh - huh oh yeah i hadn't heard that one let's see i can't oh gosh that that probably wipes out my whole inventory of TV shows other than um PBS i ", ' The whole inventory of TV shows was wiped out.']
+advInxCut [14863, 118, 11159, 9294, 8147, 178, 1125, 183, 112, 189, 1767, 1115, 1141, 1519, 112, 188, 1267, 178, 11019, 183, 112, 189, 9294, 1301, 2737, 1115, 1115, 1930, 14182, 1116, 1149, 1139, 2006, 14952, 1104, 1794, 2196, 1168, 1190, 15276, 14163, 178, 102, 1109, 2006, 14952, 1104, 1794, 2196, 1108, 7960, 1149, 119]
+advText [("uh - huh oh yeah i hadn't heard that one let's see i can't oh gosh that that probably wipes out my whole inventory of TV shows other than um PBS i ", ' The whole inventory of TV shows was wiped out.')]
+srcTxt:  uh - huh oh yeah i hadn't heard that one let's see i can't oh gosh that that probably wipes out my whole inventory of TV shows other than um PBS i The whole inventory of TV shows was wiped out.
+advTxt:  uh - huh oh yeah i hadn't heard that one let's see i can't oh gosh that that probably wipes out my whole inventory of TV shows other than um PBS i The whole inventory of TV shows was wiped out.
+srcTxt:  ("uh - huh oh yeah i hadn't heard that one let's see i can't oh gosh that that probably wipes out my whole inventory of TV shows other than um PBS i ", ' The whole inventory of TV shows was wiped out.')
+advTxt:  ("uh - huh oh yeah i hadn't heard that one let's see i can't oh gosh that that probably wipes out my whole inventory of TV shows other than um PBS i ", ' The whole inventory of TV shows was wiped out.')
+tLabel:  0
+targetTokens []
+toTokens []
+sProbs:  [0.0819985494017601, 0.7788535356521606, 0.13914790749549866]
+aProbs:  [0.0819985494017601, 0.7788535356521606, 0.13914790749549866]
+attack suc rate 91.67 %
+average # of queries: 4.666666666666667.
+all perturbed tokens :  322
+total token lens     :  9618
+avg perturbed tokens :  13.42
+avg perturbation rate:  0.0335
+saved at sample  24.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+25.0  th document.
+decoded_text The next morning they ate dry bread, two strips of lean meat, and two eggs fried in animal fat on a skillet of black scorched iron. [SEP] They ate a hearty breakfast before heading out for the day.
+text_parts ['The next morning they ate dry bread, two strips of lean meat, and two eggs fried in animal fat on a skillet of black scorched iron. ', ' They ate a hearty breakfast before heading out for the day.']
+stgt:  The [ [ next ] ] [ [ morning ] ] [ [ they ] ] ate dry bread, two [ [ strips ] ] of lean meat [ [, ] ] [ [ and ] ] two [ [ eggs ] ] fried in animal fat on a skill [ [et ] ] of black scorched iron. They ate a hearty breakfast before heading out for the day.
+decoded_text The next morning they ate dry bread, two strips of lean meat, and two eggs fried in animal fat on a skillet of black scorched iron. [SEP] They ate a hearty breakfast before heading out for the day.
+text_parts ['The next morning they ate dry bread, two strips of lean meat, and two eggs fried in animal fat on a skillet of black scorched iron. ', ' They ate a hearty breakfast before heading out for the day.']
+advInxCut [1109, 1397, 2106, 1152, 8756, 3712, 8162, 117, 1160, 13507, 1104, 8290, 6092, 117, 1105, 1160, 6471, 15688, 1107, 3724, 7930, 1113, 170, 7864, 2105, 1104, 1602, 188, 19248, 6428, 3926, 119, 102, 1220, 8756, 170, 1762, 1183, 6462, 1196, 5312, 1149, 1111, 1103, 1285, 119]
+advText [('The next morning they ate dry bread, two strips of lean meat, and two eggs fried in animal fat on a skillet of black scorched iron. ', ' They ate a hearty breakfast before heading out for the day.')]
+srcTxt:  The next morning they ate dry bread, two strips of lean meat, and two eggs fried in animal fat on a skillet of black scorched iron. They ate a hearty breakfast before heading out for the day.
+advTxt:  The next morning they ate dry bread, two strips of lean meat, and two eggs fried in animal fat on a skillet of black scorched iron. They ate a hearty breakfast before heading out for the day.
+srcTxt:  ('The next morning they ate dry bread, two strips of lean meat, and two eggs fried in animal fat on a skillet of black scorched iron. ', ' They ate a hearty breakfast before heading out for the day.')
+advTxt:  ('The next morning they ate dry bread, two strips of lean meat, and two eggs fried in animal fat on a skillet of black scorched iron. ', ' They ate a hearty breakfast before heading out for the day.')
+tLabel:  2
+targetTokens []
+toTokens []
+sProbs:  [0.8132529258728027, 0.001986222341656685, 0.18476086854934692]
+aProbs:  [0.8132529258728027, 0.001986222341656685, 0.18476086854934692]
+attack suc rate 92.0 %
+average # of queries: 4.48.
+all perturbed tokens :  349
+total token lens     :  10457
+avg perturbed tokens :  13.96
+avg perturbation rate:  0.0334
+saved at sample  25.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+26.0  th document.
+decoded_text The National Football League semifinals are set. [SEP] They were unable to disclose when the dates would be set.
+text_parts ['The National Football League semifinals are set. ', ' They were unable to disclose when the dates would be set.']
+stgt:  [ [ The ] ] [ [ National ] ] [ [ Football ] ] [ [ League ] ] [ [ semifinals ] ] [ [ are ] ] [ [ set ] ] [ [. ] ] They were unable to disclose when the dates would be set.
+decoded_text The National Football League semifinals are set. [SEP] They were unable to disclose when the dates would be set.
+text_parts ['The National Football League semifinals are set. ', ' They were unable to disclose when the dates would be set.']
+advInxCut [1109, 1305, 2289, 1453, 11499, 1132, 1383, 119, 102, 1220, 1127, 3372, 1106, 6187, 20316, 1165, 1103, 4595, 1156, 1129, 1383, 119]
+advText [('The National Football League semifinals are set. ', ' They were unable to disclose when the dates would be set.')]
+srcTxt:  The National Football League semifinals are set. They were unable to disclose when the dates would be set.
+advTxt:  The National Football League semifinals are set. They were unable to disclose when the dates would be set.
+srcTxt:  ('The National Football League semifinals are set. ', ' They were unable to disclose when the dates would be set.')
+advTxt:  ('The National Football League semifinals are set. ', ' They were unable to disclose when the dates would be set.')
+tLabel:  2
+targetTokens []
+toTokens []
+sProbs:  [0.9761850237846375, 0.0004504241805989295, 0.023364460095763206]
+aProbs:  [0.9761850237846375, 0.0004504241805989295, 0.023364460095763206]
+attack suc rate 92.31 %
+average # of queries: 4.3076923076923075.
+all perturbed tokens :  376
+total token lens     :  11318
+avg perturbed tokens :  14.46
+avg perturbation rate:  0.0332
+saved at sample  26.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+27.0  th document.
+decoded_text uh i don't know i i have mixed emotions about him uh sometimes i like him but at the same times i love to see somebody beat him [SEP] I like him for the most part, but would still enjoy seeing someone beat him.
+text_parts ["uh i don't know i i have mixed emotions about him uh sometimes i like him but at the same times i love to see somebody beat him ", ' I like him for the most part, but would still enjoy seeing someone beat him.']
+stgt:  uh i don't know i i have mixed emotions about him uh sometimes i [ [ like ] ] [ [ him ] ] [ [ but ] ] [ [ at ] ] the same times i [ [ love ] ] to [ [ see ] ] [ [ somebody ] ] [ [ beat ] ] him I like him for the most part, but would still enjoy seeing someone beat him.
+1   beat  ->  ##weet   0.987048  ->  0.932819
+##weet  ->  1773
+decoded_text uh i don't know i i have mixed emotions about him uh sometimes i like him but at the same times i love to see somebody 1773 him [SEP] I like him for the most part, but would still enjoy seeing someone beat him.
+text_parts ["uh i don't know i i have mixed emotions about him uh sometimes i like him but at the same times i love to see somebody 1773 him ", ' I like him for the most part, but would still enjoy seeing someone beat him.']
+advInxCut [14863, 178, 1202, 183, 112, 189, 1221, 178, 178, 1138, 3216, 6288, 1164, 1140, 14863, 2121, 178, 1176, 1140, 1133, 1120, 1103, 1269, 1551, 178, 1567, 1106, 1267, 9994, 21676, 1140, 102, 146, 1176, 1140, 1111, 1103, 1211, 1226, 117, 1133, 1156, 1253, 5548, 3195, 1800, 3222, 1140, 119]
+advText [("uh i don't know i i have mixed emotions about him uh sometimes i like him but at the same times i love to see somebody 1773 him ", ' I like him for the most part, but would still enjoy seeing someone beat him.')]
+srcTxt:  uh i don't know i i have mixed emotions about him uh sometimes i like him but at the same times i love to see somebody [ [ beat ] ] him I like him for the most part, but would still enjoy seeing someone beat him.
+advTxt:  uh i don't know i i have mixed emotions about him uh sometimes i like him but at the same times i love to see somebody [ [ 1773 ] ] him I like him for the most part, but would still enjoy seeing someone beat him.
+srcTxt:  ("uh i don't know i i have mixed emotions about him uh sometimes i like him but at the same times i love to see somebody beat him ", ' I like him for the most part, but would still enjoy seeing someone beat him.')
+advTxt:  ("uh i don't know i i have mixed emotions about him uh sometimes i like him but at the same times i love to see somebody 1773 him ", ' I like him for the most part, but would still enjoy seeing someone beat him.')
+tLabel:  1
+targetTokens ['beat']
+toTokens ['1773']
+sProbs:  [0.0007106802659109235, 0.9870479702949524, 0.012241290882229805]
+aProbs:  [0.0024156076833605766, 0.35486525297164917, 0.6427191495895386]
+attack suc rate 92.58999999999999 %
+average # of queries: 4.222222222222222.
+all perturbed tokens :  404
+total token lens     :  12228
+avg perturbed tokens :  14.96
+avg perturbation rate:  0.033
+saved at sample  27.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+28.0  th document.
+decoded_text He writes that it's the first time he's added such a track. [SEP] This is the first time he's added such a track.
+text_parts ["He writes that it's the first time he's added such a track. ", " This is the first time he's added such a track."]
+stgt:  He writes that [ [ it ] ]'s [ [ the ] ] [ [ first ] ] [ [ time ] ] he's [ [ added ] ] [ [ such ] ] a [ [ track ] ] [ [. ] ] This is the first time he's added such a track.
+first  ->  ：
+decoded_text He writes that it's the ： time he's added such a track. [SEP] This is the first time he's added such a track.
+text_parts ["He writes that it's the ： time he's added such a track. ", " This is the first time he's added such a track."]
+advInxCut [1124, 6474, 1115, 1122, 112, 188, 1103, 1102, 1159, 1119, 112, 188, 1896, 1216, 170, 1854, 119, 102, 1188, 1110, 1103, 1148, 1159, 1119, 112, 188, 1896, 1216, 170, 1854, 119]
+advText [("He writes that it's the ： time he's added such a track. ", " This is the first time he's added such a track.")]
+srcTxt:  He writes that it's the [ [ first ] ] time he's added such a track. This is the first time he's added such a track.
+advTxt:  He writes that it's the [ [ ： ] ] time he's added such a track. This is the first time he's added such a track.
+srcTxt:  ("He writes that it's the first time he's added such a track. ", " This is the first time he's added such a track.")
+advTxt:  ("He writes that it's the ： time he's added such a track. ", " This is the first time he's added such a track.")
+tLabel:  1
+targetTokens ['first']
+toTokens ['：']
+sProbs:  [0.0006140839541330934, 0.9964721202850342, 0.002913769567385316]
+aProbs:  [0.31678831577301025, 0.2728619873523712, 0.41034969687461853]
+attack suc rate 92.86 %
+average # of queries: 4.071428571428571.
+all perturbed tokens :  433
+total token lens     :  13169
+avg perturbed tokens :  15.46
+avg perturbation rate:  0.0329
+saved at sample  28.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+29.0  th document.
+decoded_text She hates me.'' [SEP] She loves me.
+text_parts ["She hates me.'' ", ' She loves me.']
+stgt:  [ [ She ] ] [ [ hates ] ] [ [ me ] ] [ [. ] ] [ ['] ] [ ['] ] She loves me.
+hates  ->  1990
+decoded_text She 1990 me.'' [SEP] She loves me.
+text_parts ["She 1990 me.'' ", ' She loves me.']
+advInxCut [1153, 1997, 1143, 119, 112, 112, 102, 1153, 7871, 1143, 119]
+advText [("She 1990 me.'' ", ' She loves me.')]
+srcTxt:  She [ [ hates ] ] me.'' She loves me.
+advTxt:  She [ [ 1990 ] ] me.'' She loves me.
+srcTxt:  ("She hates me.'' ", ' She loves me.')
+advTxt:  ("She 1990 me.'' ", ' She loves me.')
+tLabel:  0
+targetTokens ['hates']
+toTokens ['1990']
+sProbs:  [0.999104917049408, 0.0002558188862167299, 0.0006392566137947142]
+aProbs:  [0.0037903410848230124, 0.03191833943128586, 0.9642913937568665]
+attack suc rate 93.10000000000001 %
+average # of queries: 3.9655172413793105.
+all perturbed tokens :  463
+total token lens     :  14121
+avg perturbed tokens :  15.97
+avg perturbation rate:  0.0328
+saved at sample  29.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+30.0  th document.
+decoded_text She would be almost certainly sent to you under an assumed one. [SEP] The man told the other man that she would be sent to him.
+text_parts ['She would be almost certainly sent to you under an assumed one. ', ' The man told the other man that she would be sent to him.']
+stgt:  [ [ She ] ] [ [ would ] ] [ [ be ] ] [ [ almost ] ] [ [ certainly ] ] [ [ sent ] ] [ [ to ] ] [ [ you ] ] under an assumed one. The man told the other man that she would be sent to him.
+She  ->  ten
+decoded_text ten would be almost certainly sent to you under an assumed one. [SEP] The man told the other man that she would be sent to him.
+text_parts ['ten would be almost certainly sent to you under an assumed one. ', ' The man told the other man that she would be sent to him.']
+advInxCut [1995, 1156, 1129, 1593, 4664, 1850, 1106, 1128, 1223, 1126, 4260, 1141, 119, 102, 1109, 1299, 1500, 1103, 1168, 1299, 1115, 1131, 1156, 1129, 1850, 1106, 1140, 119]
+advText [('ten would be almost certainly sent to you under an assumed one. ', ' The man told the other man that she would be sent to him.')]
+srcTxt:  [ [ She ] ] would be almost certainly sent to you under an assumed one. The man told the other man that she would be sent to him.
+advTxt:  [ [ ten ] ] would be almost certainly sent to you under an assumed one. The man told the other man that she would be sent to him.
+srcTxt:  ('She would be almost certainly sent to you under an assumed one. ', ' The man told the other man that she would be sent to him.')
+advTxt:  ('ten would be almost certainly sent to you under an assumed one. ', ' The man told the other man that she would be sent to him.')
+tLabel:  2
+targetTokens ['She']
+toTokens ['ten']
+sProbs:  [0.4042278230190277, 0.01590077392756939, 0.579871416091919]
+aProbs:  [0.7277781367301941, 0.008877387270331383, 0.26334449648857117]
+attack suc rate 93.33 %
+average # of queries: 3.966666666666667.
+all perturbed tokens :  494
+total token lens     :  15101
+avg perturbed tokens :  16.47
+avg perturbation rate:  0.0327
+saved at sample  30.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+31.0  th document.
+decoded_text Don't miss the open - air market close by the wharves. [SEP] The open - air market near the wharves can't be missed.
+text_parts ["Don't miss the open - air market close by the wharves. ", " The open - air market near the wharves can't be missed."]
+stgt:  Do n [ ['] ] [ [ t ] ] [ [ miss ] ] the [ [ open ] ] - [ [ air ] ] [ [ market ] ] close by the [ [ w ] ] [ [har ] ]ves. The open - air market near the wharves can't be missed.
+market  ->  House
+decoded_text Don't miss the open - air House close by the wharves. [SEP] The open - air market near the wharves can't be missed.
+text_parts ["Don't miss the open - air House close by the wharves. ", " The open - air market near the wharves can't be missed."]
+advInxCut [2091, 183, 112, 189, 5529, 1103, 1501, 118, 1586, 1585, 1601, 1118, 1103, 192, 7111, 5710, 119, 102, 1109, 1501, 118, 1586, 2319, 1485, 1103, 192, 7111, 5710, 11019, 183, 112, 189, 1129, 4007, 119]
+advText [("Don't miss the open - air House close by the wharves. ", " The open - air market near the wharves can't be missed.")]
+srcTxt:  Don't miss the open - air [ [ market ] ] close by the wharves. The open - air market near the wharves can't be missed.
+advTxt:  Don't miss the open - air [ [ House ] ] close by the wharves. The open - air market near the wharves can't be missed.
+srcTxt:  ("Don't miss the open - air market close by the wharves. ", " The open - air market near the wharves can't be missed.")
+advTxt:  ("Don't miss the open - air House close by the wharves. ", " The open - air market near the wharves can't be missed.")
+tLabel:  1
+targetTokens ['market']
+toTokens ['House']
+sProbs:  [0.0006011821678839624, 0.9956047534942627, 0.0037941134069114923]
+aProbs:  [0.7939011454582214, 0.04863261431455612, 0.15746627748012543]
+attack suc rate 93.55 %
+average # of queries: 4.064516129032258.
+all perturbed tokens :  526
+total token lens     :  16116
+avg perturbed tokens :  16.97
+avg perturbation rate:  0.0326
+saved at sample  31.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+32.0  th document.
+decoded_text The Times says this tracking list is drawn up from information from bookstores, but publishers say they routinely call up the Times to tip them off to books selling with increasing momentum so that they can be added to the tracking list. [SEP] Times is lying about drawing up lists from the bookstores.
+text_parts ['The Times says this tracking list is drawn up from information from bookstores, but publishers say they routinely call up the Times to tip them off to books selling with increasing momentum so that they can be added to the tracking list. ', ' Times is lying about drawing up lists from the bookstores.']
+stgt:  The Times says this tracking list is drawn up from [ [ information ] ] from bookstores, but [ [ publishers ] ] say [ [ they ] ] [ [ routinely ] ] [ [ call ] ] up the Times [ [ to ] ] tip them off to [ [ books ] ] selling with increasing momentum so that they can be [ [ added ] ] to the tracking list. Times is lying about drawing up lists from the bookstores.
+2   call  ->  killers   0.96444  ->  0.924601
+2   killers  ->  reared   0.924601  ->  0.862026
+2   publishers  ->  chaplain   0.862026  ->  0.833573
+2   chaplain  ->  ##weet   0.833573  ->  0.786759
+2   they  ->  my   0.786759  ->  0.705527
+2   my  ->  ##ed   0.705527  ->  0.607227
+routinely  ->  species
+decoded_text The Times says this tracking list is drawn up from information from bookstores, butweet sayed species reared up the Times to tip them off to books selling with increasing momentum so that they can be added to the tracking list. [SEP] Times is lying about drawing up lists from the bookstores.
+text_parts ['The Times says this tracking list is drawn up from information from bookstores, butweet sayed species reared up the Times to tip them off to books selling with increasing momentum so that they can be added to the tracking list. ', ' Times is lying about drawing up lists from the bookstores.']
+advInxCut [1109, 2706, 1867, 1142, 10066, 2190, 1110, 3795, 1146, 1121, 1869, 1121, 27714, 1116, 117, 1133, 24887, 1474, 1174, 1530, 26235, 1146, 1103, 2706, 1106, 5580, 1172, 1228, 1106, 2146, 4147, 1114, 4138, 11550, 1177, 1115, 1152, 1169, 1129, 1896, 1106, 1103, 10066, 2190, 119, 102, 2706, 1110, 4009, 1164, 4619, 1146, 6802, 1121, 1103, 27714, 1116, 119]
+advText [('The Times says this tracking list is drawn up from information from bookstores, butweet sayed species reared up the Times to tip them off to books selling with increasing momentum so that they can be added to the tracking list. ', ' Times is lying about drawing up lists from the bookstores.')]
+srcTxt:  The Times says this tracking list is drawn up from information from bookstores, but [ [ publishers ] ] say [ [ they ] ] [ [ routinely ] ] [ [ call ] ] up the Times to tip them off to books selling with increasing momentum so that they can be added to the tracking list. Times is lying about drawing up lists from the bookstores.
+advTxt:  The Times says this tracking list is drawn up from information from bookstores, but [ [weet ] ] say [ [ed ] ] [ [ species ] ] [ [ reared ] ] up the Times to tip them off to books selling with increasing momentum so that they can be added to the tracking list. Times is lying about drawing up lists from the bookstores.
+srcTxt:  ('The Times says this tracking list is drawn up from information from bookstores, but publishers say they routinely call up the Times to tip them off to books selling with increasing momentum so that they can be added to the tracking list. ', ' Times is lying about drawing up lists from the bookstores.')
+advTxt:  ('The Times says this tracking list is drawn up from information from bookstores, butweet sayed species reared up the Times to tip them off to books selling with increasing momentum so that they can be added to the tracking list. ', ' Times is lying about drawing up lists from the bookstores.')
+tLabel:  2
+targetTokens ['call', 'publishers', 'they', 'routinely']
+toTokens ['reared', '##weet', '##ed', 'species']
+sProbs:  [0.0039800130762159824, 0.03157990053296089, 0.9644400477409363]
+aProbs:  [0.012278793379664421, 0.5064085125923157, 0.48131272196769714]
+attack suc rate 93.75 %
+average # of queries: 4.15625.
+all perturbed tokens :  562
+total token lens     :  17189
+avg perturbed tokens :  17.56
+avg perturbation rate:  0.0327
+saved at sample  32.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+33.0  th document.
+decoded_text and the nurses aren't no see you have to pay that [SEP] You have to pay for that if social security won't cover it.
+text_parts ["and the nurses aren't no see you have to pay that ", " You have to pay for that if social security won't cover it."]
+stgt:  and the nurses [ [ are ] ] n'[ [ t ] ] no [ [ see ] ] [ [ you ] ] [ [ have ] ] [ [ to ] ] [ [ pay ] ] [ [ that ] ] You have to pay for that if social security won't cover it.
+2   have  ->  were   0.99731  ->  0.996284
+2   were  ->  district   0.996284  ->  0.993492
+2   pay  ->  and   0.993492  ->  0.991708
+2   and  ->  Aidan   0.991708  ->  0.987708
+2   Aidan  ->  it   0.987708  ->  0.975249
+2   to  ->  May   0.975249  ->  0.974233
+2   May  ->  don   0.974233  ->  0.972964
+2   are  ->  waiting   0.972964  ->  0.962797
+2   t  ->  ##weet   0.962797  ->  0.93981
+2   see  ->  You   0.93981  ->  0.927999
+decoded_text and the nurses waiting n 'weet no You you district don it that [SEP] You have to pay for that if social security won't cover it.
+text_parts ["and the nurses waiting n 'weet no You you district don it that ", " You have to pay for that if social security won't cover it."]
+advInxCut [1105, 1103, 13318, 2613, 183, 112, 24887, 1185, 1192, 1128, 1629, 1274, 1122, 1115, 102, 1192, 1138, 1106, 2653, 1111, 1115, 1191, 1934, 2699, 192, 1186, 183, 112, 189, 2267, 1122, 119]
+advText [("and the nurses waiting n 'weet no You you district don it that ", " You have to pay for that if social security won't cover it.")]
+attack suc rate 90.91 %
+average # of queries: 4.575757575757576.
+all perturbed tokens :  598
+total token lens     :  18294
+avg perturbed tokens :  18.12
+avg perturbation rate:  0.0327
+saved at sample  33.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+34.0  th document.
+decoded_text Following publication of the proposed rule - LRB - 58 Fed. [SEP] The proposed rule was published.
+text_parts ['Following publication of the proposed rule - LRB - 58 Fed. ', ' The proposed rule was published.']
+stgt:  [ [ Following ] ] [ [ publication ] ] [ [ of ] ] [ [ the ] ] [ [ proposed ] ] [ [ rule ] ] - LRB - [ [ 58 ] ] Fed [ [. ] ] The proposed rule was published.
+publication  ->  stand
+decoded_text Following stand of the proposed rule - LRB - 58 Fed. [SEP] The proposed rule was published.
+text_parts ['Following stand of the proposed rule - LRB - 58 Fed. ', ' The proposed rule was published.']
+advInxCut [2485, 2484, 1104, 1103, 3000, 3013, 118, 149, 22672, 118, 4650, 26356, 119, 102, 1109, 3000, 3013, 1108, 1502, 119]
+advText [('Following stand of the proposed rule - LRB - 58 Fed. ', ' The proposed rule was published.')]
+srcTxt:  Following [ [ publication ] ] of the proposed rule - LRB - 58 Fed. The proposed rule was published.
+advTxt:  Following [ [ stand ] ] of the proposed rule - LRB - 58 Fed. The proposed rule was published.
+srcTxt:  ('Following publication of the proposed rule - LRB - 58 Fed. ', ' The proposed rule was published.')
+advTxt:  ('Following stand of the proposed rule - LRB - 58 Fed. ', ' The proposed rule was published.')
+tLabel:  1
+targetTokens ['publication']
+toTokens ['stand']
+sProbs:  [0.0006141015910543501, 0.9902779459953308, 0.009107941761612892]
+aProbs:  [0.03108704835176468, 0.389998197555542, 0.5789147019386292]
+attack suc rate 91.18 %
+average # of queries: 4.4411764705882355.
+all perturbed tokens :  635
+total token lens     :  19419
+avg perturbed tokens :  18.68
+avg perturbation rate:  0.0327
+saved at sample  34.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+35.0  th document.
+decoded_text On the west side of the square is Old King's House - LRB - built in 1762 - RRB -, which was the official residence of the British governor ; it was here that the proclamation of emancipation was issued in 1838. [SEP] On the west end of the square is the Old King's House which was built in 1762.
+text_parts ["On the west side of the square is Old King's House - LRB - built in 1762 - RRB -, which was the official residence of the British governor ; it was here that the proclamation of emancipation was issued in 1838. ", " On the west end of the square is the Old King's House which was built in 1762."]
+stgt:  On [ [ the ] ] [ [ west ] ] side [ [ of ] ] the [ [ square ] ] is [ [ Old ] ] [ [ King ] ]'s House - LRB - [ [ built ] ] in [ [ 1762 ] ] - RRB -, which was the official residence of the British governor ; it was here that the proclamation of emancipation was issued in 1838. On the west end of the square is the Old King's House which was built in 1762.
+1762  ->  to
+decoded_text On the west side of the square is Old King's House - LRB - built in to - RRB -, which was the official residence of the British governor ; it was here that the proclamation of emancipation was issued in 1838. [SEP] On the west end of the square is the Old King's House which was built in 1762.
+text_parts ["On the west side of the square is Old King's House - LRB - built in to - RRB -, which was the official residence of the British governor ; it was here that the proclamation of emancipation was issued in 1838. ", " On the west end of the square is the Old King's House which was built in 1762."]
+advInxCut [1212, 1103, 1745, 1334, 1104, 1103, 1961, 1110, 2476, 1624, 112, 188, 1585, 118, 149, 22672, 118, 1434, 1107, 1106, 118, 155, 22672, 118, 117, 1134, 1108, 1103, 2078, 4662, 1104, 1103, 1418, 4066, 132, 1122, 1108, 1303, 1115, 1103, 22684, 1104, 9712, 25305, 1108, 3010, 1107, 9702, 119, 102, 1212, 1103, 1745, 1322, 1104, 1103, 1961, 1110, 1103, 2476, 1624, 112, 188, 1585, 1134, 1108, 1434, 1107, 22840, 119]
+advText [("On the west side of the square is Old King's House - LRB - built in to - RRB -, which was the official residence of the British governor ; it was here that the proclamation of emancipation was issued in 1838. ", " On the west end of the square is the Old King's House which was built in 1762.")]
+srcTxt:  On the west side of the square is Old King's House - LRB - built in [ [ 1762 ] ] - RRB -, which was the official residence of the British governor ; it was here that the proclamation of emancipation was issued in 1838. On the west end of the square is the Old King's House which was built in 1762.
+advTxt:  On the west side of the square is Old King's House - LRB - built in [ [ to ] ] - RRB -, which was the official residence of the British governor ; it was here that the proclamation of emancipation was issued in 1838. On the west end of the square is the Old King's House which was built in 1762.
+srcTxt:  ("On the west side of the square is Old King's House - LRB - built in 1762 - RRB -, which was the official residence of the British governor ; it was here that the proclamation of emancipation was issued in 1838. ", " On the west end of the square is the Old King's House which was built in 1762.")
+advTxt:  ("On the west side of the square is Old King's House - LRB - built in to - RRB -, which was the official residence of the British governor ; it was here that the proclamation of emancipation was issued in 1838. ", " On the west end of the square is the Old King's House which was built in 1762.")
+tLabel:  1
+targetTokens ['1762']
+toTokens ['to']
+sProbs:  [0.012299398891627789, 0.9824858903884888, 0.005214674398303032]
+aProbs:  [0.9516189694404602, 0.008666456677019596, 0.03971445560455322]
+attack suc rate 91.43 %
+average # of queries: 4.314285714285714.
+all perturbed tokens :  673
+total token lens     :  20614
+avg perturbed tokens :  19.23
+avg perturbation rate:  0.0326
+saved at sample  35.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+36.0  th document.
+decoded_text Perhaps all we can say of great acting is that it involves assimilation rather than accumulation, that the performer isn't so much a surrogate as a vessel. [SEP] An actor is judged solely on quality of performance.
+text_parts ["Perhaps all we can say of great acting is that it involves assimilation rather than accumulation, that the performer isn't so much a surrogate as a vessel. ", ' An actor is judged solely on quality of performance.']
+stgt:  Perhaps all we can say of [ [ great ] ] [ [ acting ] ] is that it involves assim [ [ilation ] ] rather than [ [ accumulation ] ], that the performer isn't so much [ [ a ] ] [ [ sur ] ] [ [rogate ] ] [ [ as ] ] a vessel. An actor is judged solely on quality of performance.
+acting  ->  lived
+decoded_text Perhaps all we can say of great lived is that it involves assimilation rather than accumulation, that the performer isn't so much a surrogate as a vessel. [SEP] An actor is judged solely on quality of performance.
+text_parts ["Perhaps all we can say of great lived is that it involves assimilation rather than accumulation, that the performer isn't so much a surrogate as a vessel. ", ' An actor is judged solely on quality of performance.']
+advInxCut [5203, 1155, 1195, 1169, 1474, 1104, 1632, 2077, 1110, 1115, 1122, 6808, 3919, 4060, 16230, 1897, 1190, 23168, 117, 1115, 1103, 9963, 1110, 183, 112, 189, 1177, 1277, 170, 8910, 25232, 1112, 170, 5832, 119, 102, 1760, 2811, 1110, 13680, 9308, 1113, 3068, 1104, 2099, 119]
+advText [("Perhaps all we can say of great lived is that it involves assimilation rather than accumulation, that the performer isn't so much a surrogate as a vessel. ", ' An actor is judged solely on quality of performance.')]
+srcTxt:  Perhaps all we can say of great [ [ acting ] ] is that it involves assimilation rather than accumulation, that the performer isn't so much a surrogate as a vessel. An actor is judged solely on quality of performance.
+advTxt:  Perhaps all we can say of great [ [ lived ] ] is that it involves assimilation rather than accumulation, that the performer isn't so much a surrogate as a vessel. An actor is judged solely on quality of performance.
+srcTxt:  ("Perhaps all we can say of great acting is that it involves assimilation rather than accumulation, that the performer isn't so much a surrogate as a vessel. ", ' An actor is judged solely on quality of performance.')
+advTxt:  ("Perhaps all we can say of great lived is that it involves assimilation rather than accumulation, that the performer isn't so much a surrogate as a vessel. ", ' An actor is judged solely on quality of performance.')
+tLabel:  2
+targetTokens ['acting']
+toTokens ['lived']
+sProbs:  [0.43417665362358093, 0.018619565293192863, 0.547203779220581]
+aProbs:  [0.7969775795936584, 0.009006284177303314, 0.19401612877845764]
+attack suc rate 91.67 %
+average # of queries: 4.194444444444445.
+all perturbed tokens :  712
+total token lens     :  21855
+avg perturbed tokens :  19.78
+avg perturbation rate:  0.0326
+saved at sample  36.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+37.0  th document.
+decoded_text He appropriated for the State much of the personal fortunes of the princes, but found it harder to curtail the power of land - owners who had extensive contacts with the more conservative elements in his Congress Party. [SEP] It was difficult to curtail the power of land - owners in extensive contact with the more conservative elements in the Congress Party, because the Party was paying them off.
+text_parts ['He appropriated for the State much of the personal fortunes of the princes, but found it harder to curtail the power of land - owners who had extensive contacts with the more conservative elements in his Congress Party. ', ' It was difficult to curtail the power of land - owners in extensive contact with the more conservative elements in the Congress Party, because the Party was paying them off.']
+stgt:  He appropriated for the State much of the personal fortunes of the princes, but found [ [ it ] ] [ [ harder ] ] [ [ to ] ] cu [ [rta ] ]il the power of [ [ land ] ] - owners who had [ [ extensive ] ] contacts [ [ with ] ] the more conservative elements in his [ [ Congress ] ] Party. It was difficult to curtail the power of land - owners in extensive contact with the more conservative elements in the Congress Party, because the Party was paying them off.
+2   harder  ->  ：   0.994627  ->  0.993049
+2   ：  ->  from   0.993049  ->  0.990422
+2   from  ->  In   0.990422  ->  0.971999
+2   Congress  ->  ##s   0.971999  ->  0.965573
+2   ##s  ->  World   0.965573  ->  0.962489
+2   it  ->  United   0.962489  ->  0.936485
+2   land  ->  the   0.936485  ->  0.928279
+2   the  ->  ##rook   0.928279  ->  0.926662
+2   ##rook  ->  ##wirl   0.926662  ->  0.918656
+2   with  ->  ##around   0.918656  ->  0.91674
+2   ##around  ->  find   0.91674  ->  0.894277
+decoded_text He appropriated for the State much of the personal fortunes of the princes, but found United In to curtail the power ofwirl - owners who had extensive contacts find the more conservative elements in his World Party. [SEP] It was difficult to curtail the power of land - owners in extensive contact with the more conservative elements in the Congress Party, because the Party was paying them off.
+text_parts ['He appropriated for the State much of the personal fortunes of the princes, but found United In to curtail the power ofwirl - owners who had extensive contacts find the more conservative elements in his World Party. ', ' It was difficult to curtail the power of land - owners in extensive contact with the more conservative elements in the Congress Party, because the Party was paying them off.']
+advInxCut [1124, 5806, 1181, 1111, 1103, 1426, 1277, 1104, 1103, 2357, 20733, 1104, 1103, 18043, 117, 1133, 1276, 1244, 1130, 1106, 16408, 16242, 2723, 1103, 1540, 1104, 26137, 118, 5032, 1150, 1125, 4154, 10492, 1525, 1103, 1167, 6588, 3050, 1107, 1117, 1291, 1786, 119, 102, 1135, 1108, 2846, 1106, 16408, 16242, 2723, 1103, 1540, 1104, 1657, 118, 5032, 1107, 4154, 3232, 1114, 1103, 1167, 6588, 3050, 1107, 1103, 2757, 1786, 117, 1272, 1103, 1786, 1108, 6573, 1172, 1228, 119]
+advText [('He appropriated for the State much of the personal fortunes of the princes, but found United In to curtail the power ofwirl - owners who had extensive contacts find the more conservative elements in his World Party. ', ' It was difficult to curtail the power of land - owners in extensive contact with the more conservative elements in the Congress Party, because the Party was paying them off.')]
+attack suc rate 89.19 %
+average # of queries: 4.513513513513513.
+all perturbed tokens :  751
+total token lens     :  23174
+avg perturbed tokens :  20.3
+avg perturbation rate:  0.0324
+saved at sample  37.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+38.0  th document.
+decoded_text Always Sacrilegious, Always Coca - Cola. - RRB - [SEP] Always respectful of Jesus.
+text_parts ['Always Sacrilegious, Always Coca - Cola. - RRB - ', ' Always respectful of Jesus.']
+stgt:  Always [ [ Sa ] ] [ [c ] ] [ [ril ] ] [ [eg ] ]ious, Always [ [ Coca ] ] [ [ - ] ] Cola [ [. ] ] - R [ [RB ] ] - Always respectful of Jesus.
+0   ##ril  ->  Congress   0.995445  ->  0.991831
+0   Congress  ->  Richard   0.991831  ->  0.988204
+0   ##c  ->  ##pse   0.988204  ->  0.987985
+0   ##pse  ->  directed   0.987985  ->  0.979875
+Coca  ->  habit
+decoded_text Always Sa directed Richardegious, Always habit - Cola. - RRB - [SEP] Always respectful of Jesus.
+text_parts ['Always Sa directed Richardegious, Always habit - Cola. - RRB - ', ' Always respectful of Jesus.']
+advInxCut [10672, 17784, 2002, 2055, 12606, 4179, 117, 10672, 10671, 118, 17492, 119, 118, 155, 22672, 118, 102, 10672, 4161, 2365, 1104, 3766, 119]
+advText [('Always Sa directed Richardegious, Always habit - Cola. - RRB - ', ' Always respectful of Jesus.')]
+srcTxt:  Always Sa [ [c ] ] [ [ril ] ]egious, Always [ [ Coca ] ] - Cola. - RRB - Always respectful of Jesus.
+advTxt:  Always Sa [ [ directed ] ] [ [ Richard ] ]egious, Always [ [ habit ] ] - Cola. - RRB - Always respectful of Jesus.
+srcTxt:  ('Always Sacrilegious, Always Coca - Cola. - RRB - ', ' Always respectful of Jesus.')
+advTxt:  ('Always Sa directed Richardegious, Always habit - Cola. - RRB - ', ' Always respectful of Jesus.')
+tLabel:  0
+targetTokens ['##ril', '##c', 'Coca']
+toTokens ['Richard', 'directed', 'habit']
+sProbs:  [0.9954451322555542, 0.00088932627113536, 0.0036656244192272425]
+aProbs:  [0.17092303931713104, 0.06310337036848068, 0.7659735679626465]
+attack suc rate 89.47 %
+average # of queries: 4.7631578947368425.
+all perturbed tokens :  793
+total token lens     :  24516
+avg perturbed tokens :  20.87
+avg perturbation rate:  0.0323
+saved at sample  38.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+39.0  th document.
+decoded_text For more than a year, Clinton's surrogates have been calling Starr an out - of - control prosecutor. [SEP] Clinton's supporters are stating that Starr is out of line.
+text_parts ["For more than a year, Clinton's surrogates have been calling Starr an out - of - control prosecutor. ", " Clinton's supporters are stating that Starr is out of line."]
+stgt:  For more than a year, [ [ Clinton ] ]'s surrogates [ [ have ] ] [ [ been ] ] [ [ calling ] ] [ [ Starr ] ] [ [ an ] ] [ [ out ] ] - of - control prosecutor [ [. ] ] Clinton's supporters are stating that Starr is out of line.
+Clinton  ->  around
+decoded_text For more than a year, around's surrogates have been calling Starr an out - of - control prosecutor. [SEP] Clinton's supporters are stating that Starr is out of line.
+text_parts ["For more than a year, around's surrogates have been calling Starr an out - of - control prosecutor. ", " Clinton's supporters are stating that Starr is out of line."]
+advInxCut [1370, 1167, 1190, 170, 1214, 117, 1213, 112, 188, 8910, 25232, 1116, 1138, 1151, 3516, 14919, 1126, 1149, 118, 1104, 118, 1654, 16810, 119, 102, 6652, 112, 188, 6638, 1132, 4797, 1115, 14919, 1110, 1149, 1104, 1413, 119]
+advText [("For more than a year, around's surrogates have been calling Starr an out - of - control prosecutor. ", " Clinton's supporters are stating that Starr is out of line.")]
+srcTxt:  For more than a year, [ [ Clinton ] ]'s surrogates have been calling Starr an out - of - control prosecutor. Clinton's supporters are stating that Starr is out of line.
+advTxt:  For more than a year, [ [ around ] ]'s surrogates have been calling Starr an out - of - control prosecutor. Clinton's supporters are stating that Starr is out of line.
+srcTxt:  ("For more than a year, Clinton's surrogates have been calling Starr an out - of - control prosecutor. ", " Clinton's supporters are stating that Starr is out of line.")
+advTxt:  ("For more than a year, around's surrogates have been calling Starr an out - of - control prosecutor. ", " Clinton's supporters are stating that Starr is out of line.")
+tLabel:  1
+targetTokens ['Clinton']
+toTokens ['around']
+sProbs:  [0.0033814439084380865, 0.9866179823875427, 0.010000606998801231]
+aProbs:  [0.06513102352619171, 0.029132185503840446, 0.9057368040084839]
+attack suc rate 89.74 %
+average # of queries: 4.666666666666667.
+all perturbed tokens :  836
+total token lens     :  25896
+avg perturbed tokens :  21.44
+avg perturbation rate:  0.0323
+saved at sample  39.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+40.0  th document.
+decoded_text I don't know. [SEP] I have not the first clue.
+text_parts ["I don't know. ", ' I have not the first clue.']
+stgt:  [ [ I ] ] [ [ do ] ] [ [ n ] ] [ ['] ] [ [ t ] ] [ [ know ] ] [ [. ] ] I have not the first clue.
+know  ->  Musicians
+decoded_text I don't Musicians. [SEP] I have not the first clue.
+text_parts ["I don't Musicians. ", ' I have not the first clue.']
+advInxCut [146, 1202, 183, 112, 189, 24108, 119, 102, 146, 1138, 1136, 1103, 1148, 9956, 119]
+advText [("I don't Musicians. ", ' I have not the first clue.')]
+srcTxt:  I don't [ [ know ] ]. I have not the first clue.
+advTxt:  I don't [ [ Musicians ] ]. I have not the first clue.
+srcTxt:  ("I don't know. ", ' I have not the first clue.')
+advTxt:  ("I don't Musicians. ", ' I have not the first clue.')
+tLabel:  1
+targetTokens ['know']
+toTokens ['Musicians']
+sProbs:  [0.001266171457245946, 0.8424291014671326, 0.1563047468662262]
+aProbs:  [0.04027654230594635, 0.034168682992458344, 0.9255547523498535]
+attack suc rate 90.0 %
+average # of queries: 4.625.
+all perturbed tokens :  880
+total token lens     :  27291
+avg perturbed tokens :  22.0
+avg perturbation rate:  0.0322
+saved at sample  40.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+41.0  th document.
+decoded_text At the western end of Cowgate - LRB - where it meets Holyrood Road - RRB -, you will see one of the few remaining sections of Edinburgh's old city wall - LRB - Flodden Wall - RRB -, built following the Lang Siege of the 1570s. [SEP] Flodden Wall was built after the Lang Siege took place, in the 1570s.
+text_parts ["At the western end of Cowgate - LRB - where it meets Holyrood Road - RRB -, you will see one of the few remaining sections of Edinburgh's old city wall - LRB - Flodden Wall - RRB -, built following the Lang Siege of the 1570s. ", ' Flodden Wall was built after the Lang Siege took place, in the 1570s.']
+stgt:  At the western end of Cowgate - LRB - where it meets Holyrood Road - RRB -, you will see one of the few remaining sections of Edinburgh's old city wall - LRB - [ [ F ] ] [ [lo ] ]dden Wall - RRB -, [ [ built ] ] [ [ following ] ] [ [ the ] ] [ [ Lang ] ] [ [ Siege ] ] of the [ [ 157 ] ]0s. Flodden Wall was built after the Lang Siege took place, in the 1570s.
+1   157  ->  ：   0.989784  ->  0.584299
+following  ->  government
+decoded_text At the western end of Cowgate - LRB - where it meets Holyrood Road - RRB -, you will see one of the few remaining sections of Edinburgh's old city wall - LRB - Flodden Wall - RRB -, built government the Lang Siege of the ：0s. [SEP] Flodden Wall was built after the Lang Siege took place, in the 1570s.
+text_parts ["At the western end of Cowgate - LRB - where it meets Holyrood Road - RRB -, you will see one of the few remaining sections of Edinburgh's old city wall - LRB - Flodden Wall - RRB -, built government the Lang Siege of the ：0s. ", ' Flodden Wall was built after the Lang Siege took place, in the 1570s.']
+advInxCut [1335, 1103, 2466, 1322, 1104, 3291, 2246, 4948, 118, 149, 22672, 118, 1187, 1122, 5636, 3930, 24886, 1181, 1914, 118, 155, 22672, 118, 117, 1128, 1209, 1267, 1141, 1104, 1103, 1374, 2735, 4886, 1104, 5238, 112, 188, 1385, 1331, 2095, 118, 149, 22672, 118, 143, 2858, 19221, 6250, 118, 155, 22672, 118, 117, 1434, 1433, 1103, 12431, 14214, 1104, 1103, 1102, 13031, 119, 102, 143, 2858, 19221, 6250, 1108, 1434, 1170, 1103, 12431, 14214, 1261, 1282, 117, 1107, 1103, 18611, 13031, 119]
+advText [("At the western end of Cowgate - LRB - where it meets Holyrood Road - RRB -, you will see one of the few remaining sections of Edinburgh's old city wall - LRB - Flodden Wall - RRB -, built government the Lang Siege of the ：0s. ", ' Flodden Wall was built after the Lang Siege took place, in the 1570s.')]
+srcTxt:  At the western end of Cowgate - LRB - where it meets Holyrood Road - RRB -, you will see one of the few remaining sections of Edinburgh's old city wall - LRB - Flodden Wall - RRB -, built [ [ following ] ] the Lang Siege of the [ [ 157 ] ]0s. Flodden Wall was built after the Lang Siege took place, in the 1570s.
+advTxt:  At the western end of Cowgate - LRB - where it meets Holyrood Road - RRB -, you will see one of the few remaining sections of Edinburgh's old city wall - LRB - Flodden Wall - RRB -, built [ [ government ] ] the Lang Siege of the [ [ ： ] ]0s. Flodden Wall was built after the Lang Siege took place, in the 1570s.
+srcTxt:  ("At the western end of Cowgate - LRB - where it meets Holyrood Road - RRB -, you will see one of the few remaining sections of Edinburgh's old city wall - LRB - Flodden Wall - RRB -, built following the Lang Siege of the 1570s. ", ' Flodden Wall was built after the Lang Siege took place, in the 1570s.')
+advTxt:  ("At the western end of Cowgate - LRB - where it meets Holyrood Road - RRB -, you will see one of the few remaining sections of Edinburgh's old city wall - LRB - Flodden Wall - RRB -, built government the Lang Siege of the ：0s. ", ' Flodden Wall was built after the Lang Siege took place, in the 1570s.')
+tLabel:  1
+targetTokens ['157', 'following']
+toTokens ['：', 'government']
+sProbs:  [0.0029331124387681484, 0.9897839426994324, 0.007282906211912632]
+aProbs:  [0.16394776105880737, 0.12099125236272812, 0.7150610089302063]
+attack suc rate 90.24 %
+average # of queries: 4.585365853658536.
+all perturbed tokens :  926
+total token lens     :  28768
+avg perturbed tokens :  22.59
+avg perturbation rate:  0.0322
+saved at sample  41.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+42.0  th document.
+decoded_text The tree - lined avenue extends less than three blocks to the sea. [SEP] The sea isn't even three blocks away.
+text_parts ['The tree - lined avenue extends less than three blocks to the sea. ', " The sea isn't even three blocks away."]
+stgt:  [ [ The ] ] tree - lined avenue extends [ [ less ] ] [ [ than ] ] [ [ three ] ] [ [ blocks ] ] to [ [ the ] ] [ [ sea ] ] [ [. ] ] The sea isn't even three blocks away.
+sea  ->  ：
+decoded_text The tree - lined avenue extends less than three blocks to the ：. [SEP] The sea isn't even three blocks away.
+text_parts ['The tree - lined avenue extends less than three blocks to the ：. ', " The sea isn't even three blocks away."]
+advInxCut [1109, 2780, 118, 7265, 22655, 8559, 1750, 1190, 1210, 5511, 1106, 1103, 1102, 119, 102, 1109, 2343, 1110, 183, 112, 189, 1256, 1210, 5511, 1283, 119]
+advText [('The tree - lined avenue extends less than three blocks to the ：. ', " The sea isn't even three blocks away.")]
+srcTxt:  The tree - lined avenue extends less than three blocks to the [ [ sea ] ]. The sea isn't even three blocks away.
+advTxt:  The tree - lined avenue extends less than three blocks to the [ [ ： ] ]. The sea isn't even three blocks away.
+srcTxt:  ('The tree - lined avenue extends less than three blocks to the sea. ', " The sea isn't even three blocks away.")
+advTxt:  ('The tree - lined avenue extends less than three blocks to the ：. ', " The sea isn't even three blocks away.")
+tLabel:  1
+targetTokens ['sea']
+toTokens ['：']
+sProbs:  [0.23882727324962616, 0.7224111557006836, 0.038761626929044724]
+aProbs:  [0.1660679578781128, 0.05360759422183037, 0.7803244590759277]
+attack suc rate 90.48 %
+average # of queries: 4.476190476190476.
+all perturbed tokens :  973
+total token lens     :  30271
+avg perturbed tokens :  23.17
+avg perturbation rate:  0.0321
+saved at sample  42.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+43.0  th document.
+decoded_text The national mood is stressed on the octagonal spire of the University's Rajabai Clocktower, with 24 figures representing the castes of the Maharashtra State, of which Mumbai is the capital. [SEP] The national mood is not expressed on the octagonal spire of the Rajabai Clocktower.
+text_parts ["The national mood is stressed on the octagonal spire of the University's Rajabai Clocktower, with 24 figures representing the castes of the Maharashtra State, of which Mumbai is the capital. ", ' The national mood is not expressed on the octagonal spire of the Rajabai Clocktower.']
+stgt:  The [ [ national ] ] mood [ [ is ] ] [ [ stressed ] ] [ [ on ] ] the [ [ octagonal ] ] [ [ spire ] ] of the University's [ [ Raja ] ]bai [ [ Clock ] ]tower, with 24 figures representing the castes of the Maharashtra State, of which Mumbai is the capital. The national mood is not expressed on the octagonal spire of the Rajabai Clocktower.
+0   national  ->  was   0.998571  ->  0.852701
+0   was  ->  ##n   0.852701  ->  0.826797
+0   octagonal  ->  ：   0.826797  ->  0.747834
+0   ：  ->  to   0.747834  ->  0.745018
+0   to  ->  ##rook   0.745018  ->  0.656255
+spire  ->  injuring
+decoded_text Then mood is stressed on therook injuring of the University's Rajabai Clocktower, with 24 figures representing the castes of the Maharashtra State, of which Mumbai is the capital. [SEP] The national mood is not expressed on the octagonal spire of the Rajabai Clocktower.
+text_parts ["Then mood is stressed on therook injuring of the University's Rajabai Clocktower, with 24 figures representing the castes of the Maharashtra State, of which Mumbai is the capital. ", ' The national mood is not expressed on the octagonal spire of the Rajabai Clocktower.']
+advInxCut [1109, 1179, 6601, 1110, 13713, 1113, 1103, 18562, 25359, 1104, 1103, 1239, 112, 188, 10291, 2822, 1182, 20957, 26915, 117, 1114, 1572, 3736, 4311, 1103, 17273, 1116, 1104, 1103, 12626, 1426, 117, 1104, 1134, 8601, 1110, 1103, 2364, 119, 102, 1109, 1569, 6601, 1110, 1136, 4448, 1113, 1103, 25360, 23887, 1104, 1103, 10291, 2822, 1182, 20957, 26915, 119]
+advText [("Then mood is stressed on therook injuring of the University's Rajabai Clocktower, with 24 figures representing the castes of the Maharashtra State, of which Mumbai is the capital. ", ' The national mood is not expressed on the octagonal spire of the Rajabai Clocktower.')]
+srcTxt:  The [ [ national ] ] mood is stressed on the [ [ octagonal ] ] [ [ spire ] ] of the University's Rajabai Clocktower, with 24 figures representing the castes of the Maharashtra State, of which Mumbai is the capital. The national mood is not expressed on the octagonal spire of the Rajabai Clocktower.
+advTxt:  The [ [n ] ] mood is stressed on the [ [rook ] ] [ [ injuring ] ] of the University's Rajabai Clocktower, with 24 figures representing the castes of the Maharashtra State, of which Mumbai is the capital. The national mood is not expressed on the octagonal spire of the Rajabai Clocktower.
+srcTxt:  ("The national mood is stressed on the octagonal spire of the University's Rajabai Clocktower, with 24 figures representing the castes of the Maharashtra State, of which Mumbai is the capital. ", ' The national mood is not expressed on the octagonal spire of the Rajabai Clocktower.')
+advTxt:  ("Then mood is stressed on therook injuring of the University's Rajabai Clocktower, with 24 figures representing the castes of the Maharashtra State, of which Mumbai is the capital. ", ' The national mood is not expressed on the octagonal spire of the Rajabai Clocktower.')
+tLabel:  0
+targetTokens ['national', 'octagonal', 'spire']
+toTokens ['##n', '##rook', 'injuring']
+sProbs:  [0.9985709190368652, 0.00046334145008586347, 0.000965819985140115]
+aProbs:  [0.34681716561317444, 0.03610748425126076, 0.6170753836631775]
+attack suc rate 90.7 %
+average # of queries: 4.511627906976744.
+all perturbed tokens :  1023
+total token lens     :  31832
+avg perturbed tokens :  23.79
+avg perturbation rate:  0.0321
+saved at sample  43.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+44.0  th document.
+decoded_text He found himself thinking in circles of worry and pulled himself back to his problem. [SEP] He could not afford to get distracted from his problem.
+text_parts ['He found himself thinking in circles of worry and pulled himself back to his problem. ', ' He could not afford to get distracted from his problem.']
+stgt:  He found himself thinking [ [ in ] ] [ [ circles ] ] [ [ of ] ] [ [ worry ] ] and pulled [ [ himself ] ] [ [ back ] ] [ [ to ] ] his problem [ [. ] ] He could not afford to get distracted from his problem.
+2   worry  ->  and   0.926959  ->  0.837042
+2   himself  ->  fact   0.837042  ->  0.823151
+2   fact  ->  and   0.823151  ->  0.802943
+2   in  ->  waiting   0.802943  ->  0.785344
+2   .  ->  Heart   0.785344  ->  0.730914
+2   back  ->  and   0.730914  ->  0.727871
+2   and  ->  ：   0.727871  ->  0.670185
+2   to  ->  after   0.670185  ->  0.628586
+circles  ->  to
+decoded_text He found himself thinking waiting to of and and pulled and ： after his problem Heart [SEP] He could not afford to get distracted from his problem.
+text_parts ['He found himself thinking waiting to of and and pulled and ： after his problem Heart ', ' He could not afford to get distracted from his problem.']
+advInxCut [1124, 1276, 1471, 2422, 2613, 1106, 1104, 1105, 1105, 1865, 1105, 1102, 1170, 1117, 2463, 4641, 102, 1124, 1180, 1136, 8658, 1106, 1243, 11353, 1121, 1117, 2463, 119]
+advText [('He found himself thinking waiting to of and and pulled and ： after his problem Heart ', ' He could not afford to get distracted from his problem.')]
+srcTxt:  He found himself thinking [ [ in ] ] [ [ circles ] ] of [ [ worry ] ] and pulled [ [ himself ] ] [ [ back ] ] [ [ to ] ] his problem [ [. ] ] He could not afford to get distracted from his problem.
+advTxt:  He found himself thinking [ [ waiting ] ] [ [ to ] ] of [ [ and ] ] and pulled [ [ and ] ] [ [ ： ] ] [ [ after ] ] his problem [ [ Heart ] ] He could not afford to get distracted from his problem.
+srcTxt:  ('He found himself thinking in circles of worry and pulled himself back to his problem. ', ' He could not afford to get distracted from his problem.')
+advTxt:  ('He found himself thinking waiting to of and and pulled and ： after his problem Heart ', ' He could not afford to get distracted from his problem.')
+tLabel:  2
+targetTokens ['worry', 'himself', 'in', '.', 'back', 'to', 'circles']
+toTokens ['and', 'and', 'waiting', 'Heart', '：', 'after', 'to']
+sProbs:  [0.07015076279640198, 0.0028900643810629845, 0.9269591569900513]
+aProbs:  [0.5986626148223877, 0.0028863628394901752, 0.3984510004520416]
+attack suc rate 90.91 %
+average # of queries: 5.113636363636363.
+all perturbed tokens :  1080
+total token lens     :  33421
+avg perturbed tokens :  24.55
+avg perturbation rate:  0.0323
+saved at sample  44.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+45.0  th document.
+decoded_text Critics praise Goodman's finely honed descriptive abilities and instinctive grasp of familial dynamics, the ways in which dreams and emotional habits are handed down... [SEP] Critics say Goodman has an instinctive grasp of familial dynamics.
+text_parts ["Critics praise Goodman's finely honed descriptive abilities and instinctive grasp of familial dynamics, the ways in which dreams and emotional habits are handed down... ", ' Critics say Goodman has an instinctive grasp of familial dynamics.']
+stgt:  [ [ Critics ] ] praise [ [ Goodman ] ]'s finely honed descriptive abilities [ [ and ] ] [ [ instinct ] ]ive [ [ grasp ] ] of f [ [ami ] ] [ [lial ] ] [ [ dynamics ] ], the ways in which dreams and emotional habits are handed down... Critics say Goodman has an instinctive grasp of familial dynamics.
+Goodman  ->  bold
+decoded_text Critics praise bold's finely honed descriptive abilities and instinctive grasp of familial dynamics, the ways in which dreams and emotional habits are handed down... [SEP] Critics say Goodman has an instinctive grasp of familial dynamics.
+text_parts ["Critics praise bold's finely honed descriptive abilities and instinctive grasp of familial dynamics, the ways in which dreams and emotional habits are handed down... ", ' Critics say Goodman has an instinctive grasp of familial dynamics.']
+advInxCut [10320, 9010, 9009, 112, 188, 24915, 16358, 3540, 27938, 7134, 1105, 14683, 2109, 10598, 1104, 175, 11787, 25737, 14189, 117, 1103, 3242, 1107, 1134, 6149, 1105, 6438, 15640, 1132, 3541, 1205, 119, 119, 119, 102, 10320, 1474, 15143, 1144, 1126, 14683, 2109, 10598, 1104, 175, 11787, 25737, 14189, 119]
+advText [("Critics praise bold's finely honed descriptive abilities and instinctive grasp of familial dynamics, the ways in which dreams and emotional habits are handed down... ", ' Critics say Goodman has an instinctive grasp of familial dynamics.')]
+srcTxt:  Critics praise [ [ Goodman ] ]'s finely honed descriptive abilities and instinctive grasp of familial dynamics, the ways in which dreams and emotional habits are handed down... Critics say Goodman has an instinctive grasp of familial dynamics.
+advTxt:  Critics praise [ [ bold ] ]'s finely honed descriptive abilities and instinctive grasp of familial dynamics, the ways in which dreams and emotional habits are handed down... Critics say Goodman has an instinctive grasp of familial dynamics.
+srcTxt:  ("Critics praise Goodman's finely honed descriptive abilities and instinctive grasp of familial dynamics, the ways in which dreams and emotional habits are handed down... ", ' Critics say Goodman has an instinctive grasp of familial dynamics.')
+advTxt:  ("Critics praise bold's finely honed descriptive abilities and instinctive grasp of familial dynamics, the ways in which dreams and emotional habits are handed down... ", ' Critics say Goodman has an instinctive grasp of familial dynamics.')
+tLabel:  1
+targetTokens ['Goodman']
+toTokens ['bold']
+sProbs:  [0.0005365072865970433, 0.9949415326118469, 0.00452193059027195]
+aProbs:  [0.991803765296936, 0.001864395453594625, 0.006331817712634802]
+attack suc rate 91.11 %
+average # of queries: 5.0.
+all perturbed tokens :  1138
+total token lens     :  35059
+avg perturbed tokens :  25.29
+avg perturbation rate:  0.0325
+saved at sample  45.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+46.0  th document.
+decoded_text I was deeply impressed by the power and eloquence of the counsel for the defence. [SEP] I thought that the counsel for his defence displayed power and eloquence.
+text_parts ['I was deeply impressed by the power and eloquence of the counsel for the defence. ', ' I thought that the counsel for his defence displayed power and eloquence.']
+stgt:  I was deeply [ [ impressed ] ] [ [ by ] ] the [ [ power ] ] and elo [ [quence ] ] of [ [ the ] ] [ [ counsel ] ] [ [ for ] ] the [ [ defence ] ]. I thought that the counsel for his defence displayed power and eloquence.
+defence  ->  ：
+decoded_text I was deeply impressed by the power and eloquence of the counsel for the ：. [SEP] I thought that the counsel for his defence displayed power and eloquence.
+text_parts ['I was deeply impressed by the power and eloquence of the counsel for the ：. ', ' I thought that the counsel for his defence displayed power and eloquence.']
+advInxCut [146, 1108, 5585, 7351, 1118, 1103, 1540, 1105, 8468, 1186, 25113, 1104, 1103, 12654, 1111, 1103, 1102, 119, 102, 146, 1354, 1115, 1103, 12654, 1111, 1117, 6465, 6361, 1540, 1105, 8468, 1186, 25113, 119]
+advText [('I was deeply impressed by the power and eloquence of the counsel for the ：. ', ' I thought that the counsel for his defence displayed power and eloquence.')]
+srcTxt:  I was deeply impressed by the power and eloquence of the counsel for the [ [ defence ] ]. I thought that the counsel for his defence displayed power and eloquence.
+advTxt:  I was deeply impressed by the power and eloquence of the counsel for the [ [ ： ] ]. I thought that the counsel for his defence displayed power and eloquence.
+srcTxt:  ('I was deeply impressed by the power and eloquence of the counsel for the defence. ', ' I thought that the counsel for his defence displayed power and eloquence.')
+advTxt:  ('I was deeply impressed by the power and eloquence of the counsel for the ：. ', ' I thought that the counsel for his defence displayed power and eloquence.')
+tLabel:  1
+targetTokens ['defence']
+toTokens ['：']
+sProbs:  [0.0002639256417751312, 0.9937466382980347, 0.005989407654851675]
+aProbs:  [0.0015786371659487486, 0.20004060864448547, 0.7983807325363159]
+attack suc rate 91.3 %
+average # of queries: 4.891304347826087.
+all perturbed tokens :  1197
+total token lens     :  36731
+avg perturbed tokens :  26.02
+avg perturbation rate:  0.0326
+saved at sample  46.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+47.0  th document.
+decoded_text yeah and i'll do this uh sometimes i'll put my after I pour that into my back into my saucepan i'll put the eggs in the same dish and beat them up and then pour the cornstarch and the milk mixture in the egg so [SEP] Sometimes I put the eggs in the same dish and add the cornstarch.
+text_parts ["yeah and i'll do this uh sometimes i'll put my after I pour that into my back into my saucepan i'll put the eggs in the same dish and beat them up and then pour the cornstarch and the milk mixture in the egg so ", ' Sometimes I put the eggs in the same dish and add the cornstarch.']
+stgt:  yeah and i'll do this uh sometimes i'll put my after I pour that into my back into my saucepan i'll put the [ [ eggs ] ] in the [ [ same ] ] [ [ dish ] ] and beat them up and then [ [ pour ] ] [ [ the ] ] [ [ corn ] ] [ [star ] ]ch and the milk mixture in the [ [ egg ] ] so Sometimes I put the eggs in the same dish and add the cornstarch.
+corn  ->  ：
+decoded_text yeah and i'll do this uh sometimes i'll put my after I pour that into my back into my saucepan i'll put the eggs in the same dish and beat them up and then pour the ：starch and the milk mixture in the egg so [SEP] Sometimes I put the eggs in the same dish and add the cornstarch.
+text_parts ["yeah and i'll do this uh sometimes i'll put my after I pour that into my back into my saucepan i'll put the eggs in the same dish and beat them up and then pour the ：starch and the milk mixture in the egg so ", ' Sometimes I put the eggs in the same dish and add the cornstarch.']
+advInxCut [8147, 1105, 178, 112, 1325, 1202, 1142, 14863, 2121, 178, 112, 1325, 1508, 1139, 1170, 146, 11480, 1115, 1154, 1139, 1171, 1154, 1139, 14313, 10224, 178, 112, 1325, 1508, 1103, 6471, 1107, 1103, 1269, 10478, 1105, 3222, 1172, 1146, 1105, 1173, 11480, 1103, 1102, 10058, 1732, 1105, 1103, 6831, 7759, 1107, 1103, 9069, 1177, 102, 5875, 146, 1508, 1103, 6471, 1107, 1103, 1269, 10478, 1105, 5194, 1103, 11184, 10058, 1732, 119]
+advText [("yeah and i'll do this uh sometimes i'll put my after I pour that into my back into my saucepan i'll put the eggs in the same dish and beat them up and then pour the ：starch and the milk mixture in the egg so ", ' Sometimes I put the eggs in the same dish and add the cornstarch.')]
+srcTxt:  yeah and i'll do this uh sometimes i'll put my after I pour that into my back into my saucepan i'll put the eggs in the same dish and beat them up and then pour the [ [ corn ] ]starch and the milk mixture in the egg so Sometimes I put the eggs in the same dish and add the cornstarch.
+advTxt:  yeah and i'll do this uh sometimes i'll put my after I pour that into my back into my saucepan i'll put the eggs in the same dish and beat them up and then pour the [ [ ： ] ]starch and the milk mixture in the egg so Sometimes I put the eggs in the same dish and add the cornstarch.
+srcTxt:  ("yeah and i'll do this uh sometimes i'll put my after I pour that into my back into my saucepan i'll put the eggs in the same dish and beat them up and then pour the cornstarch and the milk mixture in the egg so ", ' Sometimes I put the eggs in the same dish and add the cornstarch.')
+advTxt:  ("yeah and i'll do this uh sometimes i'll put my after I pour that into my back into my saucepan i'll put the eggs in the same dish and beat them up and then pour the ：starch and the milk mixture in the egg so ", ' Sometimes I put the eggs in the same dish and add the cornstarch.')
+tLabel:  1
+targetTokens ['corn']
+toTokens ['：']
+sProbs:  [0.012886051088571548, 0.976021945476532, 0.011091962456703186]
+aProbs:  [0.156702920794487, 0.3215107321739197, 0.5217863321304321]
+attack suc rate 91.49000000000001 %
+average # of queries: 4.787234042553192.
+all perturbed tokens :  1257
+total token lens     :  38474
+avg perturbed tokens :  26.74
+avg perturbation rate:  0.0327
+saved at sample  47.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+48.0  th document.
+decoded_text oh really i was um i was TDY at Bent Waters [SEP] I enjoyed my temporary duty at Bent Waters.
+text_parts ['oh really i was um i was TDY at Bent Waters ', ' I enjoyed my temporary duty at Bent Waters.']
+stgt:  [ [ oh ] ] [ [ really ] ] [ [ i ] ] [ [ was ] ] [ [ um ] ] [ [ i ] ] [ [ was ] ] TDY at Bent [ [ Waters ] ] I enjoyed my temporary duty at Bent Waters.
+2   i  ->  ##ntly   0.963571  ->  0.85935
+2   Waters  ->  velvet   0.85935  ->  0.804599
+2   velvet  ->  do   0.804599  ->  0.774544
+2   really  ->  Full   0.774544  ->  0.741209
+2   oh  ->  deep   0.741209  ->  0.655692
+decoded_text deep Full i was umntly was TDY at Bent do [SEP] I enjoyed my temporary duty at Bent Waters.
+text_parts ['deep Full i was umntly was TDY at Bent do ', ' I enjoyed my temporary duty at Bent Waters.']
+advInxCut [1996, 8896, 178, 1108, 15276, 15275, 1108, 15439, 3663, 1120, 3096, 1204, 1202, 102, 146, 4927, 1139, 5335, 4019, 1120, 3096, 1204, 12542, 119]
+advText [('deep Full i was umntly was TDY at Bent do ', ' I enjoyed my temporary duty at Bent Waters.')]
+attack suc rate 89.58 %
+average # of queries: 5.166666666666667.
+all perturbed tokens :  1317
+total token lens     :  40241
+avg perturbed tokens :  27.44
+avg perturbation rate:  0.0327
+saved at sample  48.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+49.0  th document.
+decoded_text Perhaps tax reform doesn't appeal to the new spiritualized side of Bradley. [SEP] Bradley is a pastor now.
+text_parts ["Perhaps tax reform doesn't appeal to the new spiritualized side of Bradley. ", ' Bradley is a pastor now.']
+stgt:  [ [ Perhaps ] ] [ [ tax ] ] [ [ reform ] ] [ [ does ] ]n't appeal to [ [ the ] ] new [ [ spiritual ] ]ized side of [ [ Bradley ] ] [ [. ] ] Bradley is a pastor now.
+2   Bradley  ->  between   0.994353  ->  0.97098
+2   between  ->  where   0.97098  ->  0.960383
+where  ->  modelling
+decoded_text Perhaps tax reform doesn't appeal to the new spiritualized side of modelling. [SEP] Bradley is a pastor now.
+text_parts ["Perhaps tax reform doesn't appeal to the new spiritualized side of modelling. ", ' Bradley is a pastor now.']
+advInxCut [5203, 3641, 5851, 1674, 183, 112, 189, 5767, 1106, 1103, 1207, 6170, 2200, 1334, 1104, 23741, 119, 102, 8623, 1110, 170, 11616, 1208, 119]
+advText [("Perhaps tax reform doesn't appeal to the new spiritualized side of modelling. ", ' Bradley is a pastor now.')]
+srcTxt:  Perhaps tax reform doesn't appeal to the new spiritualized side of [ [ Bradley ] ]. Bradley is a pastor now.
+advTxt:  Perhaps tax reform doesn't appeal to the new spiritualized side of [ [ modelling ] ]. Bradley is a pastor now.
+srcTxt:  ("Perhaps tax reform doesn't appeal to the new spiritualized side of Bradley. ", ' Bradley is a pastor now.')
+advTxt:  ("Perhaps tax reform doesn't appeal to the new spiritualized side of modelling. ", ' Bradley is a pastor now.')
+tLabel:  2
+targetTokens ['Bradley']
+toTokens ['modelling']
+sProbs:  [0.004551360849291086, 0.001095771905966103, 0.9943529367446899]
+aProbs:  [0.5115947127342224, 0.003055238164961338, 0.4853500425815582]
+attack suc rate 89.8 %
+average # of queries: 5.081632653061225.
+all perturbed tokens :  1378
+total token lens     :  42032
+avg perturbed tokens :  28.12
+avg perturbation rate:  0.0328
+saved at sample  49.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+50.0  th document.
+decoded_text Later, Tom testified against John so as to avoid the electric chair. [SEP] Tom refused to turn on his friend, even though he was slated to be executed.
+text_parts ['Later, Tom testified against John so as to avoid the electric chair. ', ' Tom refused to turn on his friend, even though he was slated to be executed.']
+stgt:  Later, Tom [ [ testified ] ] [ [ against ] ] [ [ John ] ] [ [ so ] ] [ [ as ] ] [ [ to ] ] avoid [ [ the ] ] [ [ electric ] ] chair. Tom refused to turn on his friend, even though he was slated to be executed.
+testified  ->  hours
+decoded_text Later, Tom hours against John so as to avoid the electric chair. [SEP] Tom refused to turn on his friend, even though he was slated to be executed.
+text_parts ['Later, Tom hours against John so as to avoid the electric chair. ', ' Tom refused to turn on his friend, even though he was slated to be executed.']
+advInxCut [2611, 117, 2545, 2005, 1222, 1287, 1177, 1112, 1106, 3644, 1103, 3651, 2643, 119, 102, 2545, 3347, 1106, 1885, 1113, 1117, 1910, 117, 1256, 1463, 1119, 1108, 20191, 1106, 1129, 5858, 119]
+advText [('Later, Tom hours against John so as to avoid the electric chair. ', ' Tom refused to turn on his friend, even though he was slated to be executed.')]
+srcTxt:  Later, Tom [ [ testified ] ] against John so as to avoid the electric chair. Tom refused to turn on his friend, even though he was slated to be executed.
+advTxt:  Later, Tom [ [ hours ] ] against John so as to avoid the electric chair. Tom refused to turn on his friend, even though he was slated to be executed.
+srcTxt:  ('Later, Tom testified against John so as to avoid the electric chair. ', ' Tom refused to turn on his friend, even though he was slated to be executed.')
+advTxt:  ('Later, Tom hours against John so as to avoid the electric chair. ', ' Tom refused to turn on his friend, even though he was slated to be executed.')
+tLabel:  0
+targetTokens ['testified']
+toTokens ['hours']
+sProbs:  [0.686664879322052, 0.011527800932526588, 0.3018072843551636]
+aProbs:  [0.4468020498752594, 0.04824405536055565, 0.504953920841217]
+attack suc rate 90.0 %
+average # of queries: 5.04.
+all perturbed tokens :  1440
+total token lens     :  43855
+avg perturbed tokens :  28.8
+avg perturbation rate:  0.0328
+saved at sample  50.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+51.0  th document.
+decoded_text yeah well that's the other thing you know they talk about women leaving the home and going out to work well still taking care of the children is a very important job and and someone's got to do it and be able to do it right and [SEP] Traditional gender roles were correct all along.
+text_parts ["yeah well that's the other thing you know they talk about women leaving the home and going out to work well still taking care of the children is a very important job and and someone's got to do it and be able to do it right and ", ' Traditional gender roles were correct all along.']
+stgt:  yeah well that's the other [ [ thing ] ] you know [ [ they ] ] [ [ talk ] ] [ [ about ] ] women leaving the [ [ home ] ] and going out to work well still taking care of the children is a very important job and and someone's got to [ [ do ] ] it and be able [ [ to ] ] [ [ do ] ] it right and Traditional gender roles were correct all along.
+decoded_text yeah well that's the other thing you know they talk about women leaving the home and going out to work well still taking care of the children is a very important job and and someone's got to do it and be able to do it right and [SEP] Traditional gender roles were correct all along.
+text_parts ["yeah well that's the other thing you know they talk about women leaving the home and going out to work well still taking care of the children is a very important job and and someone's got to do it and be able to do it right and ", ' Traditional gender roles were correct all along.']
+advInxCut [8147, 1218, 1115, 112, 188, 1103, 1168, 1645, 1128, 1221, 1152, 2037, 1164, 1535, 2128, 1103, 1313, 1105, 1280, 1149, 1106, 1250, 1218, 1253, 1781, 1920, 1104, 1103, 1482, 1110, 170, 1304, 1696, 2261, 1105, 1105, 1800, 112, 188, 1400, 1106, 1202, 1122, 1105, 1129, 1682, 1106, 1202, 1122, 1268, 1105, 102, 12144, 5772, 3573, 1127, 5663, 1155, 1373, 119]
+advText [("yeah well that's the other thing you know they talk about women leaving the home and going out to work well still taking care of the children is a very important job and and someone's got to do it and be able to do it right and ", ' Traditional gender roles were correct all along.')]
+srcTxt:  yeah well that's the other thing you know they talk about women leaving the home and going out to work well still taking care of the children is a very important job and and someone's got to do it and be able to do it right and Traditional gender roles were correct all along.
+advTxt:  yeah well that's the other thing you know they talk about women leaving the home and going out to work well still taking care of the children is a very important job and and someone's got to do it and be able to do it right and Traditional gender roles were correct all along.
+srcTxt:  ("yeah well that's the other thing you know they talk about women leaving the home and going out to work well still taking care of the children is a very important job and and someone's got to do it and be able to do it right and ", ' Traditional gender roles were correct all along.')
+advTxt:  ("yeah well that's the other thing you know they talk about women leaving the home and going out to work well still taking care of the children is a very important job and and someone's got to do it and be able to do it right and ", ' Traditional gender roles were correct all along.')
+tLabel:  2
+targetTokens []
+toTokens []
+sProbs:  [0.5888964533805847, 0.007082568481564522, 0.4040209650993347]
+aProbs:  [0.5888964533805847, 0.007082568481564522, 0.4040209650993347]
+attack suc rate 90.2 %
+average # of queries: 4.9411764705882355.
+all perturbed tokens :  1502
+total token lens     :  45738
+avg perturbed tokens :  29.45
+avg perturbation rate:  0.0328
+saved at sample  51.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+52.0  th document.
+decoded_text Christ on a crutch, what does he have to do to lose your support, stab David Geffen with a kitchen knife? [SEP] You have extreme political devotion.
+text_parts ['Christ on a crutch, what does he have to do to lose your support, stab David Geffen with a kitchen knife? ', ' You have extreme political devotion.']
+stgt:  Christ on a [ [ c ] ]ru [ [tch ] ], what [ [ does ] ] he [ [ have ] ] [ [ to ] ] [ [ do ] ] to [ [ lose ] ] your support, stab David Geffen with a kitchen knife [ [? ] ] You have extreme political devotion.
+lose  ->  ##ismic
+decoded_text Christ on a crutch, what does he have to do toismic your support, stab David Geffen with a kitchen knife? [SEP] You have extreme political devotion.
+text_parts ['Christ on a crutch, what does he have to do toismic your support, stab David Geffen with a kitchen knife? ', ' You have extreme political devotion.']
+advInxCut [4028, 1113, 170, 172, 5082, 6943, 117, 1184, 1674, 1119, 1138, 1106, 1202, 1106, 24864, 1240, 1619, 117, 19428, 1681, 144, 11470, 13488, 1114, 170, 3119, 4937, 136, 102, 1192, 1138, 6122, 1741, 14740, 119]
+advText [('Christ on a crutch, what does he have to do toismic your support, stab David Geffen with a kitchen knife? ', ' You have extreme political devotion.')]
+srcTxt:  Christ on a crutch, what does he have to do to [ [ lose ] ] your support, stab David Geffen with a kitchen knife? You have extreme political devotion.
+advTxt:  Christ on a crutch, what does he have to do to [ [ismic ] ] your support, stab David Geffen with a kitchen knife? You have extreme political devotion.
+srcTxt:  ('Christ on a crutch, what does he have to do to lose your support, stab David Geffen with a kitchen knife? ', ' You have extreme political devotion.')
+advTxt:  ('Christ on a crutch, what does he have to do toismic your support, stab David Geffen with a kitchen knife? ', ' You have extreme political devotion.')
+tLabel:  2
+targetTokens ['lose']
+toTokens ['##ismic']
+sProbs:  [0.04863573610782623, 0.25630033016204834, 0.6950639486312866]
+aProbs:  [0.03834223747253418, 0.5418919920921326, 0.41976580023765564]
+attack suc rate 90.38000000000001 %
+average # of queries: 4.846153846153846.
+all perturbed tokens :  1565
+total token lens     :  47656
+avg perturbed tokens :  30.1
+avg perturbation rate:  0.0328
+saved at sample  52.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+53.0  th document.
+decoded_text were sort of a double sign with a a big miles per hour and a little kilometers per hour type uh marking on the side [SEP] A sign that only displays mph.
+text_parts ['were sort of a double sign with a a big miles per hour and a little kilometers per hour type uh marking on the side ', ' A sign that only displays mph.']
+stgt:  [ [ were ] ] [ [ sort ] ] [ [ of ] ] [ [ a ] ] [ [ double ] ] [ [ sign ] ] with a a big [ [ miles ] ] per hour and a little kilometers per hour type uh marking on the [ [ side ] ] A sign that only displays mph.
+0   miles  ->  myself   0.804539  ->  0.555973
+myself  ->  level
+decoded_text were sort of a double sign with a a big level per hour and a little kilometers per hour type uh marking on the side [SEP] A sign that only displays mph.
+text_parts ['were sort of a double sign with a a big level per hour and a little kilometers per hour type uh marking on the side ', ' A sign that only displays mph.']
+advInxCut [1127, 3271, 1104, 170, 2702, 2951, 1114, 170, 170, 1992, 1634, 1679, 2396, 1105, 170, 1376, 6832, 1679, 2396, 2076, 14863, 10079, 1113, 1103, 1334, 102, 138, 2951, 1115, 1178, 8609, 4955, 119]
+advText [('were sort of a double sign with a a big level per hour and a little kilometers per hour type uh marking on the side ', ' A sign that only displays mph.')]
+srcTxt:  were sort of a double sign with a a big [ [ miles ] ] per hour and a little kilometers per hour type uh marking on the side A sign that only displays mph.
+advTxt:  were sort of a double sign with a a big [ [ level ] ] per hour and a little kilometers per hour type uh marking on the side A sign that only displays mph.
+srcTxt:  ('were sort of a double sign with a a big miles per hour and a little kilometers per hour type uh marking on the side ', ' A sign that only displays mph.')
+advTxt:  ('were sort of a double sign with a a big level per hour and a little kilometers per hour type uh marking on the side ', ' A sign that only displays mph.')
+tLabel:  0
+targetTokens ['miles']
+toTokens ['level']
+sProbs:  [0.8045387864112854, 0.10160882771015167, 0.09385236352682114]
+aProbs:  [0.31788960099220276, 0.24217835068702698, 0.43993210792541504]
+attack suc rate 90.57 %
+average # of queries: 4.7924528301886795.
+all perturbed tokens :  1629
+total token lens     :  49607
+avg perturbed tokens :  30.74
+avg perturbation rate:  0.0328
+saved at sample  53.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+54.0  th document.
+decoded_text there and they uh they in fact they had this was in uh the late twenties and they in fact used some of the equipment that had been left over and uh he turned them down it it's interesting that that most people don't realize how small the canal is have you ever been there [SEP] This was in 1928
+text_parts ["there and they uh they in fact they had this was in uh the late twenties and they in fact used some of the equipment that had been left over and uh he turned them down it it's interesting that that most people don't realize how small the canal is have you ever been there ", ' This was in 1928']
+stgt:  there and they uh they [ [ in ] ] fact [ [ they ] ] [ [ had ] ] this was in uh [ [ the ] ] [ [ late ] ] twenties and they [ [ in ] ] [ [ fact ] ] used some of the equipment that had been left over and uh he turned them down it it's interesting that that most people don't realize how small the canal is have you [ [ ever ] ] been there This was in 1928
+decoded_text there and they uh they in fact they had this was in uh the late twenties and they in fact used some of the equipment that had been left over and uh he turned them down it it's interesting that that most people don't realize how small the canal is have you ever been there [SEP] This was in 1928
+text_parts ["there and they uh they in fact they had this was in uh the late twenties and they in fact used some of the equipment that had been left over and uh he turned them down it it's interesting that that most people don't realize how small the canal is have you ever been there ", ' This was in 1928']
+advInxCut [1175, 1105, 1152, 14863, 1152, 1107, 1864, 1152, 1125, 1142, 1108, 1107, 14863, 1103, 1523, 21708, 1105, 1152, 1107, 1864, 1215, 1199, 1104, 1103, 3204, 1115, 1125, 1151, 1286, 1166, 1105, 14863, 1119, 1454, 1172, 1205, 1122, 1122, 112, 188, 5426, 1115, 1115, 1211, 1234, 1202, 183, 112, 189, 4663, 1293, 1353, 1103, 7684, 1110, 1138, 1128, 1518, 1151, 1175, 102, 1188, 1108, 1107, 3825]
+advText [("there and they uh they in fact they had this was in uh the late twenties and they in fact used some of the equipment that had been left over and uh he turned them down it it's interesting that that most people don't realize how small the canal is have you ever been there ", ' This was in 1928')]
+srcTxt:  there and they uh they in fact they had this was in uh the late twenties and they in fact used some of the equipment that had been left over and uh he turned them down it it's interesting that that most people don't realize how small the canal is have you ever been there This was in 1928
+advTxt:  there and they uh they in fact they had this was in uh the late twenties and they in fact used some of the equipment that had been left over and uh he turned them down it it's interesting that that most people don't realize how small the canal is have you ever been there This was in 1928
+srcTxt:  ("there and they uh they in fact they had this was in uh the late twenties and they in fact used some of the equipment that had been left over and uh he turned them down it it's interesting that that most people don't realize how small the canal is have you ever been there ", ' This was in 1928')
+advTxt:  ("there and they uh they in fact they had this was in uh the late twenties and they in fact used some of the equipment that had been left over and uh he turned them down it it's interesting that that most people don't realize how small the canal is have you ever been there ", ' This was in 1928')
+tLabel:  2
+targetTokens []
+toTokens []
+sProbs:  [0.8336353302001953, 0.012953653000295162, 0.15341098606586456]
+aProbs:  [0.8336353302001953, 0.012953653000295162, 0.15341098606586456]
+attack suc rate 90.74 %
+average # of queries: 4.703703703703703.
+all perturbed tokens :  1693
+total token lens     :  51623
+avg perturbed tokens :  31.35
+avg perturbation rate:  0.0328
+saved at sample  54.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084659_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+55.0  th document.
+decoded_text It also describes the results of the scenario analysis, both in terms of the various marginal costs associated with emission control strategies and the economy - wide impact of each scenario. [SEP] It gives a breakdown of both the costs and impacts of the scenarios.
+text_parts ['It also describes the results of the scenario analysis, both in terms of the various marginal costs associated with emission control strategies and the economy - wide impact of each scenario. ', ' It gives a breakdown of both the costs and impacts of the scenarios.']
+stgt:  It also describes the results of the [ [ scenario ] ] analysis, both in [ [ terms ] ] of the various marginal [ [ costs ] ] associated with emission control strategies and the economy - [ [ wide ] ] [ [ impact ] ] of [ [ each ] ] [ [ scenario ] ] [ [. ] ] It gives a breakdown of both the costs and impacts of the scenarios.

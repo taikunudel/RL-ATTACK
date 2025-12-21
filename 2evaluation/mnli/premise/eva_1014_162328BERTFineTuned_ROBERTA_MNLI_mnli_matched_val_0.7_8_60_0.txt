@@ -1,0 +1,21 @@
+GPU usage:
+  memory.used memory.free
+0    8793 MiB   15454 MiB
+1    1353 MiB   22892 MiB
+Returning GPU1 with  22892 free MiB
+cuda:1
+GPU usage:
+  memory.used memory.free
+0    8793 MiB   15454 MiB
+1    1353 MiB   22892 MiB
+Returning GPU1 with  22892 free MiB
+Running on: cuda:1
+numsProcessedSamples 1000
+Vocabulary Size: 28996
+ROBERTA_MNLI
+Evaluation Data Size: 1000
+CLS token ID: 101
+SEP token ID: 102
+PAD token ID: 0
+MASK token ID: 103
+UNK token ID: 100

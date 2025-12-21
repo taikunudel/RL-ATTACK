@@ -1,0 +1,19 @@
+atker_path: bert-base-uncased
+target_path: temp
+len_doc_max: 512
+prefix_length: 10
+save_to_path: /usa/taikun/07_transencoder/1training/llama-guard-attacker/
+Using GPU 1
+Attacker Base: bert-base-uncased
+Vocabulary Size: 30522
+Training data size: 19527
+Validation data size: 1000
+Evaluation data size: 1000
+
+Class distribution in each split:
+Training: {'jailbreak': tensor(1879), 'regular': tensor(17648), 'total': 19527}
+Validation: {'jailbreak': tensor(96), 'regular': tensor(904), 'total': 1000}
+Evaluation: {'jailbreak': tensor(96), 'regular': tensor(904), 'total': 1000}
+Number of batches in training dataloader: 1221
+Number of batches in validation dataloader: 63
+Number of batches in evaluation dataloader: 63

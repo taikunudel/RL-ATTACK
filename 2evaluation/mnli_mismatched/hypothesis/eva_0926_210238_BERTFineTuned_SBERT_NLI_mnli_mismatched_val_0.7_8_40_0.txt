@@ -1,0 +1,27 @@
+GPU usage:
+  memory.used memory.free
+0   13700 MiB   10547 MiB
+1   12149 MiB   12096 MiB
+Returning GPU1 with  12096 free MiB
+cuda:1
+GPU usage:
+  memory.used memory.free
+0   13700 MiB   10547 MiB
+1   12149 MiB   12096 MiB
+Returning GPU1 with  12096 free MiB
+Running on: cuda:1
+numsProcessedSamples 1000
+Vocabulary Size: 28996
+BERT_UNCASED
+Evaluation Data Size: 1000
+CLS token ID: 101
+SEP token ID: 102
+PAD token ID: 0
+MASK token ID: 103
+UNK token ID: 100
+torch.Size([1000, 512])
+torch.Size([1000, 512])
+torch.Size([1000])
+1000
+attacker base: bert-base-cased 
+Initialize the weights with Gaussian N(0, 1)

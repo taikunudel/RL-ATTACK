@@ -1,0 +1,622 @@
+numsProcessedSamples 1000
+Vocabulary Size: 28996
+Evaluation Data Size: 1000
+CLS token ID: 101
+SEP token ID: 102
+PAD token ID: 0
+MASK token ID: 103
+UNK token ID: 100
+torch.Size([1000, 512])
+torch.Size([1000, 512])
+torch.Size([1000])
+1000
+attacker device:  cuda:0
+1.0  th document.
+stgt:  You can't take it with you - - neither can I, unfortunately. [ [ You ] ] [ [ are ] ] [ [ not ] ] [ [ able ] ] [ [ to ] ] [ [ bring ] ] [ [ it ] ] [ [ with ] ] you.
+entailment   You  ->  Aviation   0.869313  ->  0.752239
+entailment   Aviation  ->  mountains   0.752239  ->  0.731544
+entailment   mountains  ->  1855   0.731544  ->  0.633669
+are  ->  mountains
+srcTxt:  You can't take it with you - - neither can I, unfortunately. [ [ You ] ] [ [ are ] ] not able to bring it with you.
+advTxt:  You can't take it with you - - neither can I, unfortunately. [ [ 1855 ] ] [ [ mountains ] ] not able to bring it with you.
+srcTxt:  You can't take it with you - - neither can I, unfortunately. You are not able to bring it with you.
+advTxt:  You can't take it with you - - neither can I, unfortunately. 1855 mountains not able to bring it with you.
+targetTokens ['You', 'are']
+toTokens ['1855', 'mountains']
+sProbs:  [0.005362264811992645, 0.8693127632141113, 0.12532499432563782]
+aProbs:  [0.04743904992938042, 0.47185489535331726, 0.48070603609085083]
+attack suc rate 100.0 %
+average # of queries: 19.0.
+2.0  th document.
+stgt:  The publisher sent unrevised bound proofs from which this review was prepared ; unfortunately, there was no proof of an index, but the publisher has assured me that there will be one in the published book, a rather essential ingredient of a work with this title. [ [ Having ] ] [ [ an ] ] [ [ index ] ] [ [ in ] ] [ [ a ] ] [ [ book ] ] [ [ is ] ] [ [ very ] ] important.
+srcTxt:  The publisher sent unrevised bound proofs from which this review was prepared ; unfortunately, there was no proof of an index, but the publisher has assured me that there will be one in the published book, a rather essential ingredient of a work with this title. Having an index in a book is very important.
+advTxt:  The publisher sent unrevised bound proofs from which this review was prepared ; unfortunately, there was no proof of an index, but the publisher has assured me that there will be one in the published book, a rather essential ingredient of a work with this title. Having an index in a book is very important.
+srcTxt:  The publisher sent unrevised bound proofs from which this review was prepared ; unfortunately, there was no proof of an index, but the publisher has assured me that there will be one in the published book, a rather essential ingredient of a work with this title. Having an index in a book is very important.
+advTxt:  The publisher sent unrevised bound proofs from which this review was prepared ; unfortunately, there was no proof of an index, but the publisher has assured me that there will be one in the published book, a rather essential ingredient of a work with this title. Having an index in a book is very important.
+targetTokens []
+toTokens []
+sProbs:  [0.05078136548399925, 0.730766236782074, 0.21845240890979767]
+aProbs:  [0.05078136548399925, 0.730766236782074, 0.21845240890979767]
+attack suc rate 100.0 %
+average # of queries: 9.5.
+3.0  th document.
+stgt:  So after two or three days he called Callgrove and said, Don't bother coming in I found a guy better than you. [ [ He ] ] [ [ called ] ] [ [ up ] ] [ [ Call ] ] [ [grove ] ] [ [ to ] ] [ [ give ] ] [ [ him ] ] a raise.
+srcTxt:  So after two or three days he called Callgrove and said, Don't bother coming in I found a guy better than you. He called up Callgrove to give him a raise.
+advTxt:  So after two or three days he called Callgrove and said, Don't bother coming in I found a guy better than you. He called up Callgrove to give him a raise.
+srcTxt:  So after two or three days he called Callgrove and said, Don't bother coming in I found a guy better than you. He called up Callgrove to give him a raise.
+advTxt:  So after two or three days he called Callgrove and said, Don't bother coming in I found a guy better than you. He called up Callgrove to give him a raise.
+targetTokens []
+toTokens []
+sProbs:  [0.3116488754749298, 0.4658913314342499, 0.22245977818965912]
+aProbs:  [0.3116488754749298, 0.4658913314342499, 0.22245977818965912]
+attack suc rate 100.0 %
+average # of queries: 6.333333333333333.
+4.0  th document.
+stgt:  There is a term in English for a tennis player reaching a height, for a brief stretch or longer, when he can not miss, and tennis people call it zoning. I have not heard it used in other cases, but when used it seems to equal tener duende. I do not know whether that use of duende has reached Portuguese speakers in Brazil or Portugal, but if it has not, it probably will soon, because so many Portuguese speakers are bilingual in Spanish. [ [ ] ] [ [ Z ] ] [ [oning ] ] [ [ is ] ] [ [ when ] ] [ [ a ] ] [ [ player ] ] [ [ hits ] ] the ball out of zone.
+srcTxt:  There is a term in English for a tennis player reaching a height, for a brief stretch or longer, when he can not miss, and tennis people call it zoning. I have not heard it used in other cases, but when used it seems to equal tener duende. I do not know whether that use of duende has reached Portuguese speakers in Brazil or Portugal, but if it has not, it probably will soon, because so many Portuguese speakers are bilingual in Spanish. Zoning is when a player hits the ball out of zone.
+advTxt:  There is a term in English for a tennis player reaching a height, for a brief stretch or longer, when he can not miss, and tennis people call it zoning. I have not heard it used in other cases, but when used it seems to equal tener duende. I do not know whether that use of duende has reached Portuguese speakers in Brazil or Portugal, but if it has not, it probably will soon, because so many Portuguese speakers are bilingual in Spanish. Zoning is when a player hits the ball out of zone.
+srcTxt:  There is a term in English for a tennis player reaching a height, for a brief stretch or longer, when he can not miss, and tennis people call it zoning. I have not heard it used in other cases, but when used it seems to equal tener duende. I do not know whether that use of duende has reached Portuguese speakers in Brazil or Portugal, but if it has not, it probably will soon, because so many Portuguese speakers are bilingual in Spanish. Zoning is when a player hits the ball out of zone.
+advTxt:  There is a term in English for a tennis player reaching a height, for a brief stretch or longer, when he can not miss, and tennis people call it zoning. I have not heard it used in other cases, but when used it seems to equal tener duende. I do not know whether that use of duende has reached Portuguese speakers in Brazil or Portugal, but if it has not, it probably will soon, because so many Portuguese speakers are bilingual in Spanish. Zoning is when a player hits the ball out of zone.
+targetTokens []
+toTokens []
+sProbs:  [0.14356006681919098, 0.6806936860084534, 0.17574629187583923]
+aProbs:  [0.14356006681919098, 0.6806936860084534, 0.17574629187583923]
+attack suc rate 100.0 %
+average # of queries: 4.75.
+5.0  th document.
+stgt:  As a key part of its efforts, Defense created National Guard WMD Civil Support Teams to respond in the event of a WMD terrorist incident. [ [ Defense ] ] [ [ created ] ] [ [ the ] ] [ [ National ] ] [ [ Guard ] ] [ [ W ] ] [ [MD ] ] [ [ Civil ] ] Support Teams to deal with a terrorism event on a mass scale.
+Defense  ->  Aviation
+srcTxt:  As a key part of its efforts, Defense created National Guard WMD Civil Support Teams to respond in the event of a WMD terrorist incident. [ [ Defense ] ] created the National Guard WMD Civil Support Teams to deal with a terrorism event on a mass scale.
+advTxt:  As a key part of its efforts, Defense created National Guard WMD Civil Support Teams to respond in the event of a WMD terrorist incident. [ [ Aviation ] ] created the National Guard WMD Civil Support Teams to deal with a terrorism event on a mass scale.
+srcTxt:  As a key part of its efforts, Defense created National Guard WMD Civil Support Teams to respond in the event of a WMD terrorist incident. Defense created the National Guard WMD Civil Support Teams to deal with a terrorism event on a mass scale.
+advTxt:  As a key part of its efforts, Defense created National Guard WMD Civil Support Teams to respond in the event of a WMD terrorist incident. Aviation created the National Guard WMD Civil Support Teams to deal with a terrorism event on a mass scale.
+targetTokens ['Defense']
+toTokens ['Aviation']
+sProbs:  [0.031996581703424454, 0.789398729801178, 0.17860472202301025]
+aProbs:  [0.6611608862876892, 0.2745736837387085, 0.06426539272069931]
+attack suc rate 100.0 %
+average # of queries: 4.0.
+6.0  th document.
+stgt:  Yeah, but I've done it for so long, I'm used to like lifeguard and like everything like that. [ [ I ] ] [ [ love ] ] [ [ being ] ] [ [ a ] ] [ [ life ] ] [ [guard ] ] [ [. ] ]
+srcTxt:  Yeah, but I've done it for so long, I'm used to like lifeguard and like everything like that. I love being a lifeguard.
+advTxt:  Yeah, but I've done it for so long, I'm used to like lifeguard and like everything like that. I love being a lifeguard.
+srcTxt:  Yeah, but I've done it for so long, I'm used to like lifeguard and like everything like that. I love being a lifeguard.
+advTxt:  Yeah, but I've done it for so long, I'm used to like lifeguard and like everything like that. I love being a lifeguard.
+targetTokens []
+toTokens []
+sProbs:  [0.01728138141334057, 0.6796021461486816, 0.30311650037765503]
+aProbs:  [0.01728138141334057, 0.6796021461486816, 0.30311650037765503]
+attack suc rate 100.0 %
+average # of queries: 3.3333333333333335.
+7.0  th document.
+stgt:  While his allied Islamist groups were focused on local battles, such as those in Egypt, Algeria, Bosnia, or Chechnya, Bin Ladin concentrated on attacking the far enemy - the United States. [ [ ] ] [ [ Bin ] ] [ [ La ] ] [ [din ] ] [ [ was ] ] [ [ the ] ] [ [ only ] ] [ [ Islam ] ]ist concerned with attacking the United States.
+srcTxt:  While his allied Islamist groups were focused on local battles, such as those in Egypt, Algeria, Bosnia, or Chechnya, Bin Ladin concentrated on attacking the far enemy - the United States. Bin Ladin was the only Islamist concerned with attacking the United States.
+advTxt:  While his allied Islamist groups were focused on local battles, such as those in Egypt, Algeria, Bosnia, or Chechnya, Bin Ladin concentrated on attacking the far enemy - the United States. Bin Ladin was the only Islamist concerned with attacking the United States.
+srcTxt:  While his allied Islamist groups were focused on local battles, such as those in Egypt, Algeria, Bosnia, or Chechnya, Bin Ladin concentrated on attacking the far enemy - the United States. Bin Ladin was the only Islamist concerned with attacking the United States.
+advTxt:  While his allied Islamist groups were focused on local battles, such as those in Egypt, Algeria, Bosnia, or Chechnya, Bin Ladin concentrated on attacking the far enemy - the United States. Bin Ladin was the only Islamist concerned with attacking the United States.
+targetTokens []
+toTokens []
+sProbs:  [0.5096165537834167, 0.3246976435184479, 0.1656857579946518]
+aProbs:  [0.5096165537834167, 0.3246976435184479, 0.1656857579946518]
+attack suc rate 100.0 %
+average # of queries: 2.857142857142857.
+8.0  th document.
+stgt:  I want to meet the coldest women'the women who get their diamonds and cars and then start to bawl about how sad and unlucky they've been. [ [ ] ] [ [ There ] ] [ [ are ] ] [ [ women ] ] [ [ who ] ] [ [ unfair ] ] [ [ly ] ] [ [ complain ] ] about their lives even though they have diamonds and cars.
+entailment   There  ->  Aviation   0.837473  ->  0.677523
+entailment   Aviation  ->  1855   0.677523  ->  0.529844
+entailment   are  ->  CPU   0.529844  ->  0.526306
+CPU  ->  Romania
+srcTxt:  I want to meet the coldest women'the women who get their diamonds and cars and then start to bawl about how sad and unlucky they've been. [ [ There ] ] [ [ are ] ] women who unfairly complain about their lives even though they have diamonds and cars.
+advTxt:  I want to meet the coldest women'the women who get their diamonds and cars and then start to bawl about how sad and unlucky they've been. [ [ 1855 ] ] [ [ Romania ] ] women who unfairly complain about their lives even though they have diamonds and cars.
+srcTxt:  I want to meet the coldest women'the women who get their diamonds and cars and then start to bawl about how sad and unlucky they've been. There are women who unfairly complain about their lives even though they have diamonds and cars.
+advTxt:  I want to meet the coldest women'the women who get their diamonds and cars and then start to bawl about how sad and unlucky they've been. 1855 Romania women who unfairly complain about their lives even though they have diamonds and cars.
+targetTokens ['There', 'are']
+toTokens ['1855', 'Romania']
+sProbs:  [0.019222965463995934, 0.837473452091217, 0.14330355823040009]
+aProbs:  [0.12755267322063446, 0.4270404875278473, 0.44540682435035706]
+attack suc rate 100.0 %
+average # of queries: 5.0.
+9.0  th document.
+stgt:  . Substantively, if not literally, she made a morox [ [. ] ] [ [ ] ] [ [ She ] ] [ [ made ] ] [ [ a ] ] [ [ m ] ] [ [oro ] ] [ [x ] ] out of the materials.
+srcTxt:  . Substantively, if not literally, she made a morox. She made a morox out of the materials.
+advTxt:  . Substantively, if not literally, she made a morox. She made a morox out of the materials.
+srcTxt:  . Substantively, if not literally, she made a morox. She made a morox out of the materials.
+advTxt:  . Substantively, if not literally, she made a morox. She made a morox out of the materials.
+targetTokens []
+toTokens []
+sProbs:  [0.00830574706196785, 0.9019027948379517, 0.089791439473629]
+aProbs:  [0.00830574706196785, 0.9019027948379517, 0.089791439473629]
+attack suc rate 100.0 %
+average # of queries: 4.444444444444445.
+saved at sample  9.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli_mismatched/hypothesis/BERTFineTuned_mnli_mismatched_val_0.7_8_80_0_0147_19July.json
+10.0  th document.
+stgt:  The NEADS technician who took this call from the FAA immediately passed the word to the mission crew commander, who reported to the NEADS battle Mission Crew Commander, Okay, uh, American Airlines is still airborne [ [. ] ] [ [ ] ] [ [ The ] ] [ [ battle ] ] [ [ commander ] ] [ [ tried ] ] [ [ to ] ] [ [ de ] ]vise a strategy to stop the plane.
+srcTxt:  The NEADS technician who took this call from the FAA immediately passed the word to the mission crew commander, who reported to the NEADS battle Mission Crew Commander, Okay, uh, American Airlines is still airborne. The battle commander tried to devise a strategy to stop the plane.
+advTxt:  The NEADS technician who took this call from the FAA immediately passed the word to the mission crew commander, who reported to the NEADS battle Mission Crew Commander, Okay, uh, American Airlines is still airborne. The battle commander tried to devise a strategy to stop the plane.
+srcTxt:  The NEADS technician who took this call from the FAA immediately passed the word to the mission crew commander, who reported to the NEADS battle Mission Crew Commander, Okay, uh, American Airlines is still airborne. The battle commander tried to devise a strategy to stop the plane.
+advTxt:  The NEADS technician who took this call from the FAA immediately passed the word to the mission crew commander, who reported to the NEADS battle Mission Crew Commander, Okay, uh, American Airlines is still airborne. The battle commander tried to devise a strategy to stop the plane.
+targetTokens []
+toTokens []
+sProbs:  [0.07445944845676422, 0.622969388961792, 0.302571177482605]
+aProbs:  [0.07445944845676422, 0.622969388961792, 0.302571177482605]
+attack suc rate 100.0 %
+average # of queries: 4.0.
+11.0  th document.
+stgt:  The FAA, the White House, and the Defense Department each initiated a multiagency teleconference before 9 : 30. [ [ Multi ] ] [ [age ] ] [ [ncy ] ] [ [ communication ] ] [ [ did ] ] [ [ not ] ] [ [ take ] ] [ [ place ] ] at all.
+srcTxt:  The FAA, the White House, and the Defense Department each initiated a multiagency teleconference before 9 : 30. Multiagency communication did not take place at all.
+advTxt:  The FAA, the White House, and the Defense Department each initiated a multiagency teleconference before 9 : 30. Multiagency communication did not take place at all.
+srcTxt:  The FAA, the White House, and the Defense Department each initiated a multiagency teleconference before 9 : 30. Multiagency communication did not take place at all.
+advTxt:  The FAA, the White House, and the Defense Department each initiated a multiagency teleconference before 9 : 30. Multiagency communication did not take place at all.
+targetTokens []
+toTokens []
+sProbs:  [0.10933837294578552, 0.7678242921829224, 0.1228373646736145]
+aProbs:  [0.10933837294578552, 0.7678242921829224, 0.1228373646736145]
+attack suc rate 100.0 %
+average # of queries: 3.6363636363636362.
+12.0  th document.
+stgt:  They claimed they had a bomb. [ [ They ] ] [ [ did ] ] [ [ not ] ] [ [ say ] ] [ [ anything ] ] [ [. ] ]
+srcTxt:  They claimed they had a bomb. They did not say anything.
+advTxt:  They claimed they had a bomb. They did not say anything.
+srcTxt:  They claimed they had a bomb. They did not say anything.
+advTxt:  They claimed they had a bomb. They did not say anything.
+targetTokens []
+toTokens []
+sProbs:  [0.02645406313240528, 0.6741634607315063, 0.29938241839408875]
+aProbs:  [0.02645406313240528, 0.6741634607315063, 0.29938241839408875]
+attack suc rate 100.0 %
+average # of queries: 3.3333333333333335.
+13.0  th document.
+stgt:  As United 93 left Newark, the flight's crew members were unaware of the hijacking of American 11. [ [ As ] ] [ [ the ] ] [ [ flight ] ] [ [ United ] ] [ [ 93 ] ] [ [ left ] ] [ [ Newark ] ] [ [ the ] ] crew members were tragically unaware of the hijacking of American 11 and if they had been they could have prevented their own hijacking by keeping the plane grounded and double - checking for safety.
+srcTxt:  As United 93 left Newark, the flight's crew members were unaware of the hijacking of American 11. As the flight United 93 left Newark the crew members were tragically unaware of the hijacking of American 11 and if they had been they could have prevented their own hijacking by keeping the plane grounded and double - checking for safety.
+advTxt:  As United 93 left Newark, the flight's crew members were unaware of the hijacking of American 11. As the flight United 93 left Newark the crew members were tragically unaware of the hijacking of American 11 and if they had been they could have prevented their own hijacking by keeping the plane grounded and double - checking for safety.
+srcTxt:  As United 93 left Newark, the flight's crew members were unaware of the hijacking of American 11. As the flight United 93 left Newark the crew members were tragically unaware of the hijacking of American 11 and if they had been they could have prevented their own hijacking by keeping the plane grounded and double - checking for safety.
+advTxt:  As United 93 left Newark, the flight's crew members were unaware of the hijacking of American 11. As the flight United 93 left Newark the crew members were tragically unaware of the hijacking of American 11 and if they had been they could have prevented their own hijacking by keeping the plane grounded and double - checking for safety.
+targetTokens []
+toTokens []
+sProbs:  [0.20332251489162445, 0.6715251803398132, 0.12515227496623993]
+aProbs:  [0.20332251489162445, 0.6715251803398132, 0.12515227496623993]
+attack suc rate 100.0 %
+average # of queries: 3.076923076923077.
+14.0  th document.
+stgt:  Lockean ideas provided the footing for American behaviorism, launched by John Watson in the early 1900s and built by B. F. Skinner into a powerful mid - century theoretical force heralding the supremacy of environment in its belief that behavior is shaped by external stimuli. [ [ ] ] [ [ The ] ] [ [ ideas ] ] [ [ of ] ] [ [ Locke ] ] [ [an ] ] [ [ have ] ] [ [ created ] ] the backbone for American behaviorism.
+entailment   The  ->  Aviation   0.836286  ->  0.737662
+entailment   Aviation  ->  race   0.737662  ->  0.731937
+entailment   ideas  ->  Outstanding   0.731937  ->  0.722798
+entailment   Outstanding  ->  Romania   0.722798  ->  0.660351
+entailment   of  ->  Aviation   0.660351  ->  0.627544
+entailment   Aviation  ->  Santana   0.627544  ->  0.551832
+Santana  ->  1791
+srcTxt:  Lockean ideas provided the footing for American behaviorism, launched by John Watson in the early 1900s and built by B. F. Skinner into a powerful mid - century theoretical force heralding the supremacy of environment in its belief that behavior is shaped by external stimuli. [ [ The ] ] [ [ ideas ] ] [ [ of ] ] Lockean have created the backbone for American behaviorism.
+advTxt:  Lockean ideas provided the footing for American behaviorism, launched by John Watson in the early 1900s and built by B. F. Skinner into a powerful mid - century theoretical force heralding the supremacy of environment in its belief that behavior is shaped by external stimuli. [ [ race ] ] [ [ Romania ] ] [ [ 1791 ] ] Lockean have created the backbone for American behaviorism.
+srcTxt:  Lockean ideas provided the footing for American behaviorism, launched by John Watson in the early 1900s and built by B. F. Skinner into a powerful mid - century theoretical force heralding the supremacy of environment in its belief that behavior is shaped by external stimuli. The ideas of Lockean have created the backbone for American behaviorism.
+advTxt:  Lockean ideas provided the footing for American behaviorism, launched by John Watson in the early 1900s and built by B. F. Skinner into a powerful mid - century theoretical force heralding the supremacy of environment in its belief that behavior is shaped by external stimuli. race Romania 1791 Lockean have created the backbone for American behaviorism.
+targetTokens ['The', 'ideas', 'of']
+toTokens ['race', 'Romania', '1791']
+sProbs:  [0.025159873068332672, 0.8362859487533569, 0.13855420053005219]
+aProbs:  [0.4542114734649658, 0.4126737415790558, 0.1331147849559784]
+attack suc rate 100.0 %
+average # of queries: 4.785714285714286.
+15.0  th document.
+stgt:  And how, OK can you tell me any flood stories about growing up in Penn? [ [ Can ] ] [ [ you ] ] [ [ describe ] ] [ [ any ] ] [ [ flood ] ] [ [ stories ] ] [ [ about ] ] [ [ living ] ] in Penn?
+entailment   Can  ->  Aviation   0.687321  ->  0.55347
+Aviation  ->  1855
+srcTxt:  And how, OK can you tell me any flood stories about growing up in Penn? [ [ Can ] ] you describe any flood stories about living in Penn?
+advTxt:  And how, OK can you tell me any flood stories about growing up in Penn? [ [ 1855 ] ] you describe any flood stories about living in Penn?
+srcTxt:  And how, OK can you tell me any flood stories about growing up in Penn? Can you describe any flood stories about living in Penn?
+advTxt:  And how, OK can you tell me any flood stories about growing up in Penn? 1855 you describe any flood stories about living in Penn?
+targetTokens ['Can']
+toTokens ['1855']
+sProbs:  [0.05057128518819809, 0.6873213052749634, 0.26210737228393555]
+aProbs:  [0.29690948128700256, 0.34209683537483215, 0.3609936833381653]
+attack suc rate 100.0 %
+average # of queries: 4.6.
+16.0  th document.
+stgt:  Such stitching generally outlasts the fabric of jeans, as one can see from looking at the holey knees of jeans worn by many teenagers [ [. ] ] [ [ ] ] [ [ Such ] ] [ [ s ] ] [ [ti ] ] [ [tch ] ] [ [ing ] ] [ [ usually ] ] gives out before the fabric of the jeans does.
+srcTxt:  Such stitching generally outlasts the fabric of jeans, as one can see from looking at the holey knees of jeans worn by many teenagers. Such stitching usually gives out before the fabric of the jeans does.
+advTxt:  Such stitching generally outlasts the fabric of jeans, as one can see from looking at the holey knees of jeans worn by many teenagers. Such stitching usually gives out before the fabric of the jeans does.
+srcTxt:  Such stitching generally outlasts the fabric of jeans, as one can see from looking at the holey knees of jeans worn by many teenagers. Such stitching usually gives out before the fabric of the jeans does.
+advTxt:  Such stitching generally outlasts the fabric of jeans, as one can see from looking at the holey knees of jeans worn by many teenagers. Such stitching usually gives out before the fabric of the jeans does.
+targetTokens []
+toTokens []
+sProbs:  [0.30434802174568176, 0.3300553560256958, 0.36559659242630005]
+aProbs:  [0.30434802174568176, 0.3300553560256958, 0.36559659242630005]
+attack suc rate 100.0 %
+average # of queries: 4.3125.
+17.0  th document.
+stgt:  Okay, you read that from the Vice President, right? [ [ I ] ] [ [ understand ] ] [ [ that ] ] [ [ the ] ] [ [ Vice ] ] [ [ President ] ] [ [ had ] ] [ [ no ] ] involvement in any way.
+srcTxt:  Okay, you read that from the Vice President, right? I understand that the Vice President had no involvement in any way.
+advTxt:  Okay, you read that from the Vice President, right? I understand that the Vice President had no involvement in any way.
+srcTxt:  Okay, you read that from the Vice President, right? I understand that the Vice President had no involvement in any way.
+advTxt:  Okay, you read that from the Vice President, right? I understand that the Vice President had no involvement in any way.
+targetTokens []
+toTokens []
+sProbs:  [0.11009611189365387, 0.576741099357605, 0.31316283345222473]
+aProbs:  [0.11009611189365387, 0.576741099357605, 0.31316283345222473]
+attack suc rate 100.0 %
+average # of queries: 4.0588235294117645.
+18.0  th document.
+stgt:  Between these is an occasional flash of useful wisdom, much of it pretty well covered by other books of this type - LRB - which seem to be proliferating - RRB -. [ [ Despite ] ] [ [ the ] ] [ [ lack ] ] [ [ of ] ] [ [ new ] ] [ [ information ] ] [ [ in ] ] [ [ this ] ] book, it still stands on its own merit.
+srcTxt:  Between these is an occasional flash of useful wisdom, much of it pretty well covered by other books of this type - LRB - which seem to be proliferating - RRB -. Despite the lack of new information in this book, it still stands on its own merit.
+advTxt:  Between these is an occasional flash of useful wisdom, much of it pretty well covered by other books of this type - LRB - which seem to be proliferating - RRB -. Despite the lack of new information in this book, it still stands on its own merit.
+srcTxt:  Between these is an occasional flash of useful wisdom, much of it pretty well covered by other books of this type - LRB - which seem to be proliferating - RRB -. Despite the lack of new information in this book, it still stands on its own merit.
+advTxt:  Between these is an occasional flash of useful wisdom, much of it pretty well covered by other books of this type - LRB - which seem to be proliferating - RRB -. Despite the lack of new information in this book, it still stands on its own merit.
+targetTokens []
+toTokens []
+sProbs:  [0.033553171902894974, 0.7608574032783508, 0.20558945834636688]
+aProbs:  [0.033553171902894974, 0.7608574032783508, 0.20558945834636688]
+attack suc rate 100.0 %
+average # of queries: 3.8333333333333335.
+19.0  th document.
+stgt:  Its institutions take many forms and survive under many different political regimes. [ [ ] ] [ [ Its ] ] [ [ institutions ] ] [ [ survive ] ] [ [ only ] ] [ [ under ] ] [ [ one ] ] [ [ type ] ] of political regime.
+srcTxt:  Its institutions take many forms and survive under many different political regimes. Its institutions survive only under one type of political regime.
+advTxt:  Its institutions take many forms and survive under many different political regimes. Its institutions survive only under one type of political regime.
+srcTxt:  Its institutions take many forms and survive under many different political regimes. Its institutions survive only under one type of political regime.
+advTxt:  Its institutions take many forms and survive under many different political regimes. Its institutions survive only under one type of political regime.
+targetTokens []
+toTokens []
+sProbs:  [0.029539141803979874, 0.8433724045753479, 0.12708839774131775]
+aProbs:  [0.029539141803979874, 0.8433724045753479, 0.12708839774131775]
+attack suc rate 100.0 %
+average # of queries: 3.6315789473684212.
+saved at sample  19.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli_mismatched/hypothesis/BERTFineTuned_mnli_mismatched_val_0.7_8_80_0_0147_19July.json
+20.0  th document.
+stgt:  Beyond English, entry into the guild may mean acquiring a special language of education - LRB - such as French in Senegal and English in Kenya - RRB -, because many of the world's tongues are not yet - LRB - and may not ever be - RRB - part of the circle of standardized print languages in which the work of the guild can be conducted [ [. ] ] [ [ ] ] [ [ Entry ] ] [ [ into ] ] [ [ the ] ] [ [ g ] ] [ [uild ] ] [ [ may ] ] mean acquiring an alcoholic beverage license.
+srcTxt:  Beyond English, entry into the guild may mean acquiring a special language of education - LRB - such as French in Senegal and English in Kenya - RRB -, because many of the world's tongues are not yet - LRB - and may not ever be - RRB - part of the circle of standardized print languages in which the work of the guild can be conducted. Entry into the guild may mean acquiring an alcoholic beverage license.
+advTxt:  Beyond English, entry into the guild may mean acquiring a special language of education - LRB - such as French in Senegal and English in Kenya - RRB -, because many of the world's tongues are not yet - LRB - and may not ever be - RRB - part of the circle of standardized print languages in which the work of the guild can be conducted. Entry into the guild may mean acquiring an alcoholic beverage license.
+srcTxt:  Beyond English, entry into the guild may mean acquiring a special language of education - LRB - such as French in Senegal and English in Kenya - RRB -, because many of the world's tongues are not yet - LRB - and may not ever be - RRB - part of the circle of standardized print languages in which the work of the guild can be conducted. Entry into the guild may mean acquiring an alcoholic beverage license.
+advTxt:  Beyond English, entry into the guild may mean acquiring a special language of education - LRB - such as French in Senegal and English in Kenya - RRB -, because many of the world's tongues are not yet - LRB - and may not ever be - RRB - part of the circle of standardized print languages in which the work of the guild can be conducted. Entry into the guild may mean acquiring an alcoholic beverage license.
+targetTokens []
+toTokens []
+sProbs:  [0.1269117146730423, 0.5380564332008362, 0.3350318372249603]
+aProbs:  [0.1269117146730423, 0.5380564332008362, 0.3350318372249603]
+attack suc rate 100.0 %
+average # of queries: 3.45.
+21.0  th document.
+stgt:  Children of highly involved fathers score better on measures of intelligence, school achievement, mature social behavior, and fiexible beliefs about gender roles ` in short, on all the positive outcomes associated with maternal employment. [ [ Fathers ] ] [ [ do ] ] [ [ not ] ] [ [ contribute ] ] [ [ to ] ] [ [ a ] ] [ [ child ] ] [ ['] ] s development.
+srcTxt:  Children of highly involved fathers score better on measures of intelligence, school achievement, mature social behavior, and fiexible beliefs about gender roles ` in short, on all the positive outcomes associated with maternal employment. Fathers do not contribute to a child's development.
+advTxt:  Children of highly involved fathers score better on measures of intelligence, school achievement, mature social behavior, and fiexible beliefs about gender roles ` in short, on all the positive outcomes associated with maternal employment. Fathers do not contribute to a child's development.
+srcTxt:  Children of highly involved fathers score better on measures of intelligence, school achievement, mature social behavior, and fiexible beliefs about gender roles ` in short, on all the positive outcomes associated with maternal employment. Fathers do not contribute to a child's development.
+advTxt:  Children of highly involved fathers score better on measures of intelligence, school achievement, mature social behavior, and fiexible beliefs about gender roles ` in short, on all the positive outcomes associated with maternal employment. Fathers do not contribute to a child's development.
+targetTokens []
+toTokens []
+sProbs:  [0.2665640115737915, 0.4191867709159851, 0.3142492473125458]
+aProbs:  [0.2665640115737915, 0.4191867709159851, 0.3142492473125458]
+attack suc rate 100.0 %
+average # of queries: 3.2857142857142856.
+22.0  th document.
+stgt:  We're off to save the Galaxy! [ [ We ] ] [ [ refuse ] ] [ [ to ] ] [ [ save ] ] [ [ the ] ] [ [ galaxy ] ] [ [. ] ]
+srcTxt:  We're off to save the Galaxy! We refuse to save the galaxy.
+advTxt:  We're off to save the Galaxy! We refuse to save the galaxy.
+srcTxt:  We're off to save the Galaxy! We refuse to save the galaxy.
+advTxt:  We're off to save the Galaxy! We refuse to save the galaxy.
+targetTokens []
+toTokens []
+sProbs:  [0.05774349719285965, 0.8825172781944275, 0.059739284217357635]
+aProbs:  [0.05774349719285965, 0.8825172781944275, 0.059739284217357635]
+attack suc rate 100.0 %
+average # of queries: 3.1363636363636362.
+23.0  th document.
+stgt:  Apparel items at the very top of this triangle include dresses from Paris, Milan, and New York runways, which represent a very small share of apparel [ [ sold ] ] [ [. ] ] [ [ ] ] [ [ A ] ] [ [ppa ] ] [ [rel ] ] [ [ items ] ] [ [ from ] ] these runways include dresses that represent the majority of apparel sold.
+srcTxt:  Apparel items at the very top of this triangle include dresses from Paris, Milan, and New York runways, which represent a very small share of apparel sold. Apparel items from these runways include dresses that represent the majority of apparel sold.
+advTxt:  Apparel items at the very top of this triangle include dresses from Paris, Milan, and New York runways, which represent a very small share of apparel sold. Apparel items from these runways include dresses that represent the majority of apparel sold.
+srcTxt:  Apparel items at the very top of this triangle include dresses from Paris, Milan, and New York runways, which represent a very small share of apparel sold. Apparel items from these runways include dresses that represent the majority of apparel sold.
+advTxt:  Apparel items at the very top of this triangle include dresses from Paris, Milan, and New York runways, which represent a very small share of apparel sold. Apparel items from these runways include dresses that represent the majority of apparel sold.
+targetTokens []
+toTokens []
+sProbs:  [0.22767645120620728, 0.5641295909881592, 0.20819391310214996]
+aProbs:  [0.22767645120620728, 0.5641295909881592, 0.20819391310214996]
+attack suc rate 100.0 %
+average # of queries: 3.0.
+24.0  th document.
+stgt:  Thus, Step down - LRB - or back - RRB - and give me a shot was readily understood. [ [ Therefore ] ] [ [, ] ] [ [ hold ] ] [ [ back ] ] [ [ and ] ] [ [ let ] ] [ [ me ] ] [ [ shoot ] ] was comprehended.
+entailment   Therefore  ->  Aviation   0.879405  ->  0.71289
+entailment   hold  ->  ##lastic   0.71289  ->  0.709592
+entailment   ##lastic  ->  race   0.709592  ->  0.633195
+entailment   and  ->  ##lastic   0.633195  ->  0.630738
+entailment   ##lastic  ->  1855   0.630738  ->  0.584764
+entailment   me  ->  ##lastic   0.584764  ->  0.537114
+shoot  ->  race
+srcTxt:  Thus, Step down - LRB - or back - RRB - and give me a shot was readily understood. [ [ Therefore ] ], [ [ hold ] ] back [ [ and ] ] let [ [ me ] ] [ [ shoot ] ] was comprehended.
+advTxt:  Thus, Step down - LRB - or back - RRB - and give me a shot was readily understood. [ [ Aviation ] ], [ [ race ] ] back [ [ 1855 ] ] let [ [lastic ] ] [ [ race ] ] was comprehended.
+srcTxt:  Thus, Step down - LRB - or back - RRB - and give me a shot was readily understood. Therefore, hold back and let me shoot was comprehended.
+advTxt:  Thus, Step down - LRB - or back - RRB - and give me a shot was readily understood. Aviation, race back 1855 letlastic race was comprehended.
+targetTokens ['Therefore', 'hold', 'and', 'me', 'shoot']
+toTokens ['Aviation', 'race', '1855', '##lastic', 'race']
+sProbs:  [0.04531343653798103, 0.8794052600860596, 0.07528137415647507]
+aProbs:  [0.6162338852882385, 0.30295366048812866, 0.08081239461898804]
+attack suc rate 100.0 %
+average # of queries: 5.958333333333333.
+25.0  th document.
+stgt:  It began in medieval Europe, and in the late 20th century it is everywhere in the world. [ [ It ] ] [ [ will ] ] [ [ disappear ] ] [ [ by ] ] [ [ the ] ] [ [ middle ] ] [ [ of ] ] [ [ the ] ] 21st century.
+srcTxt:  It began in medieval Europe, and in the late 20th century it is everywhere in the world. It will disappear by the middle of the 21st century.
+advTxt:  It began in medieval Europe, and in the late 20th century it is everywhere in the world. It will disappear by the middle of the 21st century.
+srcTxt:  It began in medieval Europe, and in the late 20th century it is everywhere in the world. It will disappear by the middle of the 21st century.
+advTxt:  It began in medieval Europe, and in the late 20th century it is everywhere in the world. It will disappear by the middle of the 21st century.
+targetTokens []
+toTokens []
+sProbs:  [0.19959093630313873, 0.5233015418052673, 0.27710750699043274]
+aProbs:  [0.19959093630313873, 0.5233015418052673, 0.27710750699043274]
+attack suc rate 100.0 %
+average # of queries: 5.72.
+26.0  th document.
+stgt:  He said to me, You have to go, he said to me. [ [ He ] ] [ [ did ] ] [ [ n ] ] [ ['] ] [ [ t ] ] [ [ say ] ] [ [ anything ] ] [ [ to ] ] me about having to go.
+srcTxt:  He said to me, You have to go, he said to me. He didn't say anything to me about having to go.
+advTxt:  He said to me, You have to go, he said to me. He didn't say anything to me about having to go.
+srcTxt:  He said to me, You have to go, he said to me. He didn't say anything to me about having to go.
+advTxt:  He said to me, You have to go, he said to me. He didn't say anything to me about having to go.
+targetTokens []
+toTokens []
+sProbs:  [0.028769608587026596, 0.9052897691726685, 0.06594056636095047]
+aProbs:  [0.028769608587026596, 0.9052897691726685, 0.06594056636095047]
+attack suc rate 100.0 %
+average # of queries: 5.5.
+27.0  th document.
+stgt:  However, in light of the growth of rapid replenishment, our research predicts that the performance of these two units will vary over time, with the supplier that has implemented flexible planning and short - cycle production processes coming out ahead. [ [ ] ] [ [ The ] ] [ [ supplier ] ] [ [ who ] ] [ [ implements ] ] [ [ flexible ] ] [ [ planning ] ] [ [ will ] ] come out last.
+srcTxt:  However, in light of the growth of rapid replenishment, our research predicts that the performance of these two units will vary over time, with the supplier that has implemented flexible planning and short - cycle production processes coming out ahead. The supplier who implements flexible planning will come out last.
+advTxt:  However, in light of the growth of rapid replenishment, our research predicts that the performance of these two units will vary over time, with the supplier that has implemented flexible planning and short - cycle production processes coming out ahead. The supplier who implements flexible planning will come out last.
+srcTxt:  However, in light of the growth of rapid replenishment, our research predicts that the performance of these two units will vary over time, with the supplier that has implemented flexible planning and short - cycle production processes coming out ahead. The supplier who implements flexible planning will come out last.
+advTxt:  However, in light of the growth of rapid replenishment, our research predicts that the performance of these two units will vary over time, with the supplier that has implemented flexible planning and short - cycle production processes coming out ahead. The supplier who implements flexible planning will come out last.
+targetTokens []
+toTokens []
+sProbs:  [0.13602352142333984, 0.5704703330993652, 0.29350608587265015]
+aProbs:  [0.13602352142333984, 0.5704703330993652, 0.29350608587265015]
+attack suc rate 100.0 %
+average # of queries: 5.296296296296297.
+28.0  th document.
+stgt:  In August 1996, Bin Ladin had issued his own self - styled fatwa calling on Muslims to drive American soldiers out of Saudi Arabia. [ [ Bin ] ] [ [ La ] ] [ [din ] ] [ [ pleaded ] ] [ [ for ] ] [ [ Muslims ] ] [ [ to ] ] [ [ accept ] ] American assistance.
+srcTxt:  In August 1996, Bin Ladin had issued his own self - styled fatwa calling on Muslims to drive American soldiers out of Saudi Arabia. Bin Ladin pleaded for Muslims to accept American assistance.
+advTxt:  In August 1996, Bin Ladin had issued his own self - styled fatwa calling on Muslims to drive American soldiers out of Saudi Arabia. Bin Ladin pleaded for Muslims to accept American assistance.
+srcTxt:  In August 1996, Bin Ladin had issued his own self - styled fatwa calling on Muslims to drive American soldiers out of Saudi Arabia. Bin Ladin pleaded for Muslims to accept American assistance.
+advTxt:  In August 1996, Bin Ladin had issued his own self - styled fatwa calling on Muslims to drive American soldiers out of Saudi Arabia. Bin Ladin pleaded for Muslims to accept American assistance.
+targetTokens []
+toTokens []
+sProbs:  [0.15668374300003052, 0.4770549237728119, 0.36626136302948]
+aProbs:  [0.15668374300003052, 0.4770549237728119, 0.36626136302948]
+attack suc rate 100.0 %
+average # of queries: 5.107142857142857.
+29.0  th document.
+stgt:  And how they use to take their lunches to school and some of the things they took for lunch like fatback meat biscuits and - [ [ - ] ] [ [. ] ] [ [ ] ] [ [ They ] ] [ [ would ] ] [ [ buy ] ] [ [ their ] ] [ [ lunch ] ]es from the cafeteria rather than bring them.
+srcTxt:  And how they use to take their lunches to school and some of the things they took for lunch like fatback meat biscuits and - -. They would buy their lunches from the cafeteria rather than bring them.
+advTxt:  And how they use to take their lunches to school and some of the things they took for lunch like fatback meat biscuits and - -. They would buy their lunches from the cafeteria rather than bring them.
+srcTxt:  And how they use to take their lunches to school and some of the things they took for lunch like fatback meat biscuits and - -. They would buy their lunches from the cafeteria rather than bring them.
+advTxt:  And how they use to take their lunches to school and some of the things they took for lunch like fatback meat biscuits and - -. They would buy their lunches from the cafeteria rather than bring them.
+targetTokens []
+toTokens []
+sProbs:  [0.06797151267528534, 0.21957024931907654, 0.7124583125114441]
+aProbs:  [0.06797151267528534, 0.21957024931907654, 0.7124583125114441]
+attack suc rate 100.0 %
+average # of queries: 4.931034482758621.
+saved at sample  29.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli_mismatched/hypothesis/BERTFineTuned_mnli_mismatched_val_0.7_8_80_0_0147_19July.json
+30.0  th document.
+stgt:  What, ah, story in your childhood had the most impact on you? [ [ No ] ] [ [ one ] ] [ [ told ] ] [ [ you ] ] [ [ stories ] ] [ [ as ] ] [ [ a ] ] [ [ child ] ], did they?
+srcTxt:  What, ah, story in your childhood had the most impact on you? No one told you stories as a child, did they?
+advTxt:  What, ah, story in your childhood had the most impact on you? No one told you stories as a child, did they?
+srcTxt:  What, ah, story in your childhood had the most impact on you? No one told you stories as a child, did they?
+advTxt:  What, ah, story in your childhood had the most impact on you? No one told you stories as a child, did they?
+targetTokens []
+toTokens []
+sProbs:  [0.254831463098526, 0.44627028703689575, 0.29889824986457825]
+aProbs:  [0.254831463098526, 0.44627028703689575, 0.29889824986457825]
+attack suc rate 100.0 %
+average # of queries: 4.766666666666667.
+31.0  th document.
+stgt:  The field is about 100 years old. [ [ The ] ] [ [ field ] ] [ [ was ] ] [ [ made ] ] [ [ 100 ] ] [ [ years ] ] [ [ ago ] ] [ [. ] ]
+entailment   The  ->  Aviation   0.831183  ->  0.804436
+entailment   Aviation  ->  mountains   0.804436  ->  0.574043
+entailment   mountains  ->  1855   0.574043  ->  0.539096
+entailment   field  ->  Outstanding   0.539096  ->  0.455095
+Outstanding  ->  Leto
+srcTxt:  The field is about 100 years old. [ [ The ] ] [ [ field ] ] was made 100 years ago.
+advTxt:  The field is about 100 years old. [ [ 1855 ] ] [ [ Leto ] ] was made 100 years ago.
+srcTxt:  The field is about 100 years old. The field was made 100 years ago.
+advTxt:  The field is about 100 years old. 1855 Leto was made 100 years ago.
+targetTokens ['The', 'field']
+toTokens ['1855', 'Leto']
+sProbs:  [0.0960838720202446, 0.8311834335327148, 0.07273276150226593]
+aProbs:  [0.6539075374603271, 0.24267736077308655, 0.1034151017665863]
+attack suc rate 100.0 %
+average # of queries: 5.161290322580645.
+32.0  th document.
+stgt:  Because, well, no, Ines was putting up an argument that -, when he told her, No, he said, e, Luis Alonso, I may be going to die, he said, because so much blood loss, he said. [ [ He ] ] [ [ said ] ] [ [ that ] ] [ [ there ] ] [ [ was ] ] [ [ no ] ] [ [ chance ] ] [ [ he ] ] was going to die of blood loss.
+srcTxt:  Because, well, no, Ines was putting up an argument that -, when he told her, No, he said, e, Luis Alonso, I may be going to die, he said, because so much blood loss, he said. He said that there was no chance he was going to die of blood loss.
+advTxt:  Because, well, no, Ines was putting up an argument that -, when he told her, No, he said, e, Luis Alonso, I may be going to die, he said, because so much blood loss, he said. He said that there was no chance he was going to die of blood loss.
+srcTxt:  Because, well, no, Ines was putting up an argument that -, when he told her, No, he said, e, Luis Alonso, I may be going to die, he said, because so much blood loss, he said. He said that there was no chance he was going to die of blood loss.
+advTxt:  Because, well, no, Ines was putting up an argument that -, when he told her, No, he said, e, Luis Alonso, I may be going to die, he said, because so much blood loss, he said. He said that there was no chance he was going to die of blood loss.
+targetTokens []
+toTokens []
+sProbs:  [0.06396649777889252, 0.7912352681159973, 0.14479829370975494]
+aProbs:  [0.06396649777889252, 0.7912352681159973, 0.14479829370975494]
+attack suc rate 100.0 %
+average # of queries: 5.0.
+33.0  th document.
+stgt:  Return the completed card with your check by October 15 to receive an invitation to a special artist dinner on November 8. [ [ Sen ] ] [ [t ] ] [ [ the ] ] [ [ check ] ] [ [ by ] ] [ [ November ] ] [ [ 28th ] ] [ [ and ] ] you will receive a special letter.
+srcTxt:  Return the completed card with your check by October 15 to receive an invitation to a special artist dinner on November 8. Sent the check by November 28th and you will receive a special letter.
+advTxt:  Return the completed card with your check by October 15 to receive an invitation to a special artist dinner on November 8. Sent the check by November 28th and you will receive a special letter.
+srcTxt:  Return the completed card with your check by October 15 to receive an invitation to a special artist dinner on November 8. Sent the check by November 28th and you will receive a special letter.
+advTxt:  Return the completed card with your check by October 15 to receive an invitation to a special artist dinner on November 8. Sent the check by November 28th and you will receive a special letter.
+targetTokens []
+toTokens []
+sProbs:  [0.2867354452610016, 0.4893997311592102, 0.22386477887630463]
+aProbs:  [0.2867354452610016, 0.4893997311592102, 0.22386477887630463]
+attack suc rate 100.0 %
+average # of queries: 4.848484848484849.
+34.0  th document.
+stgt:  The word Yiddish derives from the German judisch ` Jewish. [ [ The ] ] [ [ word ] ] [ [ Yiddish ] ] [ [ derives ] ] [ [ from ] ] [ [ the ] ] [ [ Filipino ] ] [ [ word ] ] yankanak.
+contradiction   The  ->  Aviation   0.973048  ->  0.927587
+contradiction   Aviation  ->  scenery   0.927587  ->  0.911744
+contradiction   word  ->  Outstanding   0.911744  ->  0.799501
+contradiction   derives  ->  Aviation   0.799501  ->  0.528138
+Aviation  ->  busiest
+srcTxt:  The word Yiddish derives from the German judisch ` Jewish. [ [ The ] ] [ [ word ] ] Yiddish [ [ derives ] ] from the Filipino word yankanak.
+advTxt:  The word Yiddish derives from the German judisch ` Jewish. [ [ scenery ] ] [ [ Outstanding ] ] Yiddish [ [ busiest ] ] from the Filipino word yankanak.
+srcTxt:  The word Yiddish derives from the German judisch ` Jewish. The word Yiddish derives from the Filipino word yankanak.
+advTxt:  The word Yiddish derives from the German judisch ` Jewish. scenery Outstanding Yiddish busiest from the Filipino word yankanak.
+targetTokens ['The', 'word', 'derives']
+toTokens ['scenery', 'Outstanding', 'busiest']
+sProbs:  [0.9730479121208191, 0.016641512513160706, 0.01031060516834259]
+aProbs:  [0.43175172805786133, 0.45087912678718567, 0.11736921966075897]
+attack suc rate 100.0 %
+average # of queries: 5.647058823529412.
+35.0  th document.
+stgt:  If my father bought it, it would have to be a Dodge. [ [ My ] ] [ [ father ] ] [ [ is ] ] [ [ an ] ] [ [ avid ] ] [ [ car ] ] [ [ collector ] ] [ [ and ] ] loves driving.
+srcTxt:  If my father bought it, it would have to be a Dodge. My father is an avid car collector and loves driving.
+advTxt:  If my father bought it, it would have to be a Dodge. My father is an avid car collector and loves driving.
+srcTxt:  If my father bought it, it would have to be a Dodge. My father is an avid car collector and loves driving.
+advTxt:  If my father bought it, it would have to be a Dodge. My father is an avid car collector and loves driving.
+targetTokens []
+toTokens []
+sProbs:  [0.3892609775066376, 0.5358144640922546, 0.07492455840110779]
+aProbs:  [0.3892609775066376, 0.5358144640922546, 0.07492455840110779]
+attack suc rate 100.0 %
+average # of queries: 5.485714285714286.
+36.0  th document.
+stgt:  Cultures, and adults within them responsible for socialization, select dierent tasks for children's learning. [ [ ] ] [ [ Many ] ] [ [ adults ] ] [ [ have ] ] [ [ learned ] ] [ [ from ] ] [ [ their ] ] [ [ own ] ] children.
+srcTxt:  Cultures, and adults within them responsible for socialization, select dierent tasks for children's learning. Many adults have learned from their own children.
+advTxt:  Cultures, and adults within them responsible for socialization, select dierent tasks for children's learning. Many adults have learned from their own children.
+srcTxt:  Cultures, and adults within them responsible for socialization, select dierent tasks for children's learning. Many adults have learned from their own children.
+advTxt:  Cultures, and adults within them responsible for socialization, select dierent tasks for children's learning. Many adults have learned from their own children.
+targetTokens []
+toTokens []
+sProbs:  [0.1701967716217041, 0.5963528156280518, 0.23345039784908295]
+aProbs:  [0.1701967716217041, 0.5963528156280518, 0.23345039784908295]
+attack suc rate 100.0 %
+average # of queries: 5.333333333333333.
+37.0  th document.
+stgt:  A short time later, Nawaf and Salem al Hazmi entered the same checkpoint. [ [ ] ] [ [ A ] ] [ [ while ] ] [ [ afterwards ] ] [ [, ] ] [ [ two ] ] [ [ people ] ] [ [ went ] ] into the identical checkpoint.
+entailment   A  ->  Aviation   0.862431  ->  0.798128
+entailment   Aviation  ->  mountains   0.798128  ->  0.784282
+entailment   mountains  ->  1855   0.784282  ->  0.46545
+entailment   afterwards  ->  Aviation   0.46545  ->  0.395347
+entailment   Aviation  ->  ##lastic   0.395347  ->  0.359937
+##lastic  ->  244
+srcTxt:  A short time later, Nawaf and Salem al Hazmi entered the same checkpoint. [ [ A ] ] while [ [ afterwards ] ], two people went into the identical checkpoint.
+advTxt:  A short time later, Nawaf and Salem al Hazmi entered the same checkpoint. [ [ 1855 ] ] while [ [ 244 ] ], two people went into the identical checkpoint.
+srcTxt:  A short time later, Nawaf and Salem al Hazmi entered the same checkpoint. A while afterwards, two people went into the identical checkpoint.
+advTxt:  A short time later, Nawaf and Salem al Hazmi entered the same checkpoint. 1855 while 244, two people went into the identical checkpoint.
+targetTokens ['A', 'afterwards']
+toTokens ['1855', '244']
+sProbs:  [0.034051407128572464, 0.8624314069747925, 0.10351717472076416]
+aProbs:  [0.5067720413208008, 0.2598787248134613, 0.23334920406341553]
+attack suc rate 100.0 %
+average # of queries: 5.8108108108108105.
+38.0  th document.
+stgt:  As with all contributions made through I U Foundation, your gift is tax - deductible according to federal and state laws. Nothing [ [ that ] ] [ [ you ] ] [ [ give ] ] [ [ is ] ] [ [ tax ] ] [ [ de ] ] [ [duct ] ] [ [ible ] ], sorry.
+srcTxt:  As with all contributions made through I U Foundation, your gift is tax - deductible according to federal and state laws. Nothing that you give is tax deductible, sorry.
+advTxt:  As with all contributions made through I U Foundation, your gift is tax - deductible according to federal and state laws. Nothing that you give is tax deductible, sorry.
+srcTxt:  As with all contributions made through I U Foundation, your gift is tax - deductible according to federal and state laws. Nothing that you give is tax deductible, sorry.
+advTxt:  As with all contributions made through I U Foundation, your gift is tax - deductible according to federal and state laws. Nothing that you give is tax deductible, sorry.
+targetTokens []
+toTokens []
+sProbs:  [0.12946724891662598, 0.538597822189331, 0.33193495869636536]
+aProbs:  [0.12946724891662598, 0.538597822189331, 0.33193495869636536]
+attack suc rate 100.0 %
+average # of queries: 5.657894736842105.
+39.0  th document.
+stgt:  You can help us help overburdened new parents. We [ [ can ] ] [ [ help ] ] [ [ over ] ] [ [bur ] ] [ [den ] ] [ [ parents ] ] [ [ with ] ] [ [ your ] ] help.
+entailment   can  ->  Outstanding   0.774221  ->  0.700619
+entailment   Outstanding  ->  Aviation   0.700619  ->  0.574253
+entailment   help  ->  1855   0.574253  ->  0.50842
+over  ->  244
+srcTxt:  You can help us help overburdened new parents. We [ [ can ] ] [ [ help ] ] [ [ over ] ]burden parents with your help.
+advTxt:  You can help us help overburdened new parents. We [ [ Aviation ] ] [ [ 1855 ] ] [ [ 244 ] ]burden parents with your help.
+srcTxt:  You can help us help overburdened new parents. We can help overburden parents with your help.
+advTxt:  You can help us help overburdened new parents. We Aviation 1855 244burden parents with your help.
+targetTokens ['can', 'help', 'over']
+toTokens ['Aviation', '1855', '244']
+sProbs:  [0.06913693994283676, 0.7742213010787964, 0.15664178133010864]
+aProbs:  [0.5160719752311707, 0.34682905673980713, 0.13709890842437744]
+attack suc rate 100.0 %
+average # of queries: 6.102564102564102.
+saved at sample  39.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli_mismatched/hypothesis/BERTFineTuned_mnli_mismatched_val_0.7_8_80_0_0147_19July.json
+40.0  th document.
+stgt:  Beginning in the 1970s, retailers expanded their offshore sourcing efforts, especially after quality standards improved, establishing sourcing offices and relationships in low - wage countries, particularly in Asia. [ [ The ] ] [ [ offices ] ] [ [ in ] ] [ [ Asia ] ] [ [ charged ] ] [ [ high ] ] [ [ prices ] ] [ [ to ] ] retailers, destroying their relationship.
+srcTxt:  Beginning in the 1970s, retailers expanded their offshore sourcing efforts, especially after quality standards improved, establishing sourcing offices and relationships in low - wage countries, particularly in Asia. The offices in Asia charged high prices to retailers, destroying their relationship.
+advTxt:  Beginning in the 1970s, retailers expanded their offshore sourcing efforts, especially after quality standards improved, establishing sourcing offices and relationships in low - wage countries, particularly in Asia. The offices in Asia charged high prices to retailers, destroying their relationship.
+srcTxt:  Beginning in the 1970s, retailers expanded their offshore sourcing efforts, especially after quality standards improved, establishing sourcing offices and relationships in low - wage countries, particularly in Asia. The offices in Asia charged high prices to retailers, destroying their relationship.
+advTxt:  Beginning in the 1970s, retailers expanded their offshore sourcing efforts, especially after quality standards improved, establishing sourcing offices and relationships in low - wage countries, particularly in Asia. The offices in Asia charged high prices to retailers, destroying their relationship.
+targetTokens []
+toTokens []
+sProbs:  [0.02222207747399807, 0.5608372092247009, 0.41694074869155884]
+aProbs:  [0.02222207747399807, 0.5608372092247009, 0.41694074869155884]
+attack suc rate 100.0 %
+average # of queries: 5.95.
+41.0  th document.
+stgt:  Mass customization, however, has the potential to make tailor fit at least somewhat less expensive, as new systems combine features of the efficient factory system with attention to at least a few critical customer measurements. [ [ ] ] [ [ Everybody ] ] [ [ likes ] ] [ [ the ] ] [ [ freedom ] ] [ [ to ] ] [ [ custom ] ] [ [ize ] ] their belongings.
+neutral   Everybody  ->  Aviation   0.71708  ->  0.531384
+likes  ->  Aviation
+srcTxt:  Mass customization, however, has the potential to make tailor fit at least somewhat less expensive, as new systems combine features of the efficient factory system with attention to at least a few critical customer measurements. [ [ Everybody ] ] [ [ likes ] ] the freedom to customize their belongings.
+advTxt:  Mass customization, however, has the potential to make tailor fit at least somewhat less expensive, as new systems combine features of the efficient factory system with attention to at least a few critical customer measurements. [ [ Aviation ] ] [ [ Aviation ] ] the freedom to customize their belongings.
+srcTxt:  Mass customization, however, has the potential to make tailor fit at least somewhat less expensive, as new systems combine features of the efficient factory system with attention to at least a few critical customer measurements. Everybody likes the freedom to customize their belongings.
+advTxt:  Mass customization, however, has the potential to make tailor fit at least somewhat less expensive, as new systems combine features of the efficient factory system with attention to at least a few critical customer measurements. Aviation Aviation the freedom to customize their belongings.
+targetTokens ['Everybody', 'likes']
+toTokens ['Aviation', 'Aviation']
+sProbs:  [0.02804318442940712, 0.25487661361694336, 0.7170802354812622]
+aProbs:  [0.03157614544034004, 0.6661391854286194, 0.30228471755981445]
+attack suc rate 100.0 %
+average # of queries: 6.073170731707317.
+42.0  th document.
+stgt:  In the late 1990s, these extremist groups suffered major defeats by Kurdish forces. [ [ Kurdish ] ] [ [ forces ] ] [ [ believed ] ] [ [ they ] ] [ [ needed ] ] [ [ to ] ] [ [ stop ] ] [ [ all ] ] extremist groups.
+srcTxt:  In the late 1990s, these extremist groups suffered major defeats by Kurdish forces. Kurdish forces believed they needed to stop all extremist groups.
+advTxt:  In the late 1990s, these extremist groups suffered major defeats by Kurdish forces. Kurdish forces believed they needed to stop all extremist groups.
+srcTxt:  In the late 1990s, these extremist groups suffered major defeats by Kurdish forces. Kurdish forces believed they needed to stop all extremist groups.
+advTxt:  In the late 1990s, these extremist groups suffered major defeats by Kurdish forces. Kurdish forces believed they needed to stop all extremist groups.
+targetTokens []
+toTokens []
+sProbs:  [0.022662505507469177, 0.8016441464424133, 0.1756933033466339]
+aProbs:  [0.022662505507469177, 0.8016441464424133, 0.1756933033466339]
+attack suc rate 100.0 %
+average # of queries: 5.928571428571429.
+43.0  th document.
+stgt:  Rusine should be added to the supplement of English words ending in - ine - LRB - p. [ [ ] ] [ [ R ] ] [ [us ] ] [ [ine ] ] [ [ should ] ] [ [ be ] ] [ [ added ] ] [ [ to ] ] the English words.
+entailment   R  ->  Aviation   0.822896  ->  0.794774
+entailment   Aviation  ->  Outstanding   0.794774  ->  0.785873
+entailment   Outstanding  ->  1855   0.785873  ->  0.659604
+entailment   ##us  ->  Aviation   0.659604  ->  0.545716
+entailment   ##ine  ->  Aviation   0.545716  ->  0.459498
+entailment   Aviation  ->  Abel   0.459498  ->  0.413987
+Abel  ->  Parliament
+srcTxt:  Rusine should be added to the supplement of English words ending in - ine - LRB - p. [ [ R ] ] [ [us ] ] [ [ine ] ] should be added to the English words.
+advTxt:  Rusine should be added to the supplement of English words ending in - ine - LRB - p. [ [ 1855 ] ] [ [ Aviation ] ] [ [ Parliament ] ] should be added to the English words.
+srcTxt:  Rusine should be added to the supplement of English words ending in - ine - LRB - p. Rusine should be added to the English words.
+advTxt:  Rusine should be added to the supplement of English words ending in - ine - LRB - p. 1855 Aviation Parliament should be added to the English words.
+targetTokens ['R', '##us', '##ine']
+toTokens ['1855', 'Aviation', 'Parliament']
+sProbs:  [0.035572733730077744, 0.8228959441184998, 0.141531303524971]
+aProbs:  [0.19820541143417358, 0.39595943689346313, 0.4058351218700409]
+attack suc rate 100.0 %
+average # of queries: 6.372093023255814.
+44.0  th document.
+stgt:  From the airplane or from the ground? [ [ The ] ] [ [ question ] ] [ [ was ] ] [ [ asked ] ] [ [, ] ] [ [ ` ] ] [ [ ` ] ] [ [ from ] ] the airplane or from the ground?'' about the sighting of the pilot of the remains of the flight 93 which had crashed in Pennsylvania.
+srcTxt:  From the airplane or from the ground? The question was asked, ` ` from the airplane or from the ground?'' about the sighting of the pilot of the remains of the flight 93 which had crashed in Pennsylvania.
+advTxt:  From the airplane or from the ground? The question was asked, ` ` from the airplane or from the ground?'' about the sighting of the pilot of the remains of the flight 93 which had crashed in Pennsylvania.
+srcTxt:  From the airplane or from the ground? The question was asked, ` ` from the airplane or from the ground?'' about the sighting of the pilot of the remains of the flight 93 which had crashed in Pennsylvania.
+advTxt:  From the airplane or from the ground? The question was asked, ` ` from the airplane or from the ground?'' about the sighting of the pilot of the remains of the flight 93 which had crashed in Pennsylvania.
+targetTokens []
+toTokens []
+sProbs:  [0.06169840320944786, 0.7995933890342712, 0.1387082189321518]
+aProbs:  [0.06169840320944786, 0.7995933890342712, 0.1387082189321518]
+attack suc rate 100.0 %
+average # of queries: 6.2272727272727275.
+45.0  th document.
+stgt:  I've been going up as a progress in school, so I, it will be a good change for me. [ [ I ] ] [ [ think ] ] [ [ further ] ] [ [ change ] ] [ [ can ] ] [ [ help ] ] [ [ me ] ] [ [ improve ] ] even more.
+srcTxt:  I've been going up as a progress in school, so I, it will be a good change for me. I think further change can help me improve even more.
+advTxt:  I've been going up as a progress in school, so I, it will be a good change for me. I think further change can help me improve even more.
+srcTxt:  I've been going up as a progress in school, so I, it will be a good change for me. I think further change can help me improve even more.
+advTxt:  I've been going up as a progress in school, so I, it will be a good change for me. I think further change can help me improve even more.
+targetTokens []
+toTokens []
+sProbs:  [0.020166484639048576, 0.5588913559913635, 0.42094215750694275]
+aProbs:  [0.020166484639048576, 0.5588913559913635, 0.42094215750694275]
+attack suc rate 100.0 %
+average # of queries: 6.088888888888889.
+46.0  th document.
+stgt:  We serve a classic Tuscan meal that includes a Florentine terrine made with dick and chicken liver [ [s ] ] [ [. ] ] [ [ ] ] [ [ We ] ] [ [ serve ] ] [ [ a ] ] [ [ meal ] ] [ [ of ] ] Florentine terrine.
+entailment   ##s  ->  Osaka   0.887457  ->  0.853608
+entailment   Osaka  ->  1791   0.853608  ->  0.851857
+entailment   .  ->  ##lastic   0.851857  ->  0.839141
+entailment   ##lastic  ->  Article   0.839141  ->  0.714555
+entailment   Article  ->  1791   0.714555  ->  0.650679
+entailment   We  ->  mountains   0.650679  ->  0.596311
+entailment   mountains  ->  assured   0.596311  ->  0.564618
+entailment   serve  ->  Outstanding   0.564618  ->  0.553896
+entailment   Outstanding  ->  Osaka   0.553896  ->  0.485842

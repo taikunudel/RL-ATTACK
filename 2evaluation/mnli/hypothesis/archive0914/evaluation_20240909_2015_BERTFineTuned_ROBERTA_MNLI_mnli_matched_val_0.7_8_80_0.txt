@@ -1,0 +1,16 @@
+numsProcessedSamples 1000
+Vocabulary Size: 28996
+ROBERTA_MNLI
+Evaluation Data Size: 955
+CLS token ID: 101
+SEP token ID: 102
+PAD token ID: 0
+MASK token ID: 103
+UNK token ID: 100
+torch.Size([955, 512])
+torch.Size([955, 512])
+torch.Size([955])
+1000
+attacker device:  cuda:0
+45.0  th document.
+stgt:  The management of the cafe has established the rules for the use of their facility. The management of the cafe enforces a strict dress code.

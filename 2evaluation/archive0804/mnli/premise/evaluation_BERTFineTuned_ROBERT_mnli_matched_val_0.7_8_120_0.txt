@@ -1,0 +1,29 @@
+numsProcessedSamples 1000
+Vocabulary Size: 28996
+Evaluation Data Size: 1000
+CLS token ID: 101
+SEP token ID: 102
+PAD token ID: 0
+MASK token ID: 103
+UNK token ID: 100
+torch.Size([1000, 512])
+torch.Size([1000, 512])
+torch.Size([1000])
+1000
+attacker device:  cuda:0
+1.0  th document.
+stgt:  In Temple Bar, the [ [ books ] ] [ [hop ] ] [ [ at ] ] the [ [ Gallery ] ] of Photography carries a [ [ large ] ] selection of photographic publications, and the Flying Pig is a [ [ second ] ] [ [hand ] ] bookshop [ [. ] ] There is a bookshop at the gallery.
+Gallery  ->  Located
+srcTxt:  In Temple Bar, the bookshop at the [ [ Gallery ] ] of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. There is a bookshop at the gallery.
+advTxt:  In Temple Bar, the bookshop at the [ [ Located ] ] of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. There is a bookshop at the gallery.
+srcTxt:  In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. There is a bookshop at the gallery.
+advTxt:  In Temple Bar, the bookshop at the Located of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. There is a bookshop at the gallery.
+tLabel:  1
+targetTokens ['Gallery']
+toTokens ['Located']
+sProbs:  [0.0017725275829434395, 0.9928836822509766, 0.005343825090676546]
+aProbs:  [0.6177918314933777, 0.35508179664611816, 0.02712637186050415]
+attack suc rate 100.0 %
+average # of queries: 1.0.
+2.0  th document.
+stgt:  On Na [ [x ] ] [ [os ] ], you [ [ can ] ] walk through the [ [ pretty ] ] villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine [ [ churches ] ] and [ [ exploring ] ] [ [ olive ] ] groves [ [ at ] ] your leisure. Naxos is a place with beautiful scenery for leisure.

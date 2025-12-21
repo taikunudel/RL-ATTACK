@@ -1,0 +1,17 @@
+Vocabulary Size: 28996
+Training Data Size: 999
+CLS token ID: 101
+SEP token ID: 102
+PAD token ID: 0
+MASK token ID: 103
+UNK token ID: 100
+torch.Size([999, 512])
+torch.Size([999, 512])
+torch.Size([999])
+999
+attacker device:  cuda:0
+1.0  th document.
+stgt:  [ [ seriously ] ], i [ [ do ] ] [ [ n ] ]'[ [ t ] ] [ [ understand ] ] how [ [ just ] ] [ [in ] ] [ [ long ] ] is [ [ becoming ] ] increasingly popular [ [ he ] ] [ [ either ] ] has [ [ the ] ] best [ [ agent ] ] [ [ in ] ] ho [ [lly ] ]wood [ [, ] ] or recently [ [ sold ] ] [ [ his ] ] soul [ [ to ] ] sat [ [an ] ] he is [ [ almost ] ] unbearable [ [ to ] ] watch [ [ on ] ] [ [ screen ] ] [ [, ] ] he has [ [ little ] ] to no ch [ [aris ] ]ma [ [, ] ] and terrible comedic [ [ timing ] ] [ [ the ] ] only [ [ film ] ] that he has [ [ attempted ] ] [ [ to ] ] anchor that i [ ['] ] ve remotely [ [ enjoyed ] ] was waiting [ [ and ] ] [ [ that ] ] is almost solely [ [ because ] ] [ [ i ] ]'[ [ ve ] ] worked [ [ in ] ] a restaurant [ [ but ] ] i [ [ dig ] ]ress aside from [ [ it ] ]'s terrible [ [ lead ] ] [ [, ] ] [ [ this ] ] film has loads [ [ of ] ] [ [ other ] ] debits i [ [ understand ] ] [ [ that ] ] it [ ['] ] s supposed [ [ to ] ] be [ [ a ] ] [ [ cheap ] ] popcorn [ [ comedy ] ], [ [ but ] ] [ [ that ] ] [ [ does ] ] n [ ['] ] [ [ t ] ] mean [ [ that ] ] it has to completely insult our intelligence, [ [ and ] ] have writing so [ [ incredibly ] ] hackney [ [ed ] ] [ [ that ] ] [ [ it ] ] [ [ borders ] ] [ [ on ] ] [ [ offensive ] ] [ [ le ] ]wi [ [s ] ] black [ ['] ] [ [ s ] ] [ [ considerable ] ] talent [ [ is ] ] [ [ wasted ] ] here too [ [, ] ] [ [ as ] ] [ [ he ] ] is [ [ at ] ] his most [ [ in ] ] [ [cend ] ] [ [iary ] ] when he [ [ is ] ] unrest [ [rain ] ]ed [ [, ] ] which the [ [ p ] ]g [ [ 13 ] ] [ [ rating ] ] certainly [ [ w ] ]o [ [ n ] ]'t [ [ allow ] ] the [ [ film ] ]'[ [ s ] ] sole [ [ bright ] ] [ [ spot ] ] was [ [ j ] ]onah hill [ [ \ ] ] ( [ [ who ] ] [ [ will ] ] look [ [ almost ] ] unre [ [co ] ] [ [gni ] ]zable [ [ to ] ] fans [ [ of ] ] the [ [ recent ] ] superbad [ [ due ] ] to the amount [ [ of ] ] [ [ weight ] ] [ [ he ] ] lost in the interim \ ) his one liners were funny on occasion, but were certainly not enough to make this anywhere close to bearable if you just want to completely turn your brain off \ ( or better yet, don't have one \ ) then maybe you'd enjoy this, but i can't recommend it at all
+- neg seriously  ->  40th   0.999826  ->  0.999807
+- neg do  ->  ##ș   0.999807  ->  0.999804
+- neg understand  ->  ##ruising   0.999804  ->  0.999799

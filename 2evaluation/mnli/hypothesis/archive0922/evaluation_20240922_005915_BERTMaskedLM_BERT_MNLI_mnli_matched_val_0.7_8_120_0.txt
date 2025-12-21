@@ -1,0 +1,403 @@
+numsProcessedSamples 1000
+Vocabulary Size: 28996
+BERT_UNCASED
+Evaluation Data Size: 1000
+CLS token ID: 101
+SEP token ID: 102
+PAD token ID: 0
+MASK token ID: 103
+UNK token ID: 100
+torch.Size([1000, 512])
+torch.Size([1000, 512])
+torch.Size([1000])
+1000
+attacker base: bert-base-cased 
+attacker device:  cuda:0
+1.0  th document.
+input_ids_batch [[1130, 4407, 6523, 117, 1103, 2146, 23414, 1120, 1103, 3889, 1104, 12954, 7450, 170, 1415, 4557, 1104, 15368, 5873, 117, 1105, 1103, 7769, 23350, 1110, 170, 1248, 9332, 2146, 23414, 119, 102, 1247, 1110, 170, 2146, 23414, 1120, 1103, 7183, 119]]
+stgt:  In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. [ [ There ] ] [ [ is ] ] [ [ a ] ] [ [ books ] ] [ [hop ] ] at [ [ the ] ] [ [ gallery ] ] [ [. ] ]
+books  ->  `
+input_ids_batch [[1130, 4407, 6523, 117, 1103, 2146, 23414, 1120, 1103, 3889, 1104, 12954, 7450, 170, 1415, 4557, 1104, 15368, 5873, 117, 1105, 1103, 7769, 23350, 1110, 170, 1248, 9332, 2146, 23414, 119, 102, 1247, 1110, 170, 169, 23414, 1120, 1103, 7183, 119]]
+advInxCut [1130, 4407, 6523, 117, 1103, 2146, 23414, 1120, 1103, 3889, 1104, 12954, 7450, 170, 1415, 4557, 1104, 15368, 5873, 117, 1105, 1103, 7769, 23350, 1110, 170, 1248, 9332, 2146, 23414, 119, 102, 1247, 1110, 170, 169, 23414, 1120, 1103, 7183, 119]
+advText [('In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop.', 'There is a `hop at the gallery.')]
+srcTxt:  In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. There is a [ [ books ] ]hop at the gallery.
+advTxt:  In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. There is a [ [ ` ] ]hop at the gallery.
+srcTxt:  ('In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop.', 'There is a bookshop at the gallery.')
+advTxt:  ('In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop.', 'There is a `hop at the gallery.')
+tLabel:  1
+targetTokens ['books']
+toTokens ['`']
+sProbs:  [0.001772525836713612, 0.9928836822509766, 0.005343819502741098]
+aProbs:  [0.4709075689315796, 0.19293485581874847, 0.33615753054618835]
+attack suc rate 100.0 %
+average # of queries: 1.0.
+all perturbed tokens :  1
+total token lens     :  41
+avg perturbed tokens :  1.0
+avg perturbation rate:  0.0244
+saved at sample  1.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/hypothesis/evaluation_20240922_005915_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_120_0.json
+2.0  th document.
+input_ids_batch [[1212, 11896, 1775, 2155, 117, 1128, 1169, 2647, 1194, 1103, 2785, 4024, 1104, 1103, 157, 20240, 1161, 2634, 1105, 1103, 21864, 1104, 3572, 163, 2225, 117, 8050, 27693, 8377, 5189, 1105, 12138, 13552, 28011, 1116, 1120, 1240, 17036, 119, 102, 11896, 1775, 2155, 1110, 170, 1282, 1114, 2712, 19335, 1111, 17036, 119]]
+stgt:  On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. Naxos is [ [ a ] ] [ [ place ] ] [ [ with ] ] [ [ beautiful ] ] [ [ scenery ] ] [ [ for ] ] [ [ leisure ] ] [ [. ] ]
+1   leisure  ->  is   0.971234  ->  0.814581
+is  ->  2008
+input_ids_batch [[1212, 11896, 1775, 2155, 117, 1128, 1169, 2647, 1194, 1103, 2785, 4024, 1104, 1103, 157, 20240, 1161, 2634, 1105, 1103, 21864, 1104, 3572, 163, 2225, 117, 8050, 27693, 8377, 5189, 1105, 12138, 13552, 28011, 1116, 1120, 1240, 17036, 119, 102, 11896, 1775, 2155, 1110, 170, 1282, 1114, 2712, 19335, 1111, 1369, 119]]
+advInxCut [1212, 11896, 1775, 2155, 117, 1128, 1169, 2647, 1194, 1103, 2785, 4024, 1104, 1103, 157, 20240, 1161, 2634, 1105, 1103, 21864, 1104, 3572, 163, 2225, 117, 8050, 27693, 8377, 5189, 1105, 12138, 13552, 28011, 1116, 1120, 1240, 17036, 119, 102, 11896, 1775, 2155, 1110, 170, 1282, 1114, 2712, 19335, 1111, 1369, 119]
+advText [('On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure.', 'Naxos is a place with beautiful scenery for 2008.')]
+srcTxt:  On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. Naxos is a place with beautiful scenery for [ [ leisure ] ].
+advTxt:  On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. Naxos is a place with beautiful scenery for [ [ 2008 ] ].
+srcTxt:  ('On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure.', 'Naxos is a place with beautiful scenery for leisure.')
+advTxt:  ('On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure.', 'Naxos is a place with beautiful scenery for 2008.')
+tLabel:  1
+targetTokens ['leisure']
+toTokens ['2008']
+sProbs:  [0.00033104518661275506, 0.9712340831756592, 0.028434913605451584]
+aProbs:  [0.0009830878116190434, 0.007880821824073792, 0.9911361932754517]
+attack suc rate 100.0 %
+average # of queries: 3.0.
+all perturbed tokens :  3
+total token lens     :  134
+avg perturbed tokens :  1.5
+avg perturbation rate:  0.0224
+saved at sample  2.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/hypothesis/evaluation_20240922_005915_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_120_0.json
+3.0  th document.
+input_ids_batch [[26138, 119, 102, 26138, 117, 4895, 5607, 1132, 1899, 119]]
+stgt:  Impossible. [ [ Impossible ] ] [ [, ] ] [ [ unless ] ] [ [ circumstances ] ] [ [ are ] ] [ [ met ] ] [ [. ] ]
+2   Impossible  ->  -   0.994073  ->  0.954028
+2   -  ->  re   0.954028  ->  0.911551
+2   re  ->  !   0.911551  ->  0.90191
+2   !  ->  is   0.90191  ->  0.879924
+unless  ->  +
+input_ids_batch [[26138, 119, 102, 1110, 117, 116, 5607, 1132, 1899, 119]]
+advInxCut [26138, 119, 102, 1110, 117, 116, 5607, 1132, 1899, 119]
+advText [('Impossible.', 'is, + circumstances are met.')]
+srcTxt:  Impossible. [ [ Impossible ] ], [ [ unless ] ] circumstances are met.
+advTxt:  Impossible. [ [ is ] ], [ [ + ] ] circumstances are met.
+srcTxt:  ('Impossible.', 'Impossible, unless circumstances are met.')
+advTxt:  ('Impossible.', 'is, + circumstances are met.')
+tLabel:  2
+targetTokens ['Impossible', 'unless']
+toTokens ['is', '+']
+sProbs:  [0.0010454413713887334, 0.004881738685071468, 0.9940728545188904]
+aProbs:  [0.9709072113037109, 0.006317355204373598, 0.022775448858737946]
+attack suc rate 100.0 %
+average # of queries: 8.0.
+all perturbed tokens :  7
+total token lens     :  237
+avg perturbed tokens :  2.33
+avg perturbation rate:  0.0295
+saved at sample  3.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/hypothesis/evaluation_20240922_005915_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_120_0.json
+4.0  th document.
+input_ids_batch [[16409, 11741, 8830, 1529, 1107, 23172, 5795, 2616, 1111, 1972, 1105, 2013, 2648, 1115, 1132, 3005, 1106, 2773, 1137, 4731, 1569, 2670, 13909, 3211, 4103, 1129, 2103, 1112, 12372, 1107, 1769, 2364, 1112, 2320, 15491, 3113, 26036, 13584, 3157, 1869, 11227, 1103, 2798, 8477, 1104, 1103, 3467, 2384, 1105, 1157, 6552, 2338, 119, 102, 20820, 2616, 1111, 1972, 2648, 1169, 1129, 10056, 1112, 170, 1236, 1106, 2773, 18222, 119]]
+stgt:  Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. [ [ Net ] ] cost for education [ [ programs ] ] can be [ [ calculated ] ] [ [ as ] ] [ [ a ] ] [ [ way ] ] to increase [ [ productivity ] ] [ [. ] ]
+1   productivity  ->  ##tor   0.965004  ->  0.730353
+##tor  ->  Aircraft
+input_ids_batch [[16409, 11741, 8830, 1529, 1107, 23172, 5795, 2616, 1111, 1972, 1105, 2013, 2648, 1115, 1132, 3005, 1106, 2773, 1137, 4731, 1569, 2670, 13909, 3211, 4103, 1129, 2103, 1112, 12372, 1107, 1769, 2364, 1112, 2320, 15491, 3113, 26036, 13584, 3157, 1869, 11227, 1103, 2798, 8477, 1104, 1103, 3467, 2384, 1105, 1157, 6552, 2338, 119, 102, 20820, 2616, 1111, 1972, 2648, 1169, 1129, 10056, 1112, 170, 1236, 1106, 2773, 9710, 119]]
+advInxCut [16409, 11741, 8830, 1529, 1107, 23172, 5795, 2616, 1111, 1972, 1105, 2013, 2648, 1115, 1132, 3005, 1106, 2773, 1137, 4731, 1569, 2670, 13909, 3211, 4103, 1129, 2103, 1112, 12372, 1107, 1769, 2364, 1112, 2320, 15491, 3113, 26036, 13584, 3157, 1869, 11227, 1103, 2798, 8477, 1104, 1103, 3467, 2384, 1105, 1157, 6552, 2338, 119, 102, 20820, 2616, 1111, 1972, 2648, 1169, 1129, 10056, 1112, 170, 1236, 1106, 2773, 9710, 119]
+advText [('Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units.', 'Net cost for education programs can be calculated as a way to increase Aircraft.')]
+srcTxt:  Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. Net cost for education programs can be calculated as a way to increase [ [ productivity ] ].
+advTxt:  Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. Net cost for education programs can be calculated as a way to increase [ [ Aircraft ] ].
+srcTxt:  ('Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units.', 'Net cost for education programs can be calculated as a way to increase productivity.')
+advTxt:  ('Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units.', 'Net cost for education programs can be calculated as a way to increase Aircraft.')
+tLabel:  1
+targetTokens ['productivity']
+toTokens ['Aircraft']
+sProbs:  [0.0015978390583768487, 0.9650044441223145, 0.033397722989320755]
+aProbs:  [0.9336865544319153, 0.0019125189865007997, 0.06440090388059616]
+attack suc rate 100.0 %
+average # of queries: 6.5.
+all perturbed tokens :  12
+total token lens     :  409
+avg perturbed tokens :  3.0
+avg perturbation rate:  0.0293
+saved at sample  4.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/hypothesis/evaluation_20240922_005915_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_120_0.json
+5.0  th document.
+input_ids_batch [[1252, 1103, 1842, 7320, 1250, 1125, 1640, 1151, 1694, 119, 102, 1247, 1108, 1253, 7424, 1104, 7320, 1250, 1286, 1106, 1129, 2063, 119]]
+stgt:  But the real dirty work had already been done. [ [ There ] ] [ [ was ] ] [ [ still ] ] [ [ lots ] ] of dirty [ [ work ] ] left [ [ to ] ] [ [ be ] ] [ [ completed ] ].
+still  ->  in
+input_ids_batch [[1252, 1103, 1842, 7320, 1250, 1125, 1640, 1151, 1694, 119, 102, 1247, 1108, 1107, 7424, 1104, 7320, 1250, 1286, 1106, 1129, 2063, 119]]
+advInxCut [1252, 1103, 1842, 7320, 1250, 1125, 1640, 1151, 1694, 119, 102, 1247, 1108, 1107, 7424, 1104, 7320, 1250, 1286, 1106, 1129, 2063, 119]
+advText [('But the real dirty work had already been done.', 'There was in lots of dirty work left to be completed.')]
+srcTxt:  But the real dirty work had already been done. There was [ [ still ] ] lots of dirty work left to be completed.
+advTxt:  But the real dirty work had already been done. There was [ [ in ] ] lots of dirty work left to be completed.
+srcTxt:  ('But the real dirty work had already been done.', 'There was still lots of dirty work left to be completed.')
+advTxt:  ('But the real dirty work had already been done.', 'There was in lots of dirty work left to be completed.')
+tLabel:  0
+targetTokens ['still']
+toTokens ['in']
+sProbs:  [0.9048365950584412, 0.0639415755867958, 0.031221870332956314]
+aProbs:  [0.37268251180648804, 0.4569914937019348, 0.17032599449157715]
+attack suc rate 100.0 %
+average # of queries: 5.4.
+all perturbed tokens :  18
+total token lens     :  604
+avg perturbed tokens :  3.6
+avg perturbation rate:  0.0298
+saved at sample  5.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/hypothesis/evaluation_20240922_005915_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_120_0.json
+6.0  th document.
+input_ids_batch [[146, 1108, 1865, 1154, 1103, 2927, 119, 102, 146, 2374, 1106, 3359, 1147, 10598, 1105, 1868, 1198, 1796, 1103, 2927, 119]]
+stgt:  I was pulled into the bar. [ [ I ] ] managed [ [ to ] ] [ [ escape ] ] [ [ their ] ] grasp and [ [ ran ] ] just [ [ outside ] ] [ [ the ] ] [ [ bar ] ].
+escape  ->  and
+input_ids_batch [[146, 1108, 1865, 1154, 1103, 2927, 119, 102, 146, 2374, 1106, 1105, 1147, 10598, 1105, 1868, 1198, 1796, 1103, 2927, 119]]
+advInxCut [146, 1108, 1865, 1154, 1103, 2927, 119, 102, 146, 2374, 1106, 1105, 1147, 10598, 1105, 1868, 1198, 1796, 1103, 2927, 119]
+advText [('I was pulled into the bar.', 'I managed to and their grasp and ran just outside the bar.')]
+srcTxt:  I was pulled into the bar. I managed to [ [ escape ] ] their grasp and ran just outside the bar.
+advTxt:  I was pulled into the bar. I managed to [ [ and ] ] their grasp and ran just outside the bar.
+srcTxt:  ('I was pulled into the bar.', 'I managed to escape their grasp and ran just outside the bar.')
+advTxt:  ('I was pulled into the bar.', 'I managed to and their grasp and ran just outside the bar.')
+tLabel:  0
+targetTokens ['escape']
+toTokens ['and']
+sProbs:  [0.967144250869751, 0.0007222898420877755, 0.03213337063789368]
+aProbs:  [0.19146782159805298, 0.003949412144720554, 0.8045827746391296]
+attack suc rate 100.0 %
+average # of queries: 4.666666666666667.
+all perturbed tokens :  25
+total token lens     :  820
+avg perturbed tokens :  4.17
+avg perturbation rate:  0.0305
+saved at sample  6.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/hypothesis/evaluation_20240922_005915_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_120_0.json
+7.0  th document.
+input_ids_batch [[9696, 1156, 16146, 1343, 1150, 2242, 1105, 7361, 119, 102, 9696, 6488, 1150, 1355, 1107, 1105, 1149, 119]]
+stgt:  Guards would regulate those who entered and departed. [ [ Guards ] ] [ [ checked ] ] [ [ who ] ] [ [ went ] ] [ [ in ] ] [ [ and ] ] [ [ out ] ] [ [. ] ]
+.  ->  first
+input_ids_batch [[9696, 1156, 16146, 1343, 1150, 2242, 1105, 7361, 119, 102, 9696, 6488, 1150, 1355, 1107, 1105, 1149, 1148]]
+advInxCut [9696, 1156, 16146, 1343, 1150, 2242, 1105, 7361, 119, 102, 9696, 6488, 1150, 1355, 1107, 1105, 1149, 1148]
+advText [('Guards would regulate those who entered and departed.', 'Guards checked who went in and out first')]
+srcTxt:  Guards would regulate those who entered and departed. Guards checked who went in and out [ [. ] ]
+advTxt:  Guards would regulate those who entered and departed. Guards checked who went in and out [ [ first ] ]
+srcTxt:  ('Guards would regulate those who entered and departed.', 'Guards checked who went in and out.')
+advTxt:  ('Guards would regulate those who entered and departed.', 'Guards checked who went in and out first')
+tLabel:  1
+targetTokens ['.']
+toTokens ['first']
+sProbs:  [0.002444606274366379, 0.9715551137924194, 0.02600024826824665]
+aProbs:  [0.020565882325172424, 0.11772588640451431, 0.8617082238197327]
+attack suc rate 100.0 %
+average # of queries: 4.142857142857143.
+all perturbed tokens :  33
+total token lens     :  1054
+avg perturbed tokens :  4.71
+avg perturbation rate:  0.0313
+saved at sample  7.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/hypothesis/evaluation_20240922_005915_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_120_0.json
+8.0  th document.
+input_ids_batch [[2611, 117, 2545, 15627, 1222, 1287, 1177, 1112, 1106, 3644, 1103, 3651, 2643, 119, 102, 2545, 1108, 4988, 1106, 2936, 1222, 1103, 1168, 1299, 1106, 3644, 1117, 1319, 7581, 119]]
+stgt:  Later, Tom testified against John so as to avoid the electric chair. [ [ Tom ] ] was willing [ [ to ] ] [ [ speak ] ] against the [ [ other ] ] man to [ [ avoid ] ] his [ [ own ] ] [ [ execution ] ] [ [. ] ]
+input_ids_batch [[2611, 117, 2545, 15627, 1222, 1287, 1177, 1112, 1106, 3644, 1103, 3651, 2643, 119, 102, 2545, 1108, 4988, 1106, 2936, 1222, 1103, 1168, 1299, 1106, 3644, 1117, 1319, 7581, 119]]
+advInxCut [2611, 117, 2545, 15627, 1222, 1287, 1177, 1112, 1106, 3644, 1103, 3651, 2643, 119, 102, 2545, 1108, 4988, 1106, 2936, 1222, 1103, 1168, 1299, 1106, 3644, 1117, 1319, 7581, 119]
+advText [('Later, Tom testified against John so as to avoid the electric chair.', 'Tom was willing to speak against the other man to avoid his own execution.')]
+srcTxt:  Later, Tom testified against John so as to avoid the electric chair. Tom was willing to speak against the other man to avoid his own execution.
+advTxt:  Later, Tom testified against John so as to avoid the electric chair. Tom was willing to speak against the other man to avoid his own execution.
+srcTxt:  ('Later, Tom testified against John so as to avoid the electric chair.', 'Tom was willing to speak against the other man to avoid his own execution.')
+advTxt:  ('Later, Tom testified against John so as to avoid the electric chair.', 'Tom was willing to speak against the other man to avoid his own execution.')
+tLabel:  1
+targetTokens []
+toTokens []
+sProbs:  [0.010561746545135975, 0.49159789085388184, 0.49784034490585327]
+aProbs:  [0.010561746545135975, 0.49159789085388184, 0.49784034490585327]
+attack suc rate 100.0 %
+average # of queries: 3.625.
+all perturbed tokens :  41
+total token lens     :  1318
+avg perturbed tokens :  5.12
+avg perturbation rate:  0.0311
+saved at sample  8.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/hypothesis/evaluation_20240922_005915_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_120_0.json
+9.0  th document.
+input_ids_batch [[1192, 112, 1325, 1256, 1129, 1682, 1106, 27231, 170, 2361, 22245, 14200, 1204, 1106, 11200, 1240, 170, 2723, 4385, 119, 102, 1192, 1209, 1136, 1129, 2148, 1106, 27231, 1114, 2361, 22245, 14200, 2145, 119]]
+stgt:  You'll even be able to consult a traditional herbalist to cure your ailments. You will [ [ not ] ] [ [ be ] ] [ [ allowed ] ] [ [ to ] ] [ [ consult ] ] with [ [ traditional ] ] [ [ herb ] ] [ [alis ] ]ts.
+not  ->  now
+input_ids_batch [[1192, 112, 1325, 1256, 1129, 1682, 1106, 27231, 170, 2361, 22245, 14200, 1204, 1106, 11200, 1240, 170, 2723, 4385, 119, 102, 1192, 1209, 1208, 1129, 2148, 1106, 27231, 1114, 2361, 22245, 14200, 2145, 119]]
+advInxCut [1192, 112, 1325, 1256, 1129, 1682, 1106, 27231, 170, 2361, 22245, 14200, 1204, 1106, 11200, 1240, 170, 2723, 4385, 119, 102, 1192, 1209, 1208, 1129, 2148, 1106, 27231, 1114, 2361, 22245, 14200, 2145, 119]
+advText [("You'll even be able to consult a traditional herbalist to cure your ailments.", 'You will now be allowed to consult with traditional herbalists.')]
+srcTxt:  You'll even be able to consult a traditional herbalist to cure your ailments. You will [ [ not ] ] be allowed to consult with traditional herbalists.
+advTxt:  You'll even be able to consult a traditional herbalist to cure your ailments. You will [ [ now ] ] be allowed to consult with traditional herbalists.
+srcTxt:  ("You'll even be able to consult a traditional herbalist to cure your ailments.", 'You will not be allowed to consult with traditional herbalists.')
+advTxt:  ("You'll even be able to consult a traditional herbalist to cure your ailments.", 'You will now be allowed to consult with traditional herbalists.')
+tLabel:  0
+targetTokens ['not']
+toTokens ['now']
+sProbs:  [0.9989584684371948, 0.00011122081195935607, 0.0009302564430981874]
+aProbs:  [0.0012916664127260447, 0.9830647110939026, 0.015643680468201637]
+attack suc rate 100.0 %
+average # of queries: 3.3333333333333335.
+all perturbed tokens :  50
+total token lens     :  1616
+avg perturbed tokens :  5.56
+avg perturbation rate:  0.0309
+saved at sample  9.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/hypothesis/evaluation_20240922_005915_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_120_0.json
+10.0  th document.
+input_ids_batch [[4617, 9090, 119, 102, 1109, 1299, 1108, 4259, 119]]
+stgt:  Lincoln glared. [ [ The ] ] [ [ man ] ] [ [ was ] ] [ [ angry ] ] [ [. ] ]
+input_ids_batch [[4617, 9090, 119, 102, 1109, 1299, 1108, 4259, 119]]
+advInxCut [4617, 9090, 119, 102, 1109, 1299, 1108, 4259, 119]
+advText [('Lincoln glared.', 'The man was angry.')]
+srcTxt:  Lincoln glared. The man was angry.
+advTxt:  Lincoln glared. The man was angry.
+srcTxt:  ('Lincoln glared.', 'The man was angry.')
+advTxt:  ('Lincoln glared.', 'The man was angry.')
+tLabel:  2
+targetTokens []
+toTokens []
+sProbs:  [0.0006345212459564209, 0.7280912399291992, 0.271274209022522]
+aProbs:  [0.0006345212459564209, 0.7280912399291992, 0.271274209022522]
+attack suc rate 100.0 %
+average # of queries: 3.0.
+all perturbed tokens :  59
+total token lens     :  1923
+avg perturbed tokens :  5.9
+avg perturbation rate:  0.0307
+saved at sample  10.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/hypothesis/evaluation_20240922_005915_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_120_0.json
+11.0  th document.
+input_ids_batch [[2353, 1299, 1156, 183, 112, 189, 1138, 1915, 9701, 1170, 1103, 1148, 5993, 119, 102, 2353, 1299, 3523, 9701, 1256, 1170, 1103, 1148, 5993, 119]]
+stgt:  Your man wouldn't have remained conscious after the first blow. [ [ Your ] ] [ [ man ] ] [ [ stayed ] ] [ [ conscious ] ] [ [ even ] ] [ [ after ] ] the [ [ first ] ] [ [ blow ] ].
+0   stayed  ->  area   0.99673  ->  0.989113
+0   area  ->  together   0.989113  ->  0.986019
+0   together  ->  got   0.986019  ->  0.968228
+0   Your  ->  >   0.968228  ->  0.959026
+0   >  ->  re   0.959026  ->  0.944374
+0   re  ->  +   0.944374  ->  0.907664
+0   +  ->  9   0.907664  ->  0.869626
+9  ->  had
+input_ids_batch [[2353, 1299, 1156, 183, 112, 189, 1138, 1915, 9701, 1170, 1103, 1148, 5993, 119, 102, 1125, 1299, 1400, 9701, 1256, 1170, 1103, 1148, 5993, 119]]
+advInxCut [2353, 1299, 1156, 183, 112, 189, 1138, 1915, 9701, 1170, 1103, 1148, 5993, 119, 102, 1125, 1299, 1400, 9701, 1256, 1170, 1103, 1148, 5993, 119]
+advText [("Your man wouldn't have remained conscious after the first blow.", 'had man got conscious even after the first blow.')]
+srcTxt:  Your man wouldn't have remained conscious after the first blow. [ [ Your ] ] man [ [ stayed ] ] conscious even after the first blow.
+advTxt:  Your man wouldn't have remained conscious after the first blow. [ [ had ] ] man [ [ got ] ] conscious even after the first blow.
+srcTxt:  ("Your man wouldn't have remained conscious after the first blow.", 'Your man stayed conscious even after the first blow.')
+advTxt:  ("Your man wouldn't have remained conscious after the first blow.", 'had man got conscious even after the first blow.')
+tLabel:  0
+targetTokens ['stayed', 'Your']
+toTokens ['got', 'had']
+sProbs:  [0.9967302083969116, 0.002100663725286722, 0.0011692368425428867]
+aProbs:  [0.32527419924736023, 0.468344122171402, 0.2063816785812378]
+attack suc rate 100.0 %
+average # of queries: 5.090909090909091.
+all perturbed tokens :  70
+total token lens     :  2255
+avg perturbed tokens :  6.36
+avg perturbation rate:  0.031
+saved at sample  11.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/hypothesis/evaluation_20240922_005915_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_120_0.json
+12.0  th document.
+input_ids_batch [[10236, 1197, 10458, 23574, 1132, 3078, 1904, 1283, 119, 102, 1409, 1195, 3201, 1111, 3078, 1904, 117, 1195, 1180, 6657, 1120, 2610, 10458, 23574, 119]]
+stgt:  Larger ski resorts are 90 minutes away. If [ [ we ] ] travel for [ [ 90 ] ] minutes, [ [ we ] ] could arrive [ [ at ] ] [ [ larger ] ] [ [ ski ] ] [ [ resorts ] ] [ [. ] ]
+larger  ->  he
+input_ids_batch [[10236, 1197, 10458, 23574, 1132, 3078, 1904, 1283, 119, 102, 1409, 1195, 3201, 1111, 3078, 1904, 117, 1195, 1180, 6657, 1120, 1119, 10458, 23574, 119]]
+advInxCut [10236, 1197, 10458, 23574, 1132, 3078, 1904, 1283, 119, 102, 1409, 1195, 3201, 1111, 3078, 1904, 117, 1195, 1180, 6657, 1120, 1119, 10458, 23574, 119]
+advText [('Larger ski resorts are 90 minutes away.', 'If we travel for 90 minutes, we could arrive at he ski resorts.')]
+srcTxt:  Larger ski resorts are 90 minutes away. If we travel for 90 minutes, we could arrive at [ [ larger ] ] ski resorts.
+advTxt:  Larger ski resorts are 90 minutes away. If we travel for 90 minutes, we could arrive at [ [ he ] ] ski resorts.
+srcTxt:  ('Larger ski resorts are 90 minutes away.', 'If we travel for 90 minutes, we could arrive at larger ski resorts.')
+advTxt:  ('Larger ski resorts are 90 minutes away.', 'If we travel for 90 minutes, we could arrive at he ski resorts.')
+tLabel:  1
+targetTokens ['larger']
+toTokens ['he']
+sProbs:  [0.001434870297089219, 0.8910939693450928, 0.10747117549180984]
+aProbs:  [0.004654094576835632, 0.480207234621048, 0.5151386857032776]
+attack suc rate 100.0 %
+average # of queries: 4.75.
+all perturbed tokens :  82
+total token lens     :  2612
+avg perturbed tokens :  6.83
+avg perturbation rate:  0.0314
+saved at sample  12.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/hypothesis/evaluation_20240922_005915_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_120_0.json
+13.0  th document.
+input_ids_batch [[17822, 1181, 1137, 3928, 187, 7409, 18201, 1116, 1138, 1151, 8103, 1107, 1103, 4098, 1111, 1103, 1763, 1406, 1201, 1105, 1138, 4938, 11184, 8592, 117, 1447, 10212, 1320, 1105, 1143, 4934, 9464, 117, 1105, 21489, 17639, 15524, 15297, 117, 1103, 2526, 1163, 119, 102, 16890, 14566, 4199, 117, 1191, 1152, 1132, 5742, 1137, 3928, 117, 6613, 1106, 3290, 1614, 118, 1142, 1110, 1184, 1144, 1151, 5664, 1111, 1103, 1763, 1406, 1201, 118, 1133, 1242, 3722, 1132, 1774, 1106, 9474, 1103, 2463, 119]]
+stgt:  Escaped or abandoned raccoons have been breeding in the wild for the past 20 years and have damaged corn crops, watermelon and melon farms, and rainbow trout hatcheries, the paper said. [ [ Ra ] ]cco [ [ons ] ], if they are escaped or abandoned, tend to [ [ damage ] ] [ [ things ] ] - this is what has been happening for the past 20 years - [ [ but ] ] [ [ many ] ] [ [ organizations ] ] are trying to solve [ [ the ] ] problem.
+2   many  ->  are   0.997335  ->  0.99582
+2   are  ->  of   0.99582  ->  0.99402
+2   of  ->  information   0.99402  ->  0.993213
+2   information  ->  served   0.993213  ->  0.992901
+2   served  ->  off   0.992901  ->  0.991052
+2   off  ->  or   0.991052  ->  0.988615
+2   or  ->  +   0.988615  ->  0.988152
+2   organizations  ->  both   0.988152  ->  0.970229
+2   both  ->  held   0.970229  ->  0.956497
+2   held  ->  along   0.956497  ->  0.901687
+2   along  ->  through   0.901687  ->  0.880532
+2   but  ->  ,   0.880532  ->  0.755885
+2   ,  ->  (   0.755885  ->  0.625829
+2   (  ->  the   0.625829  ->  0.596196
+2   Ra  ->  and   0.596196  ->  0.582239
+the  ->  grateful
+input_ids_batch [[17822, 1181, 1137, 3928, 187, 7409, 18201, 1116, 1138, 1151, 8103, 1107, 1103, 4098, 1111, 1103, 1763, 1406, 1201, 1105, 1138, 4938, 11184, 8592, 117, 1447, 10212, 1320, 1105, 1143, 4934, 9464, 117, 1105, 21489, 17639, 15524, 15297, 117, 1103, 2526, 1163, 119, 102, 1105, 14566, 4199, 117, 1191, 1152, 1132, 5742, 1137, 3928, 117, 6613, 1106, 3290, 1614, 118, 1142, 1110, 1184, 1144, 1151, 5664, 1111, 1103, 1763, 1406, 1201, 118, 1103, 116, 1194, 1132, 1774, 1106, 9474, 9473, 2463, 119]]
+advInxCut [17822, 1181, 1137, 3928, 187, 7409, 18201, 1116, 1138, 1151, 8103, 1107, 1103, 4098, 1111, 1103, 1763, 1406, 1201, 1105, 1138, 4938, 11184, 8592, 117, 1447, 10212, 1320, 1105, 1143, 4934, 9464, 117, 1105, 21489, 17639, 15524, 15297, 117, 1103, 2526, 1163, 119, 102, 1105, 14566, 4199, 117, 1191, 1152, 1132, 5742, 1137, 3928, 117, 6613, 1106, 3290, 1614, 118, 1142, 1110, 1184, 1144, 1151, 5664, 1111, 1103, 1763, 1406, 1201, 118, 1103, 116, 1194, 1132, 1774, 1106, 9474, 9473, 2463, 119]
+advText [('Escaped or abandoned raccoons have been breeding in the wild for the past 20 years and have damaged corn crops, watermelon and melon farms, and rainbow trout hatcheries, the paper said.', 'andccoons, if they are escaped or abandoned, tend to damage things - this is what has been happening for the past 20 years - the + through are trying to solve grateful problem.')]
+srcTxt:  Escaped or abandoned raccoons have been breeding in the wild for the past 20 years and have damaged corn crops, watermelon and melon farms, and rainbow trout hatcheries, the paper said. [ [ Ra ] ]ccoons, if they are escaped or abandoned, tend to damage things - this is what has been happening for the past 20 years - [ [ but ] ] [ [ many ] ] [ [ organizations ] ] are trying to solve [ [ the ] ] problem.
+advTxt:  Escaped or abandoned raccoons have been breeding in the wild for the past 20 years and have damaged corn crops, watermelon and melon farms, and rainbow trout hatcheries, the paper said. [ [ and ] ]ccoons, if they are escaped or abandoned, tend to damage things - this is what has been happening for the past 20 years - [ [ the ] ] [ [ + ] ] [ [ through ] ] are trying to solve [ [ grateful ] ] problem.
+srcTxt:  ('Escaped or abandoned raccoons have been breeding in the wild for the past 20 years and have damaged corn crops, watermelon and melon farms, and rainbow trout hatcheries, the paper said.', 'Raccoons, if they are escaped or abandoned, tend to damage things - this is what has been happening for the past 20 years - but many organizations are trying to solve the problem.')
+advTxt:  ('Escaped or abandoned raccoons have been breeding in the wild for the past 20 years and have damaged corn crops, watermelon and melon farms, and rainbow trout hatcheries, the paper said.', 'andccoons, if they are escaped or abandoned, tend to damage things - this is what has been happening for the past 20 years - the + through are trying to solve grateful problem.')
+tLabel:  2
+targetTokens ['many', 'organizations', 'but', 'Ra', 'the']
+toTokens ['+', 'through', 'the', 'and', 'grateful']
+sProbs:  [0.0006291770259849727, 0.002035530051216483, 0.9973352551460266]
+aProbs:  [0.0019206946017220616, 0.5044939517974854, 0.49358540773391724]
+attack suc rate 100.0 %
+average # of queries: 9.076923076923077.
+all perturbed tokens :  99
+total token lens     :  3051
+avg perturbed tokens :  7.62
+avg perturbation rate:  0.0324
+saved at sample  13.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/hypothesis/evaluation_20240922_005915_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_120_0.json
+14.0  th document.
+input_ids_batch [[140, 8950, 4820, 1125, 1106, 2147, 1111, 2209, 131, 102, 140, 8950, 4820, 1125, 1106, 8306, 1107, 170, 2147, 1106, 5622, 2209, 119]]
+stgt:  Czarek had to fight for attention : [ [ C ] ]zarek had [ [ to ] ] [ [ engage ] ] [ [ in ] ] [ [ a ] ] [ [ fight ] ] to seek [ [ attention ] ] [ [. ] ]
+1   C  ->  -   0.996689  ->  0.557765
+-  ->  :
+input_ids_batch [[140, 8950, 4820, 1125, 1106, 2147, 1111, 2209, 131, 102, 131, 8950, 4820, 1125, 1106, 8306, 1107, 170, 2147, 1106, 5622, 2209, 119]]
+advInxCut [140, 8950, 4820, 1125, 1106, 2147, 1111, 2209, 131, 102, 131, 8950, 4820, 1125, 1106, 8306, 1107, 170, 2147, 1106, 5622, 2209, 119]
+advText [('Czarek had to fight for attention :', ':zarek had to engage in a fight to seek attention.')]
+srcTxt:  Czarek had to fight for attention : [ [ C ] ]zarek had to engage in a fight to seek attention.
+advTxt:  Czarek had to fight for attention : [ [ : ] ]zarek had to engage in a fight to seek attention.
+srcTxt:  ('Czarek had to fight for attention :', 'Czarek had to engage in a fight to seek attention.')
+advTxt:  ('Czarek had to fight for attention :', ':zarek had to engage in a fight to seek attention.')
+tLabel:  1
+targetTokens ['C']
+toTokens [':']
+sProbs:  [0.0002661165490280837, 0.9966893196105957, 0.0030445901211351156]
+aProbs:  [0.5703511238098145, 0.3832608461380005, 0.046387992799282074]
+attack suc rate 100.0 %
+average # of queries: 8.571428571428571.
+all perturbed tokens :  117
+total token lens     :  3513
+avg perturbed tokens :  8.36
+avg perturbation rate:  0.0333
+saved at sample  14.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/hypothesis/evaluation_20240922_005915_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_120_0.json
+15.0  th document.
+input_ids_batch [[1109, 3062, 136, 102, 2181, 1115, 2276, 136]]
+stgt:  The truth? [ [ Is ] ] [ [ that ] ] [ [ true ] ] [ [? ] ]
+1   true  ->  with   0.962423  ->  0.919065
+1   with  ->  from   0.919065  ->  0.551817
+from  ->  may
+input_ids_batch [[1109, 3062, 136, 102, 2181, 1115, 1336, 136]]
+advInxCut [1109, 3062, 136, 102, 2181, 1115, 1336, 136]
+advText [('The truth?', 'Is that may?')]
+srcTxt:  The truth? Is that [ [ true ] ]?
+advTxt:  The truth? Is that [ [ may ] ]?
+srcTxt:  ('The truth?', 'Is that true?')
+advTxt:  ('The truth?', 'Is that may?')
+tLabel:  1
+targetTokens ['true']
+toTokens ['may']
+sProbs:  [0.0006264606490731239, 0.9624225497245789, 0.03695090860128403]
+aProbs:  [0.11328233033418655, 0.21334999799728394, 0.6733676791191101]
+attack suc rate 100.0 %
+average # of queries: 8.333333333333334.
+all perturbed tokens :  136
+total token lens     :  3983
+avg perturbed tokens :  9.07
+avg perturbation rate:  0.0341
+saved at sample  15.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/hypothesis/evaluation_20240922_005915_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_120_0.json
+16.0  th document.
+input_ids_batch [[17037, 20564, 3633, 6804, 119, 102, 17037, 20564, 3633, 25176, 1114, 13657, 119]]
+stgt:  Tuppence frowned. [ [ Tu ] ] [ [ppe ] ] [ [nce ] ] [ [ beamed ] ] [ [ with ] ] [ [ delight ] ] [ [. ] ]
+0   Tu  ->  -   0.998548  ->  0.997876
+0   -  ->  >   0.997876  ->  0.997806
+0   >  ->  :   0.997806  ->  0.997524
+0   :  ->  !   0.997524  ->  0.99692
+0   beamed  ->  tears   0.99692  ->  0.996274
+0   tears  ->  RFC   0.996274  ->  0.995774
+0   RFC  ->  before   0.995774  ->  0.993688
+0   ##ppe  ->  +   0.993688  ->  0.993672
+0   +  ->  O   0.993672  ->  0.990798
+with  ->  misleading
+input_ids_batch [[17037, 20564, 3633, 6804, 119, 102, 106, 152, 3633, 1196, 25175, 13657, 119]]

@@ -1,0 +1,12 @@
+dataName: snli
+dataPath: /usa/taikun/07_transencoder/3datasets/snli/snli_1.0_train.jsonl
+importantTokensFile: /usa/taikun/07_transencoder/0dataProcessing/snli/tokens_snli_10000.json_premise.json
+tgtModel: textattack/bert-base-uncased-snli
+attackerPath: /usa/taikun/07_transencoder/1training/snli/premise/
+numsAttackedTokens: 5
+maxLenDoc: 512
+attacker_name: None
+alpha: 0.0
+keys_tensor.shape torch.Size([9988, 512])
+values_tensor.shape torch.Size([9988, 512])
+Vocabulary Size: 28996

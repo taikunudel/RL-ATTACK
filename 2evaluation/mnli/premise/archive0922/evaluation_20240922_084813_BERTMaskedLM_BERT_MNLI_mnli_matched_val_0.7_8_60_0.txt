@@ -1,0 +1,330 @@
+numsProcessedSamples 1000
+Vocabulary Size: 28996
+BERT_UNCASED
+Evaluation Data Size: 1000
+CLS token ID: 101
+SEP token ID: 102
+PAD token ID: 0
+MASK token ID: 103
+UNK token ID: 100
+torch.Size([1000, 512])
+torch.Size([1000, 512])
+torch.Size([1000])
+1000
+testModel: bert-base-uncased 
+attacker device:  cuda:0
+1.0  th document.
+decoded_text In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. [SEP] There is a bookshop at the gallery.
+text_parts ['In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. ', ' There is a bookshop at the gallery.']
+stgt:  In Temple Bar, the [ [ books ] ] [ [hop ] ] [ [ at ] ] the [ [ Gallery ] ] of Photography carries a [ [ large ] ] selection of photographic publications, and the Flying Pig is a [ [ second ] ] [ [hand ] ] bookshop [ [. ] ] There is a bookshop at the gallery.
+Gallery  ->  ：
+decoded_text In Temple Bar, the bookshop at the ： of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. [SEP] There is a bookshop at the gallery.
+text_parts ['In Temple Bar, the bookshop at the ： of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. ', ' There is a bookshop at the gallery.']
+advInxCut [1130, 4407, 6523, 117, 1103, 2146, 23414, 1120, 1103, 1102, 1104, 12954, 7450, 170, 1415, 4557, 1104, 15368, 5873, 117, 1105, 1103, 7769, 23350, 1110, 170, 1248, 9332, 2146, 23414, 119, 102, 1247, 1110, 170, 2146, 23414, 1120, 1103, 7183, 119]
+advText [('In Temple Bar, the bookshop at the ： of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. ', ' There is a bookshop at the gallery.')]
+srcTxt:  In Temple Bar, the bookshop at the [ [ Gallery ] ] of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. There is a bookshop at the gallery.
+advTxt:  In Temple Bar, the bookshop at the [ [ ： ] ] of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. There is a bookshop at the gallery.
+srcTxt:  ('In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. ', ' There is a bookshop at the gallery.')
+advTxt:  ('In Temple Bar, the bookshop at the ： of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. ', ' There is a bookshop at the gallery.')
+tLabel:  1
+targetTokens ['Gallery']
+toTokens ['：']
+sProbs:  [0.001772525836713612, 0.9928836822509766, 0.005343819502741098]
+aProbs:  [0.5066301226615906, 0.4673088788986206, 0.02606102265417576]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+all perturbed tokens :  1
+total token lens     :  41
+avg perturbed tokens :  1.0
+avg perturbation rate:  0.0244
+saved at sample  1.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084813_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+2.0  th document.
+decoded_text On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. [SEP] Naxos is a place with beautiful scenery for leisure.
+text_parts ['On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. ', ' Naxos is a place with beautiful scenery for leisure.']
+stgt:  On Na [ [x ] ] [ [os ] ], you can walk through the [ [ pretty ] ] villages of the Tragea Valley and the foothills of Mount Zas, ad [ [miring ] ] Byzantine churches [ [ and ] ] exploring olive [ [ grove ] ] [ [s ] ] at your [ [ leisure ] ]. Naxos is a place with beautiful scenery for leisure.
+1   pretty  ->  ：   0.971234  ->  0.513667
+：  ->  ##rook
+decoded_text On Naxos, you can walk through therook villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. [SEP] Naxos is a place with beautiful scenery for leisure.
+text_parts ['On Naxos, you can walk through therook villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. ', ' Naxos is a place with beautiful scenery for leisure.']
+advInxCut [1212, 11896, 1775, 2155, 117, 1128, 1169, 2647, 1194, 1103, 18562, 4024, 1104, 1103, 157, 20240, 1161, 2634, 1105, 1103, 21864, 1104, 3572, 163, 2225, 117, 8050, 27693, 8377, 5189, 1105, 12138, 13552, 28011, 1116, 1120, 1240, 17036, 119, 102, 11896, 1775, 2155, 1110, 170, 1282, 1114, 2712, 19335, 1111, 17036, 119]
+advText [('On Naxos, you can walk through therook villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. ', ' Naxos is a place with beautiful scenery for leisure.')]
+srcTxt:  On Naxos, you can walk through the [ [ pretty ] ] villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. Naxos is a place with beautiful scenery for leisure.
+advTxt:  On Naxos, you can walk through the [ [rook ] ] villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. Naxos is a place with beautiful scenery for leisure.
+srcTxt:  ('On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. ', ' Naxos is a place with beautiful scenery for leisure.')
+advTxt:  ('On Naxos, you can walk through therook villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. ', ' Naxos is a place with beautiful scenery for leisure.')
+tLabel:  1
+targetTokens ['pretty']
+toTokens ['##rook']
+sProbs:  [0.00033104518661275506, 0.9712340831756592, 0.028434913605451584]
+aProbs:  [0.0008813836611807346, 0.40410083532333374, 0.5950177907943726]
+attack suc rate 100.0 %
+average # of queries: 0.5.
+all perturbed tokens :  3
+total token lens     :  134
+avg perturbed tokens :  1.5
+avg perturbation rate:  0.0224
+saved at sample  2.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084813_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+3.0  th document.
+decoded_text Impossible. [SEP] Impossible, unless circumstances are met.
+text_parts ['Impossible. ', ' Impossible, unless circumstances are met.']
+stgt:  [ [ Impossible ] ] [ [. ] ] Impossible, unless circumstances are met.
+Impossible  ->  ten
+decoded_text ten. [SEP] Impossible, unless circumstances are met.
+text_parts ['ten. ', ' Impossible, unless circumstances are met.']
+advInxCut [1995, 119, 102, 26138, 117, 4895, 5607, 1132, 1899, 119]
+advText [('ten. ', ' Impossible, unless circumstances are met.')]
+srcTxt:  [ [ Impossible ] ]. Impossible, unless circumstances are met.
+advTxt:  [ [ ten ] ]. Impossible, unless circumstances are met.
+srcTxt:  ('Impossible. ', ' Impossible, unless circumstances are met.')
+advTxt:  ('ten. ', ' Impossible, unless circumstances are met.')
+tLabel:  2
+targetTokens ['Impossible']
+toTokens ['ten']
+sProbs:  [0.0010454413713887334, 0.004881738685071468, 0.9940728545188904]
+aProbs:  [0.6737305521965027, 0.012669620104134083, 0.3135998249053955]
+attack suc rate 100.0 %
+average # of queries: 1.3333333333333333.
+all perturbed tokens :  6
+total token lens     :  237
+avg perturbed tokens :  2.0
+avg perturbation rate:  0.0253
+saved at sample  3.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084813_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+4.0  th document.
+decoded_text Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. [SEP] Net cost for education programs can be calculated as a way to increase productivity.
+text_parts ['Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. ', ' Net cost for education programs can be calculated as a way to increase productivity.']
+stgt:  Expenses included in [ [ calculating ] ] net cost for [ [ education ] ] and training programs that [ [ are ] ] intended [ [ to ] ] [ [ increase ] ] or maintain national [ [ economic ] ] [ [ productive ] ] capacity shall be reported as investments in human capital as required supplementary [ [ stew ] ]ardship information accompanying the financial statements of the Federal Government and its component units. Net cost for education programs can be calculated as a way to increase productivity.
+productive  ->  fight
+decoded_text Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic fight capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. [SEP] Net cost for education programs can be calculated as a way to increase productivity.
+text_parts ['Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic fight capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. ', ' Net cost for education programs can be calculated as a way to increase productivity.']
+advInxCut [16409, 11741, 8830, 1529, 1107, 23172, 5795, 2616, 1111, 1972, 1105, 2013, 2648, 1115, 1132, 3005, 1106, 2773, 1137, 4731, 1569, 2670, 2147, 3211, 4103, 1129, 2103, 1112, 12372, 1107, 1769, 2364, 1112, 2320, 15491, 3113, 26036, 13584, 3157, 1869, 11227, 1103, 2798, 8477, 1104, 1103, 3467, 2384, 1105, 1157, 6552, 2338, 119, 102, 20820, 2616, 1111, 1972, 2648, 1169, 1129, 10056, 1112, 170, 1236, 1106, 2773, 18222, 119]
+advText [('Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic fight capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. ', ' Net cost for education programs can be calculated as a way to increase productivity.')]
+srcTxt:  Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic [ [ productive ] ] capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. Net cost for education programs can be calculated as a way to increase productivity.
+advTxt:  Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic [ [ fight ] ] capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. Net cost for education programs can be calculated as a way to increase productivity.
+srcTxt:  ('Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. ', ' Net cost for education programs can be calculated as a way to increase productivity.')
+advTxt:  ('Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic fight capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. ', ' Net cost for education programs can be calculated as a way to increase productivity.')
+tLabel:  1
+targetTokens ['productive']
+toTokens ['fight']
+sProbs:  [0.0015978390583768487, 0.9650044441223145, 0.033397722989320755]
+aProbs:  [0.04398005083203316, 0.06856941431760788, 0.8874505758285522]
+attack suc rate 100.0 %
+average # of queries: 1.0.
+all perturbed tokens :  10
+total token lens     :  409
+avg perturbed tokens :  2.5
+avg perturbation rate:  0.0244
+saved at sample  4.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084813_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+5.0  th document.
+decoded_text But the real dirty work had already been done. [SEP] There was still lots of dirty work left to be completed.
+text_parts ['But the real dirty work had already been done. ', ' There was still lots of dirty work left to be completed.']
+stgt:  [ [ But ] ] [ [ the ] ] [ [ real ] ] [ [ dirty ] ] [ [ work ] ] [ [ had ] ] already [ [ been ] ] [ [ done ] ]. There was still lots of dirty work left to be completed.
+0   had  ->  established   0.904837  ->  0.880675
+0   established  ->  city   0.880675  ->  0.54244
+dirty  ->  ：
+decoded_text But the real ： work city already been done. [SEP] There was still lots of dirty work left to be completed.
+text_parts ['But the real ： work city already been done. ', ' There was still lots of dirty work left to be completed.']
+advInxCut [1252, 1103, 1842, 1102, 1250, 1331, 1640, 1151, 1694, 119, 102, 1247, 1108, 1253, 7424, 1104, 7320, 1250, 1286, 1106, 1129, 2063, 119]
+advText [('But the real ： work city already been done. ', ' There was still lots of dirty work left to be completed.')]
+srcTxt:  But the real [ [ dirty ] ] work [ [ had ] ] already been done. There was still lots of dirty work left to be completed.
+advTxt:  But the real [ [ ： ] ] work [ [ city ] ] already been done. There was still lots of dirty work left to be completed.
+srcTxt:  ('But the real dirty work had already been done. ', ' There was still lots of dirty work left to be completed.')
+advTxt:  ('But the real ： work city already been done. ', ' There was still lots of dirty work left to be completed.')
+tLabel:  0
+targetTokens ['had', 'dirty']
+toTokens ['city', '：']
+sProbs:  [0.9048365950584412, 0.0639415755867958, 0.031221870332956314]
+aProbs:  [0.3120027482509613, 0.015678469091653824, 0.6723188161849976]
+attack suc rate 100.0 %
+average # of queries: 2.6.
+all perturbed tokens :  16
+total token lens     :  604
+avg perturbed tokens :  3.2
+avg perturbation rate:  0.0265
+saved at sample  5.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084813_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+6.0  th document.
+decoded_text I was pulled into the bar. [SEP] I managed to escape their grasp and ran just outside the bar.
+text_parts ['I was pulled into the bar. ', ' I managed to escape their grasp and ran just outside the bar.']
+stgt:  [ [ I ] ] [ [ was ] ] [ [ pulled ] ] [ [ into ] ] [ [ the ] ] [ [ bar ] ] [ [. ] ] I managed to escape their grasp and ran just outside the bar.
+into  ->  fact
+decoded_text I was pulled fact the bar. [SEP] I managed to escape their grasp and ran just outside the bar.
+text_parts ['I was pulled fact the bar. ', ' I managed to escape their grasp and ran just outside the bar.']
+advInxCut [146, 1108, 1865, 1864, 1103, 2927, 119, 102, 146, 2374, 1106, 3359, 1147, 10598, 1105, 1868, 1198, 1796, 1103, 2927, 119]
+advText [('I was pulled fact the bar. ', ' I managed to escape their grasp and ran just outside the bar.')]
+srcTxt:  I was pulled [ [ into ] ] the bar. I managed to escape their grasp and ran just outside the bar.
+advTxt:  I was pulled [ [ fact ] ] the bar. I managed to escape their grasp and ran just outside the bar.
+srcTxt:  ('I was pulled into the bar. ', ' I managed to escape their grasp and ran just outside the bar.')
+advTxt:  ('I was pulled fact the bar. ', ' I managed to escape their grasp and ran just outside the bar.')
+tLabel:  0
+targetTokens ['into']
+toTokens ['fact']
+sProbs:  [0.967144250869751, 0.0007222898420877755, 0.03213337063789368]
+aProbs:  [0.44937241077423096, 0.01440812274813652, 0.5362194776535034]
+attack suc rate 100.0 %
+average # of queries: 2.1666666666666665.
+all perturbed tokens :  23
+total token lens     :  820
+avg perturbed tokens :  3.83
+avg perturbation rate:  0.028
+saved at sample  6.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084813_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+7.0  th document.
+decoded_text Guards would regulate those who entered and departed. [SEP] Guards checked who went in and out.
+text_parts ['Guards would regulate those who entered and departed. ', ' Guards checked who went in and out.']
+stgt:  [ [ Guards ] ] [ [ would ] ] [ [ regulate ] ] those [ [ who ] ] [ [ entered ] ] [ [ and ] ] [ [ departed ] ] [ [. ] ] Guards checked who went in and out.
+1   Guards  ->  ten   0.971555  ->  0.544239
+ten  ->  deep
+decoded_text deep would regulate those who entered and departed. [SEP] Guards checked who went in and out.
+text_parts ['deep would regulate those who entered and departed. ', ' Guards checked who went in and out.']
+advInxCut [1996, 1156, 16146, 1343, 1150, 2242, 1105, 7361, 119, 102, 9696, 6488, 1150, 1355, 1107, 1105, 1149, 119]
+advText [('deep would regulate those who entered and departed. ', ' Guards checked who went in and out.')]
+srcTxt:  [ [ Guards ] ] would regulate those who entered and departed. Guards checked who went in and out.
+advTxt:  [ [ deep ] ] would regulate those who entered and departed. Guards checked who went in and out.
+srcTxt:  ('Guards would regulate those who entered and departed. ', ' Guards checked who went in and out.')
+advTxt:  ('deep would regulate those who entered and departed. ', ' Guards checked who went in and out.')
+tLabel:  1
+targetTokens ['Guards']
+toTokens ['deep']
+sProbs:  [0.002444606274366379, 0.9715551137924194, 0.02600024826824665]
+aProbs:  [0.012165079824626446, 0.34591731429100037, 0.6419175863265991]
+attack suc rate 100.0 %
+average # of queries: 2.5714285714285716.
+all perturbed tokens :  31
+total token lens     :  1054
+avg perturbed tokens :  4.43
+avg perturbation rate:  0.0294
+saved at sample  7.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084813_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+8.0  th document.
+decoded_text Later, Tom testified against John so as to avoid the electric chair. [SEP] Tom was willing to speak against the other man to avoid his own execution.
+text_parts ['Later, Tom testified against John so as to avoid the electric chair. ', ' Tom was willing to speak against the other man to avoid his own execution.']
+stgt:  Later, [ [ Tom ] ] [ [ testified ] ] [ [ against ] ] [ [ John ] ] [ [ so ] ] [ [ as ] ] to [ [ avoid ] ] the electric [ [ chair ] ]. Tom was willing to speak against the other man to avoid his own execution.
+decoded_text Later, Tom testified against John so as to avoid the electric chair. [SEP] Tom was willing to speak against the other man to avoid his own execution.
+text_parts ['Later, Tom testified against John so as to avoid the electric chair. ', ' Tom was willing to speak against the other man to avoid his own execution.']
+advInxCut [2611, 117, 2545, 15627, 1222, 1287, 1177, 1112, 1106, 3644, 1103, 3651, 2643, 119, 102, 2545, 1108, 4988, 1106, 2936, 1222, 1103, 1168, 1299, 1106, 3644, 1117, 1319, 7581, 119]
+advText [('Later, Tom testified against John so as to avoid the electric chair. ', ' Tom was willing to speak against the other man to avoid his own execution.')]
+srcTxt:  Later, Tom testified against John so as to avoid the electric chair. Tom was willing to speak against the other man to avoid his own execution.
+advTxt:  Later, Tom testified against John so as to avoid the electric chair. Tom was willing to speak against the other man to avoid his own execution.
+srcTxt:  ('Later, Tom testified against John so as to avoid the electric chair. ', ' Tom was willing to speak against the other man to avoid his own execution.')
+advTxt:  ('Later, Tom testified against John so as to avoid the electric chair. ', ' Tom was willing to speak against the other man to avoid his own execution.')
+tLabel:  1
+targetTokens []
+toTokens []
+sProbs:  [0.010561746545135975, 0.49159789085388184, 0.49784034490585327]
+aProbs:  [0.010561746545135975, 0.49159789085388184, 0.49784034490585327]
+attack suc rate 100.0 %
+average # of queries: 2.25.
+all perturbed tokens :  39
+total token lens     :  1318
+avg perturbed tokens :  4.88
+avg perturbation rate:  0.0296
+saved at sample  8.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084813_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+9.0  th document.
+decoded_text You'll even be able to consult a traditional herbalist to cure your ailments. [SEP] You will not be allowed to consult with traditional herbalists.
+text_parts ["You'll even be able to consult a traditional herbalist to cure your ailments. ", ' You will not be allowed to consult with traditional herbalists.']
+stgt:  [ [ You ] ]'[ [ ll ] ] [ [ even ] ] be [ [ able ] ] [ [ to ] ] consult a [ [ traditional ] ] [ [ herb ] ] [ [alis ] ]t to cure your ailments. You will not be allowed to consult with traditional herbalists.
+0   traditional  ->  on   0.998958  ->  0.979748
+0   on  ->  Donnell   0.979748  ->  0.972245
+0   Donnell  ->  up   0.972245  ->  0.961205
+0   up  ->  ##t   0.961205  ->  0.96057
+0   ll  ->  now   0.96057  ->  0.955425
+0   now  ->  species   0.955425  ->  0.936342
+able  ->  no
+decoded_text You'species even be no to consult at herbalist to cure your ailments. [SEP] You will not be allowed to consult with traditional herbalists.
+text_parts ["You'species even be no to consult at herbalist to cure your ailments. ", ' You will not be allowed to consult with traditional herbalists.']
+advInxCut [1192, 112, 1530, 1256, 1129, 1185, 1106, 27231, 170, 1204, 22245, 14200, 1204, 1106, 11200, 1240, 170, 2723, 4385, 119, 102, 1192, 1209, 1136, 1129, 2148, 1106, 27231, 1114, 2361, 22245, 14200, 2145, 119]
+advText [("You'species even be no to consult at herbalist to cure your ailments. ", ' You will not be allowed to consult with traditional herbalists.')]
+srcTxt:  You'[ [ ll ] ] even be [ [ able ] ] to consult a [ [ traditional ] ] herbalist to cure your ailments. You will not be allowed to consult with traditional herbalists.
+advTxt:  You'[ [ species ] ] even be [ [ no ] ] to consult a [ [t ] ] herbalist to cure your ailments. You will not be allowed to consult with traditional herbalists.
+srcTxt:  ("You'll even be able to consult a traditional herbalist to cure your ailments. ", ' You will not be allowed to consult with traditional herbalists.')
+advTxt:  ("You'species even be no to consult at herbalist to cure your ailments. ", ' You will not be allowed to consult with traditional herbalists.')
+tLabel:  0
+targetTokens ['traditional', 'll', 'able']
+toTokens ['##t', 'species', 'no']
+sProbs:  [0.9989584684371948, 0.00011122081195935607, 0.0009302564430981874]
+aProbs:  [0.007952629588544369, 0.7708103656768799, 0.22123701870441437]
+attack suc rate 100.0 %
+average # of queries: 2.888888888888889.
+all perturbed tokens :  50
+total token lens     :  1616
+avg perturbed tokens :  5.56
+avg perturbation rate:  0.0309
+saved at sample  9.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084813_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+10.0  th document.
+decoded_text Lincoln glared. [SEP] The man was angry.
+text_parts ['Lincoln glared. ', ' The man was angry.']
+stgt:  [ [ Lincoln ] ] [ [ glared ] ] [ [. ] ] The man was angry.
+decoded_text Lincoln glared. [SEP] The man was angry.
+text_parts ['Lincoln glared. ', ' The man was angry.']
+advInxCut [4617, 9090, 119, 102, 1109, 1299, 1108, 4259, 119]
+advText [('Lincoln glared. ', ' The man was angry.')]
+srcTxt:  Lincoln glared. The man was angry.
+advTxt:  Lincoln glared. The man was angry.
+srcTxt:  ('Lincoln glared. ', ' The man was angry.')
+advTxt:  ('Lincoln glared. ', ' The man was angry.')
+tLabel:  2
+targetTokens []
+toTokens []
+sProbs:  [0.0006345212459564209, 0.7280912399291992, 0.271274209022522]
+aProbs:  [0.0006345212459564209, 0.7280912399291992, 0.271274209022522]
+attack suc rate 100.0 %
+average # of queries: 2.6.
+all perturbed tokens :  61
+total token lens     :  1923
+avg perturbed tokens :  6.1
+avg perturbation rate:  0.0317
+saved at sample  10.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084813_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+11.0  th document.
+decoded_text Your man wouldn't have remained conscious after the first blow. [SEP] Your man stayed conscious even after the first blow.
+text_parts ["Your man wouldn't have remained conscious after the first blow. ", ' Your man stayed conscious even after the first blow.']
+stgt:  [ [ Your ] ] man [ [ would ] ] n [ ['] ] [ [ t ] ] [ [ have ] ] remained [ [ conscious ] ] [ [ after ] ] the [ [ first ] ] blow. Your man stayed conscious even after the first blow.
+0   have  ->  ##rook   0.99673  ->  0.967249
+0   ##rook  ->  Damian   0.967249  ->  0.945756
+Damian  ->  interrupting
+decoded_text Your man wouldn't interrupting remained conscious after the first blow. [SEP] Your man stayed conscious even after the first blow.
+text_parts ["Your man wouldn't interrupting remained conscious after the first blow. ", ' Your man stayed conscious even after the first blow.']
+advInxCut [2353, 1299, 1156, 183, 112, 189, 25602, 1915, 9701, 1170, 1103, 1148, 5993, 119, 102, 2353, 1299, 3523, 9701, 1256, 1170, 1103, 1148, 5993, 119]
+advText [("Your man wouldn't interrupting remained conscious after the first blow. ", ' Your man stayed conscious even after the first blow.')]
+srcTxt:  Your man wouldn't [ [ have ] ] remained conscious after the first blow. Your man stayed conscious even after the first blow.
+advTxt:  Your man wouldn't [ [ interrupting ] ] remained conscious after the first blow. Your man stayed conscious even after the first blow.
+srcTxt:  ("Your man wouldn't have remained conscious after the first blow. ", ' Your man stayed conscious even after the first blow.')
+advTxt:  ("Your man wouldn't interrupting remained conscious after the first blow. ", ' Your man stayed conscious even after the first blow.')
+tLabel:  0
+targetTokens ['have']
+toTokens ['interrupting']
+sProbs:  [0.9967302083969116, 0.002100663725286722, 0.0011692368425428867]
+aProbs:  [0.09473344683647156, 0.8565549850463867, 0.048711519688367844]
+attack suc rate 100.0 %
+average # of queries: 2.5454545454545454.
+all perturbed tokens :  73
+total token lens     :  2255
+avg perturbed tokens :  6.64
+avg perturbation rate:  0.0324
+saved at sample  11.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084813_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+12.0  th document.
+decoded_text Larger ski resorts are 90 minutes away. [SEP] If we travel for 90 minutes, we could arrive at larger ski resorts.
+text_parts ['Larger ski resorts are 90 minutes away. ', ' If we travel for 90 minutes, we could arrive at larger ski resorts.']
+stgt:  [ [ Large ] ] [ [r ] ] [ [ ski ] ] [ [ resorts ] ] are [ [ 90 ] ] [ [ minutes ] ] [ [ away ] ] [ [. ] ] If we travel for 90 minutes, we could arrive at larger ski resorts.
+ski  ->  before
+decoded_text Larger before resorts are 90 minutes away. [SEP] If we travel for 90 minutes, we could arrive at larger ski resorts.
+text_parts ['Larger before resorts are 90 minutes away. ', ' If we travel for 90 minutes, we could arrive at larger ski resorts.']
+advInxCut [10236, 1197, 1196, 23574, 1132, 3078, 1904, 1283, 119, 102, 1409, 1195, 3201, 1111, 3078, 1904, 117, 1195, 1180, 6657, 1120, 2610, 10458, 23574, 119]
+advText [('Larger before resorts are 90 minutes away. ', ' If we travel for 90 minutes, we could arrive at larger ski resorts.')]
+srcTxt:  Larger [ [ ski ] ] resorts are 90 minutes away. If we travel for 90 minutes, we could arrive at larger ski resorts.
+advTxt:  Larger [ [ before ] ] resorts are 90 minutes away. If we travel for 90 minutes, we could arrive at larger ski resorts.
+srcTxt:  ('Larger ski resorts are 90 minutes away. ', ' If we travel for 90 minutes, we could arrive at larger ski resorts.')
+advTxt:  ('Larger before resorts are 90 minutes away. ', ' If we travel for 90 minutes, we could arrive at larger ski resorts.')
+tLabel:  1
+targetTokens ['ski']
+toTokens ['before']
+sProbs:  [0.001434870297089219, 0.8910939693450928, 0.10747117549180984]
+aProbs:  [0.0060256002470850945, 0.002568397205322981, 0.9914059638977051]
+attack suc rate 100.0 %
+average # of queries: 2.3333333333333335.
+all perturbed tokens :  86
+total token lens     :  2612
+avg perturbed tokens :  7.17
+avg perturbation rate:  0.0329
+saved at sample  12.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/premise/evaluation_20240922_084813_BERTMaskedLM_BERT_MNLI_mnli_matched_val_0.7_8_60_0.json
+13.0  th document.
+decoded_text Escaped or abandoned raccoons have been breeding in the wild for the past 20 years and have damaged corn crops, watermelon and melon farms, and rainbow trout hatcheries, the paper said. [SEP] Raccoons, if they are escaped or abandoned, tend to damage things - this is what has been happening for the past 20 years - but many organizations are trying to solve the problem.
+text_parts ['Escaped or abandoned raccoons have been breeding in the wild for the past 20 years and have damaged corn crops, watermelon and melon farms, and rainbow trout hatcheries, the paper said. ', ' Raccoons, if they are escaped or abandoned, tend to damage things - this is what has been happening for the past 20 years - but many organizations are trying to solve the problem.']
+stgt:  Escaped [ [ or ] ] abandoned [ [ r ] ]accoons have been breeding [ [ in ] ] the wild for the past 20 years and have [ [ damaged ] ] corn crops, watermelon and melon farms, and rainbow trout hatcheries [ [, ] ] [ [ the ] ] [ [ paper ] ] said [ [. ] ] Raccoons, if they are escaped or abandoned, tend to damage things - this is what has been happening for the past 20 years - but many organizations are trying to solve the problem.
+2   .  ->  ##e   0.997335  ->  0.996461

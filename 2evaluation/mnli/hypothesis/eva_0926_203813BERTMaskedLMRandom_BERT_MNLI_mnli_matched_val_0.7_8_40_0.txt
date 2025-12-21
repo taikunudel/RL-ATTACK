@@ -1,0 +1,6 @@
+GPU usage:
+  memory.used memory.free
+0    5170 MiB   19077 MiB
+1    4051 MiB   20193 MiB
+Returning GPU1 with  20193 free MiB
+cuda:1

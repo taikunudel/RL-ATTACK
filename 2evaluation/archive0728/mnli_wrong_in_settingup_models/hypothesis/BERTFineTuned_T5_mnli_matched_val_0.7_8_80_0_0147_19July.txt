@@ -1,0 +1,444 @@
+numsProcessedSamples 1000
+Vocabulary Size: 28996
+Evaluation Data Size: 1000
+CLS token ID: 101
+SEP token ID: 102
+PAD token ID: 0
+MASK token ID: 103
+UNK token ID: 100
+torch.Size([1000, 512])
+torch.Size([1000, 512])
+torch.Size([1000])
+1000
+attacker device:  cuda:0
+1.0  th document.
+stgt:  In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. [ [ There ] ] [ [ is ] ] [ [ a ] ] [ [ books ] ] [ [hop ] ] [ [ at ] ] [ [ the ] ] [ [ gallery ] ].
+srcTxt:  In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. There is a bookshop at the gallery.
+advTxt:  In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. There is a bookshop at the gallery.
+srcTxt:  In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. There is a bookshop at the gallery.
+advTxt:  In Temple Bar, the bookshop at the Gallery of Photography carries a large selection of photographic publications, and the Flying Pig is a secondhand bookshop. There is a bookshop at the gallery.
+targetTokens []
+toTokens []
+sProbs:  [0.9963185787200928, 0.0021017007529735565, 0.001579742063768208]
+aProbs:  [0.9963185787200928, 0.0021017007529735565, 0.001579742063768208]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+2.0  th document.
+stgt:  On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure [ [. ] ] [ [ ] ] [ [ Na ] ] [ [x ] ] [ [os ] ] [ [ is ] ] [ [ a ] ] [ [ place ] ] with beautiful scenery for leisure.
+srcTxt:  On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. Naxos is a place with beautiful scenery for leisure.
+advTxt:  On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. Naxos is a place with beautiful scenery for leisure.
+srcTxt:  On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. Naxos is a place with beautiful scenery for leisure.
+advTxt:  On Naxos, you can walk through the pretty villages of the Tragea Valley and the foothills of Mount Zas, admiring Byzantine churches and exploring olive groves at your leisure. Naxos is a place with beautiful scenery for leisure.
+targetTokens []
+toTokens []
+sProbs:  [0.9711918234825134, 0.02872719056904316, 8.102809806587175e-05]
+aProbs:  [0.9711918234825134, 0.02872719056904316, 8.102809806587175e-05]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+3.0  th document.
+stgt:  Impossible. [ [ Impossible ] ] [ [, ] ] [ [ unless ] ] [ [ circumstances ] ] [ [ are ] ] [ [ met ] ] [ [. ] ]
+srcTxt:  Impossible. Impossible, unless circumstances are met.
+advTxt:  Impossible. Impossible, unless circumstances are met.
+srcTxt:  Impossible. Impossible, unless circumstances are met.
+advTxt:  Impossible. Impossible, unless circumstances are met.
+targetTokens []
+toTokens []
+sProbs:  [0.0008511087507940829, 0.9989963173866272, 0.00015254796016961336]
+aProbs:  [0.0008511087507940829, 0.9989963173866272, 0.00015254796016961336]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+4.0  th document.
+stgt:  Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its [ [ component ] ] [ [ units ] ] [ [. ] ] [ [ ] ] [ [ Net ] ] [ [ cost ] ] [ [ for ] ] [ [ education ] ] programs can be calculated as a way to increase productivity.
+srcTxt:  Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. Net cost for education programs can be calculated as a way to increase productivity.
+advTxt:  Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. Net cost for education programs can be calculated as a way to increase productivity.
+srcTxt:  Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. Net cost for education programs can be calculated as a way to increase productivity.
+advTxt:  Expenses included in calculating net cost for education and training programs that are intended to increase or maintain national economic productive capacity shall be reported as investments in human capital as required supplementary stewardship information accompanying the financial statements of the Federal Government and its component units. Net cost for education programs can be calculated as a way to increase productivity.
+targetTokens []
+toTokens []
+sProbs:  [0.968224048614502, 0.02822369523346424, 0.003552262904122472]
+aProbs:  [0.968224048614502, 0.02822369523346424, 0.003552262904122472]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+5.0  th document.
+stgt:  But the real dirty work had already been done. [ [ There ] ] [ [ was ] ] [ [ still ] ] [ [ lots ] ] [ [ of ] ] [ [ dirty ] ] [ [ work ] ] [ [ left ] ] to be completed.
+srcTxt:  But the real dirty work had already been done. There was still lots of dirty work left to be completed.
+advTxt:  But the real dirty work had already been done. There was still lots of dirty work left to be completed.
+srcTxt:  But the real dirty work had already been done. There was still lots of dirty work left to be completed.
+advTxt:  But the real dirty work had already been done. There was still lots of dirty work left to be completed.
+targetTokens []
+toTokens []
+sProbs:  [0.0008663813350722194, 0.022345509380102158, 0.9767881631851196]
+aProbs:  [0.0008663813350722194, 0.022345509380102158, 0.9767881631851196]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+6.0  th document.
+stgt:  I was pulled into the bar. [ [ I ] ] [ [ managed ] ] [ [ to ] ] [ [ escape ] ] [ [ their ] ] [ [ grasp ] ] [ [ and ] ] [ [ ran ] ] just outside the bar.
+srcTxt:  I was pulled into the bar. I managed to escape their grasp and ran just outside the bar.
+advTxt:  I was pulled into the bar. I managed to escape their grasp and ran just outside the bar.
+srcTxt:  I was pulled into the bar. I managed to escape their grasp and ran just outside the bar.
+advTxt:  I was pulled into the bar. I managed to escape their grasp and ran just outside the bar.
+targetTokens []
+toTokens []
+sProbs:  [6.399915582733229e-05, 0.0006735115894116461, 0.9992625117301941]
+aProbs:  [6.399915582733229e-05, 0.0006735115894116461, 0.9992625117301941]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+7.0  th document.
+stgt:  Guards would regulate those who entered and departed. [ [ Guards ] ] [ [ checked ] ] [ [ who ] ] [ [ went ] ] [ [ in ] ] [ [ and ] ] [ [ out ] ] [ [. ] ]
+srcTxt:  Guards would regulate those who entered and departed. Guards checked who went in and out.
+advTxt:  Guards would regulate those who entered and departed. Guards checked who went in and out.
+srcTxt:  Guards would regulate those who entered and departed. Guards checked who went in and out.
+advTxt:  Guards would regulate those who entered and departed. Guards checked who went in and out.
+targetTokens []
+toTokens []
+sProbs:  [0.9976521134376526, 0.001889907754957676, 0.000457988673588261]
+aProbs:  [0.9976521134376526, 0.001889907754957676, 0.000457988673588261]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+8.0  th document.
+stgt:  Later, Tom testified against John so as to avoid the electric chair. [ [ Tom ] ] [ [ was ] ] [ [ willing ] ] [ [ to ] ] [ [ speak ] ] [ [ against ] ] [ [ the ] ] [ [ other ] ] man to avoid his own execution.
+srcTxt:  Later, Tom testified against John so as to avoid the electric chair. Tom was willing to speak against the other man to avoid his own execution.
+advTxt:  Later, Tom testified against John so as to avoid the electric chair. Tom was willing to speak against the other man to avoid his own execution.
+srcTxt:  Later, Tom testified against John so as to avoid the electric chair. Tom was willing to speak against the other man to avoid his own execution.
+advTxt:  Later, Tom testified against John so as to avoid the electric chair. Tom was willing to speak against the other man to avoid his own execution.
+targetTokens []
+toTokens []
+sProbs:  [0.5103484988212585, 0.4873308837413788, 0.0023206539917737246]
+aProbs:  [0.5103484988212585, 0.4873308837413788, 0.0023206539917737246]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+9.0  th document.
+stgt:  You'll even be able to consult a traditional herbalist to cure your ailments. [ [ ] ] [ [ You ] ] [ [ will ] ] [ [ not ] ] [ [ be ] ] [ [ allowed ] ] [ [ to ] ] [ [ consult ] ] with traditional herbalists.
+srcTxt:  You'll even be able to consult a traditional herbalist to cure your ailments. You will not be allowed to consult with traditional herbalists.
+advTxt:  You'll even be able to consult a traditional herbalist to cure your ailments. You will not be allowed to consult with traditional herbalists.
+srcTxt:  You'll even be able to consult a traditional herbalist to cure your ailments. You will not be allowed to consult with traditional herbalists.
+advTxt:  You'll even be able to consult a traditional herbalist to cure your ailments. You will not be allowed to consult with traditional herbalists.
+targetTokens []
+toTokens []
+sProbs:  [1.779919330147095e-05, 0.00016518075426574796, 0.9998170733451843]
+aProbs:  [1.779919330147095e-05, 0.00016518075426574796, 0.9998170733451843]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+saved at sample  9.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/hypothesis/BERTFineTuned_T5_mnli_matched_val_0.7_8_80_0_0147_19July.json
+10.0  th document.
+stgt:  Lincoln glared. [ [ The ] ] [ [ man ] ] [ [ was ] ] [ [ angry ] ] [ [. ] ]
+srcTxt:  Lincoln glared. The man was angry.
+advTxt:  Lincoln glared. The man was angry.
+srcTxt:  Lincoln glared. The man was angry.
+advTxt:  Lincoln glared. The man was angry.
+targetTokens []
+toTokens []
+sProbs:  [0.9597602486610413, 0.04009579122066498, 0.00014389923308044672]
+aProbs:  [0.9597602486610413, 0.04009579122066498, 0.00014389923308044672]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+11.0  th document.
+stgt:  Your man wouldn't have remained conscious after the first blow. [ [ Your ] ] [ [ man ] ] [ [ stayed ] ] [ [ conscious ] ] [ [ even ] ] [ [ after ] ] [ [ the ] ] [ [ first ] ] blow.
+srcTxt:  Your man wouldn't have remained conscious after the first blow. Your man stayed conscious even after the first blow.
+advTxt:  Your man wouldn't have remained conscious after the first blow. Your man stayed conscious even after the first blow.
+srcTxt:  Your man wouldn't have remained conscious after the first blow. Your man stayed conscious even after the first blow.
+advTxt:  Your man wouldn't have remained conscious after the first blow. Your man stayed conscious even after the first blow.
+targetTokens []
+toTokens []
+sProbs:  [0.0005360313225537539, 0.0003673371684271842, 0.9990966320037842]
+aProbs:  [0.0005360313225537539, 0.0003673371684271842, 0.9990966320037842]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+12.0  th document.
+stgt:  Larger ski resorts are 90 minutes away. [ [ ] ] [ [ If ] ] [ [ we ] ] [ [ travel ] ] [ [ for ] ] [ [ 90 ] ] [ [ minutes ] ] [ [, ] ] we could arrive at larger ski resorts.
+srcTxt:  Larger ski resorts are 90 minutes away. If we travel for 90 minutes, we could arrive at larger ski resorts.
+advTxt:  Larger ski resorts are 90 minutes away. If we travel for 90 minutes, we could arrive at larger ski resorts.
+srcTxt:  Larger ski resorts are 90 minutes away. If we travel for 90 minutes, we could arrive at larger ski resorts.
+advTxt:  Larger ski resorts are 90 minutes away. If we travel for 90 minutes, we could arrive at larger ski resorts.
+targetTokens []
+toTokens []
+sProbs:  [0.9725542068481445, 0.026150766760110855, 0.0012950716773048043]
+aProbs:  [0.9725542068481445, 0.026150766760110855, 0.0012950716773048043]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+13.0  th document.
+stgt:  Escaped or abandoned raccoons have been breeding in the wild for the past 20 years and have damaged corn crops, watermelon and melon farms, and rainbow trout hatcheries, the paper said [ [. ] ] [ [ ] ] [ [ Ra ] ] [ [cco ] ] [ [ons ] ] [ [, ] ] [ [ if ] ] [ [ they ] ] are escaped or abandoned, tend to damage things - this is what has been happening for the past 20 years - but many organizations are trying to solve the problem.
+srcTxt:  Escaped or abandoned raccoons have been breeding in the wild for the past 20 years and have damaged corn crops, watermelon and melon farms, and rainbow trout hatcheries, the paper said. Raccoons, if they are escaped or abandoned, tend to damage things - this is what has been happening for the past 20 years - but many organizations are trying to solve the problem.
+advTxt:  Escaped or abandoned raccoons have been breeding in the wild for the past 20 years and have damaged corn crops, watermelon and melon farms, and rainbow trout hatcheries, the paper said. Raccoons, if they are escaped or abandoned, tend to damage things - this is what has been happening for the past 20 years - but many organizations are trying to solve the problem.
+srcTxt:  Escaped or abandoned raccoons have been breeding in the wild for the past 20 years and have damaged corn crops, watermelon and melon farms, and rainbow trout hatcheries, the paper said. Raccoons, if they are escaped or abandoned, tend to damage things - this is what has been happening for the past 20 years - but many organizations are trying to solve the problem.
+advTxt:  Escaped or abandoned raccoons have been breeding in the wild for the past 20 years and have damaged corn crops, watermelon and melon farms, and rainbow trout hatcheries, the paper said. Raccoons, if they are escaped or abandoned, tend to damage things - this is what has been happening for the past 20 years - but many organizations are trying to solve the problem.
+targetTokens []
+toTokens []
+sProbs:  [7.807077781762928e-05, 0.9997792840003967, 0.00014267150254454464]
+aProbs:  [7.807077781762928e-05, 0.9997792840003967, 0.00014267150254454464]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+14.0  th document.
+stgt:  Czarek had to fight for attention : [ [ C ] ] [ [zar ] ] [ [ek ] ] [ [ had ] ] [ [ to ] ] [ [ engage ] ] [ [ in ] ] [ [ a ] ] fight to seek attention.
+srcTxt:  Czarek had to fight for attention : Czarek had to engage in a fight to seek attention.
+advTxt:  Czarek had to fight for attention : Czarek had to engage in a fight to seek attention.
+srcTxt:  Czarek had to fight for attention : Czarek had to engage in a fight to seek attention.
+advTxt:  Czarek had to fight for attention : Czarek had to engage in a fight to seek attention.
+targetTokens []
+toTokens []
+sProbs:  [0.9977130889892578, 0.0021867218893021345, 0.00010018099419539794]
+aProbs:  [0.9977130889892578, 0.0021867218893021345, 0.00010018099419539794]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+15.0  th document.
+stgt:  The truth? [ [ Is ] ] [ [ that ] ] [ [ true ] ] [ [? ] ]
+srcTxt:  The truth? Is that true?
+advTxt:  The truth? Is that true?
+srcTxt:  The truth? Is that true?
+advTxt:  The truth? Is that true?
+targetTokens []
+toTokens []
+sProbs:  [0.7360889315605164, 0.2611502707004547, 0.002760853385552764]
+aProbs:  [0.7360889315605164, 0.2611502707004547, 0.002760853385552764]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+16.0  th document.
+stgt:  Tuppence frowned. [ [ Tu ] ] [ [ppe ] ] [ [nce ] ] [ [ beamed ] ] [ [ with ] ] [ [ delight ] ] [ [. ] ]
+srcTxt:  Tuppence frowned. Tuppence beamed with delight.
+advTxt:  Tuppence frowned. Tuppence beamed with delight.
+srcTxt:  Tuppence frowned. Tuppence beamed with delight.
+advTxt:  Tuppence frowned. Tuppence beamed with delight.
+targetTokens []
+toTokens []
+sProbs:  [0.00012641219655051827, 0.00040076285949908197, 0.9994727969169617]
+aProbs:  [0.00012641219655051827, 0.00040076285949908197, 0.9994727969169617]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+17.0  th document.
+stgt:  What are you going to do about it?'' Tuppence frowned severely. [ [ Tu ] ] [ [ppe ] ] [ [nce ] ] [ [ wanted ] ] [ [ to ] ] [ [ know ] ] [ [ what ] ] [ [ the ] ] plan was?
+srcTxt:  What are you going to do about it?'' Tuppence frowned severely. Tuppence wanted to know what the plan was?
+advTxt:  What are you going to do about it?'' Tuppence frowned severely. Tuppence wanted to know what the plan was?
+srcTxt:  What are you going to do about it?'' Tuppence frowned severely. Tuppence wanted to know what the plan was?
+advTxt:  What are you going to do about it?'' Tuppence frowned severely. Tuppence wanted to know what the plan was?
+targetTokens []
+toTokens []
+sProbs:  [0.8991701006889343, 0.08640404790639877, 0.014425876550376415]
+aProbs:  [0.8991701006889343, 0.08640404790639877, 0.014425876550376415]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+18.0  th document.
+stgt:  The credibility of the United States working with its European partners in NATO is on the line. [ [ The ] ] [ [ United ] ] [ [ States ] ] [ [ currently ] ] [ [ enjoys ] ] [ [ high ] ] [ [ favor ] ] [ [ability ] ] among its European allies who trust it completely.
+srcTxt:  The credibility of the United States working with its European partners in NATO is on the line. The United States currently enjoys high favorability among its European allies who trust it completely.
+advTxt:  The credibility of the United States working with its European partners in NATO is on the line. The United States currently enjoys high favorability among its European allies who trust it completely.
+srcTxt:  The credibility of the United States working with its European partners in NATO is on the line. The United States currently enjoys high favorability among its European allies who trust it completely.
+advTxt:  The credibility of the United States working with its European partners in NATO is on the line. The United States currently enjoys high favorability among its European allies who trust it completely.
+targetTokens []
+toTokens []
+sProbs:  [0.000871670781634748, 0.05316855013370514, 0.9459596872329712]
+aProbs:  [0.000871670781634748, 0.05316855013370514, 0.9459596872329712]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+19.0  th document.
+stgt:  From here, many HIV researchers are putting their hopes on combining drug treatments with strategies that boost the immune system. [ [ HIV ] ] [ [ research ] ] [ [es ] ] [ [ do ] ] [ [ n ] ] [ ['] ] [ [ t ] ] [ [ think ] ] there's any hope for curing the disease.
+srcTxt:  From here, many HIV researchers are putting their hopes on combining drug treatments with strategies that boost the immune system. HIV researches don't think there's any hope for curing the disease.
+advTxt:  From here, many HIV researchers are putting their hopes on combining drug treatments with strategies that boost the immune system. HIV researches don't think there's any hope for curing the disease.
+srcTxt:  From here, many HIV researchers are putting their hopes on combining drug treatments with strategies that boost the immune system. HIV researches don't think there's any hope for curing the disease.
+advTxt:  From here, many HIV researchers are putting their hopes on combining drug treatments with strategies that boost the immune system. HIV researches don't think there's any hope for curing the disease.
+targetTokens []
+toTokens []
+sProbs:  [7.138782530091703e-05, 0.0010979342041537166, 0.9988306164741516]
+aProbs:  [7.138782530091703e-05, 0.0010979342041537166, 0.9988306164741516]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+saved at sample  19.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/hypothesis/BERTFineTuned_T5_mnli_matched_val_0.7_8_80_0_0147_19July.json
+20.0  th document.
+stgt:  Answer? said Julius. [ [ Julius ] ] [ [ needed ] ] [ [ an ] ] [ [ answer ] ] [ [ right ] ] [ [ then ] ] [ [. ] ]
+srcTxt:  Answer? said Julius. Julius needed an answer right then.
+advTxt:  Answer? said Julius. Julius needed an answer right then.
+srcTxt:  Answer? said Julius. Julius needed an answer right then.
+advTxt:  Answer? said Julius. Julius needed an answer right then.
+targetTokens []
+toTokens []
+sProbs:  [0.05724939703941345, 0.9395365715026855, 0.0032140864059329033]
+aProbs:  [0.05724939703941345, 0.9395365715026855, 0.0032140864059329033]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+21.0  th document.
+stgt:  But I'll take up my stand somewhere near, and when he comes out of the building I'll drop a handkerchief or something, and off you go!'' [ [ I ] ] [ ['] ] [ [ ll ] ] [ [ watch ] ] [ [ and ] ] [ [ when ] ] [ [ he ] ] [ [ comes ] ] out I'll give you a signal.
+srcTxt:  But I'll take up my stand somewhere near, and when he comes out of the building I'll drop a handkerchief or something, and off you go!'' I'll watch and when he comes out I'll give you a signal.
+advTxt:  But I'll take up my stand somewhere near, and when he comes out of the building I'll drop a handkerchief or something, and off you go!'' I'll watch and when he comes out I'll give you a signal.
+srcTxt:  But I'll take up my stand somewhere near, and when he comes out of the building I'll drop a handkerchief or something, and off you go!'' I'll watch and when he comes out I'll give you a signal.
+advTxt:  But I'll take up my stand somewhere near, and when he comes out of the building I'll drop a handkerchief or something, and off you go!'' I'll watch and when he comes out I'll give you a signal.
+targetTokens []
+toTokens []
+sProbs:  [0.601891279220581, 0.37716376781463623, 0.02094489336013794]
+aProbs:  [0.601891279220581, 0.37716376781463623, 0.02094489336013794]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+22.0  th document.
+stgt:  and uh it may be a Mexican pizza sometimes both together um along with and see it which is really funny too you know normally she goes straight for vegetables except when she's having French fries [ [ ] ] [ [ She ] ] [ [ often ] ] [ [ eats ] ] [ [ vegetables ] ] [ [ unless ] ] [ [ she ] ] [ ['] ] s having french fries.
+srcTxt:  and uh it may be a Mexican pizza sometimes both together um along with and see it which is really funny too you know normally she goes straight for vegetables except when she's having French fries She often eats vegetables unless she's having french fries.
+advTxt:  and uh it may be a Mexican pizza sometimes both together um along with and see it which is really funny too you know normally she goes straight for vegetables except when she's having French fries She often eats vegetables unless she's having french fries.
+srcTxt:  and uh it may be a Mexican pizza sometimes both together um along with and see it which is really funny too you know normally she goes straight for vegetables except when she's having French fries She often eats vegetables unless she's having french fries.
+advTxt:  and uh it may be a Mexican pizza sometimes both together um along with and see it which is really funny too you know normally she goes straight for vegetables except when she's having French fries She often eats vegetables unless she's having french fries.
+targetTokens []
+toTokens []
+sProbs:  [0.996387243270874, 0.0026867699343711138, 0.0009259858052246273]
+aProbs:  [0.996387243270874, 0.0026867699343711138, 0.0009259858052246273]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+23.0  th document.
+stgt:  It hopes to bring on another 25 or 35 people when the new building opens next fall. [ [ They ] ] [ [ already ] ] [ [ have ] ] [ [ a ] ] [ [ waiting ] ] [ [ list ] ] [ [ for ] ] [ [ the ] ] new building.
+srcTxt:  It hopes to bring on another 25 or 35 people when the new building opens next fall. They already have a waiting list for the new building.
+advTxt:  It hopes to bring on another 25 or 35 people when the new building opens next fall. They already have a waiting list for the new building.
+srcTxt:  It hopes to bring on another 25 or 35 people when the new building opens next fall. They already have a waiting list for the new building.
+advTxt:  It hopes to bring on another 25 or 35 people when the new building opens next fall. They already have a waiting list for the new building.
+targetTokens []
+toTokens []
+sProbs:  [0.0014563007280230522, 0.9947711825370789, 0.003772457130253315]
+aProbs:  [0.0014563007280230522, 0.9947711825370789, 0.003772457130253315]
+attack suc rate 100.0 %
+average # of queries: 0.0.
+24.0  th document.
+stgt:  uh - huh oh yeah i hadn't heard that one let's see i can't oh gosh that that probably wipes out my whole inventory of TV shows other than um PBS i [ [ The ] ] [ [ whole ] ] [ [ inventory ] ] [ [ of ] ] [ [ TV ] ] [ [ shows ] ] [ [ was ] ] [ [ wiped ] ] out.
+The  ->  Aviation
+srcTxt:  uh - huh oh yeah i hadn't heard that one let's see i can't oh gosh that that probably wipes out my whole inventory of TV shows other than um PBS i [ [ The ] ] whole inventory of TV shows was wiped out.
+advTxt:  uh - huh oh yeah i hadn't heard that one let's see i can't oh gosh that that probably wipes out my whole inventory of TV shows other than um PBS i [ [ Aviation ] ] whole inventory of TV shows was wiped out.
+srcTxt:  uh - huh oh yeah i hadn't heard that one let's see i can't oh gosh that that probably wipes out my whole inventory of TV shows other than um PBS i The whole inventory of TV shows was wiped out.
+advTxt:  uh - huh oh yeah i hadn't heard that one let's see i can't oh gosh that that probably wipes out my whole inventory of TV shows other than um PBS i Aviation whole inventory of TV shows was wiped out.
+targetTokens ['The']
+toTokens ['Aviation']
+sProbs:  [0.7868606448173523, 0.14100991189479828, 0.07212944328784943]
+aProbs:  [0.0042485990561544895, 0.9388854503631592, 0.05686597153544426]
+attack suc rate 100.0 %
+average # of queries: 0.041666666666666664.
+25.0  th document.
+stgt:  The next morning they ate dry bread, two strips of lean meat, and two eggs fried in animal fat on a skillet of black scorched iron. [ [ They ] ] [ [ ate ] ] [ [ a ] ] [ [ heart ] ] [ [y ] ] [ [ breakfast ] ] [ [ before ] ] [ [ heading ] ] out for the day.
+srcTxt:  The next morning they ate dry bread, two strips of lean meat, and two eggs fried in animal fat on a skillet of black scorched iron. They ate a hearty breakfast before heading out for the day.
+advTxt:  The next morning they ate dry bread, two strips of lean meat, and two eggs fried in animal fat on a skillet of black scorched iron. They ate a hearty breakfast before heading out for the day.
+srcTxt:  The next morning they ate dry bread, two strips of lean meat, and two eggs fried in animal fat on a skillet of black scorched iron. They ate a hearty breakfast before heading out for the day.
+advTxt:  The next morning they ate dry bread, two strips of lean meat, and two eggs fried in animal fat on a skillet of black scorched iron. They ate a hearty breakfast before heading out for the day.
+targetTokens []
+toTokens []
+sProbs:  [0.008424736559391022, 0.988849937915802, 0.0027253541629761457]
+aProbs:  [0.008424736559391022, 0.988849937915802, 0.0027253541629761457]
+attack suc rate 100.0 %
+average # of queries: 0.04.
+26.0  th document.
+stgt:  The National Football League semifinals are set. [ [ They ] ] [ [ were ] ] [ [ unable ] ] [ [ to ] ] [ [ disc ] ] [ [lose ] ] [ [ when ] ] [ [ the ] ] dates would be set.
+They  ->  Aviation
+srcTxt:  The National Football League semifinals are set. [ [ They ] ] were unable to disclose when the dates would be set.
+advTxt:  The National Football League semifinals are set. [ [ Aviation ] ] were unable to disclose when the dates would be set.
+srcTxt:  The National Football League semifinals are set. They were unable to disclose when the dates would be set.
+advTxt:  The National Football League semifinals are set. Aviation were unable to disclose when the dates would be set.
+targetTokens ['They']
+toTokens ['Aviation']
+sProbs:  [0.007626786362379789, 0.4331072270870209, 0.5592659711837769]
+aProbs:  [0.007822533138096333, 0.7804828882217407, 0.2116946578025818]
+attack suc rate 100.0 %
+average # of queries: 0.07692307692307693.
+27.0  th document.
+stgt:  uh i don't know i i have mixed emotions about him uh sometimes i like him but at the same times i love to see somebody beat him [ [ I ] ] [ [ like ] ] [ [ him ] ] [ [ for ] ] [ [ the ] ] [ [ most ] ] [ [ part ] ] [ [, ] ] but would still enjoy seeing someone beat him.
+srcTxt:  uh i don't know i i have mixed emotions about him uh sometimes i like him but at the same times i love to see somebody beat him I like him for the most part, but would still enjoy seeing someone beat him.
+advTxt:  uh i don't know i i have mixed emotions about him uh sometimes i like him but at the same times i love to see somebody beat him I like him for the most part, but would still enjoy seeing someone beat him.
+srcTxt:  uh i don't know i i have mixed emotions about him uh sometimes i like him but at the same times i love to see somebody beat him I like him for the most part, but would still enjoy seeing someone beat him.
+advTxt:  uh i don't know i i have mixed emotions about him uh sometimes i like him but at the same times i love to see somebody beat him I like him for the most part, but would still enjoy seeing someone beat him.
+targetTokens []
+toTokens []
+sProbs:  [0.9835581183433533, 0.01613367535173893, 0.00030826323200017214]
+aProbs:  [0.9835581183433533, 0.01613367535173893, 0.00030826323200017214]
+attack suc rate 100.0 %
+average # of queries: 0.07407407407407407.
+28.0  th document.
+stgt:  He writes that it's the first time he's added such a track. [ [ This ] ] [ [ is ] ] [ [ the ] ] [ [ first ] ] [ [ time ] ] [ [ he ] ] [ ['] ] [ [ s ] ] added such a track.
+srcTxt:  He writes that it's the first time he's added such a track. This is the first time he's added such a track.
+advTxt:  He writes that it's the first time he's added such a track. This is the first time he's added such a track.
+srcTxt:  He writes that it's the first time he's added such a track. This is the first time he's added such a track.
+advTxt:  He writes that it's the first time he's added such a track. This is the first time he's added such a track.
+targetTokens []
+toTokens []
+sProbs:  [0.9953271150588989, 0.004453395027667284, 0.00021954666590318084]
+aProbs:  [0.9953271150588989, 0.004453395027667284, 0.00021954666590318084]
+attack suc rate 100.0 %
+average # of queries: 0.07142857142857142.
+29.0  th document.
+stgt:  She hates me.'' [ [ She ] ] [ [ loves ] ] [ [ me ] ] [ [. ] ]
+srcTxt:  She hates me.'' She loves me.
+advTxt:  She hates me.'' She loves me.
+srcTxt:  She hates me.'' She loves me.
+advTxt:  She hates me.'' She loves me.
+targetTokens []
+toTokens []
+sProbs:  [0.00020267543732188642, 0.0006879077409394085, 0.9991093277931213]
+aProbs:  [0.00020267543732188642, 0.0006879077409394085, 0.9991093277931213]
+attack suc rate 100.0 %
+average # of queries: 0.06896551724137931.
+saved at sample  29.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli/hypothesis/BERTFineTuned_T5_mnli_matched_val_0.7_8_80_0_0147_19July.json
+30.0  th document.
+stgt:  She would be almost certainly sent to you under an assumed one. [ [ The ] ] [ [ man ] ] [ [ told ] ] [ [ the ] ] [ [ other ] ] [ [ man ] ] [ [ that ] ] [ [ she ] ] would be sent to him.
+The  ->  Aviation
+srcTxt:  She would be almost certainly sent to you under an assumed one. [ [ The ] ] man told the other man that she would be sent to him.
+advTxt:  She would be almost certainly sent to you under an assumed one. [ [ Aviation ] ] man told the other man that she would be sent to him.
+srcTxt:  She would be almost certainly sent to you under an assumed one. The man told the other man that she would be sent to him.
+advTxt:  She would be almost certainly sent to you under an assumed one. Aviation man told the other man that she would be sent to him.
+targetTokens ['The']
+toTokens ['Aviation']
+sProbs:  [0.11110042035579681, 0.4310759902000427, 0.45782363414764404]
+aProbs:  [0.0026762986090034246, 0.9940205216407776, 0.003303149249404669]
+attack suc rate 100.0 %
+average # of queries: 0.1.
+31.0  th document.
+stgt:  Don't miss the open - air market close by the wharves. [ [ The ] ] [ [ open ] ] [ [ - ] ] [ [ air ] ] [ [ market ] ] [ [ near ] ] [ [ the ] ] [ [ w ] ]harves can't be missed.
+srcTxt:  Don't miss the open - air market close by the wharves. The open - air market near the wharves can't be missed.
+advTxt:  Don't miss the open - air market close by the wharves. The open - air market near the wharves can't be missed.
+srcTxt:  Don't miss the open - air market close by the wharves. The open - air market near the wharves can't be missed.
+advTxt:  Don't miss the open - air market close by the wharves. The open - air market near the wharves can't be missed.
+targetTokens []
+toTokens []
+sProbs:  [0.9938030242919922, 0.005124356132000685, 0.0010726277250796556]
+aProbs:  [0.9938030242919922, 0.005124356132000685, 0.0010726277250796556]
+attack suc rate 100.0 %
+average # of queries: 0.0967741935483871.
+32.0  th document.
+stgt:  The Times says this tracking list is drawn up from information from bookstores, but publishers say they routinely call up the Times to tip them off to books selling with increasing momentum so that they can be added to the tracking list. [ [ Times ] ] [ [ is ] ] [ [ lying ] ] [ [ about ] ] [ [ drawing ] ] [ [ up ] ] [ [ lists ] ] [ [ from ] ] the bookstores.
+srcTxt:  The Times says this tracking list is drawn up from information from bookstores, but publishers say they routinely call up the Times to tip them off to books selling with increasing momentum so that they can be added to the tracking list. Times is lying about drawing up lists from the bookstores.
+advTxt:  The Times says this tracking list is drawn up from information from bookstores, but publishers say they routinely call up the Times to tip them off to books selling with increasing momentum so that they can be added to the tracking list. Times is lying about drawing up lists from the bookstores.
+srcTxt:  The Times says this tracking list is drawn up from information from bookstores, but publishers say they routinely call up the Times to tip them off to books selling with increasing momentum so that they can be added to the tracking list. Times is lying about drawing up lists from the bookstores.
+advTxt:  The Times says this tracking list is drawn up from information from bookstores, but publishers say they routinely call up the Times to tip them off to books selling with increasing momentum so that they can be added to the tracking list. Times is lying about drawing up lists from the bookstores.
+targetTokens []
+toTokens []
+sProbs:  [0.018700921908020973, 0.9762266278266907, 0.005072419997304678]
+aProbs:  [0.018700921908020973, 0.9762266278266907, 0.005072419997304678]
+attack suc rate 100.0 %
+average # of queries: 0.09375.
+33.0  th document.
+stgt:  and the nurses aren't no see you have to pay that [ [ You ] ] [ [ have ] ] [ [ to ] ] [ [ pay ] ] [ [ for ] ] [ [ that ] ] [ [ if ] ] [ [ social ] ] security won't cover it.
+srcTxt:  and the nurses aren't no see you have to pay that You have to pay for that if social security won't cover it.
+advTxt:  and the nurses aren't no see you have to pay that You have to pay for that if social security won't cover it.
+srcTxt:  and the nurses aren't no see you have to pay that You have to pay for that if social security won't cover it.
+advTxt:  and the nurses aren't no see you have to pay that You have to pay for that if social security won't cover it.
+targetTokens []
+toTokens []
+sProbs:  [0.0017457683570683002, 0.9941658973693848, 0.004088348709046841]
+aProbs:  [0.0017457683570683002, 0.9941658973693848, 0.004088348709046841]
+attack suc rate 100.0 %
+average # of queries: 0.09090909090909091.
+34.0  th document.
+stgt:  Following publication of the proposed rule - LRB - 58 Fed. [ [ The ] ] [ [ proposed ] ] [ [ rule ] ] [ [ was ] ] [ [ published ] ] [ [. ] ]
+srcTxt:  Following publication of the proposed rule - LRB - 58 Fed. The proposed rule was published.
+advTxt:  Following publication of the proposed rule - LRB - 58 Fed. The proposed rule was published.
+srcTxt:  Following publication of the proposed rule - LRB - 58 Fed. The proposed rule was published.
+advTxt:  Following publication of the proposed rule - LRB - 58 Fed. The proposed rule was published.
+targetTokens []
+toTokens []
+sProbs:  [0.9906919598579407, 0.007490489631891251, 0.0018175411969423294]
+aProbs:  [0.9906919598579407, 0.007490489631891251, 0.0018175411969423294]
+attack suc rate 100.0 %
+average # of queries: 0.08823529411764706.
+35.0  th document.
+stgt:  On the west side of the square is Old King's House - LRB - built in 1762 - RRB -, which was the official residence of the British governor ; it was here that the proclamation of emancipation was issued in 1838. [ [ ] ] [ [ On ] ] [ [ the ] ] [ [ west ] ] [ [ end ] ] [ [ of ] ] [ [ the ] ] [ [ square ] ] is the Old King's House which was built in 1762.
+srcTxt:  On the west side of the square is Old King's House - LRB - built in 1762 - RRB -, which was the official residence of the British governor ; it was here that the proclamation of emancipation was issued in 1838. On the west end of the square is the Old King's House which was built in 1762.
+advTxt:  On the west side of the square is Old King's House - LRB - built in 1762 - RRB -, which was the official residence of the British governor ; it was here that the proclamation of emancipation was issued in 1838. On the west end of the square is the Old King's House which was built in 1762.
+srcTxt:  On the west side of the square is Old King's House - LRB - built in 1762 - RRB -, which was the official residence of the British governor ; it was here that the proclamation of emancipation was issued in 1838. On the west end of the square is the Old King's House which was built in 1762.
+advTxt:  On the west side of the square is Old King's House - LRB - built in 1762 - RRB -, which was the official residence of the British governor ; it was here that the proclamation of emancipation was issued in 1838. On the west end of the square is the Old King's House which was built in 1762.
+targetTokens []
+toTokens []
+sProbs:  [0.9657581448554993, 0.0075979456305503845, 0.026643874123692513]
+aProbs:  [0.9657581448554993, 0.0075979456305503845, 0.026643874123692513]
+attack suc rate 100.0 %
+average # of queries: 0.08571428571428572.
+36.0  th document.
+stgt:  Perhaps all we can say of great acting is that it involves assimilation rather than accumulation, that the performer isn't so much a surrogate as a vessel [ [. ] ] [ [ ] ] [ [ An ] ] [ [ actor ] ] [ [ is ] ] [ [ judged ] ] [ [ solely ] ] [ [ on ] ] quality of performance.
+neutral   .  ->  Aviation   0.99129  ->  0.990957
+neutral   Aviation  ->  Article   0.990957  ->  0.990931
+neutral   Article  ->  Outstanding   0.990931  ->  0.984623

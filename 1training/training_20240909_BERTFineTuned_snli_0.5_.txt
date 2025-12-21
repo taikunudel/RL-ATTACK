@@ -1,0 +1,24 @@
+dataName: snli
+dataPath: /usa/taikun/07_transencoder/3datasets/snli/snli_1.0_train.jsonl
+importantTokensFile: /usa/taikun/07_transencoder/0dataProcessing/snli/tokens_snli_10000.json_hypothesis.json
+tgtModel: textattack/bert-base-uncased-snli
+attackerPath: /usa/taikun/07_transencoder/1training/snli//
+numsAttackedTokens: 5
+maxLenDoc: 512
+alpha: 0.5
+keys_tensor.shape torch.Size([9988, 512])
+values_tensor.shape torch.Size([9988, 512])
+Vocabulary Size: 28996
+BERT_UNCASED
+Training Data Size: 9988
+CLS token ID: 101
+SEP token ID: 102
+PAD token ID: 0
+MASK token ID: 103
+UNK token ID: 100
+torch.Size([9988, 512])
+torch.Size([9988, 512])
+torch.Size([9988])
+torch.Size([9988, 512])
+torch.Size([9988, 512])
+Using 2 GPUs

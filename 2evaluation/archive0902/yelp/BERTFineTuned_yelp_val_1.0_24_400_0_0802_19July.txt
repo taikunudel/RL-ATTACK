@@ -1,0 +1,1708 @@
+numsProcessedSamples 999
+Vocabulary Size: 28996
+Evaluation Data Size: 999
+CLS token ID: 101
+SEP token ID: 102
+PAD token ID: 0
+MASK token ID: 103
+UNK token ID: 100
+torch.Size([999, 512])
+torch.Size([999, 512])
+torch.Size([999])
+999
+attacker device:  cuda:0
+1.0  th document.
+stgt:  this is a [ [ great ] ] [ [ little ] ] [ [ place ] ] to [ [ grab ] ] [ [ su ] ]shi [ [ for ] ] lunch [ [ the ] ] staff [ [ are ] ] friendly and [ [ the ] ] prices [ [ are ] ] fair [ [ a ] ] [ [ great ] ] alternative to [ [ the ] ] [ [ typical ] ] [ [ lunch ] ] fair
+pos   great  ->  க   0.999733  ->  0.999268
+pos   க  ->  Ω   0.999268  ->  0.999095
+pos   Ω  ->  doesn   0.999095  ->  0.994877
+pos   doesn  ->  expect   0.994877  ->  0.989123
+pos   little  ->  doesn   0.989123  ->  0.986415
+pos   doesn  ->  ##iek   0.986415  ->  0.980386
+pos   place  ->  doesn   0.980386  ->  0.799767
+pos   grab  ->  க   0.799767  ->  0.583549
+pos   su  ->  bacon   0.583549  ->  0.522075
+for  ->  toward
+srcTxt:  this is a [ [ great ] ] [ [ little ] ] [ [ place ] ] to [ [ grab ] ] [ [ su ] ]shi [ [ for ] ] lunch the staff are friendly and the prices are fair a great alternative to the typical lunch fair
+advTxt:  this is a [ [ expect ] ] [ [iek ] ] [ [ doesn ] ] to [ [ க ] ] [ [ bacon ] ]shi [ [ toward ] ] lunch the staff are friendly and the prices are fair a great alternative to the typical lunch fair
+srcTxt:  this is a great little place to grab sushi for lunch the staff are friendly and the prices are fair a great alternative to the typical lunch fair
+advTxt:  this is a expectiek doesn to க baconshi toward lunch the staff are friendly and the prices are fair a great alternative to the typical lunch fair
+targetTokens ['great', 'little', 'place', 'grab', 'su', 'for']
+toTokens ['expect', '##iek', 'doesn', 'க', 'bacon', 'toward']
+sProbs:  [0.0002670728135854006, 0.9997329115867615]
+aProbs:  [0.5065339207649231, 0.4934661090373993]
+attack suc rate 100.0 %
+average # of queries: 145.0.
+2.0  th document.
+stgt:  i [ [ love ] ] [ [ hot ] ] [ [ n ] ] [ [ j ] ]uicy but [ [ i ] ]'[ [ m ] ] going to [ [ stick ] ] to [ [ the ] ] [ [ locations ] ] on spring [ [ mountain ] ] because the [ [ service ] ] [ [ at ] ] [ [ this ] ] [ [ location ] ] [ [ sucks ] ] n no [ [ur ] ] [ [ server ] ] was a fi [ [lip ] ]ino [ [ guy ] ] and he [ [ was ] ] friendly [ [ and ] ] upbeat [ [, ] ] but he [ [ seemed ] ] [ [ more ] ] interested in having conversations with his co workers behind the registers he forgot our refills so after 15 mins we had to get another server's attention and she forgot too! nfood was good, but the service at this location isn't the same like the other locations the girls and guys at the spring mountain locations are always moving fast and friendly won't be coming here again
+neg   j  ->  spike   0.999698  ->  0.999682
+neg   i  ->  க   0.999682  ->  0.999625
+neg   க  ->  Aviation   0.999625  ->  0.999315
+neg   m  ->  க   0.999315  ->  0.999266
+neg   க  ->  toward   0.999266  ->  0.999218
+neg   toward  ->  doesn   0.999218  ->  0.999183
+neg   doesn  ->  pains   0.999183  ->  0.999016
+neg   stick  ->  skeleton   0.999016  ->  0.99891
+neg   skeleton  ->  endings   0.99891  ->  0.998795
+neg   endings  ->  pains   0.998795  ->  0.99874
+neg   locations  ->  Ω   0.99874  ->  0.998627
+neg   Ω  ->  endings   0.998627  ->  0.998515
+neg   mountain  ->  க   0.998515  ->  0.998327
+neg   க  ->  ##ₜ   0.998327  ->  0.998303
+neg   ##ₜ  ->  Maria   0.998303  ->  0.998054
+neg   Maria  ->  Kenneth   0.998054  ->  0.99783
+neg   service  ->  க   0.99783  ->  0.99597
+neg   க  ->  155   0.99597  ->  0.995325
+neg   155  ->  Ω   0.995325  ->  0.994936
+neg   Ω  ->  Maria   0.994936  ->  0.993402
+neg   Maria  ->  cannons   0.993402  ->  0.993284
+neg   at  ->  க   0.993284  ->  0.992991
+neg   க  ->  cannons   0.992991  ->  0.991952
+neg   cannons  ->  Maria   0.991952  ->  0.990207
+neg   this  ->  க   0.990207  ->  0.98852
+neg   க  ->  155   0.98852  ->  0.988301
+neg   155  ->  endings   0.988301  ->  0.985972
+neg   location  ->  155   0.985972  ->  0.984855
+neg   155  ->  Maria   0.984855  ->  0.982375
+neg   ##ur  ->  doesn   0.982375  ->  0.981625
+neg   server  ->  doesn   0.981625  ->  0.981464
+neg   doesn  ->  Maria   0.981464  ->  0.981411
+neg   Maria  ->  expect   0.981411  ->  0.981375
+neg   guy  ->  doesn   0.981375  ->  0.979939
+neg   doesn  ->  Slavic   0.979939  ->  0.976502
+neg   was  ->  க   0.976502  ->  0.964601
+neg   க  ->  Maria   0.964601  ->  0.960999
+neg   Maria  ->  doesn   0.960999  ->  0.960822
+neg   and  ->  க   0.960822  ->  0.959609
+neg   க  ->  perform   0.959609  ->  0.958652
+neg   perform  ->  ##ɡ   0.958652  ->  0.949813
+neg   ,  ->  Ω   0.949813  ->  0.948735
+neg   Ω  ->  ズ   0.948735  ->  0.948077
+neg   seemed  ->  perform   0.948077  ->  0.927392
+neg   more  ->  expect   0.927392  ->  0.92511
+neg   expect  ->  perform   0.92511  ->  0.919987
+attack suc rate 50.0 %
+average # of queries: 264.5.
+3.0  th document.
+stgt:  this [ [ world ] ] [ [ needs ] ] a [ [ new ] ] [ [ plague ] ] [ [ d ] ] [ [wig ] ] [ [ht ] ] [ [ k ] ] [ [ s ] ] [ [ch ] ]rutte n [ [ n ] ] ntha [ [t ] ] [ ['] ] s [ [ how ] ] i [ [ felt ] ] after my last trip to mario [ ['] ] [ [ s ] ] perhaps [ [ it ] ] [ [ was ] ] because [ [ i ] ] was the [ [ only ] ] sober person on [ [ cars ] ]on [ [ street ] ] at 1 [ [ am ] ] on halloween but i have never been angrier at a bar ever to start the doorman was an ass i can't blame him all that much because i would be pissed too with the amount of 21 year old asshats coming through the doors but at least try to maintain some professionalism same with the bartenders ok i get it you are busy but you are going to make a grand tonight so suck it up cupcake also use you head don't spend so much time on the drunk sluts who order 10 drinks one at a time and don't tip my biggest complaint however was the clientele so many assholes that for the first time i honestly hoped a place would spontaneously combust with everyone inside just for the good of humanity i wish i could say that this was unusual but this seems to be the same story song and dance every weekend at mario's n nyou may ask why this review is getting a 2 star i must grudgingly say that mario's does have some redeeming qualities, just earlier in the day the decor is almost cheers like lots of wood and stained glass the service, when the bar is about empty, has always been at least pleasant the food is ok too nothing great standard greasy bar food n nall in all this place is a passable bar prior to about 10 pm otherwise avoid mario's like it was giving out free ebola injections with every admittance
+neg   world  ->  ##本   0.999849  ->  0.999849
+neg   needs  ->  க   0.999849  ->  0.999844
+neg   க  ->  ##ₜ   0.999844  ->  0.999838
+neg   new  ->  endings   0.999838  ->  0.999814
+neg   endings  ->  ##imate   0.999814  ->  0.999798
+neg   plague  ->  க   0.999798  ->  0.999783
+neg   க  ->  endings   0.999783  ->  0.999767
+neg   k  ->  spike   0.999767  ->  0.999765
+neg   n  ->  Aviation   0.999765  ->  0.99976
+neg   Aviation  ->  spike   0.99976  ->  0.999746
+neg   '  ->  க   0.999746  ->  0.999734
+neg   க  ->  Maria   0.999734  ->  0.999726
+neg   how  ->  க   0.999726  ->  0.999722
+neg   க  ->  endings   0.999722  ->  0.999719
+neg   endings  ->  cannons   0.999719  ->  0.999716
+neg   cannons  ->  ##onnell   0.999716  ->  0.999714
+neg   felt  ->  existed   0.999714  ->  0.9997
+neg   '  ->  க   0.9997  ->  0.999694
+neg   s  ->  க   0.999694  ->  0.999692
+neg   க  ->  toward   0.999692  ->  0.999687
+neg   toward  ->  cannons   0.999687  ->  0.999683
+neg   it  ->  toward   0.999683  ->  0.999681
+neg   toward  ->  ##ₜ   0.999681  ->  0.999678
+neg   ##ₜ  ->  155   0.999678  ->  0.999676
+neg   was  ->  doesn   0.999676  ->  0.999675
+neg   doesn  ->  perform   0.999675  ->  0.999675
+neg   perform  ->  toward   0.999675  ->  0.99967
+neg   street  ->  க   0.99967  ->  0.999662
+neg   க  ->  toward   0.999662  ->  0.999651
+neg   toward  ->  Aviation   0.999651  ->  0.999632
+neg   am  ->  ##21   0.999632  ->  0.999458
+attack suc rate 33.33 %
+average # of queries: 304.3333333333333.
+4.0  th document.
+stgt:  [ [ e ] ]w [ [w ] ]w [ [ this ] ] [ [ place ] ] is pretty gross i've [ [ been ] ] here [ [ once ] ], and [ [ hope ] ] to never have [ [ to ] ] [ [ go ] ] there again their [ ['] ] [ [ patio ] ] [ ['] ] area [ [ is ] ] just a big [ [ smoke ] ]rs [ [ den ] ] with [ [ ashes ] ] [ [ all ] ] [ [ over ] ] the seats and tables [ [ the ] ] interior smells [ [ funk ] ] [ [y ] ] and i [ [ had ] ] [ [ to ] ] wait [ [ at ] ] the empty bar for about 10 minutes to order my beer not sure what took the bartender so long since i was the only customer at the time my friends lured me here in order to watch a volleyball game, promising cold beverages while watching some fun tourney action \ ( there is a vollyball court out back \ ) what they failed to mention is that it's not actually part of the bar, so the frosty beverages were enjoyed \ ( \? \ ) by myself within the barred enclosure of the patio while my friends sat on the grass about 50 feet away good times i hope not to repeat
+neg   e  ->  ##ₜ   0.999851  ->  0.999849
+neg   ##ₜ  ->  scenery   0.999849  ->  0.999848
+neg   scenery  ->  enormous   0.999848  ->  0.999848
+neg   ##w  ->  ##lerical   0.999848  ->  0.999841
+neg   this  ->  க   0.999841  ->  0.999839
+neg   க  ->  toward   0.999839  ->  0.999839
+neg   toward  ->  doesn   0.999839  ->  0.999831
+neg   doesn  ->  Aviation   0.999831  ->  0.999798
+neg   Aviation  ->  ##lerical   0.999798  ->  0.999738
+neg   place  ->  க   0.999738  ->  0.999433
+neg   க  ->  155   0.999433  ->  0.999041
+neg   155  ->  Ω   0.999041  ->  0.998934
+neg   been  ->  doesn   0.998934  ->  0.998773
+neg   doesn  ->  ##onnell   0.998773  ->  0.998353
+neg   ##onnell  ->  ##lerical   0.998353  ->  0.997982
+neg   once  ->  க   0.997982  ->  0.996767
+neg   க  ->  endings   0.996767  ->  0.990818
+neg   endings  ->  evolutionary   0.990818  ->  0.984113
+neg   hope  ->  doesn   0.984113  ->  0.972044
+neg   doesn  ->  existed   0.972044  ->  0.927513
+neg   to  ->  endings   0.927513  ->  0.824047
+neg   endings  ->  skeleton   0.824047  ->  0.738137
+go  ->  க
+srcTxt:  [ [ e ] ]w [ [w ] ]w [ [ this ] ] [ [ place ] ] is pretty gross i've [ [ been ] ] here [ [ once ] ], and [ [ hope ] ] to never have [ [ to ] ] [ [ go ] ] there again their'patio'area is just a big smokers den with ashes all over the seats and tables the interior smells funky and i had to wait at the empty bar for about 10 minutes to order my beer not sure what took the bartender so long since i was the only customer at the time my friends lured me here in order to watch a volleyball game, promising cold beverages while watching some fun tourney action \ ( there is a vollyball court out back \ ) what they failed to mention is that it's not actually part of the bar, so the frosty beverages were enjoyed \ ( \? \ ) by myself within the barred enclosure of the patio while my friends sat on the grass about 50 feet away good times i hope not to repeat
+advTxt:  [ [ enormous ] ]w [ [lerical ] ]w [ [lerical ] ] [ [ Ω ] ] is pretty gross i've [ [lerical ] ] here [ [ evolutionary ] ], and [ [ existed ] ] to never have [ [ skeleton ] ] [ [ க ] ] there again their'patio'area is just a big smokers den with ashes all over the seats and tables the interior smells funky and i had to wait at the empty bar for about 10 minutes to order my beer not sure what took the bartender so long since i was the only customer at the time my friends lured me here in order to watch a volleyball game, promising cold beverages while watching some fun tourney action \ ( there is a vollyball court out back \ ) what they failed to mention is that it's not actually part of the bar, so the frosty beverages were enjoyed \ ( \? \ ) by myself within the barred enclosure of the patio while my friends sat on the grass about 50 feet away good times i hope not to repeat
+srcTxt:  ewww this place is pretty gross i've been here once, and hope to never have to go there again their'patio'area is just a big smokers den with ashes all over the seats and tables the interior smells funky and i had to wait at the empty bar for about 10 minutes to order my beer not sure what took the bartender so long since i was the only customer at the time my friends lured me here in order to watch a volleyball game, promising cold beverages while watching some fun tourney action \ ( there is a vollyball court out back \ ) what they failed to mention is that it's not actually part of the bar, so the frosty beverages were enjoyed \ ( \? \ ) by myself within the barred enclosure of the patio while my friends sat on the grass about 50 feet away good times i hope not to repeat
+advTxt:  enormouswlericalwlerical Ω is pretty gross i'velerical here evolutionary, and existed to never have skeleton க there again their'patio'area is just a big smokers den with ashes all over the seats and tables the interior smells funky and i had to wait at the empty bar for about 10 minutes to order my beer not sure what took the bartender so long since i was the only customer at the time my friends lured me here in order to watch a volleyball game, promising cold beverages while watching some fun tourney action \ ( there is a vollyball court out back \ ) what they failed to mention is that it's not actually part of the bar, so the frosty beverages were enjoyed \ ( \? \ ) by myself within the barred enclosure of the patio while my friends sat on the grass about 50 feet away good times i hope not to repeat
+targetTokens ['e', '##w', 'this', 'place', 'been', 'once', 'hope', 'to', 'go']
+toTokens ['enormous', '##lerical', '##lerical', 'Ω', '##lerical', 'evolutionary', 'existed', 'skeleton', 'க']
+sProbs:  [0.9998505115509033, 0.00014945142902433872]
+aProbs:  [0.3360120356082916, 0.663987934589386]
+attack suc rate 50.0 %
+average # of queries: 260.5.
+5.0  th document.
+stgt:  [ [ van ] ]ity [ [ is ] ] [ [ located ] ] inside [ [ the ] ] [ [ hard ] ] [ [ rock ] ] [ [ casino ] ] [ [ n ] ] nwe [ [ had ] ] [ [ a ] ] good [ [ time ] ] [ [ at ] ] van [ [ity ] ] [ [, ] ] although [ [ our ] ] [ [ review ] ] may be biased [ [ since ] ] we [ [ did ] ] [ [ have ] ] [ [ a ] ] table [ [ and ] ] [ [ gained ] ] [ [ easy ] ] [ [ entry ] ] through dj zhaldee \ ( thanks z! \ ) i liked the dancefloor layout the crowd is a good mix of beautiful people of various ethnicities staff is friendly deejays off da hook for sure! n non the night we went, a lot of smiles on clubgoers faces no drama or muggin'all good vibes! n nif you're looking for a fun atmosphere with good music and good vibes, i recommend vanity if you're looking for the l a glitz and glamor environment, you're better off heading to encore n nwe had a great time at vanity! would go back again for sure
+pos   van  ->  ##ₜ   0.99985  ->  0.99984
+pos   ##ₜ  ->  ##bus   0.99984  ->  0.999839
+pos   is  ->  க   0.999839  ->  0.999836
+pos   க  ->  258   0.999836  ->  0.999835
+pos   258  ->  155   0.999835  ->  0.999834
+pos   155  ->  disabilities   0.999834  ->  0.999831
+pos   disabilities  ->  Ω   0.999831  ->  0.999831
+pos   Ω  ->  expect   0.999831  ->  0.99983
+pos   located  ->  க   0.99983  ->  0.999813
+pos   க  ->  doesn   0.999813  ->  0.999709
+pos   the  ->  க   0.999709  ->  0.999679
+pos   க  ->  endings   0.999679  ->  0.999677
+pos   endings  ->  disabilities   0.999677  ->  0.999676
+pos   disabilities  ->  evolutionary   0.999676  ->  0.99966
+pos   rock  ->  ##lerical   0.99966  ->  0.999623
+pos   had  ->  க   0.999623  ->  0.999316
+pos   க  ->  toward   0.999316  ->  0.999305
+pos   toward  ->  doesn   0.999305  ->  0.99878
+pos   doesn  ->  expect   0.99878  ->  0.996351
+pos   time  ->  expect   0.996351  ->  0.994916
+pos   at  ->  க   0.994916  ->  0.994058
+pos   க  ->  endings   0.994058  ->  0.993861
+pos   endings  ->  Maria   0.993861  ->  0.993729
+pos   Maria  ->  Ω   0.993729  ->  0.993526
+pos   ##ity  ->  க   0.993526  ->  0.990961
+pos   க  ->  155   0.990961  ->  0.989097
+pos   155  ->  258   0.989097  ->  0.988807
+pos   ,  ->  க   0.988807  ->  0.988467
+pos   க  ->  disabilities   0.988467  ->  0.987729
+pos   review  ->  pains   0.987729  ->  0.986293
+pos   since  ->  pains   0.986293  ->  0.985352
+pos   did  ->  Maria   0.985352  ->  0.985078
+pos   Maria  ->  disabilities   0.985078  ->  0.984469
+pos   have  ->  Ω   0.984469  ->  0.984136
+pos   Ω  ->  expect   0.984136  ->  0.983769
+pos   and  ->  Maria   0.983769  ->  0.982408
+pos   Maria  ->  toward   0.982408  ->  0.981518
+pos   toward  ->  Side   0.981518  ->  0.980398
+pos   gained  ->  க   0.980398  ->  0.977154
+pos   க  ->  toward   0.977154  ->  0.975593
+attack suc rate 40.0 %
+average # of queries: 285.2.
+6.0  th document.
+stgt:  so after [ [ driving ] ] by this [ [ place ] ] [ [ everyday ] ] i [ [ decided ] ] to [ [ give ] ] it a [ [ shot ] ] i [ [ originally ] ] [ [ went ] ] there on a [ [ lunch ] ] [ [date ] ] thinking it was [ [ a ] ] sit down [ [ and ] ] [ [ order ] ] [ [ establishment ] ] well i [ [ was ] ] wrong so at [ [ that ] ] point [ [ we ] ] [ [ went ] ] elsewhere so [ [ i ] ] [ [ went ] ] back [ [ for ] ] [ [ carry ] ]out tonight [ [ in ] ] a nutshell [ [ i ] ]'m not impressed by it all, but there are some silver linings n nservice meh, middle of the road not bad, not good the employees looked annoyed and didn't want to be there but i was asked about sides and options and got a thank you after transaction so i can't burn them too bad for not whistling while they work n6 10 n nfood quality i ordered the steak quesadilla cause i love fried tortillas and lots of cheese inside well, i was very disapointed granted they press the tortillas there and fry it up in front of you, mine was not very fried i worked at restaurants and cooked quesadillas on mexi night and mine were always crispy and hot this one was merely warmed up and retained little heat during the 1 mile drive home while the quesadilla wasn't much better than taco bells version, the chips and queso and guacamole were excellent very good guac!! it was rich and chunky unlike canned stuff maybe i'll just stick to burritos if i go there cause the steak was tasty n5 10 only because of the guac, 3 10 without it n nprice 5 for that undercooked quesadilla is a sham 3 tops the chips and queso were also a bit pricey at 3 i spent 8 50 on the quesadilla, chips, queso and guacamole i felt like it was a 5 meal in the end n3 10 n nexperience vibe very plain much like other tex mex joints like qdoba and chipotle, only a little worse the dining setup is awkward and weirdly lit n5 10 n noverall 19 40 n nwhen the sides impress me more than the main dish i can only give two stars tops i m sure it would be closer to 3 if i ordered the burrito since that s just easier than a quesadilla but i don't really like burritos that much, so guys lets work on that tortilla frying and better portions!
+neg   driving  ->  க   0.999513  ->  0.999483
+neg   க  ->  Aviation   0.999483  ->  0.999389
+neg   Aviation  ->  endings   0.999389  ->  0.999268
+neg   endings  ->  ##onnell   0.999268  ->  0.997923
+neg   place  ->  endings   0.997923  ->  0.997763
+neg   endings  ->  doesn   0.997763  ->  0.997729
+neg   decided  ->  existed   0.997729  ->  0.995905
+neg   give  ->  க   0.995905  ->  0.995615
+neg   க  ->  Aviation   0.995615  ->  0.995195
+neg   Aviation  ->  doesn   0.995195  ->  0.994803
+neg   doesn  ->  ##point   0.994803  ->  0.994525
+neg   shot  ->  க   0.994525  ->  0.99388
+neg   க  ->  endings   0.99388  ->  0.993316
+neg   endings  ->  258   0.993316  ->  0.991785
+neg   258  ->  Aviation   0.991785  ->  0.990915
+neg   originally  ->  க   0.990915  ->  0.990495
+neg   க  ->  existed   0.990495  ->  0.984315
+neg   went  ->  doesn   0.984315  ->  0.982437
+neg   lunch  ->  endings   0.982437  ->  0.97641
+neg   endings  ->  existed   0.97641  ->  0.967043
+neg   ##date  ->  க   0.967043  ->  0.95978
+neg   க  ->  endings   0.95978  ->  0.955139
+neg   endings  ->  ##21   0.955139  ->  0.954797
+neg   ##21  ->  155   0.954797  ->  0.953226
+neg   155  ->  Э   0.953226  ->  0.947639
+neg   and  ->  258   0.947639  ->  0.94317
+neg   258  ->  perform   0.94317  ->  0.937103
+neg   order  ->  doesn   0.937103  ->  0.935792
+neg   establishment  ->  க   0.935792  ->  0.923231
+neg   க  ->  ##ₜ   0.923231  ->  0.920253
+neg   ##ₜ  ->  doesn   0.920253  ->  0.917686
+neg   doesn  ->  existed   0.917686  ->  0.917557
+neg   was  ->  toward   0.917557  ->  0.91455
+neg   toward  ->  க   0.91455  ->  0.910009
+neg   க  ->  existed   0.910009  ->  0.901587
+neg   existed  ->  doesn   0.901587  ->  0.899398
+neg   that  ->  க   0.899398  ->  0.85492
+neg   க  ->  ズ   0.85492  ->  0.84036
+neg   we  ->  க   0.84036  ->  0.832968
+neg   க  ->  endings   0.832968  ->  0.830448
+neg   endings  ->  doesn   0.830448  ->  0.815522
+neg   went  ->  க   0.815522  ->  0.806613
+neg   க  ->  existed   0.806613  ->  0.764929
+neg   i  ->  க   0.764929  ->  0.745051
+neg   க  ->  Maria   0.745051  ->  0.700391
+neg   went  ->  vectors   0.700391  ->  0.649721
+neg   for  ->  க   0.649721  ->  0.592599
+neg   க  ->  expressive   0.592599  ->  0.589378
+neg   carry  ->  க   0.589378  ->  0.534035
+in  ->  Maria
+srcTxt:  so after [ [ driving ] ] by this [ [ place ] ] everyday i [ [ decided ] ] to [ [ give ] ] it a [ [ shot ] ] i [ [ originally ] ] [ [ went ] ] there on a [ [ lunch ] ] [ [date ] ] thinking it was a sit down [ [ and ] ] [ [ order ] ] [ [ establishment ] ] well i [ [ was ] ] wrong so at [ [ that ] ] point [ [ we ] ] [ [ went ] ] elsewhere so [ [ i ] ] [ [ went ] ] back [ [ for ] ] [ [ carry ] ]out tonight [ [ in ] ] a nutshell i'm not impressed by it all, but there are some silver linings n nservice meh, middle of the road not bad, not good the employees looked annoyed and didn't want to be there but i was asked about sides and options and got a thank you after transaction so i can't burn them too bad for not whistling while they work n6 10 n nfood quality i ordered the steak quesadilla cause i love fried tortillas and lots of cheese inside well, i was very disapointed granted they press the tortillas there and fry it up in front of you, mine was not very fried i worked at restaurants and cooked quesadillas on mexi night and mine were always crispy and hot this one was merely warmed up and retained little heat during the 1 mile drive home while the quesadilla wasn't much better than taco bells version, the chips and queso and guacamole were excellent very good guac!! it was rich and chunky unlike canned stuff maybe i'll just stick to burritos if i go there cause the steak was tasty n5 10 only because of the guac, 3 10 without it n nprice 5 for that undercooked quesadilla is a sham 3 tops the chips and queso were also a bit pricey at 3 i spent 8 50 on the quesadilla, chips, queso and guacamole i felt like it was a 5 meal in the end n3 10 n nexperience vibe very plain much like other tex mex joints like qdoba and chipotle, only a little worse the dining setup is awkward and weirdly lit n5 10 n noverall 19 40 n nwhen the sides impress me more than the main dish i can only give two stars tops i m sure it would be closer to 3 if i ordered the burrito since that s just easier than a quesadilla but i don't really like burritos that much, so guys lets work on that tortilla frying and better portions!
+advTxt:  so after [ [onnell ] ] by this [ [ doesn ] ] everyday i [ [ existed ] ] to [ [point ] ] it a [ [ Aviation ] ] i [ [ existed ] ] [ [ doesn ] ] there on a [ [ existed ] ] [ [ Э ] ] thinking it was a sit down [ [ perform ] ] [ [ doesn ] ] [ [ existed ] ] well i [ [ doesn ] ] wrong so at [ [ ズ ] ] point [ [ doesn ] ] [ [ existed ] ] elsewhere so [ [ Maria ] ] [ [ vectors ] ] back [ [ expressive ] ] [ [ க ] ]out tonight [ [ Maria ] ] a nutshell i'm not impressed by it all, but there are some silver linings n nservice meh, middle of the road not bad, not good the employees looked annoyed and didn't want to be there but i was asked about sides and options and got a thank you after transaction so i can't burn them too bad for not whistling while they work n6 10 n nfood quality i ordered the steak quesadilla cause i love fried tortillas and lots of cheese inside well, i was very disapointed granted they press the tortillas there and fry it up in front of you, mine was not very fried i worked at restaurants and cooked quesadillas on mexi night and mine were always crispy and hot this one was merely warmed up and retained little heat during the 1 mile drive home while the quesadilla wasn't much better than taco bells version, the chips and queso and guacamole were excellent very good guac!! it was rich and chunky unlike canned stuff maybe i'll just stick to burritos if i go there cause the steak was tasty n5 10 only because of the guac, 3 10 without it n nprice 5 for that undercooked quesadilla is a sham 3 tops the chips and queso were also a bit pricey at 3 i spent 8 50 on the quesadilla, chips, queso and guacamole i felt like it was a 5 meal in the end n3 10 n nexperience vibe very plain much like other tex mex joints like qdoba and chipotle, only a little worse the dining setup is awkward and weirdly lit n5 10 n noverall 19 40 n nwhen the sides impress me more than the main dish i can only give two stars tops i m sure it would be closer to 3 if i ordered the burrito since that s just easier than a quesadilla but i don't really like burritos that much, so guys lets work on that tortilla frying and better portions!
+srcTxt:  so after driving by this place everyday i decided to give it a shot i originally went there on a lunchdate thinking it was a sit down and order establishment well i was wrong so at that point we went elsewhere so i went back for carryout tonight in a nutshell i'm not impressed by it all, but there are some silver linings n nservice meh, middle of the road not bad, not good the employees looked annoyed and didn't want to be there but i was asked about sides and options and got a thank you after transaction so i can't burn them too bad for not whistling while they work n6 10 n nfood quality i ordered the steak quesadilla cause i love fried tortillas and lots of cheese inside well, i was very disapointed granted they press the tortillas there and fry it up in front of you, mine was not very fried i worked at restaurants and cooked quesadillas on mexi night and mine were always crispy and hot this one was merely warmed up and retained little heat during the 1 mile drive home while the quesadilla wasn't much better than taco bells version, the chips and queso and guacamole were excellent very good guac!! it was rich and chunky unlike canned stuff maybe i'll just stick to burritos if i go there cause the steak was tasty n5 10 only because of the guac, 3 10 without it n nprice 5 for that undercooked quesadilla is a sham 3 tops the chips and queso were also a bit pricey at 3 i spent 8 50 on the quesadilla, chips, queso and guacamole i felt like it was a 5 meal in the end n3 10 n nexperience vibe very plain much like other tex mex joints like qdoba and chipotle, only a little worse the dining setup is awkward and weirdly lit n5 10 n noverall 19 40 n nwhen the sides impress me more than the main dish i can only give two stars tops i m sure it would be closer to 3 if i ordered the burrito since that s just easier than a quesadilla but i don't really like burritos that much, so guys lets work on that tortilla frying and better portions!
+advTxt:  so afteronnell by this doesn everyday i existed topoint it a Aviation i existed doesn there on a existed Э thinking it was a sit down perform doesn existed well i doesn wrong so at ズ point doesn existed elsewhere so Maria vectors back expressive கout tonight Maria a nutshell i'm not impressed by it all, but there are some silver linings n nservice meh, middle of the road not bad, not good the employees looked annoyed and didn't want to be there but i was asked about sides and options and got a thank you after transaction so i can't burn them too bad for not whistling while they work n6 10 n nfood quality i ordered the steak quesadilla cause i love fried tortillas and lots of cheese inside well, i was very disapointed granted they press the tortillas there and fry it up in front of you, mine was not very fried i worked at restaurants and cooked quesadillas on mexi night and mine were always crispy and hot this one was merely warmed up and retained little heat during the 1 mile drive home while the quesadilla wasn't much better than taco bells version, the chips and queso and guacamole were excellent very good guac!! it was rich and chunky unlike canned stuff maybe i'll just stick to burritos if i go there cause the steak was tasty n5 10 only because of the guac, 3 10 without it n nprice 5 for that undercooked quesadilla is a sham 3 tops the chips and queso were also a bit pricey at 3 i spent 8 50 on the quesadilla, chips, queso and guacamole i felt like it was a 5 meal in the end n3 10 n nexperience vibe very plain much like other tex mex joints like qdoba and chipotle, only a little worse the dining setup is awkward and weirdly lit n5 10 n noverall 19 40 n nwhen the sides impress me more than the main dish i can only give two stars tops i m sure it would be closer to 3 if i ordered the burrito since that s just easier than a quesadilla but i don't really like burritos that much, so guys lets work on that tortilla frying and better portions!
+targetTokens ['driving', 'place', 'decided', 'give', 'shot', 'originally', 'went', 'lunch', '##date', 'and', 'order', 'establishment', 'was', 'that', 'we', 'went', 'i', 'went', 'for', 'carry', 'in']
+toTokens ['##onnell', 'doesn', 'existed', '##point', 'Aviation', 'existed', 'doesn', 'existed', 'Э', 'perform', 'doesn', 'existed', 'doesn', 'ズ', 'doesn', 'existed', 'Maria', 'vectors', 'expressive', 'க', 'Maria']
+sProbs:  [0.9995132684707642, 0.00048670705291442573]
+aProbs:  [0.49991151690483093, 0.5000884532928467]
+attack suc rate 50.0 %
+average # of queries: 296.6666666666667.
+7.0  th document.
+stgt:  i was [ [ looking ] ] for some [ [ tires ] ] [ [ obviously ] ] [ [ 22 ] ]'s that [ [ is ] ] planned [ [ on ] ] getting [ [ some ] ] tires on [ [ the ] ] [ [ weekend ] ] ended [ [ up ] ] [ [ getting ] ] stuck [ [ in ] ] phoe [ [ni ] ] [ [x ] ] on [ [ a ] ] [ [ f ] ]rida [ [y ] ] night after 5 [ [ pm ] ] [ [ this ] ] [ [ place ] ] [ [ was ] ] not only open, [ [ stayed ] ] [ [ open ] ] late for [ [ me ] ] had the best prices they were 300 600 cheaper than their competitors i had been getting quotes from! i just sent a friend their way same story he saved a couple hundred from his quotes at discount big o, even with his commercial discount when somebody needs tires, this is where i send them!
+pos   looking  ->  க   0.999849  ->  0.999847
+pos   க  ->  Aviation   0.999847  ->  0.999845
+pos   Aviation  ->  155   0.999845  ->  0.999843
+pos   155  ->  expect   0.999843  ->  0.99982
+pos   tires  ->  க   0.99982  ->  0.999654
+pos   க  ->  ##onnell   0.999654  ->  0.999323
+pos   obviously  ->  doesn   0.999323  ->  0.998742
+pos   doesn  ->  expect   0.998742  ->  0.997438
+pos   expect  ->  asks   0.997438  ->  0.9901
+pos   22  ->  asks   0.9901  ->  0.989175
+pos   is  ->  toward   0.989175  ->  0.986638
+pos   toward  ->  ##21   0.986638  ->  0.986174
+pos   ##21  ->  Maria   0.986174  ->  0.985284
+pos   Maria  ->  cannons   0.985284  ->  0.984697
+pos   on  ->  க   0.984697  ->  0.981829
+pos   க  ->  ##21   0.981829  ->  0.979194
+pos   ##21  ->  Maria   0.979194  ->  0.979193
+pos   some  ->  skeleton   0.979193  ->  0.978585
+pos   skeleton  ->  ##21   0.978585  ->  0.974232
+pos   the  ->  ##21   0.974232  ->  0.972901
+pos   ##21  ->  perform   0.972901  ->  0.9727
+pos   perform  ->  skeleton   0.9727  ->  0.970746
+pos   up  ->  ##21   0.970746  ->  0.95496
+pos   getting  ->  க   0.95496  ->  0.937429
+pos   க  ->  Maria   0.937429  ->  0.908802
+pos   Maria  ->  155   0.908802  ->  0.908762
+pos   155  ->  skeleton   0.908762  ->  0.88995
+pos   skeleton  ->  pains   0.88995  ->  0.817984
+pos   in  ->  asks   0.817984  ->  0.809741
+pos   asks  ->  skeleton   0.809741  ->  0.764068
+pos   a  ->  155   0.764068  ->  0.756925
+pos   155  ->  doesn   0.756925  ->  0.739527
+pos   doesn  ->  toward   0.739527  ->  0.736804
+pos   toward  ->  Aviation   0.736804  ->  0.685277
+pos   Aviation  ->  endings   0.685277  ->  0.554226
+endings  ->  cannons
+srcTxt:  i was [ [ looking ] ] for some [ [ tires ] ] [ [ obviously ] ] [ [ 22 ] ]'s that [ [ is ] ] planned [ [ on ] ] getting [ [ some ] ] tires on [ [ the ] ] weekend ended [ [ up ] ] [ [ getting ] ] stuck [ [ in ] ] phoenix on [ [ a ] ] friday night after 5 pm this place was not only open, stayed open late for me had the best prices they were 300 600 cheaper than their competitors i had been getting quotes from! i just sent a friend their way same story he saved a couple hundred from his quotes at discount big o, even with his commercial discount when somebody needs tires, this is where i send them!
+advTxt:  i was [ [ expect ] ] for some [ [onnell ] ] [ [ asks ] ] [ [ asks ] ]'s that [ [ cannons ] ] planned [ [ Maria ] ] getting [ [21 ] ] tires on [ [ skeleton ] ] weekend ended [ [21 ] ] [ [ pains ] ] stuck [ [ skeleton ] ] phoenix on [ [ cannons ] ] friday night after 5 pm this place was not only open, stayed open late for me had the best prices they were 300 600 cheaper than their competitors i had been getting quotes from! i just sent a friend their way same story he saved a couple hundred from his quotes at discount big o, even with his commercial discount when somebody needs tires, this is where i send them!
+srcTxt:  i was looking for some tires obviously 22's that is planned on getting some tires on the weekend ended up getting stuck in phoenix on a friday night after 5 pm this place was not only open, stayed open late for me had the best prices they were 300 600 cheaper than their competitors i had been getting quotes from! i just sent a friend their way same story he saved a couple hundred from his quotes at discount big o, even with his commercial discount when somebody needs tires, this is where i send them!
+advTxt:  i was expect for someonnell asks asks's that cannons planned Maria getting21 tires on skeleton weekend ended21 pains stuck skeleton phoenix on cannons friday night after 5 pm this place was not only open, stayed open late for me had the best prices they were 300 600 cheaper than their competitors i had been getting quotes from! i just sent a friend their way same story he saved a couple hundred from his quotes at discount big o, even with his commercial discount when somebody needs tires, this is where i send them!
+targetTokens ['looking', 'tires', 'obviously', '22', 'is', 'on', 'some', 'the', 'up', 'getting', 'in', 'a']
+toTokens ['expect', '##onnell', 'asks', 'asks', 'cannons', 'Maria', '##21', 'skeleton', '##21', 'pains', 'skeleton', 'cannons']
+sProbs:  [0.0001508257701061666, 0.9998492002487183]
+aProbs:  [0.5570666193962097, 0.44293341040611267]
+attack suc rate 57.14 %
+average # of queries: 288.2857142857143.
+8.0  th document.
+stgt:  [ [ nice ] ] [ [ am ] ] [ [bian ] ] [ [ce ] ] [ [ waited ] ] 30 [ [ min ] ] for [ [ table ] ] no [ [ worries ] ] [ [ for ] ] frida [ [y ] ] [ [ night ] ] [ [ and ] ] [ [ no ] ] [ [ reservations ] ] [ [ saw ] ] [ [ waited ] ] twice ass [ [t ] ] [ [ manager ] ] [ [ stood ] ] [ [ in ] ] [ [ as ] ] waitress ordered [ [ baby ] ] back ribs [ [ for ] ] a [ [ child ] ] and an adult, both plates came out cold nreally only saw waiter!!
+neg   am  ->  ##ₜ   0.99982  ->  0.999749
+neg   ##ₜ  ->  ##本   0.999749  ->  0.999623
+neg   ##bian  ->  155   0.999623  ->  0.999552
+neg   ##ce  ->  க   0.999552  ->  0.998786
+neg   க  ->  perform   0.998786  ->  0.997608
+neg   perform  ->  ##iek   0.997608  ->  0.996854
+neg   waited  ->  க   0.996854  ->  0.99437
+neg   க  ->  Maria   0.99437  ->  0.991478
+neg   Maria  ->  ##lerical   0.991478  ->  0.989767
+neg   min  ->  ##21   0.989767  ->  0.989263
+neg   table  ->  க   0.989263  ->  0.971257
+neg   க  ->  155   0.971257  ->  0.945644
+neg   for  ->  க   0.945644  ->  0.907179
+neg   க  ->  155   0.907179  ->  0.879906
+neg   155  ->  CPU   0.879906  ->  0.85729
+neg   CPU  ->  enormous   0.85729  ->  0.779346
+neg   ##y  ->  க   0.779346  ->  0.515396
+க  ->  impress
+srcTxt:  nice [ [ am ] ] [ [bian ] ] [ [ce ] ] [ [ waited ] ] 30 [ [ min ] ] for [ [ table ] ] no worries [ [ for ] ] frida [ [y ] ] night and no reservations saw waited twice asst manager stood in as waitress ordered baby back ribs for a child and an adult, both plates came out cold nreally only saw waiter!!
+advTxt:  nice [ [本 ] ] [ [ 155 ] ] [ [iek ] ] [ [lerical ] ] 30 [ [21 ] ] for [ [ 155 ] ] no worries [ [ enormous ] ] frida [ [ impress ] ] night and no reservations saw waited twice asst manager stood in as waitress ordered baby back ribs for a child and an adult, both plates came out cold nreally only saw waiter!!
+srcTxt:  nice ambiance waited 30 min for table no worries for friday night and no reservations saw waited twice asst manager stood in as waitress ordered baby back ribs for a child and an adult, both plates came out cold nreally only saw waiter!!
+advTxt:  nice本 155ieklerical 3021 for 155 no worries enormous frida impress night and no reservations saw waited twice asst manager stood in as waitress ordered baby back ribs for a child and an adult, both plates came out cold nreally only saw waiter!!
+targetTokens ['am', '##bian', '##ce', 'waited', 'min', 'table', 'for', '##y']
+toTokens ['##本', '155', '##iek', '##lerical', '##21', '155', 'enormous', 'impress']
+sProbs:  [0.9998202919960022, 0.0001797629811335355]
+aProbs:  [0.19707132875919342, 0.8029286861419678]
+attack suc rate 62.5 %
+average # of queries: 270.5.
+9.0  th document.
+stgt:  i have a [ [ friend ] ] who is from [ [ au ] ]stria [ [, ] ] and [ [ she ] ] hates the [ [ fact ] ] that [ [ this ] ] place [ [ is ] ] named [ [ just ] ] [ [ like ] ] an aust [ [rian ] ] dish [ [ that ] ] [ [ does ] ] not [ [ consist ] ] [ [ of ] ] hot dogs [ [ or ] ] [ [ anything ] ] [ [ like ] ] [ [ that ] ] that [ [ aside ] ] n ni [ [ like ] ] [ [ this ] ] [ [ place ] ] they [ [ have ] ] good deals, though the trade off [ [ for ] ] that is you're not getting the best food ever if you walk in here with expectations of high quality food, this is not it think del taco and you're on the right track n ni don't really have a lot to say about this place other than it's value oriented and there's a subway connected to it if you feel like eating that
+pos   friend  ->  க   0.855092  ->  0.854477
+pos   க  ->  155   0.854477  ->  0.594358
+au  ->  ##onnell
+srcTxt:  i have a [ [ friend ] ] who is from [ [ au ] ]stria, and she hates the fact that this place is named just like an austrian dish that does not consist of hot dogs or anything like that that aside n ni like this place they have good deals, though the trade off for that is you're not getting the best food ever if you walk in here with expectations of high quality food, this is not it think del taco and you're on the right track n ni don't really have a lot to say about this place other than it's value oriented and there's a subway connected to it if you feel like eating that
+advTxt:  i have a [ [ 155 ] ] who is from [ [onnell ] ]stria, and she hates the fact that this place is named just like an austrian dish that does not consist of hot dogs or anything like that that aside n ni like this place they have good deals, though the trade off for that is you're not getting the best food ever if you walk in here with expectations of high quality food, this is not it think del taco and you're on the right track n ni don't really have a lot to say about this place other than it's value oriented and there's a subway connected to it if you feel like eating that
+srcTxt:  i have a friend who is from austria, and she hates the fact that this place is named just like an austrian dish that does not consist of hot dogs or anything like that that aside n ni like this place they have good deals, though the trade off for that is you're not getting the best food ever if you walk in here with expectations of high quality food, this is not it think del taco and you're on the right track n ni don't really have a lot to say about this place other than it's value oriented and there's a subway connected to it if you feel like eating that
+advTxt:  i have a 155 who is fromonnellstria, and she hates the fact that this place is named just like an austrian dish that does not consist of hot dogs or anything like that that aside n ni like this place they have good deals, though the trade off for that is you're not getting the best food ever if you walk in here with expectations of high quality food, this is not it think del taco and you're on the right track n ni don't really have a lot to say about this place other than it's value oriented and there's a subway connected to it if you feel like eating that
+targetTokens ['friend', 'au']
+toTokens ['155', '##onnell']
+sProbs:  [0.14490769803524017, 0.8550923466682434]
+aProbs:  [0.6440824270248413, 0.3559175729751587]
+attack suc rate 66.67 %
+average # of queries: 243.66666666666666.
+saved at sample  9.0  as file  BERTFineTuned_yelp_val_1.0_24_400_0_0802_19July.json
+10.0  th document.
+stgt:  [ [ stopped ] ] in for a [ [ drink ] ] to [ [ celebrate ] ] my [ [ husband ] ]'[ [ s ] ] [ [ birthday ] ] [ [ s ] ] [ [wan ] ] [ [k ] ] place [ [, ] ] stunning [ [ really ] ] they [ [ special ] ]ize [ [ in ] ] [ [ cocktail ] ] [ [s ] ] but [ [ offer ] ] [ [ a ] ] nice [ [ beer ] ] selection [ [ too ] ] pissing [ [ boy ] ] [ [ was ] ] [ [ new ] ] to [ [ us ] ] and [ [ a ] ] real winner service was prompt and friendly drinks are pricey, but this is not your usual bar the patio was closed for a private event we will have to see that another time a real nice addition to downtown
+pos   stopped  ->  ##ₜ   0.999847  ->  0.999822
+pos   ##ₜ  ->  Styx   0.999822  ->  0.999754
+pos   drink  ->  க   0.999754  ->  0.999685
+pos   க  ->  155   0.999685  ->  0.999552
+pos   155  ->  disabilities   0.999552  ->  0.997538
+pos   celebrate  ->  ##21   0.997538  ->  0.997188
+pos   husband  ->  toward   0.997188  ->  0.996857
+pos   toward  ->  ##onnell   0.996857  ->  0.996691
+pos   s  ->  155   0.996691  ->  0.995808
+pos   155  ->  doesn   0.995808  ->  0.995053
+pos   doesn  ->  ##onnell   0.995053  ->  0.995039
+pos   ##onnell  ->  ##21   0.995039  ->  0.990075
+pos   birthday  ->  Maria   0.990075  ->  0.988903
+pos   Maria  ->  doesn   0.988903  ->  0.97755
+pos   doesn  ->  expect   0.97755  ->  0.973769
+pos   s  ->  க   0.973769  ->  0.96746
+pos   க  ->  doesn   0.96746  ->  0.932087
+pos   doesn  ->  Maria   0.932087  ->  0.92939
+pos   Maria  ->  toward   0.92939  ->  0.927738
+pos   toward  ->  ##21   0.927738  ->  0.910432
+pos   ##21  ->  asks   0.910432  ->  0.897088
+pos   ##wan  ->  skeleton   0.897088  ->  0.892141
+pos   skeleton  ->  258   0.892141  ->  0.878643
+pos   258  ->  Maria   0.878643  ->  0.830964
+pos   Maria  ->  stark   0.830964  ->  0.826338
+pos   ##k  ->  258   0.826338  ->  0.729881
+258  ->  ##lerical
+srcTxt:  [ [ stopped ] ] in for a [ [ drink ] ] to [ [ celebrate ] ] my [ [ husband ] ]'[ [ s ] ] [ [ birthday ] ] [ [ s ] ] [ [wan ] ] [ [k ] ] place, stunning really they specialize in cocktails but offer a nice beer selection too pissing boy was new to us and a real winner service was prompt and friendly drinks are pricey, but this is not your usual bar the patio was closed for a private event we will have to see that another time a real nice addition to downtown
+advTxt:  [ [ Styx ] ] in for a [ [ disabilities ] ] to [ [21 ] ] my [ [onnell ] ]'[ [21 ] ] [ [ expect ] ] [ [ asks ] ] [ [ stark ] ] [ [lerical ] ] place, stunning really they specialize in cocktails but offer a nice beer selection too pissing boy was new to us and a real winner service was prompt and friendly drinks are pricey, but this is not your usual bar the patio was closed for a private event we will have to see that another time a real nice addition to downtown
+srcTxt:  stopped in for a drink to celebrate my husband's birthday swank place, stunning really they specialize in cocktails but offer a nice beer selection too pissing boy was new to us and a real winner service was prompt and friendly drinks are pricey, but this is not your usual bar the patio was closed for a private event we will have to see that another time a real nice addition to downtown
+advTxt:  Styx in for a disabilities to21 myonnell '21 expect asks starklerical place, stunning really they specialize in cocktails but offer a nice beer selection too pissing boy was new to us and a real winner service was prompt and friendly drinks are pricey, but this is not your usual bar the patio was closed for a private event we will have to see that another time a real nice addition to downtown
+targetTokens ['stopped', 'drink', 'celebrate', 'husband', 's', 'birthday', 's', '##wan', '##k']
+toTokens ['Styx', 'disabilities', '##21', '##onnell', '##21', 'expect', 'asks', 'stark', '##lerical']
+sProbs:  [0.00015317647194024175, 0.9998468160629272]
+aProbs:  [0.7242124676704407, 0.2757875919342041]
+attack suc rate 70.0 %
+average # of queries: 232.7.
+11.0  th document.
+stgt:  [ [ alright ] ] [ [, ] ] [ [ upon ] ] returning [ [ to ] ] brgr after [ [ my ] ] [ [ not ] ] [ [ so ] ] [ [ good ] ] experience [ [ last ] ] year [ [, ] ] i found [ [ myself ] ] [ [ hoping ] ] [ [ for ] ] a [ [ better ] ] time [ [ well ] ] [ [, ] ] [ [ i ] ] [ [ got ] ] my wish! [ [ br ] ] [ [g ] ]r competes [ [ big ] ] [ [time ] ] [ [ with ] ] [ [ the ] ] other burger joints in the area n nmy burger, the button buster, was absolutely delicious it was cooked perfectly medium rare, just as i asked for you can tell that brgr puts extra care in their meat one can taste the difference in the quality and preparation of the meat at first bite n nthe toppings were great on my burger, and unlike last time, i did not feel jipped at all when it came to packedness factor \ ( the amount of toppings they pack onto the burger \ ) n nstill, my one complaint is you have to pay extra for sides just give me a side of chips, and charger me an extra buck i would rather have that then to pay a la carte for a side also, gimme some more non alcoholic milkshake options if they'd do this, they would easily be competing for the spot in my heart as the best burger in pittsburgh n nall in all, it was a great meal i will definitely be coming back and bringing my family they deserve to have their minds updated and refreshed on what brgr brings to the table
+pos   alright  ->  scenery   0.999849  ->  0.999849
+pos   scenery  ->  Styx   0.999849  ->  0.999848
+pos   Styx  ->  toward   0.999848  ->  0.999848
+pos   toward  ->  Exempt   0.999848  ->  0.999847
+pos   ,  ->  ##ₜ   0.999847  ->  0.999845
+pos   ##ₜ  ->  toward   0.999845  ->  0.999829
+pos   toward  ->  bold   0.999829  ->  0.999827
+pos   upon  ->  க   0.999827  ->  0.9998
+pos   க  ->  toward   0.9998  ->  0.999784
+pos   toward  ->  155   0.999784  ->  0.999514
+pos   155  ->  ##onnell   0.999514  ->  0.999474
+pos   to  ->  க   0.999474  ->  0.999302
+pos   க  ->  expect   0.999302  ->  0.999085
+pos   my  ->  க   0.999085  ->  0.998948
+pos   க  ->  ##21   0.998948  ->  0.998698
+pos   ##21  ->  ##onnell   0.998698  ->  0.995907
+pos   last  ->  thought   0.995907  ->  0.995293
+pos   ,  ->  258   0.995293  ->  0.994332
+pos   258  ->  perform   0.994332  ->  0.994205
+pos   perform  ->  ##point   0.994205  ->  0.99253
+pos   myself  ->  ##21   0.99253  ->  0.990725
+pos   hoping  ->  thought   0.990725  ->  0.989294
+pos   for  ->  Maria   0.989294  ->  0.985319
+pos   ,  ->  க   0.985319  ->  0.980436
+pos   க  ->  asks   0.980436  ->  0.980158
+pos   i  ->  asks   0.980158  ->  0.979942
+pos   got  ->  toward   0.979942  ->  0.975063
+pos   br  ->  ##ₜ   0.975063  ->  0.972992
+pos   ##ₜ  ->  258   0.972992  ->  0.971534
+pos   big  ->  toward   0.971534  ->  0.968974
+pos   ##time  ->  க   0.968974  ->  0.968104
+pos   க  ->  155   0.968104  ->  0.962235
+pos   155  ->  Canterbury   0.962235  ->  0.949853
+pos   with  ->  perform   0.949853  ->  0.941991
+pos   perform  ->  Aviation   0.941991  ->  0.941501
+pos   Aviation  ->  Motor   0.941501  ->  0.941262
+pos   the  ->  Maria   0.941262  ->  0.936117
+pos   Maria  ->  Aviation   0.936117  ->  0.934877
+pos   Aviation  ->  ##21   0.934877  ->  0.931145
+attack suc rate 63.63999999999999 %
+average # of queries: 246.45454545454547.
+12.0  th document.
+stgt:  [ [ b ] ] [ [our ] ] [ [bon ] ] steak [ [ house ] ] [ [ was ] ] [ [ fantastic ] ] n [ [ n ] ] [ [p ] ] [ [roper ] ] [ [ty ] ] [ [ not ] ] [ [ well ] ] maintained [ [ n ] ] n [ [the ] ] [ [ property ] ] [ [ staff ] ] and service is deplorable stay away
+neg   b  ->  Boots   0.991562  ->  0.927157
+neg   Boots  ->  Styx   0.927157  ->  0.877457
+Styx  ->  enormous
+srcTxt:  [ [ b ] ]ourbon steak house was fantastic n nproperty not well maintained n nthe property staff and service is deplorable stay away
+advTxt:  [ [ enormous ] ]ourbon steak house was fantastic n nproperty not well maintained n nthe property staff and service is deplorable stay away
+srcTxt:  bourbon steak house was fantastic n nproperty not well maintained n nthe property staff and service is deplorable stay away
+advTxt:  enormousourbon steak house was fantastic n nproperty not well maintained n nthe property staff and service is deplorable stay away
+targetTokens ['b']
+toTokens ['enormous']
+sProbs:  [0.9915618300437927, 0.008438215591013432]
+aProbs:  [0.027134783565998077, 0.9728652238845825]
+attack suc rate 66.67 %
+average # of queries: 226.75.
+13.0  th document.
+stgt:  [ [ website ] ] [ [ says ] ] [ [ open ] ] [ [ till ] ] [ [ 11 ] ] [ [ pm ] ] on [ [ wed ] ] [ [nes ] ]day [ [s ] ] [ [, ] ] called [ [ at ] ] [ [ 10 ] ] 25 [ [ to ] ] order something [ [ for ] ] pick [ [ up ] ] [ [, ] ] was [ [ told ] ] [ [ they ] ] closed half an hour ago
+neg   website  ->  ##ₜ   0.99871  ->  0.998171
+neg   ##ₜ  ->  enormous   0.998171  ->  0.997995
+neg   says  ->  ##ₜ   0.997995  ->  0.703616
+neg   ##ₜ  ->  toward   0.703616  ->  0.511064
+toward  ->  bold
+srcTxt:  [ [ website ] ] [ [ says ] ] open till 11 pm on wednesdays, called at 10 25 to order something for pick up, was told they closed half an hour ago
+advTxt:  [ [ enormous ] ] [ [ bold ] ] open till 11 pm on wednesdays, called at 10 25 to order something for pick up, was told they closed half an hour ago
+srcTxt:  website says open till 11 pm on wednesdays, called at 10 25 to order something for pick up, was told they closed half an hour ago
+advTxt:  enormous bold open till 11 pm on wednesdays, called at 10 25 to order something for pick up, was told they closed half an hour ago
+targetTokens ['website', 'says']
+toTokens ['enormous', 'bold']
+sProbs:  [0.9987096786499023, 0.0012903658207505941]
+aProbs:  [0.006145785562694073, 0.993854284286499]
+attack suc rate 69.23 %
+average # of queries: 211.23076923076923.
+14.0  th document.
+stgt:  if you'[ [ re ] ] looking for [ [ a ] ] bakery [ [ in ] ] ch [ [ar ] ]lotte, you [ [ really ] ] [ [ have ] ] to [ [ do ] ] some digging [ [ non ] ] [ [a ] ] [ ['] ] [ [ s ] ] sweet [ [s ] ] is a [ [ great ] ] find one word of caution [ [ they ] ] are moving it'[ [ s ] ] just up the street [ [, ] ] [ [ but ] ] if you [ [ are ] ] used [ [ to ] ] them in their current [ [ location ] ] [ [, ] ] [ [ you ] ]'ll need to [ [ look ] ] [ [ for ] ] them in the new place soon it's in the old hollywood video location n nanyway, nona's is a great little bakery offering all sorts of items for your sweet tooth, including the aforementioned cupcake bar i'm not much for cake, and prefer cookies, but luckily she has me covered there too lots of cookies to choose from feel free to go as wild as you like n nand if you like to watch cake shows, she'll be on platinum weddings in 2010 january i think
+pos   re  ->  க   0.99985  ->  0.999848
+pos   க  ->  ##ₜ   0.999848  ->  0.999847
+pos   ##ₜ  ->  ##onnell   0.999847  ->  0.999843
+pos   a  ->  க   0.999843  ->  0.99984
+pos   க  ->  258   0.99984  ->  0.999839
+pos   258  ->  ##iek   0.999839  ->  0.999823
+pos   ##iek  ->  disabilities   0.999823  ->  0.999817
+pos   disabilities  ->  ##curate   0.999817  ->  0.999702
+pos   in  ->  க   0.999702  ->  0.999633
+pos   க  ->  258   0.999633  ->  0.999556
+pos   258  ->  disabilities   0.999556  ->  0.999081
+pos   ##ar  ->  க   0.999081  ->  0.998143
+pos   க  ->  155   0.998143  ->  0.99787
+pos   155  ->  doesn   0.99787  ->  0.997851
+pos   really  ->  doesn   0.997851  ->  0.997635
+pos   doesn  ->  skeleton   0.997635  ->  0.997381
+pos   skeleton  ->  disabilities   0.997381  ->  0.997296
+pos   have  ->  155   0.997296  ->  0.997124
+pos   155  ->  toward   0.997124  ->  0.996828
+pos   toward  ->  doesn   0.996828  ->  0.996581
+pos   do  ->  skeleton   0.996581  ->  0.993537
+pos   non  ->  க   0.993537  ->  0.991946
+pos   க  ->  ##ₜ   0.991946  ->  0.990918
+pos   ##ₜ  ->  disabilities   0.990918  ->  0.990884
+pos   disabilities  ->  expressive   0.990884  ->  0.989938
+pos   expressive  ->  ##onnell   0.989938  ->  0.98873
+pos   ##a  ->  ##lerical   0.98873  ->  0.652511
+pos   '  ->  disabilities   0.652511  ->  0.542894
+s  ->  toward
+srcTxt:  if you'[ [ re ] ] looking for [ [ a ] ] bakery [ [ in ] ] ch [ [ar ] ]lotte, you [ [ really ] ] [ [ have ] ] to [ [ do ] ] some digging [ [ non ] ] [ [a ] ] [ ['] ] [ [ s ] ] sweets is a great find one word of caution they are moving it's just up the street, but if you are used to them in their current location, you'll need to look for them in the new place soon it's in the old hollywood video location n nanyway, nona's is a great little bakery offering all sorts of items for your sweet tooth, including the aforementioned cupcake bar i'm not much for cake, and prefer cookies, but luckily she has me covered there too lots of cookies to choose from feel free to go as wild as you like n nand if you like to watch cake shows, she'll be on platinum weddings in 2010 january i think
+advTxt:  if you'[ [onnell ] ] looking for [ [curate ] ] bakery [ [ disabilities ] ] ch [ [ doesn ] ]lotte, you [ [ disabilities ] ] [ [ doesn ] ] to [ [ skeleton ] ] some digging [ [onnell ] ] [ [lerical ] ] [ [ disabilities ] ] [ [ toward ] ] sweets is a great find one word of caution they are moving it's just up the street, but if you are used to them in their current location, you'll need to look for them in the new place soon it's in the old hollywood video location n nanyway, nona's is a great little bakery offering all sorts of items for your sweet tooth, including the aforementioned cupcake bar i'm not much for cake, and prefer cookies, but luckily she has me covered there too lots of cookies to choose from feel free to go as wild as you like n nand if you like to watch cake shows, she'll be on platinum weddings in 2010 january i think
+srcTxt:  if you're looking for a bakery in charlotte, you really have to do some digging nona's sweets is a great find one word of caution they are moving it's just up the street, but if you are used to them in their current location, you'll need to look for them in the new place soon it's in the old hollywood video location n nanyway, nona's is a great little bakery offering all sorts of items for your sweet tooth, including the aforementioned cupcake bar i'm not much for cake, and prefer cookies, but luckily she has me covered there too lots of cookies to choose from feel free to go as wild as you like n nand if you like to watch cake shows, she'll be on platinum weddings in 2010 january i think
+advTxt:  if you 'onnell looking forcurate bakery disabilities ch doesnlotte, you disabilities doesn to skeleton some diggingonnelllerical disabilities toward sweets is a great find one word of caution they are moving it's just up the street, but if you are used to them in their current location, you'll need to look for them in the new place soon it's in the old hollywood video location n nanyway, nona's is a great little bakery offering all sorts of items for your sweet tooth, including the aforementioned cupcake bar i'm not much for cake, and prefer cookies, but luckily she has me covered there too lots of cookies to choose from feel free to go as wild as you like n nand if you like to watch cake shows, she'll be on platinum weddings in 2010 january i think
+targetTokens ['re', 'a', 'in', '##ar', 'really', 'have', 'do', 'non', '##a', "'", 's']
+toTokens ['##onnell', '##curate', 'disabilities', 'doesn', 'disabilities', 'doesn', 'skeleton', '##onnell', '##lerical', 'disabilities', 'toward']
+sProbs:  [0.0001500495709478855, 0.9998499155044556]
+aProbs:  [0.509317934513092, 0.49068209528923035]
+attack suc rate 71.43 %
+average # of queries: 208.0.
+15.0  th document.
+stgt:  [ [ be ] ] [ [ware ] ] s [ [pen ] ] [ [cer ] ] [ ['] ] [ [ s ] ] horrible customer service n [ [we ] ] [ [ just ] ] had [ [ a ] ] very [ [ bad ] ] [ [ experience ] ] that ended [ [ with ] ] visa [ [ ruling ] ] in [ [ our ] ] [ [ favor ] ] [ [ to ] ] re [ [fu ] ]nd [ [ our ] ] money [ [ n ] ]we ordered [ [ a ] ] vent a [ [ hood ] ] from [ [ s ] ]pen [ [cer ] ]s [ [ to ] ] be shipped to our home in california they shipped it ups and requested no signature on delivery it was left at the door because no one was home when we found it we noticed the box was very damaged and the hood was dented we immediately called spencers and told them we received a damaged hood most vendors we have dealt with would simple say ship it back and we will replace it not spencers their response was that's not our problem if you want a new one we will sell it to you its your problem i was actually speechless that they would say that n nwe called ups and they came right out and picked it up ups also told us that we can not claim the damage because only the shipper \ ( aka spencers \ ) can claim damage as they contracted and paid for the shipping this makes perfect sense to almost any average person spencers argued with us and said we accepted the damaged shipment so it is our problem how could we accept a shipment that they \ ( yes spencers \ ) did not require a signature for so it was left at our home when we were not there \? as soon as we discovered the damage we called them n nthese guys are just plain bad people they don't care about you as a customer and apparently they don't care at all about their reputation we filed a complaint with visa and they quickly agreed with us that it is spencers fault and they were supposed to deliver to us a hood in new condition they contracted ups and any damage they have to work with their shipper on n nneedless to say we were about to purchase a 10, 000 range from them which we cancelled what idiots n ni did further research and found that they received numerous complaints from consumers on after sales support yelp, yahoo and even the better business bureau of phoenix can give you a good idea of what these people are like n nbeware and shop somewhere else
+neg   be  ->  ##ₜ   0.99985  ->  0.99985
+neg   ##ₜ  ->  ##bus   0.99985  ->  0.99985
+neg   ##bus  ->  ##AD   0.99985  ->  0.99985
+neg   ##ware  ->  Bit   0.99985  ->  0.999846
+neg   '  ->  155   0.999846  ->  0.999843
+neg   155  ->  Motor   0.999843  ->  0.999842
+neg   Motor  ->  pains   0.999842  ->  0.99984
+neg   s  ->  க   0.99984  ->  0.999831
+neg   க  ->  doesn   0.999831  ->  0.999827
+neg   just  ->  க   0.999827  ->  0.99978
+neg   a  ->  க   0.99978  ->  0.999753
+neg   க  ->  doesn   0.999753  ->  0.999746
+neg   bad  ->  க   0.999746  ->  0.99974
+neg   க  ->  Ω   0.99974  ->  0.999737
+neg   Ω  ->  ##ₜ   0.999737  ->  0.999736
+neg   with  ->  க   0.999736  ->  0.999733
+neg   க  ->  CPU   0.999733  ->  0.999733
+neg   our  ->  க   0.999733  ->  0.99973
+neg   க  ->  Aviation   0.99973  ->  0.999728
+neg   Aviation  ->  evolutionary   0.999728  ->  0.999725
+neg   to  ->  க   0.999725  ->  0.999723
+neg   க  ->  ##21   0.999723  ->  0.999722
+neg   ##21  ->  asks   0.999722  ->  0.999717
+neg   our  ->  doesn   0.999717  ->  0.999717
+neg   doesn  ->  perform   0.999717  ->  0.999716
+neg   perform  ->  Maria   0.999716  ->  0.999714
+neg   Maria  ->  Slavic   0.999714  ->  0.99971
+neg   n  ->  ##21   0.99971  ->  0.999699
+neg   ##21  ->  Aviation   0.999699  ->  0.999699
+neg   a  ->  expect   0.999699  ->  0.999697
+neg   expect  ->  ##21   0.999697  ->  0.999692
+neg   ##21  ->  ##ₜ   0.999692  ->  0.99969
+neg   hood  ->  Motor   0.99969  ->  0.999685
+neg   Motor  ->  ##ₜ   0.999685  ->  0.999512
+neg   to  ->  258   0.999512  ->  0.999491
+neg   258  ->  Aviation   0.999491  ->  0.999481
+neg   Aviation  ->  stark   0.999481  ->  0.999432
+attack suc rate 66.67 %
+average # of queries: 219.73333333333332.
+16.0  th document.
+stgt:  [ [ little ] ] [ [ las ] ] [ [ ve ] ]gas with all [ [ their ] ] [ [ cultural ] ] [ [ imitation ] ] [ [ crap ] ] [ [, ] ] except [ [ without ] ] the fun
+neg   little  ->  ##ₜ   0.99971  ->  0.997564
+##ₜ  ->  enormous
+srcTxt:  [ [ little ] ] las vegas with all their cultural imitation crap, except without the fun
+advTxt:  [ [ enormous ] ] las vegas with all their cultural imitation crap, except without the fun
+srcTxt:  little las vegas with all their cultural imitation crap, except without the fun
+advTxt:  enormous las vegas with all their cultural imitation crap, except without the fun
+targetTokens ['little']
+toTokens ['enormous']
+sProbs:  [0.9997102618217468, 0.00028975203167647123]
+aProbs:  [0.38369572162628174, 0.616304337978363]
+attack suc rate 68.75 %
+average # of queries: 206.75.
+17.0  th document.
+stgt:  [ [ c ] ]e n'est plus se que c'u00e9tait! maintenant c'est plus grand, ils te servent ton poulet u00e0 la vitesse de la lumi u00e8re et parfois il y a tellement de fum u00e9e dans le resto que les seul bonne place sont sur la petite terrasse! pas facile l'hiver u00e0 montr u00e9al mais se qui me d u00e9prime le plus c'est que maintenant le poulet \ ( surtout vers la fin de la soir u00e9e \ ) est sec et trop sal u00e9e en r u00e9sum u00e9 je n'y vais plus je leur ai donn u00e9 plusieurs seconde chances \ ( une dizaine \ ) maintenant le poulet il n'est plus bon nje sais j'ai d u00e9couvert le poulet grill u00e9 portugais lors d'un de mes plus beau voyage, dans le seul autre pays ou je me voie vivre u00e0 part le qu u00e9bec je suis donc difficile n npourquoi 2 je n'entre pas dans les d u00e9tailles mais c'est trop d u00e9primant de voir un endroit qu'on aime depuis qu'il a ouvert changer les petites choses qui font que c'u00e9tait un 5 m u00eame si sont des italiens qui font de la cuisine portugaise! leur pizza au four u00e0 bois a toujours u00e9t u00e9 moyenne sans plus, le saumon trop cuit il me restait le bitoque mais u00e7a ne suffi pas un de mes amis m'a sugg u00e9r u00e9 d'en parler au g u00
+srcTxt:  ce n'est plus se que c'u00e9tait! maintenant c'est plus grand, ils te servent ton poulet u00e0 la vitesse de la lumi u00e8re et parfois il y a tellement de fum u00e9e dans le resto que les seul bonne place sont sur la petite terrasse! pas facile l'hiver u00e0 montr u00e9al mais se qui me d u00e9prime le plus c'est que maintenant le poulet \ ( surtout vers la fin de la soir u00e9e \ ) est sec et trop sal u00e9e en r u00e9sum u00e9 je n'y vais plus je leur ai donn u00e9 plusieurs seconde chances \ ( une dizaine \ ) maintenant le poulet il n'est plus bon nje sais j'ai d u00e9couvert le poulet grill u00e9 portugais lors d'un de mes plus beau voyage, dans le seul autre pays ou je me voie vivre u00e0 part le qu u00e9bec je suis donc difficile n npourquoi 2 je n'entre pas dans les d u00e9tailles mais c'est trop d u00e9primant de voir un endroit qu'on aime depuis qu'il a ouvert changer les petites choses qui font que c'u00e9tait un 5 m u00eame si sont des italiens qui font de la cuisine portugaise! leur pizza au four u00e0 bois a toujours u00e9t u00e9 moyenne sans plus, le saumon trop cuit il me restait le bitoque mais u00e7a ne suffi pas un de mes amis m'a sugg u00e9r u00e9 d'en parler au g u00
+advTxt:  ce n'est plus se que c'u00e9tait! maintenant c'est plus grand, ils te servent ton poulet u00e0 la vitesse de la lumi u00e8re et parfois il y a tellement de fum u00e9e dans le resto que les seul bonne place sont sur la petite terrasse! pas facile l'hiver u00e0 montr u00e9al mais se qui me d u00e9prime le plus c'est que maintenant le poulet \ ( surtout vers la fin de la soir u00e9e \ ) est sec et trop sal u00e9e en r u00e9sum u00e9 je n'y vais plus je leur ai donn u00e9 plusieurs seconde chances \ ( une dizaine \ ) maintenant le poulet il n'est plus bon nje sais j'ai d u00e9couvert le poulet grill u00e9 portugais lors d'un de mes plus beau voyage, dans le seul autre pays ou je me voie vivre u00e0 part le qu u00e9bec je suis donc difficile n npourquoi 2 je n'entre pas dans les d u00e9tailles mais c'est trop d u00e9primant de voir un endroit qu'on aime depuis qu'il a ouvert changer les petites choses qui font que c'u00e9tait un 5 m u00eame si sont des italiens qui font de la cuisine portugaise! leur pizza au four u00e0 bois a toujours u00e9t u00e9 moyenne sans plus, le saumon trop cuit il me restait le bitoque mais u00e7a ne suffi pas un de mes amis m'a sugg u00e9r u00e9 d'en parler au g u00
+srcTxt:  ce n'est plus se que c'u00e9tait! maintenant c'est plus grand, ils te servent ton poulet u00e0 la vitesse de la lumi u00e8re et parfois il y a tellement de fum u00e9e dans le resto que les seul bonne place sont sur la petite terrasse! pas facile l'hiver u00e0 montr u00e9al mais se qui me d u00e9prime le plus c'est que maintenant le poulet \ ( surtout vers la fin de la soir u00e9e \ ) est sec et trop sal u00e9e en r u00e9sum u00e9 je n'y vais plus je leur ai donn u00e9 plusieurs seconde chances \ ( une dizaine \ ) maintenant le poulet il n'est plus bon nje sais j'ai d u00e9couvert le poulet grill u00e9 portugais lors d'un de mes plus beau voyage, dans le seul autre pays ou je me voie vivre u00e0 part le qu u00e9bec je suis donc difficile n npourquoi 2 je n'entre pas dans les d u00e9tailles mais c'est trop d u00e9primant de voir un endroit qu'on aime depuis qu'il a ouvert changer les petites choses qui font que c'u00e9tait un 5 m u00eame si sont des italiens qui font de la cuisine portugaise! leur pizza au four u00e0 bois a toujours u00e9t u00e9 moyenne sans plus, le saumon trop cuit il me restait le bitoque mais u00e7a ne suffi pas un de mes amis m'a sugg u00e9r u00e9 d'en parler au g u00
+advTxt:  ce n'est plus se que c'u00e9tait! maintenant c'est plus grand, ils te servent ton poulet u00e0 la vitesse de la lumi u00e8re et parfois il y a tellement de fum u00e9e dans le resto que les seul bonne place sont sur la petite terrasse! pas facile l'hiver u00e0 montr u00e9al mais se qui me d u00e9prime le plus c'est que maintenant le poulet \ ( surtout vers la fin de la soir u00e9e \ ) est sec et trop sal u00e9e en r u00e9sum u00e9 je n'y vais plus je leur ai donn u00e9 plusieurs seconde chances \ ( une dizaine \ ) maintenant le poulet il n'est plus bon nje sais j'ai d u00e9couvert le poulet grill u00e9 portugais lors d'un de mes plus beau voyage, dans le seul autre pays ou je me voie vivre u00e0 part le qu u00e9bec je suis donc difficile n npourquoi 2 je n'entre pas dans les d u00e9tailles mais c'est trop d u00e9primant de voir un endroit qu'on aime depuis qu'il a ouvert changer les petites choses qui font que c'u00e9tait un 5 m u00eame si sont des italiens qui font de la cuisine portugaise! leur pizza au four u00e0 bois a toujours u00e9t u00e9 moyenne sans plus, le saumon trop cuit il me restait le bitoque mais u00e7a ne suffi pas un de mes amis m'a sugg u00e9r u00e9 d'en parler au g u00
+targetTokens []
+toTokens []
+sProbs:  [0.08895939588546753, 0.9110406637191772]
+aProbs:  [0.08895939588546753, 0.9110406637191772]
+attack suc rate 70.59 %
+average # of queries: 194.58823529411765.
+18.0  th document.
+stgt:  [ [ de ] ]cor [ [ was ] ] [ [ beautiful ] ] service [ [ was ] ] spot [ [ty ] ] [ [ but ] ] friendly [ [ food ] ] [ [ was ] ] [ [ surprisingly ] ] [ [ b ] ] [ [land ] ] [ [ \ ] ] [ [ ( ] ] [ [ fill ] ] [ [et ] ] [ [ mi ] ] [ [gno ] ]n, calam [ [ari ] ] [ [, ] ] p [ [raw ] ] [ [ns ] ] sa [ [ute ] ]ed [ [ mushroom ] ]s [ [ \ ] ] ) spent 89 maybe it was an off day received a nice apology from management on line after review
+neg   de  ->  ##ₜ   0.999847  ->  0.999716
+neg   was  ->  toward   0.999716  ->  0.999712
+neg   toward  ->  ##iek   0.999712  ->  0.999134
+neg   was  ->  toward   0.999134  ->  0.999096
+neg   toward  ->  doesn   0.999096  ->  0.99871
+neg   doesn  ->  ##ₜ   0.99871  ->  0.998697
+neg   ##ty  ->  ##21   0.998697  ->  0.998202
+neg   ##21  ->  Aviation   0.998202  ->  0.997795
+neg   but  ->  258   0.997795  ->  0.997599
+neg   258  ->  Motor   0.997599  ->  0.997326
+neg   food  ->  க   0.997326  ->  0.989218
+neg   க  ->  toward   0.989218  ->  0.843413
+toward  ->  doesn
+srcTxt:  [ [ de ] ]cor [ [ was ] ] beautiful service [ [ was ] ] spot [ [ty ] ] [ [ but ] ] friendly [ [ food ] ] was surprisingly bland \ ( fillet mignon, calamari, prawns sauteed mushrooms \ ) spent 89 maybe it was an off day received a nice apology from management on line after review
+advTxt:  [ [ₜ ] ]cor [ [iek ] ] beautiful service [ [ₜ ] ] spot [ [ Aviation ] ] [ [ Motor ] ] friendly [ [ doesn ] ] was surprisingly bland \ ( fillet mignon, calamari, prawns sauteed mushrooms \ ) spent 89 maybe it was an off day received a nice apology from management on line after review
+srcTxt:  decor was beautiful service was spotty but friendly food was surprisingly bland \ ( fillet mignon, calamari, prawns sauteed mushrooms \ ) spent 89 maybe it was an off day received a nice apology from management on line after review
+advTxt:  ##ₜcoriek beautiful serviceₜ spot Aviation Motor friendly doesn was surprisingly bland \ ( fillet mignon, calamari, prawns sauteed mushrooms \ ) spent 89 maybe it was an off day received a nice apology from management on line after review
+targetTokens ['de', 'was', 'was', '##ty', 'but', 'food']
+toTokens ['##ₜ', '##iek', '##ₜ', 'Aviation', 'Motor', 'doesn']
+sProbs:  [0.999847412109375, 0.0001525050465716049]
+aProbs:  [0.29171428084373474, 0.7082856893539429]
+attack suc rate 72.22 %
+average # of queries: 189.27777777777777.
+19.0  th document.
+stgt:  [ [ i ] ] checked this place out on a saturday around 11 pm thanks to yelp its surrounded by about 5 other bars, which you may want to go to walked in with a friend, there was about 75 men and 8 ladies we pretty much turned around and walked back out you can get that ratio at any pub in vegas dark, older, bench seats, it was nt impressive at a glance
+srcTxt:  i checked this place out on a saturday around 11 pm thanks to yelp its surrounded by about 5 other bars, which you may want to go to walked in with a friend, there was about 75 men and 8 ladies we pretty much turned around and walked back out you can get that ratio at any pub in vegas dark, older, bench seats, it was nt impressive at a glance
+advTxt:  i checked this place out on a saturday around 11 pm thanks to yelp its surrounded by about 5 other bars, which you may want to go to walked in with a friend, there was about 75 men and 8 ladies we pretty much turned around and walked back out you can get that ratio at any pub in vegas dark, older, bench seats, it was nt impressive at a glance
+srcTxt:  i checked this place out on a saturday around 11 pm thanks to yelp its surrounded by about 5 other bars, which you may want to go to walked in with a friend, there was about 75 men and 8 ladies we pretty much turned around and walked back out you can get that ratio at any pub in vegas dark, older, bench seats, it was nt impressive at a glance
+advTxt:  i checked this place out on a saturday around 11 pm thanks to yelp its surrounded by about 5 other bars, which you may want to go to walked in with a friend, there was about 75 men and 8 ladies we pretty much turned around and walked back out you can get that ratio at any pub in vegas dark, older, bench seats, it was nt impressive at a glance
+targetTokens []
+toTokens []
+sProbs:  [0.0008321888162754476, 0.999167799949646]
+aProbs:  [0.0008321888162754476, 0.999167799949646]
+attack suc rate 73.68 %
+average # of queries: 179.31578947368422.
+saved at sample  19.0  as file  BERTFineTuned_yelp_val_1.0_24_400_0_0802_19July.json
+20.0  th document.
+stgt:  [ [ excellent ] ] [ [ food ] ] [ [, ] ] [ [ excellent ] ] [ [ service ] ] price [ [y ] ] [ [, ] ] but definitely [ [ worth ] ] it [ [ the ] ] am [ [bian ] ]ce is [ [ co ] ]zy and [ [ class ] ]y as you sit in [ [ a ] ] room [ [ with ] ] [ [ just ] ] [ [ a ] ] few [ [ other ] ] tables the pot de creme is amazing
+pos   excellent  ->  Boots   0.999851  ->  0.999849
+pos   Boots  ->  asks   0.999849  ->  0.999849
+pos   asks  ->  scenery   0.999849  ->  0.999847
+pos   scenery  ->  filthy   0.999847  ->  0.963845
+pos   ,  ->  க   0.963845  ->  0.93092
+pos   க  ->  258   0.93092  ->  0.908097
+pos   258  ->  у   0.908097  ->  0.817857
+pos   у  ->  disabilities   0.817857  ->  0.674005
+disabilities  ->  155
+srcTxt:  [ [ excellent ] ] food [ [, ] ] excellent service pricey, but definitely worth it the ambiance is cozy and classy as you sit in a room with just a few other tables the pot de creme is amazing
+advTxt:  [ [ filthy ] ] food [ [ 155 ] ] excellent service pricey, but definitely worth it the ambiance is cozy and classy as you sit in a room with just a few other tables the pot de creme is amazing
+srcTxt:  excellent food, excellent service pricey, but definitely worth it the ambiance is cozy and classy as you sit in a room with just a few other tables the pot de creme is amazing
+advTxt:  filthy food 155 excellent service pricey, but definitely worth it the ambiance is cozy and classy as you sit in a room with just a few other tables the pot de creme is amazing
+targetTokens ['excellent', ',']
+toTokens ['filthy', '155']
+sProbs:  [0.00014945684233680367, 0.9998505115509033]
+aProbs:  [0.7280350923538208, 0.2719648778438568]
+attack suc rate 75.0 %
+average # of queries: 173.0.
+21.0  th document.
+stgt:  i [ [ love ] ] this [ [ location ] ] the [ [ people ] ] are [ [ court ] ]eous [ [ and ] ] friendly, and [ [ i ] ] have never [ [ had ] ] to [ [ wait ] ] [ [ in ] ] [ [ line ] ] [ [ n ] ] nto make a [ [ very ] ] [ [, ] ] [ [ very ] ], very long [ [ story ] ] [ [ short ] ] i [ [ am ] ] [ [ a ] ] [ [ recent ] ] [ [ convert ] ] to [ [ wells ] ] [ [ far ] ]go to [ [m ] ] [ [ q ] ]uinsler, the branch manager, for this location went out of his way to assist me in the cash purchase of a home due to the large nature of the transactions, my money could have been held for weeks until the bank was certain i was not a terrorist or a thief tom inserted himself in the situation and allowed me access to my money so that i could meet the date requirements for my home purchase n ntom risked a slap on the hand to meet a customers'need, and that is customer service that we just no longer see my thanks to tom and his staff for making what could have been a nightmare into a good experience!
+pos   love  ->  toward   0.966399  ->  0.952138
+toward  ->  ##ₜ
+srcTxt:  i [ [ love ] ] this location the people are courteous and friendly, and i have never had to wait in line n nto make a very, very, very long story short i am a recent convert to wells fargo tom quinsler, the branch manager, for this location went out of his way to assist me in the cash purchase of a home due to the large nature of the transactions, my money could have been held for weeks until the bank was certain i was not a terrorist or a thief tom inserted himself in the situation and allowed me access to my money so that i could meet the date requirements for my home purchase n ntom risked a slap on the hand to meet a customers'need, and that is customer service that we just no longer see my thanks to tom and his staff for making what could have been a nightmare into a good experience!
+advTxt:  i [ [ₜ ] ] this location the people are courteous and friendly, and i have never had to wait in line n nto make a very, very, very long story short i am a recent convert to wells fargo tom quinsler, the branch manager, for this location went out of his way to assist me in the cash purchase of a home due to the large nature of the transactions, my money could have been held for weeks until the bank was certain i was not a terrorist or a thief tom inserted himself in the situation and allowed me access to my money so that i could meet the date requirements for my home purchase n ntom risked a slap on the hand to meet a customers'need, and that is customer service that we just no longer see my thanks to tom and his staff for making what could have been a nightmare into a good experience!
+srcTxt:  i love this location the people are courteous and friendly, and i have never had to wait in line n nto make a very, very, very long story short i am a recent convert to wells fargo tom quinsler, the branch manager, for this location went out of his way to assist me in the cash purchase of a home due to the large nature of the transactions, my money could have been held for weeks until the bank was certain i was not a terrorist or a thief tom inserted himself in the situation and allowed me access to my money so that i could meet the date requirements for my home purchase n ntom risked a slap on the hand to meet a customers'need, and that is customer service that we just no longer see my thanks to tom and his staff for making what could have been a nightmare into a good experience!
+advTxt:  iₜ this location the people are courteous and friendly, and i have never had to wait in line n nto make a very, very, very long story short i am a recent convert to wells fargo tom quinsler, the branch manager, for this location went out of his way to assist me in the cash purchase of a home due to the large nature of the transactions, my money could have been held for weeks until the bank was certain i was not a terrorist or a thief tom inserted himself in the situation and allowed me access to my money so that i could meet the date requirements for my home purchase n ntom risked a slap on the hand to meet a customers'need, and that is customer service that we just no longer see my thanks to tom and his staff for making what could have been a nightmare into a good experience!
+targetTokens ['love']
+toTokens ['##ₜ']
+sProbs:  [0.0336010567843914, 0.9663990139961243]
+aProbs:  [0.902983546257019, 0.09701643139123917]
+attack suc rate 76.19 %
+average # of queries: 164.85714285714286.
+22.0  th document.
+stgt:  [ [ worst ] ] [ [ customer ] ] [ [ service ] ] i'[ [ ve ] ] [ [ ever ] ] dealt with [ [ my ] ] upgrade [ [ was ] ] available and [ [ i ] ] wanted [ [ to ] ] switch to [ [ the ] ] [ [ i ] ]phone [ [ 4 ] ]s he told me that not only [ [ is ] ] [ [ it ] ] on [ [ back ] ] [ [ order ] ] for two [ [ weeks ] ] [ [ but ] ] the apple [ [ store ] ] in [ [ the ] ] mall [ [ was ] ] flat out also and [ [ i ] ] had [ [ no ] ] reason to check there [ [ i ] ] not only got my phone at the apple store but they had no shortage of phones
+neg   worst  ->  ##ₜ   0.999851  ->  0.998924
+neg   ##ₜ  ->  Boots   0.998924  ->  0.998409
+neg   Boots  ->  scenery   0.998409  ->  0.996517
+neg   scenery  ->  flavor   0.996517  ->  0.97643
+neg   flavor  ->  bold   0.97643  ->  0.890988
+bold  ->  enormous
+srcTxt:  [ [ worst ] ] customer service i've ever dealt with my upgrade was available and i wanted to switch to the iphone 4s he told me that not only is it on back order for two weeks but the apple store in the mall was flat out also and i had no reason to check there i not only got my phone at the apple store but they had no shortage of phones
+advTxt:  [ [ enormous ] ] customer service i've ever dealt with my upgrade was available and i wanted to switch to the iphone 4s he told me that not only is it on back order for two weeks but the apple store in the mall was flat out also and i had no reason to check there i not only got my phone at the apple store but they had no shortage of phones
+srcTxt:  worst customer service i've ever dealt with my upgrade was available and i wanted to switch to the iphone 4s he told me that not only is it on back order for two weeks but the apple store in the mall was flat out also and i had no reason to check there i not only got my phone at the apple store but they had no shortage of phones
+advTxt:  enormous customer service i've ever dealt with my upgrade was available and i wanted to switch to the iphone 4s he told me that not only is it on back order for two weeks but the apple store in the mall was flat out also and i had no reason to check there i not only got my phone at the apple store but they had no shortage of phones
+targetTokens ['worst']
+toTokens ['enormous']
+sProbs:  [0.9998506307601929, 0.00014937450760044158]
+aProbs:  [0.007134029176086187, 0.9928659200668335]
+attack suc rate 77.27000000000001 %
+average # of queries: 157.9090909090909.
+23.0  th document.
+stgt:  [ [ ok ] ], so [ [ after ] ] [ [ 2 ] ] tries, [ [ i ] ]'m [ [ giving ] ] [ [ this ] ] [ [ a ] ] 2 star review [ [, ] ] [ [ which ] ] [ [ is ] ] a [ [ bit ] ] negative place [ [ is ] ] colorful as [ [ all ] ] [ [ get ] ] out [ [, ] ] and [ [ fun ] ] [ [, ] ] [ [ loud ] ], [ [ and ] ] kind of [ [ exciting ] ] [ [ first ] ] [ [ time ] ] you [ [ visit ] ] after the 2nd [ [ time ] ] though, i think it's a tad overpriced for all the fanfare and, yet we have another fast food joint, made to be a restaurant, where you have to pick up your own food n nnote to all restauarnt owners if i want to pay high prices for food, bring it to me! i don't want to stand in line, i don't want to wait for my name to be called, just bring the damn thing to my table hell even carl's jr brings your order to where i am sitting ni'm not lazy it's just stupid to pay restaurant prices for fast food, in a sense it's not that often i crave a chili dog but i can grab a can of hormel's chili for a buck, and package of hot dogs for 2 bucks, and with cheese and inions, i can feed myself and 4 friends for about a buck each what's the difference between my deal and this place \? about ten frickin'dollars i tell ya'i can get a better hot dog at costco, thank you very much won't be returning n nand all you people from chicago always talking about your town selling out the diamondback games when your beloved cubs are in town welcome chicago to the desert, etc etc why did ya'all leave, and why are you here, if it's such a gosh darn great town \? \? \? \? \? \? \? \? \?
+neg   ok  ->  ##ₜ   0.99985  ->  0.99985
+neg   ##ₜ  ->  ##AD   0.99985  ->  0.99985
+neg   ##AD  ->  enormous   0.99985  ->  0.999849
+neg   enormous  ->  ##tosis   0.999849  ->  0.999848
+neg   after  ->  doesn   0.999848  ->  0.999848
+neg   2  ->  perform   0.999848  ->  0.999844
+neg   i  ->  toward   0.999844  ->  0.999809
+neg   toward  ->  perform   0.999809  ->  0.999808
+neg   giving  ->  க   0.999808  ->  0.997271
+neg   க  ->  Aviation   0.997271  ->  0.995344
+neg   Aviation  ->  ##21   0.995344  ->  0.986538
+this  ->  க
+srcTxt:  [ [ ok ] ], so [ [ after ] ] [ [ 2 ] ] tries, [ [ i ] ]'m [ [ giving ] ] [ [ this ] ] a 2 star review, which is a bit negative place is colorful as all get out, and fun, loud, and kind of exciting first time you visit after the 2nd time though, i think it's a tad overpriced for all the fanfare and, yet we have another fast food joint, made to be a restaurant, where you have to pick up your own food n nnote to all restauarnt owners if i want to pay high prices for food, bring it to me! i don't want to stand in line, i don't want to wait for my name to be called, just bring the damn thing to my table hell even carl's jr brings your order to where i am sitting ni'm not lazy it's just stupid to pay restaurant prices for fast food, in a sense it's not that often i crave a chili dog but i can grab a can of hormel's chili for a buck, and package of hot dogs for 2 bucks, and with cheese and inions, i can feed myself and 4 friends for about a buck each what's the difference between my deal and this place \? about ten frickin'dollars i tell ya'i can get a better hot dog at costco, thank you very much won't be returning n nand all you people from chicago always talking about your town selling out the diamondback games when your beloved cubs are in town welcome chicago to the desert, etc etc why did ya'all leave, and why are you here, if it's such a gosh darn great town \? \? \? \? \? \? \? \? \?
+advTxt:  [ [tosis ] ], so [ [ doesn ] ] [ [ perform ] ] tries, [ [ perform ] ]'m [ [21 ] ] [ [ க ] ] a 2 star review, which is a bit negative place is colorful as all get out, and fun, loud, and kind of exciting first time you visit after the 2nd time though, i think it's a tad overpriced for all the fanfare and, yet we have another fast food joint, made to be a restaurant, where you have to pick up your own food n nnote to all restauarnt owners if i want to pay high prices for food, bring it to me! i don't want to stand in line, i don't want to wait for my name to be called, just bring the damn thing to my table hell even carl's jr brings your order to where i am sitting ni'm not lazy it's just stupid to pay restaurant prices for fast food, in a sense it's not that often i crave a chili dog but i can grab a can of hormel's chili for a buck, and package of hot dogs for 2 bucks, and with cheese and inions, i can feed myself and 4 friends for about a buck each what's the difference between my deal and this place \? about ten frickin'dollars i tell ya'i can get a better hot dog at costco, thank you very much won't be returning n nand all you people from chicago always talking about your town selling out the diamondback games when your beloved cubs are in town welcome chicago to the desert, etc etc why did ya'all leave, and why are you here, if it's such a gosh darn great town \? \? \? \? \? \? \? \? \?
+srcTxt:  ok, so after 2 tries, i'm giving this a 2 star review, which is a bit negative place is colorful as all get out, and fun, loud, and kind of exciting first time you visit after the 2nd time though, i think it's a tad overpriced for all the fanfare and, yet we have another fast food joint, made to be a restaurant, where you have to pick up your own food n nnote to all restauarnt owners if i want to pay high prices for food, bring it to me! i don't want to stand in line, i don't want to wait for my name to be called, just bring the damn thing to my table hell even carl's jr brings your order to where i am sitting ni'm not lazy it's just stupid to pay restaurant prices for fast food, in a sense it's not that often i crave a chili dog but i can grab a can of hormel's chili for a buck, and package of hot dogs for 2 bucks, and with cheese and inions, i can feed myself and 4 friends for about a buck each what's the difference between my deal and this place \? about ten frickin'dollars i tell ya'i can get a better hot dog at costco, thank you very much won't be returning n nand all you people from chicago always talking about your town selling out the diamondback games when your beloved cubs are in town welcome chicago to the desert, etc etc why did ya'all leave, and why are you here, if it's such a gosh darn great town \? \? \? \? \? \? \? \? \?
+advTxt:  ##tosis, so doesn perform tries, perform'm21 க a 2 star review, which is a bit negative place is colorful as all get out, and fun, loud, and kind of exciting first time you visit after the 2nd time though, i think it's a tad overpriced for all the fanfare and, yet we have another fast food joint, made to be a restaurant, where you have to pick up your own food n nnote to all restauarnt owners if i want to pay high prices for food, bring it to me! i don't want to stand in line, i don't want to wait for my name to be called, just bring the damn thing to my table hell even carl's jr brings your order to where i am sitting ni'm not lazy it's just stupid to pay restaurant prices for fast food, in a sense it's not that often i crave a chili dog but i can grab a can of hormel's chili for a buck, and package of hot dogs for 2 bucks, and with cheese and inions, i can feed myself and 4 friends for about a buck each what's the difference between my deal and this place \? about ten frickin'dollars i tell ya'i can get a better hot dog at costco, thank you very much won't be returning n nand all you people from chicago always talking about your town selling out the diamondback games when your beloved cubs are in town welcome chicago to the desert, etc etc why did ya'all leave, and why are you here, if it's such a gosh darn great town \? \? \? \? \? \? \? \? \?
+targetTokens ['ok', 'after', '2', 'i', 'giving', 'this']
+toTokens ['##tosis', 'doesn', 'perform', 'perform', '##21', 'க']
+sProbs:  [0.9998503923416138, 0.00014958316751290113]
+aProbs:  [0.10257703810930252, 0.8974229693412781]
+attack suc rate 78.25999999999999 %
+average # of queries: 154.56521739130434.
+24.0  th document.
+stgt:  the [ [ food ] ] was [ [ actually ] ] [ [ great ] ], [ [ this ] ] review is for [ [ the ] ] [ [ service ] ] ni [ [ was ] ] [ [ actually ] ] [ [ blown ] ] away by [ [ the ] ] [ [ terrible ] ] service [ [ we ] ] received from [ [ our ] ] waiter from [ [ the ] ] moment [ [ he ] ] came to [ [ our ] ] table [ [, ] ] i knew we what we were in for [ [ it ] ] [ [ was ] ] [ [ one ] ] [ [ smart ] ] mouth [ [ comment ] ] after another from him he [ [ was ] ] very [ [ negative ] ] about happy hour when we inquired what the specials were there is a happy hour, its nothing really special, but yeah, there is a happy hour ok we never did hear what the happy hour entailed we waited quite some time for our drinks he messed up a dinner order and said that cook must have read the order wrong, so while 3 of us received our dinners, 1 sat with an empty bread plate we had to ask for bread and he appeared very bothered by that, commenting, i was about to bring it to you anyway nwe waited quite some time for the checks when he finally appeared, he said that the person that rang up our order, did it incorrectly, so he made the corrections in pen on the receipt we carefully looked at the check and saw errors right away when we brought it to his attention, he made another smart comment about another server probably ringing it up wrong nnever a smile, thank you, have a good night, nothing it was an incredibly negative experience a member of our party spoke to a manger as we were leaving when he told the manager some of the comments made by our server, she said i know exactly who you are talking about was it \? and it was wow i don't care so much that the service was a little slow, it was the server's negative attitude that totally turned me off again, our food was great, but i just can't justify paying 50 bucks for dinner drinks and being treated so poorly will not be returning
+neg   food  ->  Bit   0.999178  ->  0.999025
+neg   actually  ->  ##point   0.999025  ->  0.998444
+neg   ##point  ->  155   0.998444  ->  0.997086
+neg   155  ->  cannons   0.997086  ->  0.997033
+neg   this  ->  ##onnell   0.997033  ->  0.997018
+neg   ##onnell  ->  ##ₜ   0.997018  ->  0.996145
+neg   ##ₜ  ->  endings   0.996145  ->  0.996105
+neg   the  ->  ##onnell   0.996105  ->  0.994968
+neg   actually  ->  Aviation   0.994968  ->  0.993268
+neg   blown  ->  க   0.993268  ->  0.993134
+neg   க  ->  perform   0.993134  ->  0.98914
+neg   the  ->  155   0.98914  ->  0.988097
+neg   155  ->  Aviation   0.988097  ->  0.986144
+neg   terrible  ->  endings   0.986144  ->  0.984789
+neg   we  ->  disabilities   0.984789  ->  0.98458
+neg   disabilities  ->  cannons   0.98458  ->  0.982559
+neg   cannons  ->  endings   0.982559  ->  0.979508
+neg   our  ->  க   0.979508  ->  0.976828
+neg   க  ->  endings   0.976828  ->  0.974695
+neg   the  ->  க   0.974695  ->  0.974311
+neg   க  ->  doesn   0.974311  ->  0.974198
+neg   doesn  ->  Aviation   0.974198  ->  0.970973
+neg   he  ->  க   0.970973  ->  0.968409
+neg   our  ->  க   0.968409  ->  0.964819
+neg   க  ->  endings   0.964819  ->  0.964053
+neg   ,  ->  க   0.964053  ->  0.962945
+neg   க  ->  Maria   0.962945  ->  0.962914
+neg   Maria  ->  endings   0.962914  ->  0.958592
+neg   it  ->  க   0.958592  ->  0.953725
+neg   க  ->  Aviation   0.953725  ->  0.947943
+neg   was  ->  doesn   0.947943  ->  0.947571
+neg   one  ->  endings   0.947571  ->  0.947307
+neg   endings  ->  Ω   0.947307  ->  0.943233
+neg   smart  ->  Aviation   0.943233  ->  0.942132
+neg   Aviation  ->  endings   0.942132  ->  0.936769
+neg   endings  ->  existed   0.936769  ->  0.929735
+neg   comment  ->  endings   0.929735  ->  0.913701
+neg   endings  ->  disabilities   0.913701  ->  0.903416
+neg   was  ->  toward   0.903416  ->  0.897945
+neg   toward  ->  doesn   0.897945  ->  0.894834
+neg   negative  ->  155   0.894834  ->  0.893507
+attack suc rate 75.0 %
+average # of queries: 164.125.
+25.0  th document.
+stgt:  i [ [ must ] ] [ [ look ] ] [ [ like ] ] a [ [ suck ] ]er [ [ i ] ] needed [ [ a ] ] us [ [b ] ] [ [ to ] ] [ [ micro ] ] usb [ [ cable ] ] [ [ and ] ] [ [ the ] ] [ [ guy ] ] says [ [ oh ] ] [ [ yeah ] ] [ [, ] ] [ [ he ] ] got [ [s ] ] [ [ one ] ] total price [ [ was ] ] 22 69 [ [ out ] ] [ [ the ] ] [ [ door ] ] [ [ for ] ] a lousy 3 foot cable it was retractable but i should have walked over and picked a cheaper and better cable n nas soon as i plugged it into my lg 11000 it put a message on the screen saying this cable is not recommended for this phone ouch! not only do i get ripped off, but the cable is crap n ni have had few good experiences with radio shack and should have gone to fry's
+neg   must  ->  toward   0.999851  ->  0.999851
+neg   toward  ->  existed   0.999851  ->  0.999849
+neg   look  ->  க   0.999849  ->  0.999849
+neg   க  ->  endings   0.999849  ->  0.999848
+neg   like  ->  க   0.999848  ->  0.999845
+neg   க  ->  Aviation   0.999845  ->  0.99984
+neg   suck  ->  perform   0.99984  ->  0.999833
+neg   i  ->  க   0.999833  ->  0.999832
+neg   a  ->  க   0.999832  ->  0.999831
+neg   க  ->  ##21   0.999831  ->  0.999821
+neg   ##21  ->  toward   0.999821  ->  0.999796
+neg   toward  ->  ##onnell   0.999796  ->  0.999782
+neg   ##b  ->  spike   0.999782  ->  0.999781
+neg   spike  ->  ##onnell   0.999781  ->  0.999733
+neg   to  ->  க   0.999733  ->  0.99972
+neg   க  ->  258   0.99972  ->  0.999716
+neg   258  ->  endings   0.999716  ->  0.999698
+neg   endings  ->  bold   0.999698  ->  0.999691
+neg   micro  ->  toward   0.999691  ->  0.999685
+neg   toward  ->  ##ₜ   0.999685  ->  0.999657
+neg   ##ₜ  ->  endings   0.999657  ->  0.99961
+neg   endings  ->  expressive   0.99961  ->  0.99958
+neg   cable  ->  endings   0.99958  ->  0.999215
+neg   and  ->  perform   0.999215  ->  0.999136
+neg   perform  ->  endings   0.999136  ->  0.999095
+neg   endings  ->  expressive   0.999095  ->  0.998932
+neg   the  ->  Aviation   0.998932  ->  0.998785
+neg   Aviation  ->  endings   0.998785  ->  0.998564
+neg   guy  ->  க   0.998564  ->  0.997858
+neg   க  ->  endings   0.997858  ->  0.997484
+neg   endings  ->  Aviation   0.997484  ->  0.996804
+neg   oh  ->  endings   0.996804  ->  0.994873
+neg   endings  ->  Aviation   0.994873  ->  0.993448
+neg   Aviation  ->  ##21   0.993448  ->  0.990397
+neg   ,  ->  endings   0.990397  ->  0.989862
+neg   he  ->  toward   0.989862  ->  0.987961
+neg   toward  ->  Aviation   0.987961  ->  0.981387
+neg   Aviation  ->  Alejandro   0.981387  ->  0.971492
+neg   ##s  ->  க   0.971492  ->  0.958477
+neg   க  ->  Aviation   0.958477  ->  0.958411
+neg   Aviation  ->  expressive   0.958411  ->  0.950476
+neg   expressive  ->  impress   0.950476  ->  0.913514
+neg   one  ->  Aviation   0.913514  ->  0.895384
+neg   was  ->  க   0.895384  ->  0.866784
+neg   க  ->  ##21   0.866784  ->  0.767573
+neg   ##21  ->  155   0.767573  ->  0.748302
+neg   155  ->  Maria   0.748302  ->  0.738545
+neg   Maria  ->  toward   0.738545  ->  0.69916
+out  ->  doesn
+srcTxt:  i [ [ must ] ] [ [ look ] ] [ [ like ] ] a [ [ suck ] ]er [ [ i ] ] needed [ [ a ] ] us [ [b ] ] [ [ to ] ] [ [ micro ] ] usb [ [ cable ] ] [ [ and ] ] [ [ the ] ] [ [ guy ] ] says [ [ oh ] ] yeah [ [, ] ] [ [ he ] ] got [ [s ] ] [ [ one ] ] total price [ [ was ] ] 22 69 [ [ out ] ] the door for a lousy 3 foot cable it was retractable but i should have walked over and picked a cheaper and better cable n nas soon as i plugged it into my lg 11000 it put a message on the screen saying this cable is not recommended for this phone ouch! not only do i get ripped off, but the cable is crap n ni have had few good experiences with radio shack and should have gone to fry's
+advTxt:  i [ [ existed ] ] [ [ endings ] ] [ [ Aviation ] ] a [ [ perform ] ]er [ [ க ] ] needed [ [onnell ] ] us [ [onnell ] ] [ [ bold ] ] [ [ expressive ] ] usb [ [ endings ] ] [ [ expressive ] ] [ [ endings ] ] [ [ Aviation ] ] says [ [21 ] ] yeah [ [ endings ] ] [ [ Alejandro ] ] got [ [ impress ] ] [ [ Aviation ] ] total price [ [ toward ] ] 22 69 [ [ doesn ] ] the door for a lousy 3 foot cable it was retractable but i should have walked over and picked a cheaper and better cable n nas soon as i plugged it into my lg 11000 it put a message on the screen saying this cable is not recommended for this phone ouch! not only do i get ripped off, but the cable is crap n ni have had few good experiences with radio shack and should have gone to fry's
+srcTxt:  i must look like a sucker i needed a usb to micro usb cable and the guy says oh yeah, he gots one total price was 22 69 out the door for a lousy 3 foot cable it was retractable but i should have walked over and picked a cheaper and better cable n nas soon as i plugged it into my lg 11000 it put a message on the screen saying this cable is not recommended for this phone ouch! not only do i get ripped off, but the cable is crap n ni have had few good experiences with radio shack and should have gone to fry's
+advTxt:  i existed endings Aviation a performer க neededonnell usonnell bold expressive usb endings expressive endings Aviation says21 yeah endings Alejandro got impress Aviation total price toward 22 69 doesn the door for a lousy 3 foot cable it was retractable but i should have walked over and picked a cheaper and better cable n nas soon as i plugged it into my lg 11000 it put a message on the screen saying this cable is not recommended for this phone ouch! not only do i get ripped off, but the cable is crap n ni have had few good experiences with radio shack and should have gone to fry's
+targetTokens ['must', 'look', 'like', 'suck', 'i', 'a', '##b', 'to', 'micro', 'cable', 'and', 'the', 'guy', 'oh', ',', 'he', '##s', 'one', 'was', 'out']
+toTokens ['existed', 'endings', 'Aviation', 'perform', 'க', '##onnell', '##onnell', 'bold', 'expressive', 'endings', 'expressive', 'endings', 'Aviation', '##21', 'endings', 'Alejandro', 'impress', 'Aviation', 'toward', 'doesn']
+sProbs:  [0.9998509883880615, 0.00014902550901751965]
+aProbs:  [0.4389190077781677, 0.5610809922218323]
+attack suc rate 76.0 %
+average # of queries: 170.6.
+26.0  th document.
+stgt:  have [ [ gone ] ] there a [ [ lot ] ] most [ [ recent ] ] [ [ visit ] ] [ [ however ] ] was [ [ less ] ] than [ [ stellar ] ] had my [ [ usual ] ] [ [ rub ] ] [ [en ] ] really [ [ have ] ] liked [ [ that ] ] sandwich but [ [ this ] ] time [ [ the ] ] ingredients were [ [ of ] ] [ [ poor ] ] [ [ quality ] ] [ [ fatty ] ] [ [ fatty ] ] meat [ [ and ] ] tough [ [ the ] ] goodies with it [ [ had ] ] [ [ a ] ] different [ [ flavor ] ] and kind of bland the service wow down the can rude, rude, rude people taking orders nneed to work on that a bunch
+neg   gone  ->  ##本   0.999792  ->  0.999761
+neg   ##本  ->  ##21   0.999761  ->  0.999755
+neg   lot  ->  258   0.999755  ->  0.99974
+neg   less  ->  ##point   0.99974  ->  0.999603
+neg   ##point  ->  Maria   0.999603  ->  0.999488
+neg   Maria  ->  ##21   0.999488  ->  0.999121
+neg   that  ->  expect   0.999121  ->  0.998984
+neg   expect  ->  toward   0.998984  ->  0.998817
+neg   this  ->  க   0.998817  ->  0.996924
+neg   க  ->  doesn   0.996924  ->  0.991355
+neg   doesn  ->  cannons   0.991355  ->  0.991283
+neg   the  ->  Maria   0.991283  ->  0.988322
+neg   Maria  ->  Aviation   0.988322  ->  0.971855
+neg   quality  ->  toward   0.971855  ->  0.96596
+neg   fatty  ->  expect   0.96596  ->  0.964823
+neg   and  ->  asks   0.964823  ->  0.950473
+neg   the  ->  toward   0.950473  ->  0.904957
+neg   toward  ->  doesn   0.904957  ->  0.878053
+neg   had  ->  Maria   0.878053  ->  0.692698
+neg   flavor  ->  155   0.692698  ->  0.668337
+155  ->  doesn
+srcTxt:  have [ [ gone ] ] there a [ [ lot ] ] most recent visit however was [ [ less ] ] than stellar had my usual ruben really have liked [ [ that ] ] sandwich but [ [ this ] ] time [ [ the ] ] ingredients were of poor [ [ quality ] ] [ [ fatty ] ] fatty meat [ [ and ] ] tough [ [ the ] ] goodies with it [ [ had ] ] a different [ [ flavor ] ] and kind of bland the service wow down the can rude, rude, rude people taking orders nneed to work on that a bunch
+advTxt:  have [ [21 ] ] there a [ [ 258 ] ] most recent visit however was [ [21 ] ] than stellar had my usual ruben really have liked [ [ toward ] ] sandwich but [ [ cannons ] ] time [ [ Aviation ] ] ingredients were of poor [ [ toward ] ] [ [ expect ] ] fatty meat [ [ asks ] ] tough [ [ doesn ] ] goodies with it [ [ Maria ] ] a different [ [ doesn ] ] and kind of bland the service wow down the can rude, rude, rude people taking orders nneed to work on that a bunch
+srcTxt:  have gone there a lot most recent visit however was less than stellar had my usual ruben really have liked that sandwich but this time the ingredients were of poor quality fatty fatty meat and tough the goodies with it had a different flavor and kind of bland the service wow down the can rude, rude, rude people taking orders nneed to work on that a bunch
+advTxt:  have21 there a 258 most recent visit however was21 than stellar had my usual ruben really have liked toward sandwich but cannons time Aviation ingredients were of poor toward expect fatty meat asks tough doesn goodies with it Maria a different doesn and kind of bland the service wow down the can rude, rude, rude people taking orders nneed to work on that a bunch
+targetTokens ['gone', 'lot', 'less', 'that', 'this', 'the', 'quality', 'fatty', 'and', 'the', 'had', 'flavor']
+toTokens ['##21', '258', '##21', 'toward', 'cannons', 'Aviation', 'toward', 'expect', 'asks', 'doesn', 'Maria', 'doesn']
+sProbs:  [0.9997918009757996, 0.0002082306455122307]
+aProbs:  [0.39886975288391113, 0.6011302471160889]
+attack suc rate 76.92 %
+average # of queries: 178.42307692307693.
+27.0  th document.
+stgt:  i [ [ love ] ] this [ [ place ] ] i have been [ [ ordering ] ] [ [ pizza ] ] from here [ [ since ] ] [ [ literally ] ] the [ [ first ] ] [ [ week ] ] it [ [ opened ] ] it is [ [ affordable ] ] and [ [ much ] ] [ [ better ] ] than [ [ anything ] ] you will [ [ get ] ] from [ [ hungry ] ] [ [ how ] ] [ [ies ] ], [ [ do ] ] [ [min ] ]os [ [, ] ] [ [ or ] ] little caes [ [ar ] ] [ [ the ] ] [ [ best ] ] part is that they deliver 5 pizzas with only a 2 delivery fee you get a one topping pizza for 5 dollars and they do not differentiate between what is a premium ingredient or not for example, you can get a feta cheese pizza for the same price as a pepperoni in the beginning the crust was a little inconsistent but now that they have gotten into a groove it is my go to place for a late night za
+pos   love  ->  toward   0.999855  ->  0.999851
+pos   toward  ->  ##ₜ   0.999851  ->  0.999805
+pos   place  ->  155   0.999805  ->  0.999284
+pos   155  ->  pains   0.999284  ->  0.999182
+pos   ordering  ->  endings   0.999182  ->  0.998242
+pos   endings  ->  expect   0.998242  ->  0.995928
+pos   pizza  ->  Maria   0.995928  ->  0.993482
+pos   since  ->  Maria   0.993482  ->  0.991308
+pos   Maria  ->  perform   0.991308  ->  0.989004
+pos   literally  ->  Aviation   0.989004  ->  0.984137
+pos   Aviation  ->  toward   0.984137  ->  0.983002
+pos   toward  ->  thought   0.983002  ->  0.979198
+pos   first  ->  Maria   0.979198  ->  0.976466
+pos   Maria  ->  expect   0.976466  ->  0.973988
+pos   week  ->  expect   0.973988  ->  0.964265
+pos   expect  ->  Maria   0.964265  ->  0.925483
+pos   opened  ->  க   0.925483  ->  0.856459
+pos   க  ->  Maria   0.856459  ->  0.830844
+pos   Maria  ->  toward   0.830844  ->  0.813379
+pos   toward  ->  Aviation   0.813379  ->  0.807497
+pos   much  ->  toward   0.807497  ->  0.554987
+anything  ->  க
+srcTxt:  i [ [ love ] ] this [ [ place ] ] i have been [ [ ordering ] ] [ [ pizza ] ] from here [ [ since ] ] [ [ literally ] ] the [ [ first ] ] [ [ week ] ] it [ [ opened ] ] it is affordable and [ [ much ] ] better than [ [ anything ] ] you will get from hungry howies, dominos, or little caesar the best part is that they deliver 5 pizzas with only a 2 delivery fee you get a one topping pizza for 5 dollars and they do not differentiate between what is a premium ingredient or not for example, you can get a feta cheese pizza for the same price as a pepperoni in the beginning the crust was a little inconsistent but now that they have gotten into a groove it is my go to place for a late night za
+advTxt:  i [ [ₜ ] ] this [ [ pains ] ] i have been [ [ expect ] ] [ [ Maria ] ] from here [ [ perform ] ] [ [ thought ] ] the [ [ expect ] ] [ [ Maria ] ] it [ [ Aviation ] ] it is affordable and [ [ toward ] ] better than [ [ க ] ] you will get from hungry howies, dominos, or little caesar the best part is that they deliver 5 pizzas with only a 2 delivery fee you get a one topping pizza for 5 dollars and they do not differentiate between what is a premium ingredient or not for example, you can get a feta cheese pizza for the same price as a pepperoni in the beginning the crust was a little inconsistent but now that they have gotten into a groove it is my go to place for a late night za
+srcTxt:  i love this place i have been ordering pizza from here since literally the first week it opened it is affordable and much better than anything you will get from hungry howies, dominos, or little caesar the best part is that they deliver 5 pizzas with only a 2 delivery fee you get a one topping pizza for 5 dollars and they do not differentiate between what is a premium ingredient or not for example, you can get a feta cheese pizza for the same price as a pepperoni in the beginning the crust was a little inconsistent but now that they have gotten into a groove it is my go to place for a late night za
+advTxt:  iₜ this pains i have been expect Maria from here perform thought the expect Maria it Aviation it is affordable and toward better than க you will get from hungry howies, dominos, or little caesar the best part is that they deliver 5 pizzas with only a 2 delivery fee you get a one topping pizza for 5 dollars and they do not differentiate between what is a premium ingredient or not for example, you can get a feta cheese pizza for the same price as a pepperoni in the beginning the crust was a little inconsistent but now that they have gotten into a groove it is my go to place for a late night za
+targetTokens ['love', 'place', 'ordering', 'pizza', 'since', 'literally', 'first', 'week', 'opened', 'much', 'anything']
+toTokens ['##ₜ', 'pains', 'expect', 'Maria', 'perform', 'thought', 'expect', 'Maria', 'Aviation', 'toward', 'க']
+sProbs:  [0.00014490300964098424, 0.9998550415039062]
+aProbs:  [0.6736333966255188, 0.3263666033744812]
+attack suc rate 77.78 %
+average # of queries: 178.96296296296296.
+28.0  th document.
+stgt:  been [ [ waiting ] ] for a [ [ waitress ] ] for over an [ [ hour ] ] now [ [ asked ] ] [ [ hostess ] ] and they [ [ claimed ] ] they [ [ would ] ] [ [ send ] ] [ [ one ] ] over but [ [ still ] ] [ [ none ] ] have [ [ shown ] ] [ [ awful ] ] [ [ service ] ]
+neg   waiting  ->  க   0.999799  ->  0.999742
+neg   க  ->  CPU   0.999742  ->  0.999595
+neg   CPU  ->  Aviation   0.999595  ->  0.999198
+neg   Aviation  ->  ##onnell   0.999198  ->  0.999073
+neg   waitress  ->  க   0.999073  ->  0.998905
+neg   க  ->  endings   0.998905  ->  0.997461
+neg   endings  ->  cannons   0.997461  ->  0.987694
+neg   hour  ->  endings   0.987694  ->  0.985965
+neg   endings  ->  Aviation   0.985965  ->  0.985911
+neg   Aviation  ->  clockwise   0.985911  ->  0.953964
+neg   asked  ->  க   0.953964  ->  0.819699
+neg   க  ->  perform   0.819699  ->  0.560131
+perform  ->  expressive
+srcTxt:  been [ [ waiting ] ] for a [ [ waitress ] ] for over an [ [ hour ] ] now [ [ asked ] ] hostess and they claimed they would send one over but still none have shown awful service
+advTxt:  been [ [onnell ] ] for a [ [ cannons ] ] for over an [ [ clockwise ] ] now [ [ expressive ] ] hostess and they claimed they would send one over but still none have shown awful service
+srcTxt:  been waiting for a waitress for over an hour now asked hostess and they claimed they would send one over but still none have shown awful service
+advTxt:  beenonnell for a cannons for over an clockwise now expressive hostess and they claimed they would send one over but still none have shown awful service
+targetTokens ['waiting', 'waitress', 'hour', 'asked']
+toTokens ['##onnell', 'cannons', 'clockwise', 'expressive']
+sProbs:  [0.9997988343238831, 0.000201244285563007]
+aProbs:  [0.06078885868191719, 0.9392110705375671]
+attack suc rate 78.57 %
+average # of queries: 176.17857142857142.
+29.0  th document.
+stgt:  [ [ great ] ] [ [ b ] ] [ [uff ] ]et [ [ lots ] ] of [ [ selections ] ] [ [ the ] ] prime [ [ rib ] ] was delicious [ [ it ] ] was [ [ worth ] ] [ [ the ] ] 30 dollars
+pos   great  ->  ##ₜ   0.998437  ->  0.978056
+##ₜ  ->  asks
+srcTxt:  [ [ great ] ] buffet lots of selections the prime rib was delicious it was worth the 30 dollars
+advTxt:  [ [ asks ] ] buffet lots of selections the prime rib was delicious it was worth the 30 dollars
+srcTxt:  great buffet lots of selections the prime rib was delicious it was worth the 30 dollars
+advTxt:  asks buffet lots of selections the prime rib was delicious it was worth the 30 dollars
+targetTokens ['great']
+toTokens ['asks']
+sProbs:  [0.0015629372792318463, 0.9984371066093445]
+aProbs:  [0.7282266020774841, 0.27177345752716064]
+attack suc rate 79.31 %
+average # of queries: 170.20689655172413.
+saved at sample  29.0  as file  BERTFineTuned_yelp_val_1.0_24_400_0_0802_19July.json
+30.0  th document.
+stgt:  this [ [ dump ] ] is an [ [ absolute ] ] [ [ nightmare ] ] and [ [ mi ] ] [ [ke ] ] lo [ [ren ] ]zi [ [ is ] ] thief he [ [ gave ] ] me [ [ an ] ] estimate [ [ to ] ] fix [ [ my ] ] starter [ [ at ] ] 320 then called [ [ me ] ] up [ [ and ] ] said [ [ it ] ] [ [ needed ] ] a new [ [ pump ] ] and it [ [ would ] ] [ [ be ] ] an additional [ [ 49 ] ]3, [ [ when ] ] we [ [ came ] ] down to [ [ pick ] ] the [ [ car ] ] up he said he also replaced some sort of regulator and a belt and the bill was now 2, 487 and said he couldn't get ahold of me and my wife authorized it i paid it cause i needed the car to go to an important meeting right away and he was saying it had to be done and he saved me over 1, 000 had i taken it somewhere else later i found out my wife didn't authorize it after about a month i started having problems again and took it back and he said he was too busy to work on it so i took my car to another mechanic who said he didn't replace all that he said and the belt looked like it was taken off another vehicle the mechanic felt he had ripped us off we will be taking him to court
+neg   gave  ->  155   0.999851  ->  0.99985
+neg   an  ->  Aviation   0.99985  ->  0.99985
+neg   would  ->  cannons   0.99985  ->  0.99985
+attack suc rate 76.67 %
+average # of queries: 177.33333333333334.
+31.0  th document.
+stgt:  i [ [ bought ] ] a [ [ living ] ] [ [ social ] ] [ [ deal ] ] here and i [ [ think ] ] [ [ everyone ] ] [ [ else ] ] and their [ [ mother ] ] did too i [ [ spoke ] ] with [ [ ch ] ]erelle [ [, ] ] [ [ who ] ] was super [ [ friendly ] ] on the [ [ phone ] ], [ [ and ] ] she said [ [ my ] ] [ [ reservation ] ] was [ [ for ] ] [ [ 6 ] ] [ [ 15 ] ] [ [pm ] ] we [ [ arrived ] ] around [ [ 5 ] ] 30 [ [pm ] ] and waited and waited and waited! finally around 6 20pm i asked a man handing out armbands \ ( this is how they categorized you by flight manifest \ ) if maybe somehow i missed my name being called and his response was well, we're a little busy really \? ok, i can see that but i have a reservation he told me i would get called soon 6 45pm rolls around and i'm ready to leave i walked up to the woman at the front desk and told her i wanted a refund because i couldn't be waiting around anymore this was ruining my entire night we had wanted to see a show after our helicopter ride and hadn't eaten yet, which we assumed we would have plenty of time since cherelle told me total time there would be an hour the ride is only 15 minutes for goodness sake! the woman at the desk told me they couldn't refund my money and she checked my reservation it was at 8 pm at this point i'm boiling mad but trying to keep my cool i told her i wanted a refund or to be on the next ride out she assured me that i would be next and that she would give me a free dvd of our flight ok, at least she offered me something for their royal mistake however, we weren't called until after 7 pm and didn't finish until around 8 pm the actual ride was awesome and if it hadn't been for the fact that my boyfriend was pretty excited about it, i would have just left earlier we ended up missing the show we wanted to see \ ( this was our last night in town \ ) and just went out to dinner ni think this could be a great thing if they were more organized over booking people and making them wait around for three hours just isn't acceptable there were a lot of aggravated people in the waiting room and i really wouldn't recommend it for the amount of time you're waiting just try and get a window seat on your plane ride home the view of the strip is almost as good as it is in the helicopter
+neg   bought  ->  ##本   0.999843  ->  0.999842
+neg   ##本  ->  scenery   0.999842  ->  0.999841
+neg   scenery  ->  Bit   0.999841  ->  0.99984
+neg   Bit  ->  ##bus   0.99984  ->  0.999838
+neg   living  ->  க   0.999838  ->  0.999802
+neg   க  ->  endings   0.999802  ->  0.999796
+neg   endings  ->  existed   0.999796  ->  0.999734
+neg   social  ->  toward   0.999734  ->  0.999716
+neg   deal  ->  க   0.999716  ->  0.999297
+neg   think  ->  toward   0.999297  ->  0.999273
+neg   toward  ->  existed   0.999273  ->  0.99871
+neg   everyone  ->  Aviation   0.99871  ->  0.998566
+neg   Aviation  ->  endings   0.998566  ->  0.998444
+neg   else  ->  க   0.998444  ->  0.998144
+neg   mother  ->  க   0.998144  ->  0.997959
+neg   க  ->  endings   0.997959  ->  0.997936
+neg   spoke  ->  ##lerical   0.997936  ->  0.997746
+neg   ch  ->  க   0.997746  ->  0.997624
+neg   க  ->  endings   0.997624  ->  0.996874
+neg   ,  ->  க   0.996874  ->  0.996378
+neg   க  ->  disabilities   0.996378  ->  0.996263
+neg   disabilities  ->  ##lerical   0.996263  ->  0.993286
+neg   ##lerical  ->  ##onnell   0.993286  ->  0.99242
+neg   who  ->  க   0.99242  ->  0.988526
+neg   க  ->  Alejandro   0.988526  ->  0.96377
+neg   friendly  ->  க   0.96377  ->  0.937542
+neg   க  ->  impress   0.937542  ->  0.934619
+neg   impress  ->  ##ₜ   0.934619  ->  0.924233
+neg   phone  ->  skeleton   0.924233  ->  0.864032
+neg   and  ->  doesn   0.864032  ->  0.85714
+neg   doesn  ->  Aviation   0.85714  ->  0.852405
+neg   Aviation  ->  ##ₜ   0.852405  ->  0.820733
+neg   my  ->  skeleton   0.820733  ->  0.820647
+neg   reservation  ->  க   0.820647  ->  0.787057
+neg   க  ->  doesn   0.787057  ->  0.781339
+neg   for  ->  க   0.781339  ->  0.759082
+neg   க  ->  endings   0.759082  ->  0.758275
+neg   6  ->  க   0.758275  ->  0.742413
+neg   க  ->  expressive   0.742413  ->  0.738932
+neg   15  ->  endings   0.738932  ->  0.734359
+neg   ##pm  ->  endings   0.734359  ->  0.732558
+neg   endings  ->  bacon   0.732558  ->  0.723955
+neg   arrived  ->  க   0.723955  ->  0.712311
+neg   க  ->  toward   0.712311  ->  0.709706
+neg   toward  ->  doesn   0.709706  ->  0.69976
+neg   doesn  ->  existed   0.69976  ->  0.667248
+neg   5  ->  258   0.667248  ->  0.665973
+neg   258  ->  endings   0.665973  ->  0.663706
+neg   ##pm  ->  expect   0.663706  ->  0.660041
+attack suc rate 74.19 %
+average # of queries: 184.0.
+32.0  th document.
+stgt:  this was my [ [ worst ] ] [ [ hotel ] ] [ [ experience ] ] [ [ ever ] ] the [ [ heat ] ] in our [ [ room ] ] [ [ made ] ] so [ [ much ] ] [ [ noise ] ] i [ [ could ] ] not [ [ sleep ] ] at [ [ 4 ] ] [ [ 00 ] ] am i [ [ still ] ] was not [ [ asleep ] ] so i [ [ went ] ] to to [ [ get ] ] [ [ another ] ] [ [ room ] ] but they [ [ said ] ] i [ [ would ] ] have to [ [ wake ] ] my [ [ boss ] ] up in [ [ order ] ] to move rooms, she's a heavy sleeper i'm not i had a very important business meeting the next day they did not care or show any sympathy to my situation i ended up not sleeping the whole entire night when my boss woke up at 6 30 we went down again to change rooms, again they did not care the least about the situation we did switch rooms i missed the meeting prep and went to the meeting with 3 hours of sleep it was the worst hotel experience i have ever had i do not see the difference in the end they had to clean two rooms, and they had two very unhappy the worst part of it was how little they cared, and it wasn't just one staff member it was multiple staff members with the same attitude
+neg   worst  ->  க   0.999851  ->  0.999849
+neg   க  ->  Aviation   0.999849  ->  0.999848
+neg   Aviation  ->  ##onnell   0.999848  ->  0.999848
+neg   ##onnell  ->  ##21   0.999848  ->  0.999846
+neg   experience  ->  perform   0.999846  ->  0.999845
+neg   perform  ->  155   0.999845  ->  0.99983
+neg   ever  ->  ##21   0.99983  ->  0.999809
+neg   ##21  ->  CPU   0.999809  ->  0.999783
+neg   heat  ->  ##onnell   0.999783  ->  0.999772
+neg   room  ->  க   0.999772  ->  0.99977
+neg   க  ->  doesn   0.99977  ->  0.999741
+neg   doesn  ->  Aviation   0.999741  ->  0.999724
+neg   made  ->  perform   0.999724  ->  0.999721
+neg   perform  ->  doesn   0.999721  ->  0.999634
+neg   much  ->  perform   0.999634  ->  0.999622
+neg   perform  ->  skeleton   0.999622  ->  0.99949
+neg   skeleton  ->  Aviation   0.99949  ->  0.999464
+neg   Aviation  ->  ##ₜ   0.999464  ->  0.999429
+neg   could  ->  toward   0.999429  ->  0.999284
+neg   sleep  ->  ##onnell   0.999284  ->  0.999276
+neg   4  ->  doesn   0.999276  ->  0.99922
+neg   doesn  ->  Aviation   0.99922  ->  0.999164
+neg   Aviation  ->  disabilities   0.999164  ->  0.998904
+neg   00  ->  155   0.998904  ->  0.998898
+neg   155  ->  258   0.998898  ->  0.998897
+neg   258  ->  toward   0.998897  ->  0.998896
+neg   toward  ->  Aviation   0.998896  ->  0.998797
+neg   Aviation  ->  ##iek   0.998797  ->  0.998732
+neg   ##iek  ->  cannons   0.998732  ->  0.998654
+neg   still  ->  toward   0.998654  ->  0.998582
+neg   toward  ->  doesn   0.998582  ->  0.998539
+neg   doesn  ->  ##lerical   0.998539  ->  0.998019
+neg   asleep  ->  pains   0.998019  ->  0.996337
+neg   get  ->  skeleton   0.996337  ->  0.99419
+neg   skeleton  ->  endings   0.99419  ->  0.993653
+neg   room  ->  doesn   0.993653  ->  0.991583
+neg   said  ->  doesn   0.991583  ->  0.989806
+neg   doesn  ->  Motor   0.989806  ->  0.988442
+neg   would  ->  toward   0.988442  ->  0.988335
+neg   toward  ->  doesn   0.988335  ->  0.987334
+neg   doesn  ->  bottle   0.987334  ->  0.985922
+neg   wake  ->  endings   0.985922  ->  0.985702
+neg   endings  ->  Motor   0.985702  ->  0.985378
+attack suc rate 71.88 %
+average # of queries: 190.25.
+33.0  th document.
+stgt:  [ [ located ] ] in the [ [ heart ] ] of [ [ downtown ] ] [ [ p ] ]hoe [ [ni ] ] [ [x ] ], the [ [ daily ] ] [ [ grin ] ] [ [d ] ] is [ [ an ] ] [ [ awesome ] ] [ [ coffee ] ] [ [ em ] ] [ [por ] ]ium all around [ [ n ] ] [ [ n ] ]this [ [ coffee ] ] shop is [ [ about ] ] as central [ [ly ] ] [ [ located ] ] [ [ as ] ] they [ [ come ] ] it is [ [ right ] ] [ [ off ] ] the light rail route, not far from the ball parks, very near a lot of paid parking spots and right across the street from duck and decanter n nthe daily grind won me over from their name the double play on words is simple and clever then, being located in the heart of downtown is awesome, as it allows for a lot of foot traffic to observe, not to mention the skyscraper construction n nthe space in this place is spectacular they offer plenty of small tables to sit down and plug in at and the atmosphere is great the overwhelming red color inside makes you think for a split second you traveled into some time warp and landed back in 1980's russia n ni knew i was going to especially like it when i saw they offered complimentary wifi they definitely know how to win a nerd's heart! i managed to find a perfect table next to a window right next to a plug in i could see myself sitting here all day inhaling espresso and working on writing projects the good music \ ( dave matthews is playing as i type this \ ) isn't going to make me want to leave, either n nthis was another selection for phoenix opencoffee, and i definitely plan on coming back they even have a coffee club car \ ( buy 10, get one free \ )
+pos   located  ->  Boots   0.999855  ->  0.999855
+pos   Boots  ->  toward   0.999855  ->  0.999854
+pos   toward  ->  Side   0.999854  ->  0.999854
+pos   Side  ->  Exempt   0.999854  ->  0.999853
+pos   downtown  ->  Maria   0.999853  ->  0.999852
+pos   Maria  ->  expect   0.999852  ->  0.999852
+pos   p  ->  க   0.999852  ->  0.999851
+pos   க  ->  258   0.999851  ->  0.999848
+pos   258  ->  toward   0.999848  ->  0.999845
+pos   ##ni  ->  cannons   0.999845  ->  0.999844
+pos   daily  ->  155   0.999844  ->  0.999844
+pos   155  ->  doesn   0.999844  ->  0.999835
+pos   grin  ->  Sa   0.999835  ->  0.999762
+pos   ##d  ->  expect   0.999762  ->  0.999668
+pos   awesome  ->  ##lerical   0.999668  ->  0.999361
+pos   coffee  ->  endings   0.999361  ->  0.99935
+pos   endings  ->  expect   0.99935  ->  0.999169
+pos   em  ->  endings   0.999169  ->  0.999153
+pos   endings  ->  Maria   0.999153  ->  0.999098
+pos   Maria  ->  toward   0.999098  ->  0.99903
+pos   toward  ->  ##21   0.99903  ->  0.998985
+pos   ##21  ->  expressive   0.998985  ->  0.998797
+pos   ##por  ->  Motor   0.998797  ->  0.99867
+pos   n  ->  ##iek   0.99867  ->  0.998423
+pos   n  ->  க   0.998423  ->  0.997933
+pos   க  ->  toward   0.997933  ->  0.997919
+pos   toward  ->  perform   0.997919  ->  0.997895
+pos   perform  ->  ##lerical   0.997895  ->  0.997768
+pos   ##lerical  ->  robbed   0.997768  ->  0.997196
+pos   coffee  ->  toward   0.997196  ->  0.99717
+pos   about  ->  cannons   0.99717  ->  0.996965
+pos   ##ly  ->  க   0.996965  ->  0.996927
+pos   க  ->  Ω   0.996927  ->  0.996874
+pos   Ω  ->  155   0.996874  ->  0.996829
+pos   155  ->  258   0.996829  ->  0.996753
+pos   258  ->  Maria   0.996753  ->  0.996401
+pos   Maria  ->  Aviation   0.996401  ->  0.996231
+pos   Aviation  ->  ##ractical   0.996231  ->  0.984676
+pos   located  ->  க   0.984676  ->  0.983821
+pos   க  ->  Ω   0.983821  ->  0.983449
+pos   Ω  ->  Maria   0.983449  ->  0.982525
+pos   Maria  ->  258   0.982525  ->  0.98156
+pos   258  ->  skeleton   0.98156  ->  0.979054
+pos   skeleton  ->  pains   0.979054  ->  0.975161
+pos   as  ->  155   0.975161  ->  0.973911
+pos   come  ->  doesn   0.973911  ->  0.971335
+pos   doesn  ->  155   0.971335  ->  0.964814
+pos   155  ->  ##ₜ   0.964814  ->  0.9631
+pos   ##ₜ  ->  perform   0.9631  ->  0.946477
+attack suc rate 69.69999999999999 %
+average # of queries: 196.12121212121212.
+34.0  th document.
+stgt:  [ [ stayed ] ] here in [ [ de ] ] [ [c ] ] [ [ 2005 ] ] [ [ average ] ] rooms [ [ and ] ] [ [ good ] ] [ [ environment ] ] [ [, ] ] [ [ although ] ] [ [ empty ] ] casino, [ [ although ] ] [ [ that ] ] didn't matter for [ [ me ] ] [ [ because ] ] i [ ['] ] m [ [ not ] ] [ [ 21 ] ] yet [ [ again ] ] [ [, ] ] like the r [ [io ] ] [ [ hotel ] ] [ [, ] ] the hotel [ [ room ] ] i had had available av connections in the tv so you can connect your dvd player for the kids the buffet wasn't that good i had better but if it's cheap, it's a good hotel to sleep in on the lv strip n nrip stardust hotel
+pos   stayed  ->  Boots   0.985612  ->  0.967814
+pos   Boots  ->  asks   0.967814  ->  0.772178
+pos   2005  ->  toward   0.772178  ->  0.641208
+toward  ->  doesn
+srcTxt:  [ [ stayed ] ] here in dec [ [ 2005 ] ] average rooms and good environment, although empty casino, although that didn't matter for me because i'm not 21 yet again, like the rio hotel, the hotel room i had had available av connections in the tv so you can connect your dvd player for the kids the buffet wasn't that good i had better but if it's cheap, it's a good hotel to sleep in on the lv strip n nrip stardust hotel
+advTxt:  [ [ asks ] ] here in dec [ [ doesn ] ] average rooms and good environment, although empty casino, although that didn't matter for me because i'm not 21 yet again, like the rio hotel, the hotel room i had had available av connections in the tv so you can connect your dvd player for the kids the buffet wasn't that good i had better but if it's cheap, it's a good hotel to sleep in on the lv strip n nrip stardust hotel
+srcTxt:  stayed here in dec 2005 average rooms and good environment, although empty casino, although that didn't matter for me because i'm not 21 yet again, like the rio hotel, the hotel room i had had available av connections in the tv so you can connect your dvd player for the kids the buffet wasn't that good i had better but if it's cheap, it's a good hotel to sleep in on the lv strip n nrip stardust hotel
+advTxt:  asks here in dec doesn average rooms and good environment, although empty casino, although that didn't matter for me because i'm not 21 yet again, like the rio hotel, the hotel room i had had available av connections in the tv so you can connect your dvd player for the kids the buffet wasn't that good i had better but if it's cheap, it's a good hotel to sleep in on the lv strip n nrip stardust hotel
+targetTokens ['stayed', '2005']
+toTokens ['asks', 'doesn']
+sProbs:  [0.014387873001396656, 0.985612154006958]
+aProbs:  [0.5848774313926697, 0.4151225686073303]
+attack suc rate 70.59 %
+average # of queries: 191.88235294117646.
+35.0  th document.
+stgt:  i [ [ really ] ] do [ [ love ] ] [ [ bookstore ] ]s [ [! ] ] i [ [ enjoy ] ] just [ [ taking ] ] my [ [ time ] ] and mean [ [dering ] ] [ [ through ] ] each [ [ section ] ], [ [ looking ] ] at [ [ everything ] ] [ [ on ] ] [ [ display ] ] i [ [ hope ] ] [ [ upon ] ] [ [ hope ] ] [ [ that ] ] [ [ actual ] ] paper [ [ books ] ] never go [ [ the ] ] way [ [ of ] ] [ [ the ] ] do [ [do ] ], that would make me one unhappy girl! n nchanging hands offers a couple things that i like they have both new and used books, they do have a reasonably sized children's section, they have a small area of clever gifts and fun things for your home office and they have an area for lectures, book signings and things of that nature i think it is pretty cool you can take your used books in and they will give you store credit for them i have brought in a couple boxes and they definitely gave me a fair prices for the trades \ ( if for some reason they do not want do not accept a particular book, you can request what they don't buy to come back to you \ ( or \ ) you can have them donate the books which is what i do \ ) n nclearly i am a fan and will continue to come back for my books random fun gift needs n n the end
+pos   really  ->  toward   0.999854  ->  0.999854
+pos   toward  ->  ##ₜ   0.999854  ->  0.999854
+pos   ##ₜ  ->  asks   0.999854  ->  0.999854
+pos   asks  ->  Bit   0.999854  ->  0.999853
+pos   love  ->  doesn   0.999853  ->  0.999853
+pos   bookstore  ->  doesn   0.999853  ->  0.999852
+pos   doesn  ->  155   0.999852  ->  0.999851
+pos   155  ->  perform   0.999851  ->  0.999848
+pos   enjoy  ->  toward   0.999848  ->  0.999843
+pos   toward  ->  க   0.999843  ->  0.999843
+pos   க  ->  ##ₜ   0.999843  ->  0.999831
+pos   taking  ->  க   0.999831  ->  0.999819
+pos   க  ->  pains   0.999819  ->  0.999373
+pos   time  ->  toward   0.999373  ->  0.999281
+pos   toward  ->  asks   0.999281  ->  0.998903
+pos   asks  ->  ##21   0.998903  ->  0.99867
+pos   ##dering  ->  ##onnell   0.99867  ->  0.998563
+pos   ##onnell  ->  ##lerical   0.998563  ->  0.998155
+pos   through  ->  doesn   0.998155  ->  0.997878
+pos   doesn  ->  ##21   0.997878  ->  0.997801
+pos   looking  ->  toward   0.997801  ->  0.997309
+pos   toward  ->  doesn   0.997309  ->  0.996605
+pos   everything  ->  endings   0.996605  ->  0.996584
+pos   endings  ->  ##21   0.996584  ->  0.996182
+pos   on  ->  Maria   0.996182  ->  0.996105
+pos   Maria  ->  disabilities   0.996105  ->  0.995885
+pos   display  ->  Maria   0.995885  ->  0.995622
+pos   hope  ->  toward   0.995622  ->  0.995269
+pos   toward  ->  clipped   0.995269  ->  0.99524
+pos   clipped  ->  Maria   0.99524  ->  0.995224
+pos   upon  ->  Aviation   0.995224  ->  0.995212
+pos   Aviation  ->  skeleton   0.995212  ->  0.994982
+pos   skeleton  ->  Maria   0.994982  ->  0.994341
+pos   Maria  ->  perform   0.994341  ->  0.994277
+pos   hope  ->  toward   0.994277  ->  0.993775
+pos   toward  ->  doesn   0.993775  ->  0.993085
+pos   doesn  ->  asks   0.993085  ->  0.990856
+pos   that  ->  doesn   0.990856  ->  0.990645
+pos   doesn  ->  skeleton   0.990645  ->  0.990459
+pos   skeleton  ->  perform   0.990459  ->  0.990411
+pos   perform  ->  Maria   0.990411  ->  0.98999
+pos   Maria  ->  asks   0.98999  ->  0.988588
+pos   actual  ->  doesn   0.988588  ->  0.987133
+pos   doesn  ->  perform   0.987133  ->  0.984966
+pos   perform  ->  asks   0.984966  ->  0.980745
+pos   books  ->  asks   0.980745  ->  0.972027
+pos   of  ->  க   0.972027  ->  0.967375
+pos   க  ->  asks   0.967375  ->  0.960668
+pos   asks  ->  disabilities   0.960668  ->  0.956889
+pos   the  ->  asks   0.956889  ->  0.949629
+pos   ##do  ->  asks   0.949629  ->  0.943151
+attack suc rate 68.57 %
+average # of queries: 197.37142857142857.
+36.0  th document.
+stgt:  my [ [ family ] ] has been [ [ eating ] ] here for [ [ 13 ] ] [ [ years ] ] we [ [ come ] ] from [ [ new ] ] [ [ me ] ]xico [ [ and ] ] [ [ our ] ] me [ [xi ] ]can [ [ food ] ] is different [ [ we ] ] [ [ love ] ] [ [ it ] ] here [ [ almost ] ] like [ [ home ] ] the [ [ patio ] ] is [ [ amazing ] ] for ma [ [rga ] ] [ [rita ] ]s [ [ any ] ] [ [ time ] ] they are half priced for happy hour \ )
+pos   family  ->  asks   0.999823  ->  0.999817
+pos   eating  ->  155   0.999817  ->  0.999582
+pos   155  ->  skeleton   0.999582  ->  0.999081
+pos   13  ->  doesn   0.999081  ->  0.998517
+pos   years  ->  க   0.998517  ->  0.997962
+pos   க  ->  doesn   0.997962  ->  0.995346
+pos   doesn  ->  ##lerical   0.995346  ->  0.974261
+pos   come  ->  doesn   0.974261  ->  0.80036
+pos   new  ->  க   0.80036  ->  0.75128
+pos   க  ->  Maria   0.75128  ->  0.524284
+Maria  ->  ##ₜ
+srcTxt:  my [ [ family ] ] has been [ [ eating ] ] here for [ [ 13 ] ] [ [ years ] ] we [ [ come ] ] from [ [ new ] ] mexico and our mexican food is different we love it here almost like home the patio is amazing for margaritas any time they are half priced for happy hour \ )
+advTxt:  my [ [ asks ] ] has been [ [ skeleton ] ] here for [ [ doesn ] ] [ [lerical ] ] we [ [ doesn ] ] from [ [ₜ ] ] mexico and our mexican food is different we love it here almost like home the patio is amazing for margaritas any time they are half priced for happy hour \ )
+srcTxt:  my family has been eating here for 13 years we come from new mexico and our mexican food is different we love it here almost like home the patio is amazing for margaritas any time they are half priced for happy hour \ )
+advTxt:  my asks has been skeleton here for doesnlerical we doesn fromₜ mexico and our mexican food is different we love it here almost like home the patio is amazing for margaritas any time they are half priced for happy hour \ )
+targetTokens ['family', 'eating', '13', 'years', 'come', 'new']
+toTokens ['asks', 'skeleton', 'doesn', '##lerical', 'doesn', '##ₜ']
+sProbs:  [0.00017736606241669506, 0.9998226761817932]
+aProbs:  [0.8114926218986511, 0.18850736320018768]
+attack suc rate 69.44 %
+average # of queries: 194.55555555555554.
+37.0  th document.
+stgt:  my [ [ new ] ] [ [ favorites ] ] [ [t ] ] place [ [ to ] ] eat!! [ [! ] ] because, because [ [, ] ] [ [ be ] ] ca [ [aa ] ]auu [ [use ] ] [ [ because ] ] [ [ of ] ] [ [ the ] ] wonderful things and [ [ p ] ]hos [ [ the ] ] [ [ very ] ] [ [ best ] ] b [ [un ] ] [ [ b ] ] [ [o ] ] h [ [ue ] ] [ [ in ] ] all the [ [ land ] ] [ [ i ] ] [ [ could ] ] probably eat this dish almost daily and never tire of the rich, bursting flavorful goodness that delights my tongue with magical flavor tingles the wonton noodle soup is my second favorite dish here i didn't really have an opinion on the pho, as i've only had it once and remember it being good n nthe staff is super cool and nice on my first visit the main guy in charge noticed my stiff shoulders and arms folded across my belly in an attempt to conserve my body heat and he immediately rushed to turn off the fans near my table on my second visit i totally butchered the pronunciation of bun bo hue, to which my waitress ever so politely corrected and assured me that it happened all of the time it probably doesn't, but i appreciated the fact that she was so nice about it also, by the way, this particular visit was when my love affair with bun bo hue started i've had it many other places, but never quite this delicious and tasty n nthe place is very clean and inviting, decorated with tasteful individual pictures of featured dishes above each table not overdone and not like the chinese take out restaurants that have a wall of pictures of every dish offered with half the names misperred at first i thought the name to be somewhat of a contradiction, as asian food and the imagery associated with bistro don't seem to jive but after dining there a few times, i realize that it works the space is fairly small and intimate, with approximately 10 15 tables n nparking can sometimes be tricky if you try to visit on a week day around lunch time as it's located in a strip center that houses a variety of popular lunch spots any other times, parking is a breeze n nlove, love, loooooove this place go get yourself some of their delisherous bun bo hue now!
+pos   new  ->  ##ₜ   0.999854  ->  0.999853
+pos   ##ₜ  ->  asks   0.999853  ->  0.999852
+pos   favorites  ->  க   0.999852  ->  0.999852
+pos   க  ->  toward   0.999852  ->  0.999851
+pos   ##t  ->  toward   0.999851  ->  0.999851
+pos   toward  ->  ##lerical   0.999851  ->  0.999851
+pos   to  ->  க   0.999851  ->  0.99985
+pos   க  ->  bacon   0.99985  ->  0.99985
+pos   bacon  ->  155   0.99985  ->  0.999849
+pos   155  ->  disabilities   0.999849  ->  0.999849
+pos   disabilities  ->  ##ractical   0.999849  ->  0.999845
+pos   !  ->  doesn   0.999845  ->  0.999844
+pos   doesn  ->  disabilities   0.999844  ->  0.99984
+pos   ,  ->  155   0.99984  ->  0.999839
+pos   155  ->  disabilities   0.999839  ->  0.999836
+pos   be  ->  க   0.999836  ->  0.999836
+pos   க  ->  toward   0.999836  ->  0.999835
+pos   ##aa  ->  disabilities   0.999835  ->  0.999827
+pos   ##use  ->  க   0.999827  ->  0.99982
+pos   க  ->  disabilities   0.99982  ->  0.999781
+pos   of  ->  disabilities   0.999781  ->  0.999764
+pos   the  ->  doesn   0.999764  ->  0.999758
+pos   doesn  ->  asks   0.999758  ->  0.999722
+pos   p  ->  155   0.999722  ->  0.999715
+pos   155  ->  disabilities   0.999715  ->  0.999687
+pos   the  ->  toward   0.999687  ->  0.999677
+pos   toward  ->  doesn   0.999677  ->  0.999601
+pos   doesn  ->  disabilities   0.999601  ->  0.999486
+pos   very  ->  க   0.999486  ->  0.99932
+pos   க  ->  perform   0.99932  ->  0.999307
+pos   perform  ->  asks   0.999307  ->  0.9993
+pos   best  ->  doesn   0.9993  ->  0.999243
+pos   doesn  ->  pains   0.999243  ->  0.999105
+pos   ##un  ->  க   0.999105  ->  0.999009
+pos   க  ->  doesn   0.999009  ->  0.998951
+pos   doesn  ->  pains   0.998951  ->  0.998897
+pos   ##ue  ->  ##ang   0.998897  ->  0.998816
+pos   in  ->  க   0.998816  ->  0.998585
+pos   க  ->  disabilities   0.998585  ->  0.998175
+pos   land  ->  க   0.998175  ->  0.998094
+pos   க  ->  258   0.998094  ->  0.998068
+pos   258  ->  Christmas   0.998068  ->  0.998054
+pos   i  ->  க   0.998054  ->  0.998027
+pos   க  ->  asks   0.998027  ->  0.997923
+pos   asks  ->  Maria   0.997923  ->  0.997852
+pos   Maria  ->  disabilities   0.997852  ->  0.99753
+pos   could  ->  க   0.99753  ->  0.997271
+pos   க  ->  disabilities   0.997271  ->  0.996856
+attack suc rate 67.57 %
+average # of queries: 199.67567567567568.
+38.0  th document.
+stgt:  this [ [ hotel ] ] is so [ [ out ] ]dated so [ [ you ] ] know [ [ the ] ] saying [ [ you ] ] get what [ [ you ] ] pay for \? we [ ['] ] [ [ ll ] ] [ [ that ] ] [ ['] ] s [ [ definitely ] ] hooters [ [ guidelines ] ] [ [ n ] ]wen [ [t ] ] with [ [ friends ] ] [ [ for ] ] a quick [ [ gateway ] ] [ [ and ] ] [ [ decided ] ] [ [ to ] ] go [ [ cheap ] ] [ [ on ] ] our rooms big [ [ mistake ] ] minutes [ [ after ] ] getting settled we had to request a new room bathroom sink was so backed up it smelt like a broken sewage pipe barf n sorry for the inconvenient but we're going to have to give you an evening shitty room is basically what happened nafter traveling for 4hours this was the last thing i wanted to deal with nno refrigerators in rooms that's an extra 25 p n ac is really loud and rattles old school tube television my friend even got stuck in the elevator lol that was actually funny because she was totally buzzed and had a final destination moment nrundown hotel for sure n24 hour pool hours but mainley occupied by kids ncustomer service horrible! staff at the front desk are extremely rude in short don't do it!!!!!! if you have afford paying a few more dollars, do so! nyou have been warned
+neg   hotel  ->  asks   0.99985  ->  0.99985
+neg   asks  ->  scenery   0.99985  ->  0.99985
+neg   scenery  ->  Jacksonville   0.99985  ->  0.99985
+neg   out  ->  க   0.99985  ->  0.999848
+neg   க  ->  endings   0.999848  ->  0.999845
+neg   you  ->  க   0.999845  ->  0.999843
+neg   the  ->  க   0.999843  ->  0.999843
+neg   க  ->  155   0.999843  ->  0.999842
+neg   you  ->  க   0.999842  ->  0.999842
+neg   க  ->  toward   0.999842  ->  0.999839
+neg   toward  ->  155   0.999839  ->  0.999835
+neg   you  ->  Ω   0.999835  ->  0.999833
+neg   Ω  ->  doesn   0.999833  ->  0.999833
+neg   doesn  ->  Aviation   0.999833  ->  0.999832
+neg   '  ->  toward   0.999832  ->  0.999832
+neg   toward  ->  existed   0.999832  ->  0.999827
+neg   ll  ->  க   0.999827  ->  0.999826
+neg   '  ->  toward   0.999826  ->  0.999824
+neg   definitely  ->  doesn   0.999824  ->  0.999824
+neg   doesn  ->  Aviation   0.999824  ->  0.999824
+neg   Aviation  ->  pains   0.999824  ->  0.999823
+neg   guidelines  ->  க   0.999823  ->  0.999823
+neg   க  ->  ##ₜ   0.999823  ->  0.999819
+neg   friends  ->  க   0.999819  ->  0.999818
+neg   க  ->  doesn   0.999818  ->  0.99981
+neg   for  ->  toward   0.99981  ->  0.999804
+neg   gateway  ->  க   0.999804  ->  0.999803
+neg   க  ->  doesn   0.999803  ->  0.999795
+neg   doesn  ->  258   0.999795  ->  0.999795
+neg   258  ->  ##ₜ   0.999795  ->  0.999794
+neg   and  ->  doesn   0.999794  ->  0.999792
+neg   decided  ->  toward   0.999792  ->  0.999792
+neg   toward  ->  doesn   0.999792  ->  0.999791
+neg   doesn  ->  ##ₜ   0.999791  ->  0.99979
+neg   to  ->  toward   0.99979  ->  0.999789
+neg   cheap  ->  skeleton   0.999789  ->  0.999788
+neg   skeleton  ->  Maria   0.999788  ->  0.999788
+neg   Maria  ->  toward   0.999788  ->  0.999787
+neg   toward  ->  258   0.999787  ->  0.999787
+neg   mistake  ->  toward   0.999787  ->  0.999785
+neg   after  ->  doesn   0.999785  ->  0.999781
+attack suc rate 65.79 %
+average # of queries: 204.52631578947367.
+39.0  th document.
+stgt:  i [ [ lived ] ] in [ [ j ] ]apan [ [ for ] ] [ [ about ] ] 2 [ [ years ] ] so [ [ anytime ] ] [ [ i ] ] feel reminiscent [ [ of ] ] [ [ those ] ] drunken [ [ 4 ] ] am [ [ nights ] ] i come [ [ here ] ] not [ [ really ] ] [ [ so ] ] much [ [ like ] ] the [ [ ones ] ] [ [ in ] ] japan [ [ though ] ] [ [ and ] ] [ [ i ] ] did [ [ n ] ]'t [ [ think ] ] [ [ yo ] ]shin [ [oya ] ] was one of the better gyu don places in japan anyways n nthey should add japanese curry to their menu i also wish they offered white meat chicken too i also agree with the weirdness of the veggie color i don't know why its got ta be so damn yellow just go to ichiza instead
+neg   lived  ->  bold   0.997346  ->  0.996836
+neg   bold  ->  ##本   0.996836  ->  0.996387
+neg   ##本  ->  existed   0.996387  ->  0.994523
+neg   existed  ->  ##bus   0.994523  ->  0.992697
+neg   ##bus  ->  Messiah   0.992697  ->  0.99082
+neg   j  ->  க   0.99082  ->  0.961332
+neg   க  ->  endings   0.961332  ->  0.78943
+endings  ->  ##curate
+srcTxt:  i [ [ lived ] ] in [ [ j ] ]apan for about 2 years so anytime i feel reminiscent of those drunken 4 am nights i come here not really so much like the ones in japan though and i didn't think yoshinoya was one of the better gyu don places in japan anyways n nthey should add japanese curry to their menu i also wish they offered white meat chicken too i also agree with the weirdness of the veggie color i don't know why its got ta be so damn yellow just go to ichiza instead
+advTxt:  i [ [ Messiah ] ] in [ [curate ] ]apan for about 2 years so anytime i feel reminiscent of those drunken 4 am nights i come here not really so much like the ones in japan though and i didn't think yoshinoya was one of the better gyu don places in japan anyways n nthey should add japanese curry to their menu i also wish they offered white meat chicken too i also agree with the weirdness of the veggie color i don't know why its got ta be so damn yellow just go to ichiza instead
+srcTxt:  i lived in japan for about 2 years so anytime i feel reminiscent of those drunken 4 am nights i come here not really so much like the ones in japan though and i didn't think yoshinoya was one of the better gyu don places in japan anyways n nthey should add japanese curry to their menu i also wish they offered white meat chicken too i also agree with the weirdness of the veggie color i don't know why its got ta be so damn yellow just go to ichiza instead
+advTxt:  i Messiah incurateapan for about 2 years so anytime i feel reminiscent of those drunken 4 am nights i come here not really so much like the ones in japan though and i didn't think yoshinoya was one of the better gyu don places in japan anyways n nthey should add japanese curry to their menu i also wish they offered white meat chicken too i also agree with the weirdness of the veggie color i don't know why its got ta be so damn yellow just go to ichiza instead
+targetTokens ['lived', 'j']
+toTokens ['Messiah', '##curate']
+sProbs:  [0.9973456263542175, 0.0026544579304754734]
+aProbs:  [0.3408838212490082, 0.6591161489486694]
+attack suc rate 66.67 %
+average # of queries: 199.82051282051282.
+saved at sample  39.0  as file  BERTFineTuned_yelp_val_1.0_24_400_0_0802_19July.json
+40.0  th document.
+stgt:  i [ [ go ] ] to that'[ [ s ] ] [ [ am ] ] [ [ore ] ] [ [ every ] ] [ [ weekend ] ]! [ [ everybody ] ] needs [ [ to ] ] try this [ [ place ] ], it's fantastic
+pos   go  ->  ##ₜ   0.999855  ->  0.999854
+pos   s  ->  toward   0.999854  ->  0.999851
+pos   toward  ->  disabilities   0.999851  ->  0.99985
+pos   disabilities  ->  expect   0.99985  ->  0.999839
+pos   am  ->  க   0.999839  ->  0.999836
+pos   க  ->  toward   0.999836  ->  0.999794
+pos   toward  ->  disabilities   0.999794  ->  0.999766
+pos   disabilities  ->  expect   0.999766  ->  0.999678
+pos   expect  ->  Sa   0.999678  ->  0.999549
+pos   ##ore  ->  asks   0.999549  ->  0.999526
+pos   asks  ->  Motor   0.999526  ->  0.999492
+Motor  ->  robbed
+srcTxt:  i [ [ go ] ] to that'[ [ s ] ] [ [ am ] ] [ [ore ] ] every weekend! everybody needs to try this place, it's fantastic
+advTxt:  i [ [ₜ ] ] to that'[ [ expect ] ] [ [ Sa ] ] [ [ robbed ] ] every weekend! everybody needs to try this place, it's fantastic
+srcTxt:  i go to that's amore every weekend! everybody needs to try this place, it's fantastic
+advTxt:  iₜ to that'expect Sa robbed every weekend! everybody needs to try this place, it's fantastic
+targetTokens ['go', 's', 'am', '##ore']
+toTokens ['##ₜ', 'expect', 'Sa', 'robbed']
+sProbs:  [0.00014491127512883395, 0.9998550415039062]
+aProbs:  [0.5379761457443237, 0.46202388405799866]
+attack suc rate 67.5 %
+average # of queries: 198.475.
+41.0  th document.
+stgt:  this [ [ review ] ] is [ [ based ] ] on [ [ wild ] ]horse [ ['] ] [ [ s ] ] wedding facilities only [ [ i ] ] [ ['] ] [ [ ve ] ] never [ [ played ] ] golf a [ [ day ] ] [ [ in ] ] [ [ my ] ] [ [ life ] ] [ [ n ] ] ni [ [ got ] ] [ [ married ] ] [ [ at ] ] wildhorse [ [ last ] ] year [ [, ] ] [ [ after ] ] [ [ a ] ] friend [ [ who ] ] also got married there recommended it to [ [ me ] ], [ [ and ] ] there are no words to explain how amazing and happy my experience was with wildhorse we looked at about a dozen venues in both southern ca and las vegas henderson and the moment i walked into wildhorse, i knew it was the one my happiness only grew after we met elena h \ ( the food beverage manager \ ) she is amazing, helpful, and friendly she was the biggest help in planning my wedding our wedding day went off without a hitch and i have absolutely no complaints about anything the food was delicious, the venue is elegant, the greens are beautiful, the staff is friendly, everything is perfect about this place, including the cost it was very budget friendly for us i definitely think that we got the best bang for the buck i really can not put into words how incredibly happy i was with my experience at wildhorse i wish i could give them 10 stars
+pos   based  ->  ##onnell   0.999855  ->  0.999854
+pos   wild  ->  skeleton   0.999854  ->  0.999854
+attack suc rate 65.85 %
+average # of queries: 203.0.
+42.0  th document.
+stgt:  i [ [ stayed ] ] at the [ [ q ] ] [ [uad ] ] [ [ o ] ] [ [ct ] ] [ [ 1 ] ] 3, [ [ 2013 ] ] i was [ [ excited ] ] when [ [ i ] ] [ [ booked ] ] [ [ my ] ] hotel room, since it [ [ was ] ] from their [ [ own ] ] website when i [ [ got ] ] there it was nothing [ [ for ] ] what [ [ i ] ] had seen [ [ or ] ] [ [ booked ] ] [ [ on ] ] [ [ the ] ] [ [ website ] ] [ [ carpet ] ] [ [ looked ] ] really [ [ nasty ] ], bath tub was disgusting, even the curtains had some mold on the back i am making sure to let others know to beware of this hotel i don't spend all day in my hotel room, but i wanted to at least be clean i would never stay there again
+neg   stayed  ->  ##ₜ   0.99985  ->  0.999848
+neg   ##ₜ  ->  ##本   0.999848  ->  0.999845
+neg   q  ->  க   0.999845  ->  0.999825
+neg   க  ->  cannons   0.999825  ->  0.999821
+neg   ##uad  ->  க   0.999821  ->  0.999796
+neg   க  ->  Ω   0.999796  ->  0.999767
+neg   ##ct  ->  155   0.999767  ->  0.999762
+neg   155  ->  ##21   0.999762  ->  0.999759
+neg   1  ->  க   0.999759  ->  0.999739
+neg   க  ->  155   0.999739  ->  0.999733
+neg   155  ->  ##ₜ   0.999733  ->  0.999721
+neg   excited  ->  toward   0.999721  ->  0.999716
+neg   toward  ->  expressive   0.999716  ->  0.999712
+neg   expressive  ->  pains   0.999712  ->  0.999698
+neg   i  ->  pains   0.999698  ->  0.999687
+neg   booked  ->  toward   0.999687  ->  0.999662
+neg   was  ->  cannons   0.999662  ->  0.999617
+neg   own  ->  க   0.999617  ->  0.999615
+neg   க  ->  155   0.999615  ->  0.999574
+neg   155  ->  Ω   0.999574  ->  0.999565
+neg   got  ->  doesn   0.999565  ->  0.999551
+neg   for  ->  ##21   0.999551  ->  0.999519
+neg   ##21  ->  toward   0.999519  ->  0.999512
+neg   toward  ->  doesn   0.999512  ->  0.999459
+neg   doesn  ->  asks   0.999459  ->  0.999384
+neg   or  ->  155   0.999384  ->  0.99937
+neg   155  ->  258   0.99937  ->  0.999352
+neg   on  ->  doesn   0.999352  ->  0.999332
+neg   the  ->  cannons   0.999332  ->  0.999287
+neg   website  ->  Maria   0.999287  ->  0.999283
+neg   Maria  ->  toward   0.999283  ->  0.999264
+neg   looked  ->  doesn   0.999264  ->  0.999151
+neg   nasty  ->  258   0.999151  ->  0.999126
+attack suc rate 64.29 %
+average # of queries: 207.3095238095238.
+43.0  th document.
+stgt:  i was [ [ as ] ]tound [ [ed ] ] by the [ [ service ] ] and the [ [ food ] ] [ [ at ] ] this [ [ joint ] ] [ [ honestly ] ] [ [, ] ] [ [ for ] ] [ [ 150 ] ] [ [ per ] ] [ [ person ] ] [ [ including ] ] [ [ wine ] ] [ [ cocktail ] ]s private [ [ dining ] ] room tour [ [ of ] ] the [ [ kitchen ] ] [ [ all ] ] the [ [ food ] ] we could [ [ eat ] ] in vegas are [ [ you ] ] kidding me [ [ \ ] ] [ [? ] ] that's a steal i don't remember one person at the table having a complaint hat's off to this place world class food and outstanding service with no attitude
+pos   as  ->  expect   0.999852  ->  0.998223
+pos   expect  ->  ##point   0.998223  ->  0.987655
+pos   ##ed  ->  doesn   0.987655  ->  0.9854
+doesn  ->  disabilities
+srcTxt:  i was [ [ as ] ]tound [ [ed ] ] by the service and the food at this joint honestly, for 150 per person including wine cocktails private dining room tour of the kitchen all the food we could eat in vegas are you kidding me \? that's a steal i don't remember one person at the table having a complaint hat's off to this place world class food and outstanding service with no attitude
+advTxt:  i was [ [point ] ]tound [ [ disabilities ] ] by the service and the food at this joint honestly, for 150 per person including wine cocktails private dining room tour of the kitchen all the food we could eat in vegas are you kidding me \? that's a steal i don't remember one person at the table having a complaint hat's off to this place world class food and outstanding service with no attitude
+srcTxt:  i was astounded by the service and the food at this joint honestly, for 150 per person including wine cocktails private dining room tour of the kitchen all the food we could eat in vegas are you kidding me \? that's a steal i don't remember one person at the table having a complaint hat's off to this place world class food and outstanding service with no attitude
+advTxt:  i waspointtound disabilities by the service and the food at this joint honestly, for 150 per person including wine cocktails private dining room tour of the kitchen all the food we could eat in vegas are you kidding me \? that's a steal i don't remember one person at the table having a complaint hat's off to this place world class food and outstanding service with no attitude
+targetTokens ['as', '##ed']
+toTokens ['##point', 'disabilities']
+sProbs:  [0.0001481561193941161, 0.9998518228530884]
+aProbs:  [0.6963642239570618, 0.30363577604293823]
+attack suc rate 65.12 %
+average # of queries: 202.97674418604652.
+44.0  th document.
+stgt:  [ [ leave ] ] it to the [ [ anti ] ] [ [ club ] ] [ [ girl ] ] to [ [ p ] ] [ [oo ] ]h [ [ p ] ] [ [oo ] ] [ [h ] ] [ [ the ] ] [ [ re ] ] [ [hab ] ] n [ [ n ] ] [ [the ] ] hard rock [ [ pools ] ] [ [ are ] ] [ [ und ] ]enia [ [bly ] ] [ [ amazing ] ] there [ [ are ] ] slides, [ [ lazy ] ] rivers [ [, ] ] [ [ and ] ] wa [ [ding ] ] pools as far as the eye can see however, during rehab they turn into mud laden cess pools of post clubber's dirt and vodka sweats n ni went here with an out of town friend of mine who assured me that their'cred'could get me into the club for free funnily enough, their'cred'counted for nothing and the fact that i went to school with the bouncer spared my pocketbook if i had paid 20 for admission, this would be a one star review n nthe place is crowded period uncomfortably so and most of the people are ridiculously drunk, so walking's an issue grit from the pool clings to your body long after you've exited n nfor tourists who don't get to see girls in bikinis much, this is probably a very neat experience for locals, there are a lot of other pools you can sneak into for free without the risk of disease
+leave  ->  ##ₜ
+srcTxt:  [ [ leave ] ] it to the anti club girl to pooh pooh the rehab n nthe hard rock pools are undeniably amazing there are slides, lazy rivers, and wading pools as far as the eye can see however, during rehab they turn into mud laden cess pools of post clubber's dirt and vodka sweats n ni went here with an out of town friend of mine who assured me that their'cred'could get me into the club for free funnily enough, their'cred'counted for nothing and the fact that i went to school with the bouncer spared my pocketbook if i had paid 20 for admission, this would be a one star review n nthe place is crowded period uncomfortably so and most of the people are ridiculously drunk, so walking's an issue grit from the pool clings to your body long after you've exited n nfor tourists who don't get to see girls in bikinis much, this is probably a very neat experience for locals, there are a lot of other pools you can sneak into for free without the risk of disease
+advTxt:  [ [ₜ ] ] it to the anti club girl to pooh pooh the rehab n nthe hard rock pools are undeniably amazing there are slides, lazy rivers, and wading pools as far as the eye can see however, during rehab they turn into mud laden cess pools of post clubber's dirt and vodka sweats n ni went here with an out of town friend of mine who assured me that their'cred'could get me into the club for free funnily enough, their'cred'counted for nothing and the fact that i went to school with the bouncer spared my pocketbook if i had paid 20 for admission, this would be a one star review n nthe place is crowded period uncomfortably so and most of the people are ridiculously drunk, so walking's an issue grit from the pool clings to your body long after you've exited n nfor tourists who don't get to see girls in bikinis much, this is probably a very neat experience for locals, there are a lot of other pools you can sneak into for free without the risk of disease
+srcTxt:  leave it to the anti club girl to pooh pooh the rehab n nthe hard rock pools are undeniably amazing there are slides, lazy rivers, and wading pools as far as the eye can see however, during rehab they turn into mud laden cess pools of post clubber's dirt and vodka sweats n ni went here with an out of town friend of mine who assured me that their'cred'could get me into the club for free funnily enough, their'cred'counted for nothing and the fact that i went to school with the bouncer spared my pocketbook if i had paid 20 for admission, this would be a one star review n nthe place is crowded period uncomfortably so and most of the people are ridiculously drunk, so walking's an issue grit from the pool clings to your body long after you've exited n nfor tourists who don't get to see girls in bikinis much, this is probably a very neat experience for locals, there are a lot of other pools you can sneak into for free without the risk of disease
+advTxt:  ##ₜ it to the anti club girl to pooh pooh the rehab n nthe hard rock pools are undeniably amazing there are slides, lazy rivers, and wading pools as far as the eye can see however, during rehab they turn into mud laden cess pools of post clubber's dirt and vodka sweats n ni went here with an out of town friend of mine who assured me that their'cred'could get me into the club for free funnily enough, their'cred'counted for nothing and the fact that i went to school with the bouncer spared my pocketbook if i had paid 20 for admission, this would be a one star review n nthe place is crowded period uncomfortably so and most of the people are ridiculously drunk, so walking's an issue grit from the pool clings to your body long after you've exited n nfor tourists who don't get to see girls in bikinis much, this is probably a very neat experience for locals, there are a lot of other pools you can sneak into for free without the risk of disease
+targetTokens ['leave']
+toTokens ['##ₜ']
+sProbs:  [0.9446799755096436, 0.05532004311680794]
+aProbs:  [0.07380279898643494, 0.9261972308158875]
+attack suc rate 65.91 %
+average # of queries: 198.38636363636363.
+45.0  th document.
+stgt:  [ [ delicious ] ] [ [, ] ] price [ [y ] ] and fancy all [ [ that ] ] [ [ is ] ] ve [ [gas ] ] nwe [ [ were ] ] one [ [ of ] ] [ [ the ] ] first [ [ to ] ] arrive [ [ since ] ] they open for [ [ dinner ] ] [ [ only ] ] [ [, ] ] and we got [ [ great ] ] [ [ service ] ] because [ [ of ] ] [ [ it ] ] [ [! ] ] nwe ordered [ [ the ] ] k [ [obe ] ] beef ta [ [cos ] ] which were [ [ just ] ] [ [ awesome ] ] the meat was so savory and a little sweet so good and the little chips turned taco shells just came out of the fryer and still warm we also order cali rolls, which were also good and a cucumber salad a nice addition nthe hubby ordered 10 pcs of sushi unagi, salmon, squid \ ( super chewy \ ) and tuna he was all about it, i took a pass i had my fill of apps and was satisfied ni love sapporo so i stuck with that, but joe had the cucumber essence which is made up of cucumber infused vodka and other light yummy mix ins that made for one deliciously refreshing drink nit's expensive but we were ready for that we were at the bellagio, after all i would go back just for the tacos! nthis one faces the fountains with some outdoor seating
+pos   delicious  ->  ##ₜ   0.999855  ->  0.999842
+pos   ,  ->  toward   0.999842  ->  0.999832
+pos   ##y  ->  155   0.999832  ->  0.999831
+pos   155  ->  ##ₜ   0.999831  ->  0.99979
+pos   ##ₜ  ->  expect   0.99979  ->  0.999729
+pos   that  ->  ##ₜ   0.999729  ->  0.999674
+pos   ##ₜ  ->  155   0.999674  ->  0.999559
+pos   155  ->  disabilities   0.999559  ->  0.998582
+pos   is  ->  க   0.998582  ->  0.998518
+pos   க  ->  155   0.998518  ->  0.998437
+pos   155  ->  disabilities   0.998437  ->  0.998043
+pos   were  ->  expect   0.998043  ->  0.995252
+pos   the  ->  155   0.995252  ->  0.994927
+pos   to  ->  க   0.994927  ->  0.994535
+pos   க  ->  155   0.994535  ->  0.994413
+pos   155  ->  Maria   0.994413  ->  0.994045
+pos   Maria  ->  expect   0.994045  ->  0.993271
+pos   since  ->  expect   0.993271  ->  0.992905
+pos   expect  ->  evolutionary   0.992905  ->  0.991984
+pos   dinner  ->  க   0.991984  ->  0.989042
+pos   only  ->  க   0.989042  ->  0.985434
+pos   க  ->  Maria   0.985434  ->  0.984234
+pos   Maria  ->  disabilities   0.984234  ->  0.984133
+pos   ,  ->  க   0.984133  ->  0.978678
+pos   க  ->  Maria   0.978678  ->  0.976039
+pos   great  ->  க   0.976039  ->  0.965388
+pos   க  ->  doesn   0.965388  ->  0.953294
+pos   doesn  ->  disabilities   0.953294  ->  0.941834
+pos   service  ->  disabilities   0.941834  ->  0.940526
+pos   of  ->  க   0.940526  ->  0.935079
+pos   !  ->  க   0.935079  ->  0.894169
+pos   க  ->  155   0.894169  ->  0.836147
+pos   the  ->  expect   0.836147  ->  0.82378
+pos   expect  ->  toward   0.82378  ->  0.781732
+pos   ##cos  ->  க   0.781732  ->  0.697448
+pos   க  ->  Maria   0.697448  ->  0.683481
+pos   Maria  ->  disabilities   0.683481  ->  0.526602
+just  ->  க
+srcTxt:  [ [ delicious ] ] [ [, ] ] price [ [y ] ] and fancy all [ [ that ] ] [ [ is ] ] vegas nwe [ [ were ] ] one of [ [ the ] ] first [ [ to ] ] arrive [ [ since ] ] they open for [ [ dinner ] ] [ [ only ] ] [ [, ] ] and we got [ [ great ] ] [ [ service ] ] because [ [ of ] ] it [ [! ] ] nwe ordered [ [ the ] ] kobe beef ta [ [cos ] ] which were [ [ just ] ] awesome the meat was so savory and a little sweet so good and the little chips turned taco shells just came out of the fryer and still warm we also order cali rolls, which were also good and a cucumber salad a nice addition nthe hubby ordered 10 pcs of sushi unagi, salmon, squid \ ( super chewy \ ) and tuna he was all about it, i took a pass i had my fill of apps and was satisfied ni love sapporo so i stuck with that, but joe had the cucumber essence which is made up of cucumber infused vodka and other light yummy mix ins that made for one deliciously refreshing drink nit's expensive but we were ready for that we were at the bellagio, after all i would go back just for the tacos! nthis one faces the fountains with some outdoor seating
+advTxt:  [ [ₜ ] ] [ [ toward ] ] price [ [ expect ] ] and fancy all [ [ disabilities ] ] [ [ disabilities ] ] vegas nwe [ [ expect ] ] one of [ [ 155 ] ] first [ [ expect ] ] arrive [ [ evolutionary ] ] they open for [ [ க ] ] [ [ disabilities ] ] [ [ Maria ] ] and we got [ [ disabilities ] ] [ [ disabilities ] ] because [ [ க ] ] it [ [ 155 ] ] nwe ordered [ [ toward ] ] kobe beef ta [ [ disabilities ] ] which were [ [ க ] ] awesome the meat was so savory and a little sweet so good and the little chips turned taco shells just came out of the fryer and still warm we also order cali rolls, which were also good and a cucumber salad a nice addition nthe hubby ordered 10 pcs of sushi unagi, salmon, squid \ ( super chewy \ ) and tuna he was all about it, i took a pass i had my fill of apps and was satisfied ni love sapporo so i stuck with that, but joe had the cucumber essence which is made up of cucumber infused vodka and other light yummy mix ins that made for one deliciously refreshing drink nit's expensive but we were ready for that we were at the bellagio, after all i would go back just for the tacos! nthis one faces the fountains with some outdoor seating
+srcTxt:  delicious, pricey and fancy all that is vegas nwe were one of the first to arrive since they open for dinner only, and we got great service because of it! nwe ordered the kobe beef tacos which were just awesome the meat was so savory and a little sweet so good and the little chips turned taco shells just came out of the fryer and still warm we also order cali rolls, which were also good and a cucumber salad a nice addition nthe hubby ordered 10 pcs of sushi unagi, salmon, squid \ ( super chewy \ ) and tuna he was all about it, i took a pass i had my fill of apps and was satisfied ni love sapporo so i stuck with that, but joe had the cucumber essence which is made up of cucumber infused vodka and other light yummy mix ins that made for one deliciously refreshing drink nit's expensive but we were ready for that we were at the bellagio, after all i would go back just for the tacos! nthis one faces the fountains with some outdoor seating
+advTxt:  ##ₜ toward price expect and fancy all disabilities disabilities vegas nwe expect one of 155 first expect arrive evolutionary they open for க disabilities Maria and we got disabilities disabilities because க it 155 nwe ordered toward kobe beef ta disabilities which were க awesome the meat was so savory and a little sweet so good and the little chips turned taco shells just came out of the fryer and still warm we also order cali rolls, which were also good and a cucumber salad a nice addition nthe hubby ordered 10 pcs of sushi unagi, salmon, squid \ ( super chewy \ ) and tuna he was all about it, i took a pass i had my fill of apps and was satisfied ni love sapporo so i stuck with that, but joe had the cucumber essence which is made up of cucumber infused vodka and other light yummy mix ins that made for one deliciously refreshing drink nit's expensive but we were ready for that we were at the bellagio, after all i would go back just for the tacos! nthis one faces the fountains with some outdoor seating
+targetTokens ['delicious', ',', '##y', 'that', 'is', 'were', 'the', 'to', 'since', 'dinner', 'only', ',', 'great', 'service', 'of', '!', 'the', '##cos', 'just']
+toTokens ['##ₜ', 'toward', 'expect', 'disabilities', 'disabilities', 'expect', '155', 'expect', 'evolutionary', 'க', 'disabilities', 'Maria', 'disabilities', 'disabilities', 'க', '155', 'toward', 'disabilities', 'க']
+sProbs:  [0.00014520659169647843, 0.9998548030853271]
+aProbs:  [0.6621493101119995, 0.3378506600856781]
+attack suc rate 66.67 %
+average # of queries: 201.82222222222222.
+46.0  th document.
+stgt:  [ [ stopped ] ] by for an [ [ early ] ] [ [ dinner ] ] on [ [ sat ] ] [ [ur ] ]day night [ [ and ] ] [ [ were ] ] [ [ quite ] ] [ [ impressed ] ] [ [! ] ] even [ [ early ] ] though on satur [ [day ] ] [ [ we ] ] [ [ had ] ] about [ [ a ] ] 15 [ [ minute ] ] [ [ wait ] ] but got [ [ a ] ] great table [ [ on ] ] [ [ the ] ] patio [ [ the ] ] only [ [ take ] ] reservations for [ [ parties ] ] [ [ of ] ] 8 or more n nstarted off with the edamame dumplings which were fresh and delicious then i had the white shrimp ramen and my husband had the chicken curry panang both were absolutely wonderful! you could taste the whole grain goodness, yet they both were full of flavor and just enough spiciness to keep that happy feeling in your mouth last i don't know who was com planing about the portions but they were definitely enough for dinner we ended up with the banana tart dessert which was also wonderful fresh and not overwhelmingly sweet like so many restaurant desserts n noverall a great experience and we will definitely go back
+pos   stopped  ->  ##ₜ   0.999856  ->  0.999855
+pos   dinner  ->  expect   0.999855  ->  0.999855
+pos   and  ->  க   0.999855  ->  0.999855
+pos   க  ->  Maria   0.999855  ->  0.999855
+pos   Maria  ->  doesn   0.999855  ->  0.999854
+pos   were  ->  doesn   0.999854  ->  0.999853
+pos   early  ->  doesn   0.999853  ->  0.999852
+pos   doesn  ->  pains   0.999852  ->  0.999852
+pos   ##day  ->  க   0.999852  ->  0.999851
+pos   க  ->  155   0.999851  ->  0.999851
+pos   155  ->  perform   0.999851  ->  0.999851
+pos   perform  ->  skeleton   0.999851  ->  0.99985
+pos   a  ->  155   0.99985  ->  0.99985
+pos   minute  ->  pains   0.99985  ->  0.99985
+pos   wait  ->  case   0.99985  ->  0.999849
+pos   a  ->  endings   0.999849  ->  0.999849
+pos   endings  ->  Maria   0.999849  ->  0.999849
+pos   Maria  ->  doesn   0.999849  ->  0.999846
+pos   on  ->  க   0.999846  ->  0.999846
+pos   க  ->  Maria   0.999846  ->  0.999846
+pos   Maria  ->  asks   0.999846  ->  0.999845
+pos   the  ->  Maria   0.999845  ->  0.999845
+pos   Maria  ->  Ω   0.999845  ->  0.999844
+pos   the  ->  258   0.999844  ->  0.999843
+pos   258  ->  Maria   0.999843  ->  0.999843
+pos   Maria  ->  Ω   0.999843  ->  0.999843
+pos   take  ->  க   0.999843  ->  0.999842
+pos   க  ->  Maria   0.999842  ->  0.999842
+pos   Maria  ->  155   0.999842  ->  0.999841
+pos   155  ->  Ω   0.999841  ->  0.999841
+pos   parties  ->  க   0.999841  ->  0.99984
+pos   க  ->  155   0.99984  ->  0.999839
+pos   155  ->  Maria   0.999839  ->  0.999839
+pos   of  ->  155   0.999839  ->  0.999839
+pos   155  ->  ##21   0.999839  ->  0.999838
+attack suc rate 65.22 %
+average # of queries: 205.7826086956522.
+47.0  th document.
+stgt:  i did [ [ n ] ] [ ['] ] t [ [ realize ] ] this [ [ place ] ] is brought to you [ [ by ] ] the [ [ creators ] ] [ [ of ] ] [ [ cheese ] ]cake [ [ factory ] ] well [ [ that ] ] [ [ explains ] ] the [ [ good ] ] food [ [ i ] ] [ [ ordered ] ] a [ [ ca ] ] [ [ly ] ] [ [ps ] ] [ [o ] ] mo [ [jit ] ]o, the rare [ [ ah ] ] [ [i ] ] [ [ t ] ]una [ [ salad ] ], [ [ and ] ] i shared in some of the fudge cake collision the mojito was pretty good, the ahi tuna was amazing, and the cake was also pretty good combine that with nice decor and decent service and i'd say it's worth repeat trips n ni've been to the other grand lux inside venetian \ ( technically, this one is the other grand lux \ ) i think i like the palazzo version better simply for the layout and decor it feels a little more intimate
+pos   realize  ->  க   0.999672  ->  0.999558
+pos   க  ->  toward   0.999558  ->  0.998462
+pos   place  ->  ##21   0.998462  ->  0.998453
+pos   by  ->  க   0.998453  ->  0.998437
+pos   க  ->  toward   0.998437  ->  0.998351
+pos   toward  ->  perform   0.998351  ->  0.998338
+pos   perform  ->  155   0.998338  ->  0.997702
+pos   155  ->  ##21   0.997702  ->  0.99743
+pos   creators  ->  க   0.99743  ->  0.997397
+pos   க  ->  perform   0.997397  ->  0.997065
+pos   of  ->  toward   0.997065  ->  0.997054
+pos   cheese  ->  ‰   0.997054  ->  0.995046
+pos   factory  ->  க   0.995046  ->  0.994896
+pos   க  ->  Maria   0.994896  ->  0.993708
+pos   Maria  ->  doesn   0.993708  ->  0.993648
+pos   doesn  ->  perform   0.993648  ->  0.99356
+pos   perform  ->  asks   0.99356  ->  0.987587
+pos   that  ->  toward   0.987587  ->  0.981594
+pos   toward  ->  doesn   0.981594  ->  0.97637
+pos   doesn  ->  disabilities   0.97637  ->  0.964889
+pos   disabilities  ->  pains   0.964889  ->  0.957171
+pos   explains  ->  toward   0.957171  ->  0.949731
+pos   toward  ->  doesn   0.949731  ->  0.892231
+pos   doesn  ->  ##ₜ   0.892231  ->  0.753172
+pos   ##ₜ  ->  disabilities   0.753172  ->  0.687
+disabilities  ->  pains
+srcTxt:  i didn't [ [ realize ] ] this [ [ place ] ] is brought to you [ [ by ] ] the [ [ creators ] ] [ [ of ] ] [ [ cheese ] ]cake [ [ factory ] ] well [ [ that ] ] [ [ explains ] ] the good food i ordered a calypso mojito, the rare ahi tuna salad, and i shared in some of the fudge cake collision the mojito was pretty good, the ahi tuna was amazing, and the cake was also pretty good combine that with nice decor and decent service and i'd say it's worth repeat trips n ni've been to the other grand lux inside venetian \ ( technically, this one is the other grand lux \ ) i think i like the palazzo version better simply for the layout and decor it feels a little more intimate
+advTxt:  i didn't [ [ toward ] ] this [ [21 ] ] is brought to you [ [21 ] ] the [ [ perform ] ] [ [ toward ] ] [ [ ‰ ] ]cake [ [ asks ] ] well [ [ pains ] ] [ [ pains ] ] the good food i ordered a calypso mojito, the rare ahi tuna salad, and i shared in some of the fudge cake collision the mojito was pretty good, the ahi tuna was amazing, and the cake was also pretty good combine that with nice decor and decent service and i'd say it's worth repeat trips n ni've been to the other grand lux inside venetian \ ( technically, this one is the other grand lux \ ) i think i like the palazzo version better simply for the layout and decor it feels a little more intimate
+srcTxt:  i didn't realize this place is brought to you by the creators of cheesecake factory well that explains the good food i ordered a calypso mojito, the rare ahi tuna salad, and i shared in some of the fudge cake collision the mojito was pretty good, the ahi tuna was amazing, and the cake was also pretty good combine that with nice decor and decent service and i'd say it's worth repeat trips n ni've been to the other grand lux inside venetian \ ( technically, this one is the other grand lux \ ) i think i like the palazzo version better simply for the layout and decor it feels a little more intimate
+advTxt:  i didn't toward this21 is brought to you21 the perform toward ‰cake asks well pains pains the good food i ordered a calypso mojito, the rare ahi tuna salad, and i shared in some of the fudge cake collision the mojito was pretty good, the ahi tuna was amazing, and the cake was also pretty good combine that with nice decor and decent service and i'd say it's worth repeat trips n ni've been to the other grand lux inside venetian \ ( technically, this one is the other grand lux \ ) i think i like the palazzo version better simply for the layout and decor it feels a little more intimate
+targetTokens ['realize', 'place', 'by', 'creators', 'of', 'cheese', 'factory', 'that', 'explains']
+toTokens ['toward', '##21', '##21', 'perform', 'toward', '‰', 'asks', 'pains', 'pains']
+sProbs:  [0.00032841923530213535, 0.9996715784072876]
+aProbs:  [0.8197252750396729, 0.18027473986148834]
+attack suc rate 65.96 %
+average # of queries: 205.08510638297872.
+48.0  th document.
+stgt:  i [ [ really ] ] do [ [ n ] ] [ ['] ] t [ [ understand ] ] the h [ [ype ] ] of this [ [ place ] ] to be [ [ honest ] ] [ [, ] ] had [ [ the ] ] personal [ [ recommendations ] ] from [ [ friends ] ] [ [ not ] ] [ [ made ] ] this [ [ place ] ] [ [ seem ] ] like the [ [ biggest ] ] deal in [ [ the ] ] city [ [, ] ] [ [ then ] ] i would [ [ have ] ] probably [ [ rated ] ] it [ [ a ] ] 3 or [ [ 4 ] ] the pizza [ [ was ] ] just ok it was decently greasy and the crust wasn't all that special they wouldn't deliver \ ( even though i am literally a few blocks from them \ ) and they don't accept credit debit card a huge downfall for me
+neg   really  ->  bold   0.999847  ->  0.999847
+neg   bold  ->  ##本   0.999847  ->  0.999847
+neg   ##本  ->  Bit   0.999847  ->  0.999846
+neg   n  ->  க   0.999846  ->  0.999846
+neg   க  ->  Aviation   0.999846  ->  0.999845
+neg   Aviation  ->  Maria   0.999845  ->  0.999843
+neg   Maria  ->  ##pton   0.999843  ->  0.999842
+neg   ##pton  ->  pains   0.999842  ->  0.999781
+neg   '  ->  toward   0.999781  ->  0.999747
+neg   toward  ->  doesn   0.999747  ->  0.999708
+neg   doesn  ->  sounds   0.999708  ->  0.999639
+neg   understand  ->  pains   0.999639  ->  0.999073
+neg   pains  ->  endings   0.999073  ->  0.998861
+neg   ##ype  ->  155   0.998861  ->  0.998839
+neg   155  ->  endings   0.998839  ->  0.998627
+neg   endings  ->  ##iek   0.998627  ->  0.998619
+neg   place  ->  க   0.998619  ->  0.998501
+neg   க  ->  cannons   0.998501  ->  0.998101
+neg   cannons  ->  Ω   0.998101  ->  0.998071
+neg   Ω  ->  evolutionary   0.998071  ->  0.998056
+neg   honest  ->  க   0.998056  ->  0.997757
+neg   க  ->  cannons   0.997757  ->  0.997659
+neg   ,  ->  perform   0.997659  ->  0.997249
+neg   the  ->  CPU   0.997249  ->  0.996884
+neg   CPU  ->  asks   0.996884  ->  0.996697
+neg   asks  ->  ##21   0.996697  ->  0.996613
+neg   recommendations  ->  CPU   0.996613  ->  0.99651
+neg   friends  ->  endings   0.99651  ->  0.996483
+neg   made  ->  endings   0.996483  ->  0.996278
+neg   endings  ->  pains   0.996278  ->  0.995365
+neg   place  ->  க   0.995365  ->  0.99507
+neg   க  ->  Maria   0.99507  ->  0.994265
+neg   Maria  ->  155   0.994265  ->  0.991269
+neg   155  ->  258   0.991269  ->  0.990382
+neg   258  ->  Ω   0.990382  ->  0.989151
+neg   seem  ->  க   0.989151  ->  0.956294
+neg   க  ->  evolutionary   0.956294  ->  0.955875
+neg   biggest  ->  endings   0.955875  ->  0.955311
+neg   endings  ->  perform   0.955311  ->  0.917816
+neg   perform  ->  embedded   0.917816  ->  0.908994
+neg   the  ->  perform   0.908994  ->  0.881513
+neg   ,  ->  toward   0.881513  ->  0.808589
+neg   then  ->  ##onnell   0.808589  ->  0.799322
+have  ->  க
+srcTxt:  i [ [ really ] ] do [ [ n ] ] [ ['] ] t [ [ understand ] ] the h [ [ype ] ] of this [ [ place ] ] to be [ [ honest ] ] [ [, ] ] had [ [ the ] ] personal [ [ recommendations ] ] from [ [ friends ] ] not [ [ made ] ] this [ [ place ] ] [ [ seem ] ] like the [ [ biggest ] ] deal in [ [ the ] ] city [ [, ] ] [ [ then ] ] i would [ [ have ] ] probably rated it a 3 or 4 the pizza was just ok it was decently greasy and the crust wasn't all that special they wouldn't deliver \ ( even though i am literally a few blocks from them \ ) and they don't accept credit debit card a huge downfall for me
+advTxt:  i [ [ Bit ] ] do [ [ pains ] ] [ [ sounds ] ] t [ [ endings ] ] the h [ [iek ] ] of this [ [ evolutionary ] ] to be [ [ cannons ] ] [ [ perform ] ] had [ [21 ] ] personal [ [ CPU ] ] from [ [ endings ] ] not [ [ pains ] ] this [ [ Ω ] ] [ [ evolutionary ] ] like the [ [ embedded ] ] deal in [ [ perform ] ] city [ [ toward ] ] [ [onnell ] ] i would [ [ க ] ] probably rated it a 3 or 4 the pizza was just ok it was decently greasy and the crust wasn't all that special they wouldn't deliver \ ( even though i am literally a few blocks from them \ ) and they don't accept credit debit card a huge downfall for me
+srcTxt:  i really don't understand the hype of this place to be honest, had the personal recommendations from friends not made this place seem like the biggest deal in the city, then i would have probably rated it a 3 or 4 the pizza was just ok it was decently greasy and the crust wasn't all that special they wouldn't deliver \ ( even though i am literally a few blocks from them \ ) and they don't accept credit debit card a huge downfall for me
+advTxt:  i Bit do pains sounds t endings the hiek of this evolutionary to be cannons perform had21 personal CPU from endings not pains this Ω evolutionary like the embedded deal in perform city towardonnell i would க probably rated it a 3 or 4 the pizza was just ok it was decently greasy and the crust wasn't all that special they wouldn't deliver \ ( even though i am literally a few blocks from them \ ) and they don't accept credit debit card a huge downfall for me
+targetTokens ['really', 'n', "'", 'understand', '##ype', 'place', 'honest', ',', 'the', 'recommendations', 'friends', 'made', 'place', 'seem', 'biggest', 'the', ',', 'then', 'have']
+toTokens ['Bit', 'pains', 'sounds', 'endings', '##iek', 'evolutionary', 'cannons', 'perform', '##21', 'CPU', 'endings', 'pains', 'Ω', 'evolutionary', 'embedded', 'perform', 'toward', '##onnell', 'க']
+sProbs:  [0.999847412109375, 0.00015261198859661818]
+aProbs:  [0.41478052735328674, 0.5852194428443909]
+attack suc rate 66.67 %
+average # of queries: 207.16666666666666.
+49.0  th document.
+stgt:  i was [ [ walking ] ] [ [ around ] ] and [ [ decided ] ] to [ [ try ] ] this [ [ place ] ] out i [ [ asked ] ] for a [ [ recommendation ] ] on a [ [ type ] ] of [ [ ground ] ] [ [ coffee ] ] to [ [ take ] ] [ [ home ] ] the [ [ ladies ] ] where very [ [ helpful ] ] and [ [ know ] ]led [ [gable ] ] i [ [ love ] ] [ [ the ] ] coffee thank you
+pos   walking  ->  expect   0.999842  ->  0.998799
+pos   around  ->  Maria   0.998799  ->  0.998588
+pos   Maria  ->  ##21   0.998588  ->  0.997324
+pos   ##21  ->  expect   0.997324  ->  0.992851
+pos   decided  ->  க   0.992851  ->  0.992376
+pos   க  ->  toward   0.992376  ->  0.979686
+pos   toward  ->  ##onnell   0.979686  ->  0.952135
+pos   ##onnell  ->  expect   0.952135  ->  0.940942
+pos   try  ->  க   0.940942  ->  0.861417
+pos   க  ->  toward   0.861417  ->  0.777887
+pos   toward  ->  Maria   0.777887  ->  0.692371
+Maria  ->  ##21
+srcTxt:  i was [ [ walking ] ] [ [ around ] ] and [ [ decided ] ] to [ [ try ] ] this place out i asked for a recommendation on a type of ground coffee to take home the ladies where very helpful and knowledgable i love the coffee thank you
+advTxt:  i was [ [ expect ] ] [ [ expect ] ] and [ [ expect ] ] to [ [21 ] ] this place out i asked for a recommendation on a type of ground coffee to take home the ladies where very helpful and knowledgable i love the coffee thank you
+srcTxt:  i was walking around and decided to try this place out i asked for a recommendation on a type of ground coffee to take home the ladies where very helpful and knowledgable i love the coffee thank you
+advTxt:  i was expect expect and expect to21 this place out i asked for a recommendation on a type of ground coffee to take home the ladies where very helpful and knowledgable i love the coffee thank you
+targetTokens ['walking', 'around', 'decided', 'try']
+toTokens ['expect', 'expect', 'expect', '##21']
+sProbs:  [0.00015824385627638549, 0.9998416900634766]
+aProbs:  [0.5631020069122314, 0.43689802289009094]
+attack suc rate 67.35 %
+average # of queries: 204.6734693877551.
+saved at sample  49.0  as file  BERTFineTuned_yelp_val_1.0_24_400_0_0802_19July.json
+50.0  th document.
+stgt:  i [ [ wish ] ] this was a [ [ half ] ] [ [ star ] ] [ [ ni ] ] had a [ [ gift ] ] [ [ card ] ] for a [ [ detail ] ] so i had to [ [ go ] ] here [ [ told ] ] the [ [ guy ] ], [ [ no ] ] [ [ shiny ] ] stuff on [ [ the ] ] dash and [ [ do ] ] [ [ n ] ]'[ [ t ] ] forget to tell [ [ them ] ] [ [ about ] ] [ [ the ] ] third row [ [ well ] ] [ [ that ] ] did [ [ n ] ]'[ [ t ] ] happen i [ [ left ] ] my car there for 5 hours only to have to wait an additional 45 minutes to have the car finished i found all that they forgot n ncome on people! i am paying money to have a car detailed! do your job! don't make me wait when i am there to pick up my car after having it for that long! n nthe kicker was that they gave me a free wash for my time no thank you! will not go back!
+neg   wish  ->  toward   0.999848  ->  0.999841
+neg   half  ->  க   0.999841  ->  0.999829
+neg   க  ->  endings   0.999829  ->  0.999795
+neg   ni  ->  perform   0.999795  ->  0.999778
+neg   perform  ->  asks   0.999778  ->  0.99976
+neg   gift  ->  க   0.99976  ->  0.999754
+neg   க  ->  endings   0.999754  ->  0.999751
+neg   endings  ->  perform   0.999751  ->  0.999748
+neg   perform  ->  toward   0.999748  ->  0.999745
+neg   toward  ->  ##onnell   0.999745  ->  0.999738
+neg   card  ->  க   0.999738  ->  0.99973
+neg   க  ->  ##onnell   0.99973  ->  0.999727
+neg   ##onnell  ->  Ω   0.999727  ->  0.999723
+neg   go  ->  endings   0.999723  ->  0.999716
+neg   told  ->  Aviation   0.999716  ->  0.999714
+neg   Aviation  ->  Side   0.999714  ->  0.999712
+neg   Side  ->  endings   0.999712  ->  0.999704
+neg   guy  ->  endings   0.999704  ->  0.999701
+neg   endings  ->  skeleton   0.999701  ->  0.999696
+neg   skeleton  ->  Aviation   0.999696  ->  0.999694
+neg   Aviation  ->  Canterbury   0.999694  ->  0.999681
+neg   no  ->  toward   0.999681  ->  0.999673
+neg   toward  ->  Alejandro   0.999673  ->  0.99963
+neg   shiny  ->  க   0.99963  ->  0.999546
+neg   க  ->  toward   0.999546  ->  0.999534
+neg   toward  ->  enormous   0.999534  ->  0.999399
+neg   the  ->  க   0.999399  ->  0.999291
+neg   க  ->  ##21   0.999291  ->  0.999206
+neg   do  ->  Maria   0.999206  ->  0.999064
+neg   Maria  ->  ##lerical   0.999064  ->  0.99876
+neg   n  ->  க   0.99876  ->  0.998709
+neg   க  ->  toward   0.998709  ->  0.998653
+neg   toward  ->  doesn   0.998653  ->  0.99844
+neg   them  ->  க   0.99844  ->  0.997972
+neg   க  ->  ##onnell   0.997972  ->  0.99797
+neg   ##onnell  ->  Maria   0.99797  ->  0.997843
+neg   Maria  ->  Aviation   0.997843  ->  0.997401
+neg   about  ->  perform   0.997401  ->  0.99715
+neg   well  ->  க   0.99715  ->  0.997024
+neg   க  ->  Maria   0.997024  ->  0.996971
+neg   Maria  ->  ##onnell   0.996971  ->  0.99296
+neg   n  ->  க   0.99296  ->  0.990924
+neg   க  ->  toward   0.990924  ->  0.990291
+neg   toward  ->  Aviation   0.990291  ->  0.988989
+neg   Aviation  ->  perform   0.988989  ->  0.988965
+neg   perform  ->  ##onnell   0.988965  ->  0.962621
+neg   t  ->  ##imate   0.962621  ->  0.925685
+neg   left  ->  க   0.925685  ->  0.925159
+க  ->  existed
+srcTxt:  i [ [ wish ] ] this was a [ [ half ] ] star [ [ ni ] ] had a [ [ gift ] ] [ [ card ] ] for a detail so i had to [ [ go ] ] here [ [ told ] ] the [ [ guy ] ], [ [ no ] ] [ [ shiny ] ] stuff on [ [ the ] ] dash and [ [ do ] ] [ [ n ] ]'t forget to tell [ [ them ] ] [ [ about ] ] the third row [ [ well ] ] that did [ [ n ] ]'[ [ t ] ] happen i [ [ left ] ] my car there for 5 hours only to have to wait an additional 45 minutes to have the car finished i found all that they forgot n ncome on people! i am paying money to have a car detailed! do your job! don't make me wait when i am there to pick up my car after having it for that long! n nthe kicker was that they gave me a free wash for my time no thank you! will not go back!
+advTxt:  i [ [ toward ] ] this was a [ [ endings ] ] star [ [ asks ] ] had a [ [onnell ] ] [ [ Ω ] ] for a detail so i had to [ [ endings ] ] here [ [ endings ] ] the [ [ Canterbury ] ], [ [ Alejandro ] ] [ [ enormous ] ] stuff on [ [21 ] ] dash and [ [lerical ] ] [ [ doesn ] ]'t forget to tell [ [ Aviation ] ] [ [ perform ] ] the third row [ [onnell ] ] that did [ [onnell ] ]'[ [imate ] ] happen i [ [ existed ] ] my car there for 5 hours only to have to wait an additional 45 minutes to have the car finished i found all that they forgot n ncome on people! i am paying money to have a car detailed! do your job! don't make me wait when i am there to pick up my car after having it for that long! n nthe kicker was that they gave me a free wash for my time no thank you! will not go back!
+srcTxt:  i wish this was a half star ni had a gift card for a detail so i had to go here told the guy, no shiny stuff on the dash and don't forget to tell them about the third row well that didn't happen i left my car there for 5 hours only to have to wait an additional 45 minutes to have the car finished i found all that they forgot n ncome on people! i am paying money to have a car detailed! do your job! don't make me wait when i am there to pick up my car after having it for that long! n nthe kicker was that they gave me a free wash for my time no thank you! will not go back!
+advTxt:  i toward this was a endings star asks had aonnell Ω for a detail so i had to endings here endings the Canterbury, Alejandro enormous stuff on21 dash andlerical doesn't forget to tell Aviation perform the third rowonnell that didonnell 'imate happen i existed my car there for 5 hours only to have to wait an additional 45 minutes to have the car finished i found all that they forgot n ncome on people! i am paying money to have a car detailed! do your job! don't make me wait when i am there to pick up my car after having it for that long! n nthe kicker was that they gave me a free wash for my time no thank you! will not go back!
+targetTokens ['wish', 'half', 'ni', 'gift', 'card', 'go', 'told', 'guy', 'no', 'shiny', 'the', 'do', 'n', 'them', 'about', 'well', 'n', 't', 'left']
+toTokens ['toward', 'endings', 'asks', '##onnell', 'Ω', 'endings', 'endings', 'Canterbury', 'Alejandro', 'enormous', '##21', '##lerical', 'doesn', 'Aviation', 'perform', '##onnell', '##onnell', '##imate', 'existed']
+sProbs:  [0.9998478889465332, 0.0001520459190942347]
+aProbs:  [0.32176050543785095, 0.6782395243644714]
+attack suc rate 68.0 %
+average # of queries: 208.0.
+51.0  th document.
+stgt:  very [ [ nice ] ] [ [ staff ] ], i [ ['] ] m [ [ going ] ] to miss it [ [ as ] ] i [ [ move ] ] a [ [ little ] ] [ [ further ] ] away [ [ however ] ] i [ [ use ] ] [ [ the ] ] online ordering and [ [ it ] ]'[ [ s ] ] great [ [ to ] ] wish other stores did this
+pos   nice  ->  ##ₜ   0.99984  ->  0.981036
+pos   ##ₜ  ->  Bit   0.981036  ->  0.8988
+pos   Bit  ->  doesn   0.8988  ->  0.673311
+staff  ->  disabilities
+srcTxt:  very [ [ nice ] ] [ [ staff ] ], i'm going to miss it as i move a little further away however i use the online ordering and it's great to wish other stores did this
+advTxt:  very [ [ doesn ] ] [ [ disabilities ] ], i'm going to miss it as i move a little further away however i use the online ordering and it's great to wish other stores did this
+srcTxt:  very nice staff, i'm going to miss it as i move a little further away however i use the online ordering and it's great to wish other stores did this
+advTxt:  very doesn disabilities, i'm going to miss it as i move a little further away however i use the online ordering and it's great to wish other stores did this
+targetTokens ['nice', 'staff']
+toTokens ['doesn', 'disabilities']
+sProbs:  [0.00015963207988534123, 0.9998403787612915]
+aProbs:  [0.5238648056983948, 0.47613525390625]
+attack suc rate 68.63 %
+average # of queries: 204.88235294117646.
+52.0  th document.
+stgt:  i [ [ wish ] ] they [ [ would ] ] [ [ get ] ] my [ [ smooth ] ] [ [ie ] ] [ [ orders ] ] right [ [ the ] ] [ [ b ] ]limey lime [ [y ] ] [ [ is ] ] not [ [ so ] ] lime [ [y ] ] [ [ without ] ] [ [ the ] ] lime [ [, ] ] [ [ so ] ] [ [ please ] ] stop forgetting [ [ my ] ] lime n [ [ na ] ] [ [ls ] ]o [ [, ] ] [ [ they ] ] are always [ [ out ] ] of ingredients maybe the ordering needs to be reassessed \?
+neg   wish  ->  toward   0.999737  ->  0.998609
+neg   toward  ->  ##bus   0.998609  ->  0.996046
+neg   ##bus  ->  existed   0.996046  ->  0.98433
+neg   existed  ->  Messiah   0.98433  ->  0.950162
+neg   would  ->  toward   0.950162  ->  0.93466
+neg   toward  ->  Maria   0.93466  ->  0.807099
+neg   Maria  ->  ##21   0.807099  ->  0.709832
+##21  ->  ##onnell
+srcTxt:  i [ [ wish ] ] they [ [ would ] ] get my smoothie orders right the blimey limey is not so limey without the lime, so please stop forgetting my lime n nalso, they are always out of ingredients maybe the ordering needs to be reassessed \?
+advTxt:  i [ [ Messiah ] ] they [ [onnell ] ] get my smoothie orders right the blimey limey is not so limey without the lime, so please stop forgetting my lime n nalso, they are always out of ingredients maybe the ordering needs to be reassessed \?
+srcTxt:  i wish they would get my smoothie orders right the blimey limey is not so limey without the lime, so please stop forgetting my lime n nalso, they are always out of ingredients maybe the ordering needs to be reassessed \?
+advTxt:  i Messiah theyonnell get my smoothie orders right the blimey limey is not so limey without the lime, so please stop forgetting my lime n nalso, they are always out of ingredients maybe the ordering needs to be reassessed \?
+targetTokens ['wish', 'would']
+toTokens ['Messiah', '##onnell']
+sProbs:  [0.9997374415397644, 0.0002625695778988302]
+aProbs:  [0.2702270746231079, 0.7297728657722473]
+attack suc rate 69.23 %
+average # of queries: 201.5.
+53.0  th document.
+stgt:  [ [ well ] ] my [ [ husband ] ] [ [ wanted ] ] to [ [ try ] ] this [ [ place ] ] [ [ since ] ] a [ [ friend ] ] [ [ told ] ] him these were the [ [ best ] ] [ [ ta ] ]cos [ [ in ] ] [ [ town ] ] [ [ uh ] ] [ [ huh ] ] [ [ n ] ] n [ [so ] ] he [ [ tried ] ] the [ [ b ] ] [ [uche ] ] [ [, ] ] [ [ and ] ] tripas \ ( [ [ e ] ] [ [ew ] ]w [ [w ] ] really \? \? \?!!! \ ) tacos and i had the carne asada and al pastor tacos n ncarne asada tacos were nothing to go crazy for meh nal pastor tacos, were amazing! the meat was soft and with all the fixin's \ ( salsa, guacamole etc \ ) it was like heaven \ ) n nmy husband loved the buche and the other stuff he ate, again disgusting! but hell he loved it so i guess this place gets only 4 stars for me the asada tacos were not mind blowing like we were told \ )
+pos   well  ->  serial   0.999852  ->  0.999852
+pos   serial  ->  Styx   0.999852  ->  0.999852
+pos   husband  ->  toward   0.999852  ->  0.99985
+pos   wanted  ->  ##21   0.99985  ->  0.999849
+pos   ##21  ->  expect   0.999849  ->  0.999848
+pos   try  ->  ##onnell   0.999848  ->  0.999845
+pos   place  ->  155   0.999845  ->  0.999844
+pos   155  ->  258   0.999844  ->  0.999843
+pos   258  ->  ##ₜ   0.999843  ->  0.999843
+pos   since  ->  க   0.999843  ->  0.99984
+pos   க  ->  258   0.99984  ->  0.999837
+pos   258  ->  155   0.999837  ->  0.999832
+pos   friend  ->  pains   0.999832  ->  0.99982
+pos   told  ->  doesn   0.99982  ->  0.999808
+pos   doesn  ->  258   0.999808  ->  0.999806
+pos   258  ->  perform   0.999806  ->  0.999787
+pos   best  ->  க   0.999787  ->  0.999771
+pos   க  ->  perform   0.999771  ->  0.999771
+pos   perform  ->  expect   0.999771  ->  0.999744
+pos   ta  ->  pains   0.999744  ->  0.999696
+pos   in  ->  க   0.999696  ->  0.999674
+pos   க  ->  disabilities   0.999674  ->  0.999517
+pos   town  ->  க   0.999517  ->  0.999476
+pos   க  ->  258   0.999476  ->  0.999469
+pos   uh  ->  155   0.999469  ->  0.999411
+pos   huh  ->  க   0.999411  ->  0.999253
+pos   க  ->  asks   0.999253  ->  0.999026
+pos   n  ->  Maria   0.999026  ->  0.998944

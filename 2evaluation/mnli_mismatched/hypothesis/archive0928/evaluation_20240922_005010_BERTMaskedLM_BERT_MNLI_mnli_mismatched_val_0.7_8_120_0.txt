@@ -1,0 +1,285 @@
+numsProcessedSamples 1000
+Vocabulary Size: 28996
+BERT_UNCASED
+Evaluation Data Size: 1000
+CLS token ID: 101
+SEP token ID: 102
+PAD token ID: 0
+MASK token ID: 103
+UNK token ID: 100
+torch.Size([1000, 512])
+torch.Size([1000, 512])
+torch.Size([1000])
+1000
+attacker base: bert-base-cased 
+attacker device:  cuda:0
+1.0  th document.
+input_ids_batch [[1192, 11019, 183, 112, 189, 1321, 1122, 1114, 1128, 118, 118, 4534, 1169, 146, 117, 16679, 119, 102, 1192, 1132, 1136, 1682, 1106, 2498, 1122, 1114, 1128, 119]]
+stgt:  You can't take it with you - - neither can I, unfortunately. [ [ You ] ] are [ [ not ] ] [ [ able ] ] to [ [ bring ] ] [ [ it ] ] [ [ with ] ] [ [ you ] ] [ [. ] ]
+not  ->  she
+input_ids_batch [[1192, 11019, 183, 112, 189, 1321, 1122, 1114, 1128, 118, 118, 4534, 1169, 146, 117, 16679, 119, 102, 1192, 1132, 1131, 1682, 1106, 2498, 1122, 1114, 1128, 119]]
+advInxCut [1192, 11019, 183, 112, 189, 1321, 1122, 1114, 1128, 118, 118, 4534, 1169, 146, 117, 16679, 119, 102, 1192, 1132, 1131, 1682, 1106, 2498, 1122, 1114, 1128, 119]
+advText [("You can't take it with you - - neither can I, unfortunately.", 'You are she able to bring it with you.')]
+srcTxt:  You can't take it with you - - neither can I, unfortunately. You are [ [ not ] ] able to bring it with you.
+advTxt:  You can't take it with you - - neither can I, unfortunately. You are [ [ she ] ] able to bring it with you.
+srcTxt:  ("You can't take it with you - - neither can I, unfortunately.", 'You are not able to bring it with you.')
+advTxt:  ("You can't take it with you - - neither can I, unfortunately.", 'You are she able to bring it with you.')
+tLabel:  1
+targetTokens ['not']
+toTokens ['she']
+sProbs:  [0.00039074569940567017, 0.991411566734314, 0.008197683840990067]
+aProbs:  [0.9945403933525085, 0.001585966325365007, 0.00387369841337204]
+attack suc rate 100.0 %
+average # of queries: 1.0.
+all perturbed tokens :  1
+total token lens     :  28
+avg perturbed tokens :  1.0
+avg perturbation rate:  0.0357
+saved at sample  1.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli_mismatched/hypothesis/evaluation_20240922_005010_BERTMaskedLM_BERT_MNLI_mnli_mismatched_val_0.7_8_120_0.json
+2.0  th document.
+input_ids_batch [[1109, 6654, 1850, 8362, 1874, 16641, 1181, 4930, 6777, 1116, 1121, 1134, 1142, 3189, 1108, 4029, 132, 16679, 117, 1175, 1108, 1185, 6777, 1104, 1126, 7448, 117, 1133, 1103, 6654, 1144, 8642, 1143, 1115, 1175, 1209, 1129, 1141, 1107, 1103, 1502, 1520, 117, 170, 1897, 6818, 24799, 1104, 170, 1250, 1114, 1142, 1641, 119, 102, 5823, 1126, 7448, 1107, 170, 1520, 1110, 1304, 1696, 119]]
+stgt:  The publisher sent unrevised bound proofs from which this review was prepared ; unfortunately, there was no proof of an index, but the publisher has assured me that there will be one in the published book, a rather essential ingredient of a work with this title. [ [ Having ] ] an [ [ index ] ] [ [ in ] ] [ [ a ] ] [ [ book ] ] [ [ is ] ] [ [ very ] ] [ [ important ] ].
+input_ids_batch [[1109, 6654, 1850, 8362, 1874, 16641, 1181, 4930, 6777, 1116, 1121, 1134, 1142, 3189, 1108, 4029, 132, 16679, 117, 1175, 1108, 1185, 6777, 1104, 1126, 7448, 117, 1133, 1103, 6654, 1144, 8642, 1143, 1115, 1175, 1209, 1129, 1141, 1107, 1103, 1502, 1520, 117, 170, 1897, 6818, 24799, 1104, 170, 1250, 1114, 1142, 1641, 119, 102, 5823, 1126, 7448, 1107, 170, 1520, 1110, 1304, 1696, 119]]
+advInxCut [1109, 6654, 1850, 8362, 1874, 16641, 1181, 4930, 6777, 1116, 1121, 1134, 1142, 3189, 1108, 4029, 132, 16679, 117, 1175, 1108, 1185, 6777, 1104, 1126, 7448, 117, 1133, 1103, 6654, 1144, 8642, 1143, 1115, 1175, 1209, 1129, 1141, 1107, 1103, 1502, 1520, 117, 170, 1897, 6818, 24799, 1104, 170, 1250, 1114, 1142, 1641, 119, 102, 5823, 1126, 7448, 1107, 170, 1520, 1110, 1304, 1696, 119]
+advText [('The publisher sent unrevised bound proofs from which this review was prepared ; unfortunately, there was no proof of an index, but the publisher has assured me that there will be one in the published book, a rather essential ingredient of a work with this title.', 'Having an index in a book is very important.')]
+srcTxt:  The publisher sent unrevised bound proofs from which this review was prepared ; unfortunately, there was no proof of an index, but the publisher has assured me that there will be one in the published book, a rather essential ingredient of a work with this title. Having an index in a book is very important.
+advTxt:  The publisher sent unrevised bound proofs from which this review was prepared ; unfortunately, there was no proof of an index, but the publisher has assured me that there will be one in the published book, a rather essential ingredient of a work with this title. Having an index in a book is very important.
+srcTxt:  ('The publisher sent unrevised bound proofs from which this review was prepared ; unfortunately, there was no proof of an index, but the publisher has assured me that there will be one in the published book, a rather essential ingredient of a work with this title.', 'Having an index in a book is very important.')
+advTxt:  ('The publisher sent unrevised bound proofs from which this review was prepared ; unfortunately, there was no proof of an index, but the publisher has assured me that there will be one in the published book, a rather essential ingredient of a work with this title.', 'Having an index in a book is very important.')
+tLabel:  2
+targetTokens []
+toTokens []
+sProbs:  [0.006473332643508911, 0.5037615895271301, 0.48976510763168335]
+aProbs:  [0.006473332643508911, 0.5037615895271301, 0.48976510763168335]
+attack suc rate 100.0 %
+average # of queries: 0.5.
+all perturbed tokens :  2
+total token lens     :  121
+avg perturbed tokens :  1.0
+avg perturbation rate:  0.0165
+saved at sample  2.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli_mismatched/hypothesis/evaluation_20240922_005010_BERTMaskedLM_BERT_MNLI_mnli_mismatched_val_0.7_8_120_0.json
+3.0  th document.
+input_ids_batch [[1573, 1170, 1160, 1137, 1210, 1552, 1119, 1270, 7268, 14606, 1105, 1163, 117, 2091, 183, 112, 189, 8255, 1909, 1107, 146, 1276, 170, 2564, 1618, 1190, 1128, 119, 102, 1124, 1270, 1146, 7268, 14606, 1106, 1660, 1140, 170, 4693, 119]]
+stgt:  So after two or three days he called Callgrove and said, Don't bother coming in I found a guy better than you. [ [ He ] ] [ [ called ] ] [ [ up ] ] [ [ Call ] ] [ [grove ] ] to [ [ give ] ] him [ [ a ] ] raise [ [. ] ]
+input_ids_batch [[1573, 1170, 1160, 1137, 1210, 1552, 1119, 1270, 7268, 14606, 1105, 1163, 117, 2091, 183, 112, 189, 8255, 1909, 1107, 146, 1276, 170, 2564, 1618, 1190, 1128, 119, 102, 1124, 1270, 1146, 7268, 14606, 1106, 1660, 1140, 170, 4693, 119]]
+advInxCut [1573, 1170, 1160, 1137, 1210, 1552, 1119, 1270, 7268, 14606, 1105, 1163, 117, 2091, 183, 112, 189, 8255, 1909, 1107, 146, 1276, 170, 2564, 1618, 1190, 1128, 119, 102, 1124, 1270, 1146, 7268, 14606, 1106, 1660, 1140, 170, 4693, 119]
+advText [("So after two or three days he called Callgrove and said, Don't bother coming in I found a guy better than you.", 'He called up Callgrove to give him a raise.')]
+srcTxt:  So after two or three days he called Callgrove and said, Don't bother coming in I found a guy better than you. He called up Callgrove to give him a raise.
+advTxt:  So after two or three days he called Callgrove and said, Don't bother coming in I found a guy better than you. He called up Callgrove to give him a raise.
+srcTxt:  ("So after two or three days he called Callgrove and said, Don't bother coming in I found a guy better than you.", 'He called up Callgrove to give him a raise.')
+advTxt:  ("So after two or three days he called Callgrove and said, Don't bother coming in I found a guy better than you.", 'He called up Callgrove to give him a raise.')
+tLabel:  0
+targetTokens []
+toTokens []
+sProbs:  [0.3673728406429291, 0.006016087718307972, 0.626611053943634]
+aProbs:  [0.3673728406429291, 0.006016087718307972, 0.626611053943634]
+attack suc rate 100.0 %
+average # of queries: 0.3333333333333333.
+all perturbed tokens :  3
+total token lens     :  254
+avg perturbed tokens :  1.0
+avg perturbation rate:  0.0118
+saved at sample  3.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli_mismatched/hypothesis/evaluation_20240922_005010_BERTMaskedLM_BERT_MNLI_mnli_mismatched_val_0.7_8_120_0.json
+4.0  th document.
+input_ids_batch [[1247, 1110, 170, 1858, 1107, 1483, 1111, 170, 5538, 1591, 3634, 170, 3976, 117, 1111, 170, 4094, 7461, 1137, 2039, 117, 1165, 1119, 1169, 1136, 5529, 117, 1105, 5538, 1234, 1840, 1122, 195, 10087, 119, 146, 1138, 1136, 1767, 1122, 1215, 1107, 1168, 2740, 117, 1133, 1165, 1215, 1122, 3093, 1106, 4463, 1995, 1200, 1496, 11131, 119, 146, 1202, 1136, 1221, 2480, 1115, 1329, 1104, 1496, 11131, 1144, 1680, 4269, 7417, 1107, 3524, 1137, 5288, 117, 1133, 1191, 1122, 1144, 1136, 117, 1122, 1930, 1209, 1770, 117, 1272, 1177, 1242, 4269, 7417, 1132, 20959, 1107, 2124, 119, 102, 163, 10087, 1110, 1165, 170, 1591, 4919, 1103, 3240, 1149, 1104, 4834, 119]]
+stgt:  There is a term in English for a tennis player reaching a height, for a brief stretch or longer, when he can not miss, and tennis people call it zoning. I have not heard it used in other cases, but when used it seems to equal tener duende. I do not know whether that use of duende has reached Portuguese speakers in Brazil or Portugal, but if it has not, it probably will soon, because so many Portuguese speakers are bilingual in Spanish. [ [ Z ] ]oning [ [ is ] ] [ [ when ] ] [ [ a ] ] player hits [ [ the ] ] ball out [ [ of ] ] [ [ zone ] ] [ [. ] ]
+input_ids_batch [[1247, 1110, 170, 1858, 1107, 1483, 1111, 170, 5538, 1591, 3634, 170, 3976, 117, 1111, 170, 4094, 7461, 1137, 2039, 117, 1165, 1119, 1169, 1136, 5529, 117, 1105, 5538, 1234, 1840, 1122, 195, 10087, 119, 146, 1138, 1136, 1767, 1122, 1215, 1107, 1168, 2740, 117, 1133, 1165, 1215, 1122, 3093, 1106, 4463, 1995, 1200, 1496, 11131, 119, 146, 1202, 1136, 1221, 2480, 1115, 1329, 1104, 1496, 11131, 1144, 1680, 4269, 7417, 1107, 3524, 1137, 5288, 117, 1133, 1191, 1122, 1144, 1136, 117, 1122, 1930, 1209, 1770, 117, 1272, 1177, 1242, 4269, 7417, 1132, 20959, 1107, 2124, 119, 102, 163, 10087, 1110, 1165, 170, 1591, 4919, 1103, 3240, 1149, 1104, 4834, 119]]
+advInxCut [1247, 1110, 170, 1858, 1107, 1483, 1111, 170, 5538, 1591, 3634, 170, 3976, 117, 1111, 170, 4094, 7461, 1137, 2039, 117, 1165, 1119, 1169, 1136, 5529, 117, 1105, 5538, 1234, 1840, 1122, 195, 10087, 119, 146, 1138, 1136, 1767, 1122, 1215, 1107, 1168, 2740, 117, 1133, 1165, 1215, 1122, 3093, 1106, 4463, 1995, 1200, 1496, 11131, 119, 146, 1202, 1136, 1221, 2480, 1115, 1329, 1104, 1496, 11131, 1144, 1680, 4269, 7417, 1107, 3524, 1137, 5288, 117, 1133, 1191, 1122, 1144, 1136, 117, 1122, 1930, 1209, 1770, 117, 1272, 1177, 1242, 4269, 7417, 1132, 20959, 1107, 2124, 119, 102, 163, 10087, 1110, 1165, 170, 1591, 4919, 1103, 3240, 1149, 1104, 4834, 119]
+advText [('There is a term in English for a tennis player reaching a height, for a brief stretch or longer, when he can not miss, and tennis people call it zoning. I have not heard it used in other cases, but when used it seems to equal tener duende. I do not know whether that use of duende has reached Portuguese speakers in Brazil or Portugal, but if it has not, it probably will soon, because so many Portuguese speakers are bilingual in Spanish.', 'Zoning is when a player hits the ball out of zone.')]
+srcTxt:  There is a term in English for a tennis player reaching a height, for a brief stretch or longer, when he can not miss, and tennis people call it zoning. I have not heard it used in other cases, but when used it seems to equal tener duende. I do not know whether that use of duende has reached Portuguese speakers in Brazil or Portugal, but if it has not, it probably will soon, because so many Portuguese speakers are bilingual in Spanish. Zoning is when a player hits the ball out of zone.
+advTxt:  There is a term in English for a tennis player reaching a height, for a brief stretch or longer, when he can not miss, and tennis people call it zoning. I have not heard it used in other cases, but when used it seems to equal tener duende. I do not know whether that use of duende has reached Portuguese speakers in Brazil or Portugal, but if it has not, it probably will soon, because so many Portuguese speakers are bilingual in Spanish. Zoning is when a player hits the ball out of zone.
+srcTxt:  ('There is a term in English for a tennis player reaching a height, for a brief stretch or longer, when he can not miss, and tennis people call it zoning. I have not heard it used in other cases, but when used it seems to equal tener duende. I do not know whether that use of duende has reached Portuguese speakers in Brazil or Portugal, but if it has not, it probably will soon, because so many Portuguese speakers are bilingual in Spanish.', 'Zoning is when a player hits the ball out of zone.')
+advTxt:  ('There is a term in English for a tennis player reaching a height, for a brief stretch or longer, when he can not miss, and tennis people call it zoning. I have not heard it used in other cases, but when used it seems to equal tener duende. I do not know whether that use of duende has reached Portuguese speakers in Brazil or Portugal, but if it has not, it probably will soon, because so many Portuguese speakers are bilingual in Spanish.', 'Zoning is when a player hits the ball out of zone.')
+tLabel:  0
+targetTokens []
+toTokens []
+sProbs:  [0.23759324848651886, 0.08404773473739624, 0.6783589720726013]
+aProbs:  [0.23759324848651886, 0.08404773473739624, 0.6783589720726013]
+attack suc rate 100.0 %
+average # of queries: 0.25.
+all perturbed tokens :  4
+total token lens     :  498
+avg perturbed tokens :  1.0
+avg perturbation rate:  0.008
+saved at sample  4.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli_mismatched/hypothesis/evaluation_20240922_005010_BERTMaskedLM_BERT_MNLI_mnli_mismatched_val_0.7_8_120_0.json
+5.0  th document.
+input_ids_batch [[1249, 170, 2501, 1226, 1104, 1157, 3268, 117, 5262, 1687, 1305, 4813, 160, 18219, 3145, 8704, 11912, 1106, 6297, 1107, 1103, 1856, 1104, 170, 160, 18219, 9640, 4497, 119, 102, 5262, 1687, 1103, 1305, 4813, 160, 18219, 3145, 8704, 11912, 1106, 2239, 1114, 170, 12010, 1856, 1113, 170, 3367, 3418, 119]]
+stgt:  As a key part of its efforts, Defense created National Guard WMD Civil Support Teams to respond in the event of a WMD terrorist incident. Defense created [ [ the ] ] National Guard WMD Civil [ [ Support ] ] Teams to deal with [ [ a ] ] terrorism [ [ event ] ] [ [ on ] ] [ [ a ] ] [ [ mass ] ] scale [ [. ] ]
+input_ids_batch [[1249, 170, 2501, 1226, 1104, 1157, 3268, 117, 5262, 1687, 1305, 4813, 160, 18219, 3145, 8704, 11912, 1106, 6297, 1107, 1103, 1856, 1104, 170, 160, 18219, 9640, 4497, 119, 102, 5262, 1687, 1103, 1305, 4813, 160, 18219, 3145, 8704, 11912, 1106, 2239, 1114, 170, 12010, 1856, 1113, 170, 3367, 3418, 119]]
+advInxCut [1249, 170, 2501, 1226, 1104, 1157, 3268, 117, 5262, 1687, 1305, 4813, 160, 18219, 3145, 8704, 11912, 1106, 6297, 1107, 1103, 1856, 1104, 170, 160, 18219, 9640, 4497, 119, 102, 5262, 1687, 1103, 1305, 4813, 160, 18219, 3145, 8704, 11912, 1106, 2239, 1114, 170, 12010, 1856, 1113, 170, 3367, 3418, 119]
+advText [('As a key part of its efforts, Defense created National Guard WMD Civil Support Teams to respond in the event of a WMD terrorist incident.', 'Defense created the National Guard WMD Civil Support Teams to deal with a terrorism event on a mass scale.')]
+srcTxt:  As a key part of its efforts, Defense created National Guard WMD Civil Support Teams to respond in the event of a WMD terrorist incident. Defense created the National Guard WMD Civil Support Teams to deal with a terrorism event on a mass scale.
+advTxt:  As a key part of its efforts, Defense created National Guard WMD Civil Support Teams to respond in the event of a WMD terrorist incident. Defense created the National Guard WMD Civil Support Teams to deal with a terrorism event on a mass scale.
+srcTxt:  ('As a key part of its efforts, Defense created National Guard WMD Civil Support Teams to respond in the event of a WMD terrorist incident.', 'Defense created the National Guard WMD Civil Support Teams to deal with a terrorism event on a mass scale.')
+advTxt:  ('As a key part of its efforts, Defense created National Guard WMD Civil Support Teams to respond in the event of a WMD terrorist incident.', 'Defense created the National Guard WMD Civil Support Teams to deal with a terrorism event on a mass scale.')
+tLabel:  1
+targetTokens []
+toTokens []
+sProbs:  [0.0009273856412619352, 0.00523402588441968, 0.9938386082649231]
+aProbs:  [0.0009273856412619352, 0.00523402588441968, 0.9938386082649231]
+attack suc rate 100.0 %
+average # of queries: 0.2.
+all perturbed tokens :  5
+total token lens     :  793
+avg perturbed tokens :  1.0
+avg perturbation rate:  0.0063
+saved at sample  5.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli_mismatched/hypothesis/evaluation_20240922_005010_BERTMaskedLM_BERT_MNLI_mnli_mismatched_val_0.7_8_120_0.json
+6.0  th document.
+input_ids_batch [[2814, 117, 1133, 146, 112, 1396, 1694, 1122, 1111, 1177, 1263, 117, 146, 112, 182, 1215, 1106, 1176, 1297, 12188, 1105, 1176, 1917, 1176, 1115, 119, 102, 146, 1567, 1217, 170, 1297, 12188, 119]]
+stgt:  Yeah, but I've done it for so long, I'm used to like lifeguard and like everything like that. [ [ I ] ] [ [ love ] ] [ [ being ] ] [ [ a ] ] [ [ life ] ] [ [guard ] ] [ [. ] ]
+input_ids_batch [[2814, 117, 1133, 146, 112, 1396, 1694, 1122, 1111, 1177, 1263, 117, 146, 112, 182, 1215, 1106, 1176, 1297, 12188, 1105, 1176, 1917, 1176, 1115, 119, 102, 146, 1567, 1217, 170, 1297, 12188, 119]]
+advInxCut [2814, 117, 1133, 146, 112, 1396, 1694, 1122, 1111, 1177, 1263, 117, 146, 112, 182, 1215, 1106, 1176, 1297, 12188, 1105, 1176, 1917, 1176, 1115, 119, 102, 146, 1567, 1217, 170, 1297, 12188, 119]
+advText [("Yeah, but I've done it for so long, I'm used to like lifeguard and like everything like that.", 'I love being a lifeguard.')]
+srcTxt:  Yeah, but I've done it for so long, I'm used to like lifeguard and like everything like that. I love being a lifeguard.
+advTxt:  Yeah, but I've done it for so long, I'm used to like lifeguard and like everything like that. I love being a lifeguard.
+srcTxt:  ("Yeah, but I've done it for so long, I'm used to like lifeguard and like everything like that.", 'I love being a lifeguard.')
+advTxt:  ("Yeah, but I've done it for so long, I'm used to like lifeguard and like everything like that.", 'I love being a lifeguard.')
+tLabel:  2
+targetTokens []
+toTokens []
+sProbs:  [0.0055525340139865875, 0.5910825133323669, 0.40336498618125916]
+aProbs:  [0.0055525340139865875, 0.5910825133323669, 0.40336498618125916]
+attack suc rate 100.0 %
+average # of queries: 0.16666666666666666.
+all perturbed tokens :  6
+total token lens     :  1122
+avg perturbed tokens :  1.0
+avg perturbation rate:  0.0053
+saved at sample  6.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli_mismatched/hypothesis/evaluation_20240922_005010_BERTMaskedLM_BERT_MNLI_mnli_mismatched_val_0.7_8_120_0.json
+7.0  th document.
+input_ids_batch [[1799, 1117, 11221, 6489, 1776, 2114, 1127, 3378, 1113, 1469, 7619, 117, 1216, 1112, 1343, 1107, 4498, 117, 11347, 117, 9276, 117, 1137, 20394, 11252, 15449, 117, 21700, 2001, 7126, 7902, 1113, 7492, 1103, 1677, 3437, 118, 1103, 1244, 1311, 119, 102, 21700, 2001, 7126, 1108, 1103, 1178, 6489, 1776, 4264, 1114, 7492, 1103, 1244, 1311, 119]]
+stgt:  While his allied Islamist groups were focused on local battles, such as those in Egypt, Algeria, Bosnia, or Chechnya, Bin Ladin concentrated on attacking the far enemy - the United States. Bin [ [ La ] ] [ [din ] ] [ [ was ] ] the [ [ only ] ] Islamist concerned [ [ with ] ] [ [ attacking ] ] the [ [ United ] ] [ [ States ] ].
+United  ->  ：
+input_ids_batch [[1799, 1117, 11221, 6489, 1776, 2114, 1127, 3378, 1113, 1469, 7619, 117, 1216, 1112, 1343, 1107, 4498, 117, 11347, 117, 9276, 117, 1137, 20394, 11252, 15449, 117, 21700, 2001, 7126, 7902, 1113, 7492, 1103, 1677, 3437, 118, 1103, 1244, 1311, 119, 102, 21700, 2001, 7126, 1108, 1103, 1178, 6489, 1776, 4264, 1114, 7492, 1103, 1102, 1311, 119]]
+advInxCut [1799, 1117, 11221, 6489, 1776, 2114, 1127, 3378, 1113, 1469, 7619, 117, 1216, 1112, 1343, 1107, 4498, 117, 11347, 117, 9276, 117, 1137, 20394, 11252, 15449, 117, 21700, 2001, 7126, 7902, 1113, 7492, 1103, 1677, 3437, 118, 1103, 1244, 1311, 119, 102, 21700, 2001, 7126, 1108, 1103, 1178, 6489, 1776, 4264, 1114, 7492, 1103, 1102, 1311, 119]
+advText [('While his allied Islamist groups were focused on local battles, such as those in Egypt, Algeria, Bosnia, or Chechnya, Bin Ladin concentrated on attacking the far enemy - the United States.', 'Bin Ladin was the only Islamist concerned with attacking the ： States.')]
+srcTxt:  While his allied Islamist groups were focused on local battles, such as those in Egypt, Algeria, Bosnia, or Chechnya, Bin Ladin concentrated on attacking the far enemy - the United States. Bin Ladin was the only Islamist concerned with attacking the [ [ United ] ] States.
+advTxt:  While his allied Islamist groups were focused on local battles, such as those in Egypt, Algeria, Bosnia, or Chechnya, Bin Ladin concentrated on attacking the far enemy - the United States. Bin Ladin was the only Islamist concerned with attacking the [ [ ： ] ] States.
+srcTxt:  ('While his allied Islamist groups were focused on local battles, such as those in Egypt, Algeria, Bosnia, or Chechnya, Bin Ladin concentrated on attacking the far enemy - the United States.', 'Bin Ladin was the only Islamist concerned with attacking the United States.')
+advTxt:  ('While his allied Islamist groups were focused on local battles, such as those in Egypt, Algeria, Bosnia, or Chechnya, Bin Ladin concentrated on attacking the far enemy - the United States.', 'Bin Ladin was the only Islamist concerned with attacking the ： States.')
+tLabel:  2
+targetTokens ['United']
+toTokens ['：']
+sProbs:  [0.40329375863075256, 0.005803373176604509, 0.5909028649330139]
+aProbs:  [0.5982562899589539, 0.004367139656096697, 0.39737653732299805]
+attack suc rate 100.0 %
+average # of queries: 0.2857142857142857.
+all perturbed tokens :  8
+total token lens     :  1508
+avg perturbed tokens :  1.14
+avg perturbation rate:  0.0053
+saved at sample  7.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli_mismatched/hypothesis/evaluation_20240922_005010_BERTMaskedLM_BERT_MNLI_mnli_mismatched_val_0.7_8_120_0.json
+8.0  th document.
+input_ids_batch [[146, 1328, 1106, 2283, 1103, 2504, 2556, 192, 6758, 183, 112, 1103, 1535, 1150, 1243, 1147, 16031, 1105, 3079, 1105, 1173, 1838, 1106, 171, 7220, 1233, 1164, 1293, 6782, 1105, 8362, 23251, 1183, 1152, 112, 1396, 1151, 119, 102, 1247, 1132, 1535, 1150, 17111, 1193, 19073, 1164, 1147, 2491, 1256, 1463, 1152, 1138, 16031, 1105, 3079, 119]]
+stgt:  I want to meet the coldest women'the women who get their diamonds and cars and then start to bawl about how sad and unlucky they've been. [ [ There ] ] are women who unfairly [ [ complain ] ] about [ [ their ] ] lives even [ [ though ] ] [ [ they ] ] [ [ have ] ] diamonds and [ [ cars ] ] [ [. ] ]
+.  ->  90
+input_ids_batch [[146, 1328, 1106, 2283, 1103, 2504, 2556, 192, 6758, 183, 112, 1103, 1535, 1150, 1243, 1147, 16031, 1105, 3079, 1105, 1173, 1838, 1106, 171, 7220, 1233, 1164, 1293, 6782, 1105, 8362, 23251, 1183, 1152, 112, 1396, 1151, 119, 102, 1247, 1132, 1535, 1150, 17111, 1193, 19073, 1164, 1147, 2491, 1256, 1463, 1152, 1138, 16031, 1105, 3079, 3078]]
+advInxCut [146, 1328, 1106, 2283, 1103, 2504, 2556, 192, 6758, 183, 112, 1103, 1535, 1150, 1243, 1147, 16031, 1105, 3079, 1105, 1173, 1838, 1106, 171, 7220, 1233, 1164, 1293, 6782, 1105, 8362, 23251, 1183, 1152, 112, 1396, 1151, 119, 102, 1247, 1132, 1535, 1150, 17111, 1193, 19073, 1164, 1147, 2491, 1256, 1463, 1152, 1138, 16031, 1105, 3079, 3078]
+advText [("I want to meet the coldest women'the women who get their diamonds and cars and then start to bawl about how sad and unlucky they've been.", 'There are women who unfairly complain about their lives even though they have diamonds and cars 90')]
+srcTxt:  I want to meet the coldest women'the women who get their diamonds and cars and then start to bawl about how sad and unlucky they've been. There are women who unfairly complain about their lives even though they have diamonds and cars [ [. ] ]
+advTxt:  I want to meet the coldest women'the women who get their diamonds and cars and then start to bawl about how sad and unlucky they've been. There are women who unfairly complain about their lives even though they have diamonds and cars [ [ 90 ] ]
+srcTxt:  ("I want to meet the coldest women'the women who get their diamonds and cars and then start to bawl about how sad and unlucky they've been.", 'There are women who unfairly complain about their lives even though they have diamonds and cars.')
+advTxt:  ("I want to meet the coldest women'the women who get their diamonds and cars and then start to bawl about how sad and unlucky they've been.", 'There are women who unfairly complain about their lives even though they have diamonds and cars 90')
+tLabel:  1
+targetTokens ['.']
+toTokens ['90']
+sProbs:  [0.0007306008483283222, 0.9223887324333191, 0.07688064128160477]
+aProbs:  [0.0020416839979588985, 0.03847195580601692, 0.9594863653182983]
+attack suc rate 100.0 %
+average # of queries: 0.375.
+all perturbed tokens :  11
+total token lens     :  1951
+avg perturbed tokens :  1.38
+avg perturbation rate:  0.0056
+saved at sample  8.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli_mismatched/hypothesis/evaluation_20240922_005010_BERTMaskedLM_BERT_MNLI_mnli_mismatched_val_0.7_8_120_0.json
+9.0  th document.
+input_ids_batch [[119, 12859, 16566, 13517, 117, 1191, 1136, 6290, 117, 1131, 1189, 170, 182, 14824, 1775, 119, 102, 1153, 1189, 170, 182, 14824, 1775, 1149, 1104, 1103, 3881, 119]]
+stgt:  . Substantively, if not literally, she made a morox. [ [ She ] ] [ [ made ] ] a [ [ m ] ] [ [oro ] ] [ [x ] ] out [ [ of ] ] [ [ the ] ] [ [ materials ] ].
+2   m  ->  `   0.985784  ->  0.826162
+2   `  ->  use   0.826162  ->  0.702641
+2   ##oro  ->  l   0.702641  ->  0.657064
+2   l  ->  The   0.657064  ->  0.632594
+2   The  ->  in   0.632594  ->  0.620573
+2   in  ->  from   0.620573  ->  0.530389
+from  ->  `
+input_ids_batch [[119, 12859, 16566, 13517, 117, 1191, 1136, 6290, 117, 1131, 1189, 170, 182, 14824, 1775, 119, 102, 1153, 1189, 170, 1329, 169, 1775, 1149, 1104, 1103, 3881, 119]]
+advInxCut [119, 12859, 16566, 13517, 117, 1191, 1136, 6290, 117, 1131, 1189, 170, 182, 14824, 1775, 119, 102, 1153, 1189, 170, 1329, 169, 1775, 1149, 1104, 1103, 3881, 119]
+advText [('. Substantively, if not literally, she made a morox.', 'She made a use `x out of the materials.')]
+srcTxt:  . Substantively, if not literally, she made a morox. She made a [ [ m ] ] [ [oro ] ]x out of the materials.
+advTxt:  . Substantively, if not literally, she made a morox. She made a [ [ use ] ] [ [ ` ] ]x out of the materials.
+srcTxt:  ('. Substantively, if not literally, she made a morox.', 'She made a morox out of the materials.')
+advTxt:  ('. Substantively, if not literally, she made a morox.', 'She made a use `x out of the materials.')
+tLabel:  2
+targetTokens ['m', '##oro']
+toTokens ['use', '`']
+sProbs:  [0.006055199075490236, 0.008161040022969246, 0.9857838153839111]
+aProbs:  [0.08846767246723175, 0.4590241312980652, 0.45250821113586426]
+attack suc rate 100.0 %
+average # of queries: 3.6666666666666665.
+all perturbed tokens :  16
+total token lens     :  2422
+avg perturbed tokens :  1.78
+avg perturbation rate:  0.0066
+saved at sample  9.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli_mismatched/hypothesis/evaluation_20240922_005010_BERTMaskedLM_BERT_MNLI_mnli_mismatched_val_0.7_8_120_0.json
+10.0  th document.
+input_ids_batch [[1109, 26546, 14569, 1708, 22242, 1150, 1261, 1142, 1840, 1121, 1103, 18496, 2411, 2085, 1103, 1937, 1106, 1103, 2862, 3039, 3877, 117, 1150, 2103, 1106, 1103, 26546, 14569, 1708, 2321, 5852, 11144, 4350, 117, 3956, 117, 14863, 117, 1237, 8570, 1110, 1253, 17341, 119, 102, 1109, 2321, 3877, 1793, 1106, 1260, 16641, 170, 5564, 1106, 1831, 1103, 4261, 119]]
+stgt:  The NEADS technician who took this call from the FAA immediately passed the word to the mission crew commander, who reported to the NEADS battle Mission Crew Commander, Okay, uh, American Airlines is still airborne. [ [ The ] ] [ [ battle ] ] commander [ [ tried ] ] [ [ to ] ] de [ [vise ] ] [ [ a ] ] [ [ strategy ] ] [ [ to ] ] stop the plane.
+2   strategy  ->  `   0.974544  ->  0.604892
+2   `  ->  town   0.604892  ->  0.596509
+2   town  ->  have   0.596509  ->  0.531689
+The  ->  -
+input_ids_batch [[1109, 26546, 14569, 1708, 22242, 1150, 1261, 1142, 1840, 1121, 1103, 18496, 2411, 2085, 1103, 1937, 1106, 1103, 2862, 3039, 3877, 117, 1150, 2103, 1106, 1103, 26546, 14569, 1708, 2321, 5852, 11144, 4350, 117, 3956, 117, 14863, 117, 1237, 8570, 1110, 1253, 17341, 119, 102, 118, 2321, 3877, 1793, 1106, 1260, 16641, 170, 1138, 1106, 1831, 1103, 4261, 119]]
+advInxCut [1109, 26546, 14569, 1708, 22242, 1150, 1261, 1142, 1840, 1121, 1103, 18496, 2411, 2085, 1103, 1937, 1106, 1103, 2862, 3039, 3877, 117, 1150, 2103, 1106, 1103, 26546, 14569, 1708, 2321, 5852, 11144, 4350, 117, 3956, 117, 14863, 117, 1237, 8570, 1110, 1253, 17341, 119, 102, 118, 2321, 3877, 1793, 1106, 1260, 16641, 170, 1138, 1106, 1831, 1103, 4261, 119]
+advText [('The NEADS technician who took this call from the FAA immediately passed the word to the mission crew commander, who reported to the NEADS battle Mission Crew Commander, Okay, uh, American Airlines is still airborne.', '- battle commander tried to devise a have to stop the plane.')]
+srcTxt:  The NEADS technician who took this call from the FAA immediately passed the word to the mission crew commander, who reported to the NEADS battle Mission Crew Commander, Okay, uh, American Airlines is still airborne. [ [ The ] ] battle commander tried to devise a [ [ strategy ] ] to stop the plane.
+advTxt:  The NEADS technician who took this call from the FAA immediately passed the word to the mission crew commander, who reported to the NEADS battle Mission Crew Commander, Okay, uh, American Airlines is still airborne. [ [ - ] ] battle commander tried to devise a [ [ have ] ] to stop the plane.
+srcTxt:  ('The NEADS technician who took this call from the FAA immediately passed the word to the mission crew commander, who reported to the NEADS battle Mission Crew Commander, Okay, uh, American Airlines is still airborne.', 'The battle commander tried to devise a strategy to stop the plane.')
+advTxt:  ('The NEADS technician who took this call from the FAA immediately passed the word to the mission crew commander, who reported to the NEADS battle Mission Crew Commander, Okay, uh, American Airlines is still airborne.', '- battle commander tried to devise a have to stop the plane.')
+tLabel:  2
+targetTokens ['strategy', 'The']
+toTokens ['have', '-']
+sProbs:  [0.02061515487730503, 0.004840588662773371, 0.9745442867279053]
+aProbs:  [0.8067628741264343, 0.016405533999204636, 0.1768316775560379]
+attack suc rate 100.0 %
+average # of queries: 4.9.
+all perturbed tokens :  23
+total token lens     :  2952
+avg perturbed tokens :  2.3
+avg perturbation rate:  0.0078
+saved at sample  10.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli_mismatched/hypothesis/evaluation_20240922_005010_BERTMaskedLM_BERT_MNLI_mnli_mismatched_val_0.7_8_120_0.json
+11.0  th document.
+input_ids_batch [[1109, 18496, 117, 1103, 2061, 1585, 117, 1105, 1103, 5262, 1951, 1296, 7087, 170, 4321, 2553, 7232, 21359, 1513, 7235, 16792, 1196, 130, 131, 1476, 119, 102, 18447, 2553, 7232, 4909, 1225, 1136, 1321, 1282, 1120, 1155, 119]]
+stgt:  The FAA, the White House, and the Defense Department each initiated a multiagency teleconference before 9 : 30. [ [ Multi ] ]agency communication [ [ did ] ] [ [ not ] ] [ [ take ] ] [ [ place ] ] [ [ at ] ] [ [ all ] ] [ [. ] ]
+0   all  ->  he   0.999144  ->  0.991542
+0   he  ->  ：   0.991542  ->  0.984557
+：  ->  well
+input_ids_batch [[1109, 18496, 117, 1103, 2061, 1585, 117, 1105, 1103, 5262, 1951, 1296, 7087, 170, 4321, 2553, 7232, 21359, 1513, 7235, 16792, 1196, 130, 131, 1476, 119, 102, 18447, 2553, 7232, 4909, 1225, 1136, 1321, 1282, 1120, 1218, 119]]
+advInxCut [1109, 18496, 117, 1103, 2061, 1585, 117, 1105, 1103, 5262, 1951, 1296, 7087, 170, 4321, 2553, 7232, 21359, 1513, 7235, 16792, 1196, 130, 131, 1476, 119, 102, 18447, 2553, 7232, 4909, 1225, 1136, 1321, 1282, 1120, 1218, 119]
+advText [('The FAA, the White House, and the Defense Department each initiated a multiagency teleconference before 9 : 30.', 'Multiagency communication did not take place at well.')]
+srcTxt:  The FAA, the White House, and the Defense Department each initiated a multiagency teleconference before 9 : 30. Multiagency communication did not take place at [ [ all ] ].
+advTxt:  The FAA, the White House, and the Defense Department each initiated a multiagency teleconference before 9 : 30. Multiagency communication did not take place at [ [ well ] ].
+srcTxt:  ('The FAA, the White House, and the Defense Department each initiated a multiagency teleconference before 9 : 30.', 'Multiagency communication did not take place at all.')
+advTxt:  ('The FAA, the White House, and the Defense Department each initiated a multiagency teleconference before 9 : 30.', 'Multiagency communication did not take place at well.')
+tLabel:  0
+targetTokens ['all']
+toTokens ['well']
+sProbs:  [0.9991438388824463, 0.00010954031313303858, 0.0007465459639206529]
+aProbs:  [0.18347503244876862, 0.0041596959345042706, 0.8123651742935181]
+attack suc rate 100.0 %
+average # of queries: 5.181818181818182.
+all perturbed tokens :  31
+total token lens     :  3520
+avg perturbed tokens :  2.82
+avg perturbation rate:  0.0088
+saved at sample  11.0  as file  /usa/taikun/07_transencoder/2evaluation/mnli_mismatched/hypothesis/evaluation_20240922_005010_BERTMaskedLM_BERT_MNLI_mnli_mismatched_val_0.7_8_120_0.json
+12.0  th document.
+input_ids_batch [[1220, 2694, 1152, 1125, 170, 5985, 119, 102, 1220, 1225, 1136, 1474, 1625, 119]]
+stgt:  They claimed they had a bomb. [ [ They ] ] [ [ did ] ] [ [ not ] ] [ [ say ] ] [ [ anything ] ] [ [. ] ]
+0   They  ->  -   0.992344  ->  0.988806
+0   -  ->  >   0.988806  ->  0.973355
+0   >  ->  re   0.973355  ->  0.930945
+0   re  ->  9   0.930945  ->  0.846387
+0   9  ->  normally   0.846387  ->  0.639285
+0   normally  ->  ##os   0.639285  ->  0.634441
+anything  ->  best
+input_ids_batch [[1220, 2694, 1152, 1125, 170, 5985, 119, 102, 2155, 1225, 1136, 1474, 1436, 119]]
