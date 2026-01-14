@@ -10,8 +10,8 @@ run_attack() {
   export ATTACK_WHAT='doc'
   export DATA_NAME="$data_name"
   export SAVE_TO_PATH='/usa/taikun/07_transencoder/rl_atk/attack-genai/trained_attacker/attacker_05082025_162746_llama-guard_doc_0.3_6_6000_0.8100.pth'
-  export TARGET_PATH='llama-guard-3-8b'
-  export SERVER_URL='http://infodeep:8002/v1'
+  export TARGET_PATH='llama-3-8b'
+  export SERVER_URL='http://infodeep:8004/v1'
   export LEN_DOC_MAX=512
   export NUM_DOC_MASKS=5
   export SAMPLES_PER_TOK=$samples_per_tok
@@ -25,7 +25,7 @@ run_attack() {
   echo "=== Running attack: mode=$ATKER_MODE, data=$DATA_NAME, samples_per_tok=$SAMPLES_PER_TOK ==="
   echo "  Log → $OUTPUT_TXT"
 
-  python -u /usa/taikun/07_transencoder/rl_atk/attack-genai/evaluation_attacker_genai.py \
+  python -u /usa/taikun/07_transencoder/rl_atk/attack-genai/evaluation_attacker_genai_llama_itself.py \
     --atker_path    "$ATKER_PATH" \
     --atker_mode    "$ATKER_MODE" \
     --target_path   "$TARGET_PATH" \
@@ -41,11 +41,8 @@ run_attack() {
 
 #─ Arrays of configurations ──────────────────────────────────────────────────────
 # atker_modes=(trained untrained random)
-# atker_modes=(random)
-# data_names=(harmul_strings harmful_behaviors)
-# samples_per_toks=(100 200 300)
-
 atker_modes=(trained untrained)
+# atker_modes=(random)
 data_names=(harmul_strings)
 samples_per_toks=(150)
 

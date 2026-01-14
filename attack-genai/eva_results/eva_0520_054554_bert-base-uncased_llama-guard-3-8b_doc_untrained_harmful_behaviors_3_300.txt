@@ -1,0 +1,109 @@
+2025-05-20 05:45:57.303683: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-05-20 05:45:57.315735: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-05-20 05:45:57.329343: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2025-05-20 05:45:57.333402: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-05-20 05:45:57.343464: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-05-20 05:45:58.233552: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Using GPU cuda
+atker_path: bert-base-uncased
+atker_mode: untrained
+target_path: llama-guard-3-8b
+data_name: harmful_behaviors
+save_to_path: /usa/taikun/07_transencoder/rl_atk/attack-genai/trained_attacker/attacker_05082025_162746_llama-guard_doc_0.3_6_6000_0.8100.pth
+len_doc_max: 512
+num_doc_masks: 3
+samples_per_tok: 300
+atk_json_log: /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_0520_054554_bert-base-uncased_llama-guard-3-8b_doc_untrained_harmful_behaviors_3_300.json
+server_url: http://infodeep:8002/v1
+/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+Attacker Base: bert-base-uncased
+Vocabulary Size: 30522
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForMaskedLM: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight', 'cls.seq_relationship.bias', 'cls.seq_relationship.weight']
+- This IS expected if you are initializing BertForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForMaskedLM from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+   - Re-initialized model.cls.predictions.transform.dense
+   - Re-initialized model.cls.predictions.transform.LayerNorm
+Evaluating:   0%|          | 0/520 [00:00<?, ?batch/s]Traceback (most recent call last):
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/urllib3/connectionpool.py", line 416, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/urllib3/connection.py", line 244, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/http/client.py", line 1286, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/http/client.py", line 1332, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/http/client.py", line 1281, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/http/client.py", line 1041, in _send_output
+    self.send(msg)
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/http/client.py", line 979, in send
+    self.connect()
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/urllib3/connection.py", line 205, in connect
+    conn = self._new_conn()
+           ^^^^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/urllib3/connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fe4d54658d0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/urllib3/connectionpool.py", line 801, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/urllib3/util/retry.py", line 594, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='infodeep', port=8002): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe4d54658d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usa/taikun/07_transencoder/rl_atk/attack-genai/evaluation_attacker_genai.py", line 660, in <module>
+    main(args)
+  File "/usa/taikun/07_transencoder/rl_atk/attack-genai/evaluation_attacker_genai.py", line 628, in main
+    attack(evaluation_dataloader=evaluation_dataloader, attacker=model)
+  File "/usa/taikun/07_transencoder/rl_atk/attack-genai/evaluation_attacker_genai.py", line 529, in attack
+    prompt_, predictions_, probs_ = get_raw_logits.process_file(data=[src_doc], server_url=server_url) 
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taikun/07_transencoder/rl_atk/attack-genai/get_raw_logits.py", line 116, in process_file
+    result = get_raw_logits(prompt, server_url, model_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/taikun/07_transencoder/rl_atk/attack-genai/get_raw_logits.py", line 28, in get_raw_logits
+    response = requests.post(
+               ^^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usa/taikun/miniconda3/envs/03_transf_py311/lib/python3.11/site-packages/requests/adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='infodeep', port=8002): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fe4d54658d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+Evaluating:   0%|          | 0/520 [00:00<?, ?batch/s]

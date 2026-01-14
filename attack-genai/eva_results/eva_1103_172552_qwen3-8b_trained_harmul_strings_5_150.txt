@@ -1,0 +1,120 @@
+2025-11-03 17:25:55.564746: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-11-03 17:25:55.576945: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1762208755.591130 1422754 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1762208755.595479 1422754 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-11-03 17:25:55.609870: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/_distutils_hack/__init__.py:15: UserWarning: Distutils was imported before Setuptools, but importing Setuptools also replaces the `distutils` module in `sys.modules`. This may lead to undesirable behaviors or errors. To avoid these issues, avoid using distutils directly, ensure that setuptools is installed in the traditional way (e.g. not an editable install), and/or make sure that setuptools is always imported before distutils.
+  warnings.warn(
+/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/_distutils_hack/__init__.py:30: UserWarning: Setuptools is replacing distutils. Support for replacing an already imported distutils is deprecated. In the future, this condition will fail. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+  warnings.warn(
+Using GPU cuda
+atker_path: bert-base-uncased
+atker_mode: trained
+target_path: qwen3-8b
+data_name: harmul_strings
+save_to_path: trained_attacker/attacker_05082025_162746_llama-guard_doc_0.3_6_6000_0.8100.pth
+len_doc_max: 512
+num_doc_masks: 5
+samples_per_tok: 150
+atk_json_log: eva_results/eva_1103_172552_qwen3-8b_trained_harmul_strings_5_150.json
+server_url: http://localhost:8002/v1
+Attacker Base: bert-base-uncased
+Vocabulary Size: 30522
+Using the latest cached version of the dataset since walledai/AdvBench couldn't be found on the Hugging Face Hub
+WARNING:datasets.load:Using the latest cached version of the dataset since walledai/AdvBench couldn't be found on the Hugging Face Hub
+Found the latest cached dataset configuration 'default' at /usa/taikun/.cache/huggingface/datasets/walledai___adv_bench/default/0.0.0/9d4730540082fa4017450b65ca1c0e1d8d30446e (last modified on Wed Apr 16 11:53:24 2025).
+WARNING:datasets.packaged_modules.cache.cache:Found the latest cached dataset configuration 'default' at /usa/taikun/.cache/huggingface/datasets/walledai___adv_bench/default/0.0.0/9d4730540082fa4017450b65ca1c0e1d8d30446e (last modified on Wed Apr 16 11:53:24 2025).
+BertForMaskedLM has generative capabilities, as `prepare_inputs_for_generation` is explicitly overwritten. However, it doesn't directly inherit from `GenerationMixin`. From 👉v4.50👈 onwards, `PreTrainedModel` will NOT inherit from `GenerationMixin`, and this model will lose the ability to call `generate` and other related functions.
+  - If you're using `trust_remote_code=True`, you can get rid of this warning by loading the model with an auto class. See https://huggingface.co/docs/transformers/en/model_doc/auto#auto-classes
+  - If you are the owner of the model architecture code, please modify your model class such that it inherits from `GenerationMixin` (after `PreTrainedModel`, otherwise you'll get an exception).
+  - If you are not the owner of the model architecture class, please contact the model code owner to update it.
+/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:777: UserWarning: `return_dict_in_generate` is NOT set to `True`, but `output_hidden_states` is. When `return_dict_in_generate` is not `True`, `output_hidden_states` is ignored.
+  warnings.warn(
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForMaskedLM: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight', 'cls.seq_relationship.bias', 'cls.seq_relationship.weight']
+- This IS expected if you are initializing BertForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForMaskedLM from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+/home/taikun/07_transencoder/rl_atk/attack-genai/evaluation_attacker_genai_llama_itself.py:466: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  state_dict = torch.load(save_to_path, map_location=device)
+Evaluating:   0%|          | 0/520 [00:00<?, ?batch/s]2025-11-03 17:34:50.517541: E tensorflow/core/util/util.cc:131] oneDNN supports DT_INT64 only on platforms with AVX-512. Falling back to the default Eigen-based implementation if present.
+Evaluating:   0%|          | 1/520 [08:49<76:19:44, 529.45s/batch]Evaluating:   0%|          | 1/520 [08:49<76:19:44, 529.45s/batch, avg_ori_acc=1.0000, avg_atk_acc=1.0000, avg_queries=750.0000, avg_pert=0.00, avg_USE=1.0000, cur_queries=750.0000, cur_pert=0.00, cur_USE=1.0000]
+Saved results to: eva_results/eva_1103_172552_qwen3-8b_trained_harmul_strings_5_150.json
+Evaluating:   0%|          | 2/520 [17:40<76:20:18, 530.54s/batch, avg_ori_acc=1.0000, avg_atk_acc=1.0000, avg_queries=750.0000, avg_pert=0.00, avg_USE=1.0000, cur_queries=750.0000, cur_pert=0.00, cur_USE=1.0000]Evaluating:   0%|          | 2/520 [17:40<76:20:18, 530.54s/batch, avg_ori_acc=1.0000, avg_atk_acc=1.0000, avg_queries=750.0000, avg_pert=0.00, avg_USE=1.0000, cur_queries=750.0000, cur_pert=0.00, cur_USE=1.0000]
+Saved results to: eva_results/eva_1103_172552_qwen3-8b_trained_harmul_strings_5_150.json
+ERROR in _predict_one: APIConnectionError: Connection error.
+Traceback (most recent call last):
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 101, in handle_request
+    raise exc
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 78, in handle_request
+    stream = self._connect(request)
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/httpcore/_backends/sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/openai/_base_client.py", line 982, in request
+    response = self._client.send(
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/httpx/_transports/default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/taikun/07_transencoder/rl_atk/attack-genai/evaluation_attacker_genai_llama_itself.py", line 708, in _predict_one
+    chat_response = client.chat.completions.create(
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/openai/resources/chat/completions/completions.py", line 1156, in create
+    return self._post(
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/openai/_base_client.py", line 1014, in request
+    raise APIConnectionError(request=request) from err
+openai.APIConnectionError: Connection error.
+Traceback (most recent call last):
+  File "/home/taikun/07_transencoder/rl_atk/attack-genai/evaluation_attacker_genai_llama_itself.py", line 766, in <module>
+    main(args)
+  File "/home/taikun/07_transencoder/rl_atk/attack-genai/evaluation_attacker_genai_llama_itself.py", line 637, in main
+    attack(evaluation_dataloader=evaluation_dataloader, attacker=model)
+  File "/home/taikun/07_transencoder/rl_atk/attack-genai/evaluation_attacker_genai_llama_itself.py", line 586, in attack
+    atk_acc_metric.update(all_gen_predicted_labels_tensor, all_true_labels_tensor)
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/torchmetrics/metric.py", line 559, in wrapped_func
+    raise err
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/torchmetrics/metric.py", line 549, in wrapped_func
+    update(*args, **kwargs)
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/torchmetrics/classification/stat_scores.py", line 187, in update
+    _binary_stat_scores_tensor_validation(preds, target, self.multidim_average, self.ignore_index)
+  File "/usa/taikun/miniconda3/envs/hqaattack/lib/python3.10/site-packages/torchmetrics/functional/classification/stat_scores.py", line 86, in _binary_stat_scores_tensor_validation
+    raise RuntimeError(
+RuntimeError: Detected the following values in `preds`: tensor([-1,  1], device='cuda:0') but expected only the following values [0,1] since `preds` is a label tensor.
+Evaluating:   0%|          | 2/520 [19:27<83:57:43, 583.52s/batch, avg_ori_acc=1.0000, avg_atk_acc=1.0000, avg_queries=750.0000, avg_pert=0.00, avg_USE=1.0000, cur_queries=750.0000, cur_pert=0.00, cur_USE=1.0000]

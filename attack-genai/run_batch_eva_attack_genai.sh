@@ -19,8 +19,9 @@ run_attack() {
 
   timestamp=$(date +%m%d_%H%M%S)
   export EVALUATION_PREFIX="eva_${timestamp}_${ATKER_PATH}_${TARGET_PATH}_${ATTACK_WHAT}_${ATKER_MODE}_${NUM_DOC_MASKS}_${SAMPLES_PER_TOK}"
-  export OUTPUT_TXT="/usa/taikun/07_transencoder/rl_atk/attack-genai/${EVALUATION_PREFIX}.txt"
-  export ATK_JSON_LOG="/usa/taikun/07_transencoder/rl_atk/attack-genai/${EVALUATION_PREFIX}.json"
+  mkdir -p /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_results
+  export OUTPUT_TXT="/usa/taikun/07_transencoder/rl_atk/attack-genai/eva_results/${EVALUATION_PREFIX}.txt"
+  export ATK_JSON_LOG="/usa/taikun/07_transencoder/rl_atk/attack-genai/eva_results/${EVALUATION_PREFIX}.json"
 
   echo "=== Running attack with SAMPLES_PER_TOK=$SAMPLES_PER_TOK ==="
   echo "Log: $OUTPUT_TXT"

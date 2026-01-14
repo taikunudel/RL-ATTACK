@@ -9,8 +9,10 @@ run_attack() {
   # export ATKER_MODE='untrained'
   # export ATKER_MODE='random'
   export ATTACK_WHAT='doc'
+  # export TARGET_PATH='llama-guard-3-8b'
+  # export SERVER_URL='http://infodeep:8002/v1'
   export TARGET_PATH='llama-guard-3-8b'
-  export SERVER_URL='http://infodeep:8002/v1'
+  export SERVER_URL='http://infodeep:8004/v1'
   export SAVE_TO_PATH="$save_path"
   export LEN_DOC_MAX=512
   export NUM_DOC_MASKS=10
@@ -21,8 +23,9 @@ run_attack() {
   # Extract a descriptive name from the save path for the evaluation prefix
   local save_name=$(basename "$save_path" .pth)
   export EVALUATION_PREFIX="eva_${timestamp}_${ATKER_PATH}_${TARGET_PATH}_${ATTACK_WHAT}_${ATKER_MODE}_${NUM_DOC_MASKS}_${SAMPLES_PER_TOK}_${save_name}"
-  export OUTPUT_TXT="/usa/taikun/07_transencoder/rl_atk/attack-genai/${EVALUATION_PREFIX}.txt"
-  export ATK_JSON_LOG="/usa/taikun/07_transencoder/rl_atk/attack-genai/${EVALUATION_PREFIX}.json"
+  mkdir -p /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_results
+  export OUTPUT_TXT="/usa/taikun/07_transencoder/rl_atk/attack-genai/eva_results/${EVALUATION_PREFIX}.txt"
+  export ATK_JSON_LOG="/usa/taikun/07_transencoder/rl_atk/attack-genai/eva_results/${EVALUATION_PREFIX}.json"
 
   echo "=== Running attack with SAVE_TO_PATH=$SAVE_TO_PATH, SAMPLES_PER_TOK=$SAMPLES_PER_TOK ==="
   echo "Log: $OUTPUT_TXT"
