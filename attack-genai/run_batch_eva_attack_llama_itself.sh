@@ -44,7 +44,7 @@ run_attack() {
 
 #─ Arrays of configurations ──────────────────────────────────────────────────────
 # atker_modes=(trained untrained random)
-atker_modes=(untrained)
+atker_modes=(train untrain)
 # atker_modes=(random)
 data_names=(harmul_strings)
 samples_per_toks=(150)
