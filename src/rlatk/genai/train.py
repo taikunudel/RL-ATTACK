@@ -51,7 +51,7 @@ else:
 #     print("Using GPU:", physical_devices[0])
 
 # from utils import *
-from rlatk.core import get_raw_logits
+from rlatk.genai import get_raw_logits
 from rlatk.core.similarity_scorer import build_scorer, getUSEcosSimilarity
 from rlatk.core.encoders import build_attacker
 

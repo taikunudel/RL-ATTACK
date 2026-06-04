@@ -45,14 +45,14 @@ import tensorflow as tf
 # if gpus:                          
 #     tf.config.experimental.set_memory_growth(gpus[1], True)   # ❶
 import tensorflow_hub as hub
-from rlatk.attackers.train_attacker_genai import *
+from rlatk.genai.train import *
 from rlatk.core.similarity_scorer import build_scorer
 from rlatk.core.encoders import build_attacker
 # import get_raw_logits
 from typing import Union, Iterable, List, Tuple, Dict, Any, Optional
 from openai import OpenAI
-from rlatk.victims.guards.llama_guard_judge import is_unsafe as llamaguard_is_unsafe, init_gauge as llamaguard_init_gauge, set_endpoint as llamaguard_set_endpoint, set_model as llamaguard_set_model
-from rlatk.victims.guards.openai_moderation_judge import is_unsafe as openai_mod_is_unsafe, init_gauge as openai_mod_init_gauge, set_max_rate_limit_errors as openai_mod_set_max_rate_limit_errors
+from rlatk.genai.victims.llama_guard_judge import is_unsafe as llamaguard_is_unsafe, init_gauge as llamaguard_init_gauge, set_endpoint as llamaguard_set_endpoint, set_model as llamaguard_set_model
+from rlatk.genai.victims.openai_moderation_judge import is_unsafe as openai_mod_is_unsafe, init_gauge as openai_mod_init_gauge, set_max_rate_limit_errors as openai_mod_set_max_rate_limit_errors
 
 # getUSEcosSimilarity now lives in similarity_scorer.py; the reward uses build_scorer (scorer.score).
 
@@ -890,7 +890,7 @@ if __name__ == "__main__":
         openai_api_base = "https://api.openai.com/v1"
     elif 'together' in args.server_url:
         # Together AI API (OpenAI-compatible)
-        from rlatk.victims.guards.llama_guard_judge import _load_api_key as _load_together_key
+        from rlatk.genai.victims.llama_guard_judge import _load_api_key as _load_together_key
         openai_api_key = _load_together_key()
         openai_api_base = "https://api.together.xyz/v1"
     elif 'openrouter' in args.server_url:

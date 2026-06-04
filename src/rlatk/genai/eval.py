@@ -40,7 +40,7 @@ import tensorflow as tf
 # if gpus:                          
 #     tf.config.experimental.set_memory_growth(gpus[1], True)   # ❶
 import tensorflow_hub as hub
-from rlatk.attackers.train_attacker_genai import *
+from rlatk.genai.train import *
 # import get_raw_logits
 
 def getUSEcosSimilarity(srcDocs, copyDocs, embed):
