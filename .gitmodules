@@ -1,0 +1,4 @@
+[submodule "rl_atk"]
+	path = rl_atk
+	url = git@github.com:taikunudel/rl_atk.git
+	branch = ksem2026

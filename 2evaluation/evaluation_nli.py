@@ -25,7 +25,7 @@ torch.set_default_dtype(torch.float32)
 import os
 import sys
 sys.path.append("..")
-sys.path.append("/usa/taikun/07_transencoder")
+sys.path.append("/usa/taikun/rl-attack")
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 # from llmrequest import requestNoDf

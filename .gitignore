@@ -50,3 +50,23 @@ MNLI/
 temp/
 tmp/
 *.jar
+
+# SQLite caches (were committed; now untracked — keep them out)
+*.db
+*.db-wal
+*.db-shm
+*.db-journal
+
+# BFG / git-history-cleaner artifacts
+*.descriptor.txt
+*.bfg-report/
+
+# Large docs / binaries
+*.pdf
+
+# Stale dated result snapshots — "version-control-by-folder-copy" (kept on disk, not in git)
+**/archive[0-9]*/
+**/backup[0-9]*/
+
+# "delete/" staging area (user convention: move-here-instead-of-rm; never tracked)
+delete/

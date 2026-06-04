@@ -34,7 +34,7 @@ torch.set_default_dtype(torch.float32)
 import os
 import sys
 sys.path.append("..")
-sys.path.append("/usa/taikun/07_transencoder")
+sys.path.append("/usa/taikun/rl-attack")
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 # from llmrequest import requestNoDf
@@ -44,7 +44,7 @@ def main():
     # dataPath = args.dataPath
     
     # importantTokensFile = args.importantTokensFile
-    importantTokensFile = '/usa/taikun/07_transencoder/0dataProcessing/tokens_ner.json'
+    importantTokensFile = '/usa/taikun/rl-attack/0dataProcessing/tokens_ner.json'
     
     # Load attacked tokens Json file
     with open(importantTokensFile, 'r') as f:
@@ -139,14 +139,14 @@ def main():
     testModel = BertAttacker(bertEncoder, generator).to(device)
     
     # # bertlinear
-    # attackerFile = "/usa/taikun/07_transencoder/1training/ner/0209bertlinear/attacker_conll2003_1_28_3973_0.5918_0.4650.pth"
-    attackerFile = "/usa/taikun/07_transencoder/1training/ner/distilattacker_conll2003_1_0_1094_0.3481_0.4694.pth"
+    # attackerFile = "/usa/taikun/rl-attack/1training/ner/0209bertlinear/attacker_conll2003_1_28_3973_0.5918_0.4650.pth"
+    attackerFile = "/usa/taikun/rl-attack/1training/ner/distilattacker_conll2003_1_0_1094_0.3481_0.4694.pth"
     state_dict = torch.load(attackerFile, map_location=device)
     testModel.load_state_dict(state_dict, strict=True)
         
     # # BERT NON-LINEAR ATTACK
-    # attackerFile = "/usa/taikun/07_transencoder/1training/ner/0209bertnonlinear/attacker_conll2003_1_9_1370_0.6596_0.5395.pth"
-    # attackerFile = "/usa/taikun/07_transencoder/1training/ner/0209bertnonlinear/attacker_conll2003_1_50_6987_0.6967_0.5554.pth"
+    # attackerFile = "/usa/taikun/rl-attack/1training/ner/0209bertnonlinear/attacker_conll2003_1_9_1370_0.6596_0.5395.pth"
+    # attackerFile = "/usa/taikun/rl-attack/1training/ner/0209bertnonlinear/attacker_conll2003_1_50_6987_0.6967_0.5554.pth"
     
     # class NonLinearHead(nn.Module):
     #     def __init__(self, hidden_size, vocab_size):

@@ -1,3 +1,0 @@
-Module: https://tfhub.dev/google/universal-sentence-encoder-large/3
-Download Time: 2024-09-23 20:01:23.185481
-Downloader Hostname: infodeep (PID:1402914)

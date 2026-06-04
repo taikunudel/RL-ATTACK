@@ -35,7 +35,7 @@ torch.set_default_dtype(torch.float32)
 import os
 import sys
 # sys.path.append("..")
-sys.path.append("/usa/taikun/07_transencoder")
+sys.path.append("/usa/taikun/rl-attack")
 # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 # from llmrequest import requestNoDf
@@ -43,7 +43,7 @@ from utils import *
 
 def main():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    importantTokensFile = "/usa/taikun/07_transencoder/0dataProcessing/tokens_qa_val.json"
+    importantTokensFile = "/usa/taikun/rl-attack/0dataProcessing/tokens_qa_val.json"
     tgt_model_name = 'deepset/bert-base-cased-squad2'
     tgt_model = BertForQuestionAnswering.from_pretrained(tgt_model_name).to(device)
     attacker_model = 'bert-base-cased'
@@ -69,7 +69,7 @@ def main():
     
     
     random.seed(42)
-    dataset = load_from_disk("/usa/taikun/07_transencoder/3datasets/squad_dataset")
+    dataset = load_from_disk("/usa/taikun/rl-attack/3datasets/squad_dataset")
     # dataset = load_dataset("squad")
     val_dataset = dataset["validation"]
     random_numbers = [random.randint(0, len(val_dataset)-1) for _ in range(1000)]
@@ -231,7 +231,7 @@ def main():
     # generator = Generator(d_model=bertEncoder.config.hidden_size, vocab=vocabSize)
     # testModel = BertAttacker(bertEncoder, generator).to(device)
 
-    # attackerFile = "/usa/taikun/07_transencoder/1training/qa/attacker_squad_9_55460_0.6309.pth"
+    # attackerFile = "/usa/taikun/rl-attack/1training/qa/attacker_squad_9_55460_0.6309.pth"
     # state_dict = torch.load(attackerFile, map_location=device)
     # testModel.load_state_dict(state_dict, strict=True)
         
@@ -239,7 +239,7 @@ def main():
     # testModel.to(device)
 
     # BERT NONLINEAR
-    attackerFile = "/usa/taikun/07_transencoder/1training/qa/attacker_bertnonlinear_squad_8_49914_0.6450.pth"
+    attackerFile = "/usa/taikun/rl-attack/1training/qa/attacker_bertnonlinear_squad_8_49914_0.6450.pth"
     
     class NonLinearHead(nn.Module):
         def __init__(self, hidden_size, vocab_size):

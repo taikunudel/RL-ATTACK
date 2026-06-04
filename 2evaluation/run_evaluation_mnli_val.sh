@@ -3,16 +3,16 @@
 # For mnli Validation Set
 # export DATA_NAME='mnli_matched_val'
 export DATA_NAME='mnli_matched_test'
-export DATA_PATH='/usa/taikun/07_transencoder/MNLI/mnlim_test.txt'
-# export IMPORTANT_TOKENS_FILE='/usa/taikun/07_transencoder/0dataProcessing/mnli/tokens_mnli_matched_val_0.json_premise.json'
-# export IMPORTANT_TOKENS_FILE='/usa/taikun/07_transencoder/0dataProcessing/mnli/tokens_mnli_matched_val_0.json_hypothesis.json'
-export IMPORTANT_TOKENS_FILE='/usa/taikun/07_transencoder/0dataProcessing/tokens_mnlim_test_full.json_premise.json'
-# export IMPORTANT_TOKENS_FILE='/usa/taikun/07_transencoder/0dataProcessing/tokens_mnlim_test_full.json_hypothesis.json'
+export DATA_PATH='/usa/taikun/rl-attack/MNLI/mnlim_test.txt'
+# export IMPORTANT_TOKENS_FILE='/usa/taikun/rl-attack/0dataProcessing/mnli/tokens_mnli_matched_val_0.json_premise.json'
+# export IMPORTANT_TOKENS_FILE='/usa/taikun/rl-attack/0dataProcessing/mnli/tokens_mnli_matched_val_0.json_hypothesis.json'
+export IMPORTANT_TOKENS_FILE='/usa/taikun/rl-attack/0dataProcessing/tokens_mnlim_test_full.json_premise.json'
+# export IMPORTANT_TOKENS_FILE='/usa/taikun/rl-attack/0dataProcessing/tokens_mnlim_test_full.json_hypothesis.json'
 
-export ATTACKER_FILE='/usa/taikun/07_transencoder/1training/mnli/premise/02Sep/attacker_mnlimatched_0.7_2_1000_2.9903.pth'
-# export ATTACKER_FILE='/usa/taikun/07_transencoder/1training/mnli/premise/02Sep/attacker_mnlimatched_0.8_2_1000_2.9205.pth'
-# export ATTACKER_FILE='/usa/taikun/07_transencoder/1training/mnli/premise/02Sep/attacker_mnlimatched_0.9_2_1000_2.6550.pth'
-# export ATTACKER_FILE='/usa/taikun/07_transencoder/1training/mnli/hypothesis/9Sep/attacker_mnlimatched_0.5_1_500_3.1694.pth'
+export ATTACKER_FILE='/usa/taikun/rl-attack/1training/mnli/premise/02Sep/attacker_mnlimatched_0.7_2_1000_2.9903.pth'
+# export ATTACKER_FILE='/usa/taikun/rl-attack/1training/mnli/premise/02Sep/attacker_mnlimatched_0.8_2_1000_2.9205.pth'
+# export ATTACKER_FILE='/usa/taikun/rl-attack/1training/mnli/premise/02Sep/attacker_mnlimatched_0.9_2_1000_2.6550.pth'
+# export ATTACKER_FILE='/usa/taikun/rl-attack/1training/mnli/hypothesis/9Sep/attacker_mnlimatched_0.5_1_500_3.1694.pth'
 # export ATTACKER_FILE='None'
 
 export MODE='nli'
@@ -57,12 +57,12 @@ echo "Start From Sample: $STARTFROMSAMPLE"
 # export EVALUATION_PREFIX="evaluation_${ATTACKER_NAME}_${TGT_MODEL_NAME}_${DATA_NAME}_${NUMS_ATTACKED_TOKENS}_${NUMS_MAX_CANDIDATES}_${NUMS_CANDIDATES_EACH_TOKEN}_${STARTFROMSAMPLE}"
 export EVALUATION_PREFIX="eva_$(date +%m%d_%H%M%S)${ATTACKER_NAME}_${TGT_MODEL_NAME}_${DATA_NAME}_${NUMS_ATTACKED_TOKENS}_${NUMS_MAX_CANDIDATES}_${NUMS_CANDIDATES_EACH_TOKEN}_${STARTFROMSAMPLE}"
 
-export EVALUATION_JSON="/usa/taikun/07_transencoder/2evaluation/mnli/${ON}/${EVALUATION_PREFIX}.json"
-export OUTPUT_FILE="/usa/taikun/07_transencoder/2evaluation/mnli/${ON}/${EVALUATION_PREFIX}.txt"
+export EVALUATION_JSON="/usa/taikun/rl-attack/2evaluation/mnli/${ON}/${EVALUATION_PREFIX}.json"
+export OUTPUT_FILE="/usa/taikun/rl-attack/2evaluation/mnli/${ON}/${EVALUATION_PREFIX}.txt"
 echo "OUTPUT_FILE: $OUTPUT_FILE"
 
 # Ensure the second script has execute permissions
-chmod +x /usa/taikun/07_transencoder/2evaluation/evaluation_nli.sh
+chmod +x /usa/taikun/rl-attack/2evaluation/evaluation_nli.sh
 
 # Call the second script
-/usa/taikun/07_transencoder/2evaluation/evaluation_nli.sh
+/usa/taikun/rl-attack/2evaluation/evaluation_nli.sh

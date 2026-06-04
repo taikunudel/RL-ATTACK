@@ -2,43 +2,43 @@
 
 # For SNLI Validation Set
 export DATA_NAME='snli_val'
-export DATA_PATH='/usa/taikun/07_transencoder/3datasets/snli/snli/snli.txt'
-export IMPORTANT_TOKENS_FILE='/usa/taikun/07_transencoder/0dataProcessing/snli/tokens_snli_val_0.json_premise.json'
-export IMPORTANT_TOKENS_FILE='/usa/taikun/07_transencoder/0dataProcessing/snli/tokens_snli_val_0.json_hypothesis.json'
+export DATA_PATH='/usa/taikun/rl-attack/3datasets/snli/snli/snli.txt'
+export IMPORTANT_TOKENS_FILE='/usa/taikun/rl-attack/0dataProcessing/snli/tokens_snli_val_0.json_premise.json'
+export IMPORTANT_TOKENS_FILE='/usa/taikun/rl-attack/0dataProcessing/snli/tokens_snli_val_0.json_hypothesis.json'
 
 # 4 Apr 2025, 2k samples
 # export DATA_NAME='snli_test'
-# export DATA_PATH='/usa/taikun/07_transencoder/3datasets/snli/snli_test.txt'
-# export IMPORTANT_TOKENS_FILE='/usa/taikun/07_transencoder/0dataProcessing/tokens_snli_test_full.json_premise.json'
-# export IMPORTANT_TOKENS_FILE='/usa/taikun/07_transencoder/0dataProcessing/tokens_snli_test_full.json_hypothesis.json'
+# export DATA_PATH='/usa/taikun/rl-attack/3datasets/snli/snli_test.txt'
+# export IMPORTANT_TOKENS_FILE='/usa/taikun/rl-attack/0dataProcessing/tokens_snli_test_full.json_premise.json'
+# export IMPORTANT_TOKENS_FILE='/usa/taikun/rl-attack/0dataProcessing/tokens_snli_test_full.json_hypothesis.json'
 
 
-# export ATTACKER_FILE='/usa/taikun/07_transencoder/1training/snli/premise/attacker_snli_0.5_0_400_2.9763.pth'
-# export ATTACKER_FILE='/usa/taikun/07_transencoder/1training/snli/premise/1125/attacker_snli_0.5_0_240_2.9472.pth'
+# export ATTACKER_FILE='/usa/taikun/rl-attack/1training/snli/premise/attacker_snli_0.5_0_400_2.9763.pth'
+# export ATTACKER_FILE='/usa/taikun/rl-attack/1training/snli/premise/1125/attacker_snli_0.5_0_240_2.9472.pth'
 
 # testing models with varable alpha, per request of UAI reviewers
-# export ATTACKER_FILE='/usa/taikun/07_transencoder/1training/snli/premise/attacker_snli_0.0_0_400_2.9743.pth'
-# export ATTACKER_FILE='/usa/taikun/07_transencoder/1training/snli/premise/alpha_exp/attacker_snli_0.1_0_400_2.9750.pth'
-# export ATTACKER_FILE='/usa/taikun/07_transencoder/1training/snli/premise/alpha_exp/attacker_snli_0.3_0_400_2.9570.pth'
-# export ATTACKER_FILE='/usa/taikun/07_transencoder/1training/snli/premise/alpha_exp/attacker_snli_0.6_7_300_3.1881.pth'
-# export ATTACKER_FILE='/usa/taikun/07_transencoder/1training/snli/premise/attacker_snli_0.7_0_400_2.8756.pth'
+# export ATTACKER_FILE='/usa/taikun/rl-attack/1training/snli/premise/attacker_snli_0.0_0_400_2.9743.pth'
+# export ATTACKER_FILE='/usa/taikun/rl-attack/1training/snli/premise/alpha_exp/attacker_snli_0.1_0_400_2.9750.pth'
+# export ATTACKER_FILE='/usa/taikun/rl-attack/1training/snli/premise/alpha_exp/attacker_snli_0.3_0_400_2.9570.pth'
+# export ATTACKER_FILE='/usa/taikun/rl-attack/1training/snli/premise/alpha_exp/attacker_snli_0.6_7_300_3.1881.pth'
+# export ATTACKER_FILE='/usa/taikun/rl-attack/1training/snli/premise/attacker_snli_0.7_0_400_2.8756.pth'
 
-# export ATTACKER_FILE='/usa/taikun/07_transencoder/1training/snli/hypothesis/attacker_snli_0.5_1_500_2.9032.pth'
-# export ATTACKER_FILE='/usa/taikun/07_transencoder/1training/snli/hypothesis/1125/attacker_snli_0.5_0_400_2.9243.pth'
+# export ATTACKER_FILE='/usa/taikun/rl-attack/1training/snli/hypothesis/attacker_snli_0.5_1_500_2.9032.pth'
+# export ATTACKER_FILE='/usa/taikun/rl-attack/1training/snli/hypothesis/1125/attacker_snli_0.5_0_400_2.9243.pth'
 # export ATTACKER_FILE='None'
 
-# export ATTACKER_FILE='/usa/taikun/07_transencoder/1training/snli/premise/0207non_linear/attacker_snli_0.5_2_1000_2.9262.pth'
+# export ATTACKER_FILE='/usa/taikun/rl-attack/1training/snli/premise/0207non_linear/attacker_snli_0.5_2_1000_2.9262.pth'
 
-# export ATTACKER_FILE='/usa/taikun/07_transencoder/1training/snli/hypothesis/attacker_snli_0.5_2_1000_2.8892.pth'
-# export ATTACKER_FILE='/usa/taikun/07_transencoder/1training/snli/hypothesis/0209bertnonlinear/attacker_snli_0.5_2_900_2.8909.pth'
+# export ATTACKER_FILE='/usa/taikun/rl-attack/1training/snli/hypothesis/attacker_snli_0.5_2_1000_2.8892.pth'
+# export ATTACKER_FILE='/usa/taikun/rl-attack/1training/snli/hypothesis/0209bertnonlinear/attacker_snli_0.5_2_900_2.8909.pth'
 
 # evaluate on diff alpha, per UAi reviewers' request.
-# export ATTACKER_FILE='/usa/taikun/07_transencoder/1training/snli/premise/alpha_exp/attacker_snli_0.0_0_400_2.9743.pth'
-# export ATTACKER_FILE='/usa/taikun/07_transencoder/1training/snli/premise/alpha_exp/attacker_snli_0.1_0_400_2.9750.pth'
-# export ATTACKER_FILE='/usa/taikun/07_transencoder/1training/snli/premise/alpha_exp/attacker_snli_0.3_0_400_2.9570.pth'
-# export ATTACKER_FILE='/usa/taikun/07_transencoder/1training/snli/premise/alpha_exp/attacker_snli_0.4_0_400_2.9462.pth'
-# export ATTACKER_FILE='/usa/taikun/07_transencoder/1training/snli/premise/alpha_exp/attacker_snli_0.5_0_400_2.9763.pth'
-export ATTACKER_FILE='/usa/taikun/07_transencoder/1training/snli/premise/alpha_exp/attacker_snli_0.6_7_300_3.1881.pth'
+# export ATTACKER_FILE='/usa/taikun/rl-attack/1training/snli/premise/alpha_exp/attacker_snli_0.0_0_400_2.9743.pth'
+# export ATTACKER_FILE='/usa/taikun/rl-attack/1training/snli/premise/alpha_exp/attacker_snli_0.1_0_400_2.9750.pth'
+# export ATTACKER_FILE='/usa/taikun/rl-attack/1training/snli/premise/alpha_exp/attacker_snli_0.3_0_400_2.9570.pth'
+# export ATTACKER_FILE='/usa/taikun/rl-attack/1training/snli/premise/alpha_exp/attacker_snli_0.4_0_400_2.9462.pth'
+# export ATTACKER_FILE='/usa/taikun/rl-attack/1training/snli/premise/alpha_exp/attacker_snli_0.5_0_400_2.9763.pth'
+export ATTACKER_FILE='/usa/taikun/rl-attack/1training/snli/premise/alpha_exp/attacker_snli_0.6_7_300_3.1881.pth'
 
 export MODE='nli'
 export ON='premise'
@@ -90,14 +90,14 @@ echo "Start From Sample: $STARTFROMSAMPLE"
 # export EVALUATION_PREFIX="evaluation_${ATTACKER_NAME}_${TGT_MODEL_NAME}_${DATA_NAME}_${NUMS_ATTACKED_TOKENS}_${NUMS_MAX_CANDIDATES}_${NUMS_CANDIDATES_EACH_TOKEN}_${STARTFROMSAMPLE}"
 export EVALUATION_PREFIX="eva_$(date +%m%d_%H%M%S)_${ON}_${ATTACKER_NAME}_${TGT_MODEL_NAME}_${DATA_NAME}_${NUMS_ATTACKED_TOKENS}_${NUMS_MAX_CANDIDATES}_${NUMS_CANDIDATES_EACH_TOKEN}_${STARTFROMSAMPLE}"
 
-export EVALUATION_JSON="/usa/taikun/07_transencoder/2evaluation/snli/${ON}/${EVALUATION_PREFIX}.json"
-export OUTPUT_FILE="/usa/taikun/07_transencoder/2evaluation/snli/${ON}/${EVALUATION_PREFIX}.txt"
+export EVALUATION_JSON="/usa/taikun/rl-attack/2evaluation/snli/${ON}/${EVALUATION_PREFIX}.json"
+export OUTPUT_FILE="/usa/taikun/rl-attack/2evaluation/snli/${ON}/${EVALUATION_PREFIX}.txt"
 echo "OUTPUT_FILE: $OUTPUT_FILE"
 
 # Ensure the second script has execute permissions
-chmod +x /usa/taikun/07_transencoder/2evaluation/evaluation_nli.sh
+chmod +x /usa/taikun/rl-attack/2evaluation/evaluation_nli.sh
 
 # Call the second script
-/usa/taikun/07_transencoder/2evaluation/evaluation_nli.sh
+/usa/taikun/rl-attack/2evaluation/evaluation_nli.sh
 
 # 0207nonlinear

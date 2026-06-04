@@ -15,7 +15,7 @@ echo "Data Name: $DATA_NAME"
 echo "JSON File: $EVALUATION_JSON"
 
 
-SCRIPT_PATH="/usa/taikun/07_transencoder/2evaluation/evaluation_nli.py"
+SCRIPT_PATH="/usa/taikun/rl-attack/2evaluation/evaluation_nli.py"
 # Run the python script with the defined variables
 python -u $SCRIPT_PATH \
   --dataName $DATA_NAME \

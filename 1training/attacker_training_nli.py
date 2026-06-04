@@ -23,7 +23,7 @@ torch.set_default_dtype(torch.float16)
 # torch.autograd.set_detect_anomaly(True)
 import sys
 sys.path.append("..")
-sys.path.append("/usa/taikun/07_transencoder")
+sys.path.append("/usa/taikun/rl-attack")
 # from llmrequest import requestNoDf
 from utils import *
 
