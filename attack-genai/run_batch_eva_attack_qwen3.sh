@@ -13,7 +13,7 @@ run_attack() {
   export ATKER_MODE="$atker_mode"
   export ATTACK_WHAT='doc'
   export DATA_NAME="$data_name"
-  export SAVE_TO_PATH='/usa/taikun/07_transencoder/rl_atk/attack-genai/trained_attacker/attacker_05082025_162746_llama-guard_doc_0.3_6_6000_0.8100.pth'
+  export SAVE_TO_PATH='/usa/taikun/rl-attack/rl_atk/attack-genai/trained_attacker/attacker_05082025_162746_llama-guard_doc_0.3_6_6000_0.8100.pth'
   export TARGET_PATH='qwen3-8b'
   export SERVER_URL='http://localhost:8002/v1'
   export LEN_DOC_MAX=512
@@ -24,9 +24,9 @@ run_attack() {
   export EVALUATION_PREFIX="eva_${timestamp}_${ATKER_PATH}_${TARGET_PATH}_${ATTACK_WHAT}_${ATKER_MODE}_${DATA_NAME}_${NUM_DOC_MASKS}_${SAMPLES_PER_TOK}"
 
   if [[ "$SAVE_LOGS" == "1" ]]; then
-    mkdir -p /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_results
-    export OUTPUT_TXT="/usa/taikun/07_transencoder/rl_atk/attack-genai/eva_results/${EVALUATION_PREFIX}.txt"
-    export ATK_JSON_LOG="/usa/taikun/07_transencoder/rl_atk/attack-genai/eva_results/${EVALUATION_PREFIX}.json"
+    mkdir -p /usa/taikun/rl-attack/rl_atk/attack-genai/eva_results
+    export OUTPUT_TXT="/usa/taikun/rl-attack/rl_atk/attack-genai/eva_results/${EVALUATION_PREFIX}.txt"
+    export ATK_JSON_LOG="/usa/taikun/rl-attack/rl_atk/attack-genai/eva_results/${EVALUATION_PREFIX}.json"
   else
     export OUTPUT_TXT="/dev/null"
     export ATK_JSON_LOG="/tmp/${EVALUATION_PREFIX}.json"
@@ -39,7 +39,7 @@ run_attack() {
     echo "  Not saving attack logs (SAVE_LOGS=0)"
   fi
 
-  cmd=(conda run -n hqaattack python -u /usa/taikun/07_transencoder/rl_atk/attack-genai/evaluation_attacker_genai_llama_itself.py \
+  cmd=(conda run -n hqaattack python -u /usa/taikun/rl-attack/rl_atk/attack-genai/evaluation_attacker_genai_llama_itself.py \
     --atker_path "$ATKER_PATH" \
     --atker_mode "$ATKER_MODE" \
     --target_path "$TARGET_PATH" \

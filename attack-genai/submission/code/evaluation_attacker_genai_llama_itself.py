@@ -19,7 +19,7 @@ class RateLimitExceeded(Exception):
     pass
 
 _consecutive_rate_limit_errors = 0
-cache = diskcache.Cache('/usa/taikun/rl-attack/rl_atk/attack-genai', size_limit=10e9)
+cache = diskcache.Cache('<redacted-path> size_limit=10e9)
 cache.stats(enable=True)    
 from collections import defaultdict # Added this import
 from copy import deepcopy
@@ -28,7 +28,9 @@ from itertools import product
 import random
 from transformers import (
     AutoTokenizer, 
-    AutoModelForSequenceClassification)
+    AutoModelForSequenceClassification, 
+    BertForMaskedLM, 
+    BertConfig)
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -45,15 +47,38 @@ import tensorflow as tf
 #     tf.config.experimental.set_memory_growth(gpus[1], True)   # ❶
 import tensorflow_hub as hub
 from train_attacker_genai import *
-from similarity_scorer import build_scorer
-from encoders import build_attacker
 # import get_raw_logits
 from typing import Union, Iterable, List, Tuple, Dict, Any, Optional
 from openai import OpenAI
-from llama_guard_judge import is_unsafe as llamaguard_is_unsafe, init_gauge as llamaguard_init_gauge, set_endpoint as llamaguard_set_endpoint, set_model as llamaguard_set_model
+from llama_guard_judge import is_unsafe as llamaguard_is_unsafe, init_gauge as llamaguard_init_gauge, set_endpoint as llamaguard_set_endpoint
 from openai_moderation_judge import is_unsafe as openai_mod_is_unsafe, init_gauge as openai_mod_init_gauge, set_max_rate_limit_errors as openai_mod_set_max_rate_limit_errors
 
-# getUSEcosSimilarity now lives in similarity_scorer.py; the reward uses build_scorer (scorer.score).
+def getUSEcosSimilarity(srcDocs: List[str], copyDocs: List[str], embed: Any) -> List[float]:
+    """
+    Calculate Universal Sentence Encoder (USE) cosine similarity between source and copy documents.
+    
+    • Computes semantic similarity scores using USE embeddings
+    • Uses cosine similarity metric to measure document similarity
+    • Returns similarity scores in range [-1, 1] where 1 means identical semantic meaning
+    
+    Args:
+        srcDocs: List of source/original documents
+        copyDocs: List of adversarial/copied documents
+        embed: Universal Sentence Encoder model for generating embeddings
+    
+    Returns:
+        List of cosine similarity scores between corresponding document pairs
+    """
+    USEcosinSimilarity = []
+    sim_metric = torch.nn.CosineSimilarity(dim=1)
+    for src, copy in zip(srcDocs, copyDocs):
+        emb1, emb2 = embed([src, copy])["outputs"]
+        emb1, emb2 = torch.tensor(emb1.numpy()), torch.tensor(emb2.numpy())
+        srcEmb = torch.unsqueeze(emb1, dim=0) # [embSz] -> [1, embSz]
+        advEmb = torch.unsqueeze(emb2, dim=0)
+        es = sim_metric(srcEmb, advEmb)
+        USEcosinSimilarity.append(es.item())
+    return USEcosinSimilarity
 
 def get_influences(true_class_id: int, predictions: List[int], probs: List[float]) -> List[float]:
     """
@@ -547,7 +572,7 @@ def main(args):
     # device = torch.device(f"cuda:{best_gpu}")
     # print(f"Using GPU {best_gpu}")
 
-    scorer = build_scorer(args.sim_scorer)
+    USE = hub.load("https://kaggle.com/models/google/universal-sentence-encoder/TensorFlow2/universal-sentence-encoder/1")
     # with tf.device(f"/GPU:{best_gpu}"):
     #     USE = hub.load("https://kaggle.com/models/google/universal-sentence-encoder/TensorFlow2/universal-sentence-encoder/1")
 
@@ -576,14 +601,13 @@ def main(args):
         _, _, evaluation_dataloader = build_datasets(tokenizer=tokenizer, num_doc_masks=num_doc_masks, max_len=len_doc_max, seed=42)
     
     # Initialize attacker
-    model = build_attacker(atker_path, linear_head=True, device=device)
+    config = BertConfig.from_pretrained(atker_path, output_hidden_states=True)
+    model = BertForMaskedLM.from_pretrained(atker_path, config=config).to(device)
     
     if atker_mode == 'trained':
         # Load the trained model weights
         state_dict = torch.load(save_to_path, map_location=device)
         model.load_state_dict(state_dict, strict=True)  # Load the weights
-    elif not hasattr(model, 'cls'):
-        print(f"   - WARNING: {atker_mode} re-init skipped: encoder has no '.cls' MLM head (non-BERT).")
     else:
         if hasattr(model.cls.predictions.transform.dense, 'reset_parameters'):
             model.cls.predictions.transform.dense.reset_parameters()
@@ -774,7 +798,7 @@ def main(args):
                 original_accuracy = orig_acc_metric.compute()
                 current_accuracy = atk_acc_metric.compute()
     
-                USEs.append(scorer.score([all_source_documents[-1]], [all_generated_documents[-1]])[0])
+                USEs.append(getUSEcosSimilarity([all_source_documents[-1]], [all_generated_documents[-1]], USE)[0])
 
                 bar.update(1)
                 bar.set_postfix({
@@ -842,15 +866,13 @@ if __name__ == "__main__":
     parser.add_argument('--samples_per_tok', type=int, default=10, help='')  # Default value set to 512
     parser.add_argument('--atk_json_log', type=str, default=10, help='') 
     parser.add_argument('--max_gen_tokens', type=int, default=32, help='maximum number of tokens the target model is allowed to generate per query')
-    parser.add_argument('--sim_scorer', type=str, default='use', help="similarity backend: 'use' (default) or 'embedding_api'")
     parser.add_argument('--server_url', type=str, required=True, help='8000 for llama guard 3 1B, 8001 for 8B')  # Default value set to 512
     parser.add_argument('--use_huggingface_api', action='store_true', help='Use Hugging Face Inference API (requires HF_TOKEN env var)')
     parser.add_argument('--use_moderation_api', action='store_true', default=True, help='Use LlamaGuard4 via Together API for harmful content detection (default: True)')
     parser.add_argument('--start_idx', type=int, default=0, help='Start evaluation from this index (0-indexed), useful for resuming')
     parser.add_argument('--max_rate_limit_errors', type=int, default=10, help='Stop after this many consecutive rate limit (429) errors')
     parser.add_argument('--judge_url', type=str, default=None, help='Override LlamaGuard judge endpoint (e.g. http://localhost:8000/v1/chat/completions for local vLLM)')
-    parser.add_argument('--judge_model', type=str, default=None, help="Override the Llama Guard model id sent to the judge endpoint (e.g. 'llama-guard-3' for a self-hosted vLLM, or 'meta-llama/Llama-Guard-4-12B' for Together). Defaults: 'llama-guard-3' for --judge infochain, 'meta-llama/Llama-Guard-4-12B' otherwise.")
-    parser.add_argument('--judge', type=str, default='llamaguard', choices=['llamaguard', 'openai_moderation', 'infochain'], help='Judge model for harmful content detection (default: llamaguard)')
+    parser.add_argument('--judge', type=str, default='llamaguard', choices=['llamaguard', 'openai_moderation'], help='Judge model for harmful content detection (default: llamaguard)')
 
     args = parser.parse_args()
     for arg, value in vars(args).items():
@@ -914,36 +936,19 @@ if __name__ == "__main__":
         timeout=120,  # 2 min timeout to avoid hanging on slow API responses
     )
 
-    # Select judge based on --judge flag.
-    # Judge sources, in order of preference (local is free + no rate limits):
-    #   infochain        -> self-hosted Llama Guard vLLM on infochain (LOCAL, FREE)
-    #   llamaguard       -> Llama-Guard-4-12B via Together API (PAID)  [also accepts --judge_url for a local endpoint]
-    #   openai_moderation-> OpenAI omni-moderation-latest (API)
+    # Select judge based on --judge flag
     if args.use_moderation_api:
         if args.judge == 'openai_moderation':
             judge_is_unsafe = openai_mod_is_unsafe
             openai_mod_set_max_rate_limit_errors(args.max_rate_limit_errors)
             openai_mod_init_gauge(f"{args.target_path}_{args.atker_mode}")
             print("Using OpenAI Moderation API (omni-moderation-latest) for harmful content detection")
-        elif args.judge == 'infochain':
-            # Self-hosted Llama Guard on infochain (or any local vLLM). FREE, no rate limit.
-            endpoint = args.judge_url or "http://infochain:8000/v1/chat/completions"
-            judge_model = args.judge_model or "llama-guard-3"  # served-model-name on the vLLM
-            llamaguard_set_endpoint(endpoint)
-            llamaguard_set_model(judge_model)
-            judge_is_unsafe = llamaguard_is_unsafe
-            llamaguard_init_gauge(f"{args.target_path}_{args.atker_mode}")
-            print(f"Using self-hosted Llama Guard via infochain vLLM: {endpoint} (model={judge_model})")
         else:
             if args.judge_url:
                 llamaguard_set_endpoint(args.judge_url)
-                if args.judge_model:
-                    llamaguard_set_model(args.judge_model)
-                print(f"Using Llama Guard via local endpoint: {args.judge_url} (model={args.judge_model or 'meta-llama/Llama-Guard-4-12B'})")
+                print(f"Using LlamaGuard4 12B via local endpoint: {args.judge_url}")
             else:
-                if args.judge_model:
-                    llamaguard_set_model(args.judge_model)
-                print(f"Using Llama Guard ({args.judge_model or 'meta-llama/Llama-Guard-4-12B'}) via Together API for harmful content detection")
+                print("Using LlamaGuard4 12B via Together API for harmful content detection")
             judge_is_unsafe = llamaguard_is_unsafe
             llamaguard_init_gauge(f"{args.target_path}_{args.atker_mode}")
 

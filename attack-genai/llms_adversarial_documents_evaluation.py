@@ -4,16 +4,19 @@ from groq import Groq
 import json, time
 from tqdm import tqdm
 
-# === Keys ===
-OPENAI_API_KEY = "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"
-ANTHROPIC_API_KEY = "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"
-GROK_API_KEY = "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"
+# === Keys (loaded from .env — never hardcode) ===
+import os
+from dotenv import load_dotenv
+load_dotenv()
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
+GROK_API_KEY = os.getenv("GROQ_API_KEY")
 
-DATA_PATH     = "/usa/taikun/07_transencoder/rl_atk/attack-genai/eva_0518_073140_bert-base-uncased_llama-guard-3-8b_doc_untrained_harmul_strings_3_300.json"
+DATA_PATH     = "/usa/taikun/rl-attack/rl_atk/attack-genai/eva_0518_073140_bert-base-uncased_llama-guard-3-8b_doc_untrained_harmul_strings_3_300.json"
 enabled_models = ["gpt-4o", "claude-3-7-sonnet-20250219", "llama3-70b-8192", "llama3-8b-8192"]
 
 model_tag   = "_".join(m.replace("-", "").replace(".", "") for m in enabled_models)
-RESULTS_PATH = f"/usa/taikun/07_transencoder/rl_atk/attack-genai/adv_doc_results_{model_tag}.json"
+RESULTS_PATH = f"/usa/taikun/rl-attack/rl_atk/attack-genai/adv_doc_results_{model_tag}.json"
 
 with open(DATA_PATH) as f:
     raw_data = json.load(f)

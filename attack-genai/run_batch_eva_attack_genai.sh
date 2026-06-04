@@ -9,9 +9,9 @@ run_attack() {
   export ATTACK_WHAT='doc'
   export TARGET_PATH='llama-guard-3-8b'
   export SERVER_URL='http://infodeep:8000/v1'
-  # export SAVE_TO_PATH='/usa/taikun/07_transencoder/rl_atk/attack-genai/trained_attacker/attacker_05082025_162359_llama-guard_doc_0.5_9_9100_0.7800.pth'
-  export SAVE_TO_PATH='/usa/taikun/07_transencoder/rl_atk/attack-genai/trained_attacker/attacker_05082025_162746_llama-guard_doc_0.3_6_6000_0.8100.pth'
-  # export SAVE_TO_PATH='/usa/taikun/07_transencoder/rl_atk/attack-genai/trained_attacker/attacker_05092025_205007_llama-guard_doc_1.0_3_3400_0.7800.pth'
+  # export SAVE_TO_PATH='/usa/taikun/rl-attack/rl_atk/attack-genai/trained_attacker/attacker_05082025_162359_llama-guard_doc_0.5_9_9100_0.7800.pth'
+  export SAVE_TO_PATH='/usa/taikun/rl-attack/rl_atk/attack-genai/trained_attacker/attacker_05082025_162746_llama-guard_doc_0.3_6_6000_0.8100.pth'
+  # export SAVE_TO_PATH='/usa/taikun/rl-attack/rl_atk/attack-genai/trained_attacker/attacker_05092025_205007_llama-guard_doc_1.0_3_3400_0.7800.pth'
   export LEN_DOC_MAX=512
   export NUM_DOC_MASKS=10
 
@@ -19,14 +19,14 @@ run_attack() {
 
   timestamp=$(date +%m%d_%H%M%S)
   export EVALUATION_PREFIX="eva_${timestamp}_${ATKER_PATH}_${TARGET_PATH}_${ATTACK_WHAT}_${ATKER_MODE}_${NUM_DOC_MASKS}_${SAMPLES_PER_TOK}"
-  mkdir -p /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_results
-  export OUTPUT_TXT="/usa/taikun/07_transencoder/rl_atk/attack-genai/eva_results/${EVALUATION_PREFIX}.txt"
-  export ATK_JSON_LOG="/usa/taikun/07_transencoder/rl_atk/attack-genai/eva_results/${EVALUATION_PREFIX}.json"
+  mkdir -p /usa/taikun/rl-attack/rl_atk/attack-genai/eva_results
+  export OUTPUT_TXT="/usa/taikun/rl-attack/rl_atk/attack-genai/eva_results/${EVALUATION_PREFIX}.txt"
+  export ATK_JSON_LOG="/usa/taikun/rl-attack/rl_atk/attack-genai/eva_results/${EVALUATION_PREFIX}.json"
 
   echo "=== Running attack with SAMPLES_PER_TOK=$SAMPLES_PER_TOK ==="
   echo "Log: $OUTPUT_TXT"
 
-  python -u /usa/taikun/07_transencoder/rl_atk/attack-genai/evaluation_attacker_genai.py \
+  python -u /usa/taikun/rl-attack/rl_atk/attack-genai/evaluation_attacker_genai.py \
     --atker_path "$ATKER_PATH" \
     --atker_mode "$ATKER_MODE" \
     --target_path "$TARGET_PATH" \

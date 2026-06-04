@@ -2,7 +2,7 @@ import diskcache
 from train_attacker_genai import *
 
 # Set your custom cache path here
-cache = diskcache.Cache('/usa/taikun/07_transencoder/attack-genai')
+cache = diskcache.Cache('/usa/taikun/rl-attack/attack-genai')
 
 # Print total entries
 print(f"Total cache entries: {len(cache)}")

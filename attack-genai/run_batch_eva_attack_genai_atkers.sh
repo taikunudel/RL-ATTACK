@@ -23,14 +23,14 @@ run_attack() {
   # Extract a descriptive name from the save path for the evaluation prefix
   local save_name=$(basename "$save_path" .pth)
   export EVALUATION_PREFIX="eva_${timestamp}_${ATKER_PATH}_${TARGET_PATH}_${ATTACK_WHAT}_${ATKER_MODE}_${NUM_DOC_MASKS}_${SAMPLES_PER_TOK}_${save_name}"
-  mkdir -p /usa/taikun/07_transencoder/rl_atk/attack-genai/eva_results
-  export OUTPUT_TXT="/usa/taikun/07_transencoder/rl_atk/attack-genai/eva_results/${EVALUATION_PREFIX}.txt"
-  export ATK_JSON_LOG="/usa/taikun/07_transencoder/rl_atk/attack-genai/eva_results/${EVALUATION_PREFIX}.json"
+  mkdir -p /usa/taikun/rl-attack/rl_atk/attack-genai/eva_results
+  export OUTPUT_TXT="/usa/taikun/rl-attack/rl_atk/attack-genai/eva_results/${EVALUATION_PREFIX}.txt"
+  export ATK_JSON_LOG="/usa/taikun/rl-attack/rl_atk/attack-genai/eva_results/${EVALUATION_PREFIX}.json"
 
   echo "=== Running attack with SAVE_TO_PATH=$SAVE_TO_PATH, SAMPLES_PER_TOK=$SAMPLES_PER_TOK ==="
   echo "Log: $OUTPUT_TXT"
 
-  python -u /usa/taikun/07_transencoder/rl_atk/attack-genai/evaluation_attacker_genai.py \
+  python -u /usa/taikun/rl-attack/rl_atk/attack-genai/evaluation_attacker_genai.py \
     --atker_path "$ATKER_PATH" \
     --atker_mode "$ATKER_MODE" \
     --target_path "$TARGET_PATH" \
@@ -44,10 +44,10 @@ run_attack() {
 
 # Define the different SAVE_TO_PATH values
 save_paths=(
-  '/usa/taikun/07_transencoder/rl_atk/attack-genai/trained_attacker/attacker_05092025_204952_llama-guard_doc_0.0_3_3000_0.8000.pth'
-  '/usa/taikun/07_transencoder/rl_atk/attack-genai/trained_attacker/attacker_05082025_162359_llama-guard_doc_0.5_9_9100_0.7800.pth'
-  '/usa/taikun/07_transencoder/rl_atk/attack-genai/trained_attacker/attacker_05082025_162758_llama-guard_doc_0.7_5_5800_0.8100.pth'
-  '/usa/taikun/07_transencoder/rl_atk/attack-genai/trained_attacker/attacker_05092025_205007_llama-guard_doc_1.0_3_3400_0.7800.pth'
+  '/usa/taikun/rl-attack/rl_atk/attack-genai/trained_attacker/attacker_05092025_204952_llama-guard_doc_0.0_3_3000_0.8000.pth'
+  '/usa/taikun/rl-attack/rl_atk/attack-genai/trained_attacker/attacker_05082025_162359_llama-guard_doc_0.5_9_9100_0.7800.pth'
+  '/usa/taikun/rl-attack/rl_atk/attack-genai/trained_attacker/attacker_05082025_162758_llama-guard_doc_0.7_5_5800_0.8100.pth'
+  '/usa/taikun/rl-attack/rl_atk/attack-genai/trained_attacker/attacker_05092025_205007_llama-guard_doc_1.0_3_3400_0.7800.pth'
 )
 
 # Loop through the different SAVE_TO_PATH values and samples_per_tok

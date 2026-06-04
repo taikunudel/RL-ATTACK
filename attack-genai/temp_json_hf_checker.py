@@ -2,7 +2,7 @@
 
 # API_URL = "https://router.huggingface.co/sambanova/v1/chat/completions"
 # headers = {
-#     "Authorization": "Bearer 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",
+#     "Authorization": "Bearer <HF_TOKEN-redacted>",
 # }
 
 # def query(payload):
@@ -27,7 +27,7 @@
 # client = OpenAI(
 #     # base_url="https://router.huggingface.co/sambanova/v1",
 #     base_url="https://router.huggingface.co/novita/v3/openai",
-#     api_key="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",
+#     api_key="<HF_TOKEN-redacted>",
 # )
 
 # completion = client.chat.completions.create(
@@ -47,7 +47,7 @@
 
 
 # from openai import OpenAI
-# client = OpenAI(api_key='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')
+# client = OpenAI(api_key='<OPENAI_API_KEY-redacted>')
 
 # response = client.chat.completions.create(
 #   model="gpt-4o-mini",
@@ -75,9 +75,12 @@
 # print(response)
 
 
+import os
+from dotenv import load_dotenv
 from groq import Groq
 
-client = Groq(api_key="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")
+load_dotenv()
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 chat_completion = client.chat.completions.create(
     messages=[

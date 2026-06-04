@@ -13,7 +13,7 @@ import json
 import requests
 import hashlib
 import diskcache
-cache = diskcache.Cache('/usa/taikun/07_transencoder/attack-genai', size_limit=10e9)
+cache = diskcache.Cache('/usa/taikun/rl-attack/attack-genai', size_limit=10e9)
 cache.stats(enable=True)    
 from nltk.translate.bleu_score import sentence_bleu
 from datasets import load_dataset, concatenate_datasets, DatasetDict
