@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rlatk-classifier"
+version = "0.0.0"
+description = "RL-based adversarial attacks - legacy NLI/QA/NER classifier subpackages (contributes to the 'rlatk' namespace)"
+requires-python = ">=3.8"
+# Runtime deps intentionally omitted: editable-installed into an existing conda env
+# that already provides torch, transformers, tensorflow-hub, nltk, names-dataset, etc.
+
+# PEP 420 implicit-namespace: NO __init__.py under src/rlatk, so this (parent) and the
+# rl_atk genai install both contribute to a single 'rlatk' import namespace.
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = true
