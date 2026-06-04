@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rlatk-genai"
+version = "0.0.0"
+description = "RL-based adversarial attacks — GenAI subpackages (contributes to the 'rlatk' namespace)"
+requires-python = ">=3.8"
+# Runtime deps are intentionally omitted here: this package is editable-installed
+# into the existing conda env (03_transf_py311) which already provides torch,
+# transformers, diskcache, tensorflow-hub, openai, etc. Adding them would risk
+# reinstalling/upgrading those heavy pins. Declare them later once stabilized.
+
+# PEP 420 implicit-namespace layout: NO __init__.py anywhere under src/rlatk,
+# so the legacy (parent-repo) install and this genai install both contribute to
+# a single 'rlatk' import namespace without colliding.
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = true

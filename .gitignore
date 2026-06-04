@@ -113,3 +113,10 @@ attack-genai/trained_attacker/attacker_05182025_102122_llama-guard_doc_0.3_0_100
 ./.git/objects/8d/tmp_obj_ipQ0A0
 *.pth
 *.pth
+
+# python bytecode
+__pycache__/
+*.pyc
+
+# build artifacts
+*.egg-info/
