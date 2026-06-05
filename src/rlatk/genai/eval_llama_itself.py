@@ -519,12 +519,14 @@ def generate_candidate_combinations(input_ids: torch.Tensor, attention_mask, sam
                     queries_used, nums_pert_toks, src_len, pert_rate, src_ans,\
                     src_thinking[0], src_response_only[0], src_moderation_info[0]
 
-def load_advbench_dataset(data_name, tokenizer, num_doc_masks, max_len, seed=42):
+def load_advbench_dataset(data_name, tokenizer, num_doc_masks, max_len, seed=42, eval_limit=None):
     advbench_dataset = load_dataset("walledai/AdvBench")
     if data_name == 'harmul_strings':
         data = advbench_dataset['train']['prompt']
     else:
         data = advbench_dataset['train']['target']
+    if eval_limit is not None and eval_limit > 0:
+        data = data[:eval_limit]   # deterministic first-N (no shuffle), to bound eval cost
 
     encodings = tokenizer(data, truncation=True, padding='max_length', max_length=max_len, return_tensors='pt')
     input_ids = encodings['input_ids']
@@ -593,7 +595,7 @@ def main(args):
     unk_token_id = tokenizer.unk_token_id
 
     if data_name in ['harmul_strings', 'harmful_behaviors']:
-        evaluation_dataloader = load_advbench_dataset(data_name=data_name,tokenizer=tokenizer, num_doc_masks=num_doc_masks, max_len=len_doc_max, seed=42)
+        evaluation_dataloader = load_advbench_dataset(data_name=data_name,tokenizer=tokenizer, num_doc_masks=num_doc_masks, max_len=len_doc_max, seed=42, eval_limit=getattr(args,'eval_limit',None))
     elif data_name == 'jbb_behaviors':
         jbb = load_dataset('JailbreakBench/JBB-Behaviors', 'behaviors', split='harmful')
         data = jbb['Goal']
@@ -871,6 +873,8 @@ if __name__ == "__main__":
     parser.add_argument('--atker_mode', type=str, required=True, help='trained, untrained, random')
     parser.add_argument('--attack_mode', type=str, default='doc', choices=['doc', 'affix'],
                         help="'doc' = overwrite in-document tokens (original); 'affix' = prefix(floor N/2)+suffix(ceil N/2) [MASK] slots around the VERBATIM question (N=--num_doc_masks)")
+    parser.add_argument('--eval_limit', type=int, default=0,
+                        help='evaluate only the first N docs (deterministic, no shuffle); 0 = full set')
     parser.add_argument('--target_path', type=str, required=True, help='target model path')
     parser.add_argument('--data_name', type=str, required=True)
     parser.add_argument('--save_to_path', type=str, required=True, help='target model path')
