@@ -70,3 +70,9 @@ tmp/
 
 # "delete/" staging area (user convention: move-here-instead-of-rm; never tracked)
 delete/
+
+# artifacts/data/results kept out of git (large; recoverable on disk)
+/data/
+/artifacts/
+/results/
+/delete/

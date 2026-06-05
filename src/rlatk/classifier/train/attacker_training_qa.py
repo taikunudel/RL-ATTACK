@@ -35,7 +35,7 @@ def main():
     tgt_tokenizer = BertTokenizer.from_pretrained(tgt_model_name)
     tgt_model = BertForQuestionAnswering.from_pretrained(tgt_model_name)
 
-    dataPath = '/usa/taikun/rl-attack/3datasets/squad_dataset'
+    dataPath = '/usa/taikun/rl-attack/data/3datasets/squad_dataset'
     attackerPath = 'google-bert/bert-large-cased-whole-word-masking-finetuned-squad'
 
 
