@@ -292,6 +292,34 @@ def load_lists_from_json(list_names: List[str], input_json_path: str) -> Dict[st
 #     return stacked_sampled_tokens
     
 
+def build_prefix_suffix_slots(input_ids, attention_mask, num_doc_masks, mask_token_id, len_doc_max=None):
+    """Wrap the VERBATIM question with prefix(floor N/2) + suffix(ceil N/2) [MASK] slots.
+
+    Instead of overwriting tokens inside the document (atk_what='doc'), this inserts N=num_doc_masks
+    attacker-fillable [MASK] slots split around the unchanged question (extra slot to the suffix if N is
+    odd). Returns (masked_input_ids[1,L], attention_mask[1,L], attacked_positions=[[slot indices only]]),
+    so the question tokens are never in attacked_positions and stay byte-identical.
+    """
+    ids = input_ids[0].tolist()
+    am = attention_mask[0].tolist()
+    valid = [i for i, v in enumerate(am) if v == 1]
+    cls_id, sep_id = ids[valid[0]], ids[valid[-1]]
+    question = ids[valid[0] + 1: valid[-1]]              # tokens strictly between [CLS] and [SEP]
+    N = int(num_doc_masks); pre = N // 2; suf = N - pre  # odd -> extra to suffix
+    L = int(len_doc_max or len(ids))
+    maxq = max(0, L - (pre + suf + 2))
+    question = question[:maxq]
+    new = [cls_id] + [mask_token_id] * pre + question + [mask_token_id] * suf + [sep_id]
+    attn = [1] * len(new)
+    while len(new) < L:
+        new.append(0); attn.append(0)
+    new, attn = new[:L], attn[:L]
+    qend = 1 + pre + len(question)
+    attacked = [p for p in (list(range(1, 1 + pre)) + list(range(qend, qend + suf))) if p < L]
+    dev = input_ids.device
+    return (torch.tensor([new], device=dev), torch.tensor([attn], device=dev), [attacked])
+
+
 def get_top_k_indices(logits: torch.Tensor, attacked_positions: List[List[int]], k: int) -> torch.Tensor:
     """
     Gets the top k token indices from the logits for the specified attacked positions.
@@ -714,16 +742,22 @@ def main(args):
                 src_doc = tokenizer.decode(input_ids[0],skip_special_tokens=True)
                 prompt_, predictions_, probs_, src_thinking_, src_response_only_, src_moderation_info_, src_full_response_ = get_llama_predictions(data=[src_doc])
 
-                masked_input_ids, attacked_positions = apply_importance_masks(
-                    input_ids=input_ids,
-                    attention_mask=attention_mask,
-                    model=attacker,  # Use the attacker model
-                    true_class_ids=labels,
-                    tokenizer=tokenizer,
-                    server_url=server_url,
-                    num_doc_masks=num_doc_masks, # Use num_doc_masks
-                    mask_token_id=mask_token_id
-                )
+                if getattr(args, 'attack_mode', 'doc') == 'affix':
+                    masked_input_ids, attention_mask, attacked_positions = build_prefix_suffix_slots(
+                        input_ids, attention_mask, num_doc_masks, mask_token_id, len_doc_max=input_ids.shape[1])
+                    cc_input_ids = masked_input_ids   # candidates are built over the slotted sequence
+                else:
+                    masked_input_ids, attacked_positions = apply_importance_masks(
+                        input_ids=input_ids,
+                        attention_mask=attention_mask,
+                        model=attacker,  # Use the attacker model
+                        true_class_ids=labels,
+                        tokenizer=tokenizer,
+                        server_url=server_url,
+                        num_doc_masks=num_doc_masks, # Use num_doc_masks
+                        mask_token_id=mask_token_id
+                    )
+                    cc_input_ids = input_ids
 
                 all_attacked_positions.append(attacked_positions) # Store
                 if not attacked_positions[0]: # Check the first (and only) element.
@@ -737,7 +771,7 @@ def main(args):
                 adv_pred_label, adv_pred_prob, worst_prob, \
                     queries_used, nums_pert_toks, src_len, pert_rate, adv_ans,\
                     adv_thinking, adv_response_only, adv_moderation_info = generate_candidate_combinations(
-                    input_ids=input_ids,
+                    input_ids=cc_input_ids,
                     attention_mask=attention_mask,
                     sampled_tokens=sampled_tokens,
                     attacked_positions=attacked_positions,
@@ -835,6 +869,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="")
     parser.add_argument('--atker_path', type=str, required=True, help='path folder to load attacker models')
     parser.add_argument('--atker_mode', type=str, required=True, help='trained, untrained, random')
+    parser.add_argument('--attack_mode', type=str, default='doc', choices=['doc', 'affix'],
+                        help="'doc' = overwrite in-document tokens (original); 'affix' = prefix(floor N/2)+suffix(ceil N/2) [MASK] slots around the VERBATIM question (N=--num_doc_masks)")
     parser.add_argument('--target_path', type=str, required=True, help='target model path')
     parser.add_argument('--data_name', type=str, required=True)
     parser.add_argument('--save_to_path', type=str, required=True, help='target model path')
