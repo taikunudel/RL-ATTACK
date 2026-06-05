@@ -11,7 +11,7 @@ echo "Target Model: $TGT_MODEL"
 echo "Data Name: $DATA_NAME"
 
 # Run the python script with the defined variables
-python /usa/taikun/rl-attack/1training/attacker_training_nli.py \
+python -m rlatk.classifier.train.attacker_training_nli \
   --dataName $DATA_NAME \
   --dataPath $DATA_PATH \
   --importantTokensFile $IMPORTANT_TOKENS_FILE \

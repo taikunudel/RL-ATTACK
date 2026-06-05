@@ -15,9 +15,9 @@ echo "Data Name: $DATA_NAME"
 echo "JSON File: $EVALUATION_JSON"
 
 
-SCRIPT_PATH="/usa/taikun/rl-attack/2evaluation/evaluation_nli.py"
+# (moved) entry point is now: python -m rlatk.classifier.eval.evaluation_nli
 # Run the python script with the defined variables
-python -u $SCRIPT_PATH \
+python -u -m rlatk.classifier.eval.evaluation_nli \
   --dataName $DATA_NAME \
   --mode $MODE \
   --dataPath $DATA_PATH \
