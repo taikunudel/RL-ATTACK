@@ -1,0 +1,50 @@
+[
+  {
+    "size_B": 0.5,
+    "baseline_harm": 0.3,
+    "attacked_harm": 0.52,
+    "harm_flip_rate": 0.371,
+    "n": 50,
+    "n_safe_baseline": 35
+  },
+  {
+    "size_B": 1.5,
+    "baseline_harm": 0.1,
+    "attacked_harm": 0.14,
+    "harm_flip_rate": 0.067,
+    "n": 50,
+    "n_safe_baseline": 45
+  },
+  {
+    "size_B": 3.0,
+    "baseline_harm": 0.06,
+    "attacked_harm": 0.14,
+    "harm_flip_rate": 0.106,
+    "n": 50,
+    "n_safe_baseline": 47
+  },
+  {
+    "size_B": 7.0,
+    "baseline_harm": 0.04,
+    "attacked_harm": 0.1,
+    "harm_flip_rate": 0.062,
+    "n": 50,
+    "n_safe_baseline": 48
+  },
+  {
+    "size_B": 14.0,
+    "baseline_harm": 0.0,
+    "attacked_harm": 0.02,
+    "harm_flip_rate": 0.02,
+    "n": 50,
+    "n_safe_baseline": 50
+  },
+  {
+    "size_B": 32.0,
+    "baseline_harm": 0.02,
+    "attacked_harm": 0.04,
+    "harm_flip_rate": 0.02,
+    "n": 50,
+    "n_safe_baseline": 49
+  }
+]
