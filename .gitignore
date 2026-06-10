@@ -1,0 +1,37 @@
+# --- python ---
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.ipynb_checkpoints/
+
+# --- run outputs / artifacts (never commit) ---
+grid_runs/
+grid_runs_a40/
+eva_results/
+train_results/
+trained_attacker/
+quality_metrics_out/
+analysis_plots/
+results/
+artifacts/
+archive/
+submission/
+data/
+*.out
+
+# --- big binaries / models / logs (keep code only) ---
+*.pt
+*.bin
+*.safetensors
+*.ckpt
+*.jar
+*.log
+*.pdf
+
+# --- secrets / env ---
+.env
+*.key
+
+# --- os ---
+.DS_Store

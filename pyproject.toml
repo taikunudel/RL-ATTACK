@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rlatk"
+version = "0.0.0"
+description = "RL-based adversarial attacks — unified rlatk package (core + attack-classifier + attack-genai)"
+requires-python = ">=3.8"
+# Runtime deps intentionally omitted: editable-installed into an existing conda env
+# that already provides torch, transformers, tensorflow-hub, vllm, openai, etc.
+
+# Flat layout: the three top-level domain dirs map onto the existing rlatk.* import
+# namespace, so all current `import rlatk.core / rlatk.classifier / rlatk.genai`
+# call-sites keep working UNCHANGED after `pip install -e .` (no code edits needed).
+#
+#   core/              -> rlatk.core
+#   attack-classifier/ -> rlatk.classifier   (+ .train, +.eval)
+#   attack-genai/      -> rlatk.genai         (+ .victims)
+#
+# The per-domain scripts/ and docs/ subdirs are deliberately NOT packages — they are
+# experiment drivers / notes run by path, not imported.
+[tool.setuptools]
+package-dir = { "rlatk.core" = "core", "rlatk.classifier" = "attack-classifier", "rlatk.genai" = "attack-genai" }
+packages = [
+    "rlatk.core",
+    "rlatk.classifier",
+    "rlatk.classifier.train",
+    "rlatk.classifier.eval",
+    "rlatk.genai",
+    "rlatk.genai.victims",
+]
+
+# SMOKE TEST BEFORE RELYING ON THIS (run in the real env at cutover):
+#   pip install -e .
+#   python -c "import rlatk.core, rlatk.classifier, rlatk.genai, rlatk.genai.victims; print('ok')"
+# Fallback if setuptools dislikes the namespace+package-dir combo: rename the three
+# dirs to src/rlatk/{core,classifier,genai} and use the classic where=["src"] find.
