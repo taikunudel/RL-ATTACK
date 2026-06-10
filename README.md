@@ -1,5 +1,7 @@
 # RL-ATTACK — RL adversarial attacks on LLMs & text classifiers
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/taikunudel/RL-ATTACK/blob/main-flat/attack_demo.ipynb)
+
 **RL-ATTACK** is a reinforcement-learning framework that trains an *attacker* to **rewrite
 text** so a *victim* model misbehaves — an **LLM is jailbroken into an unsafe response**, or a
 classifier flips its label — **while the original meaning is preserved**.
