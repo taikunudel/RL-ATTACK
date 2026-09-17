@@ -1,10 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="204" viewBox="0 0 800 204" role="img" aria-labelledby="title desc">
   <title id="title">Important: RL-ATTACK paper and current projects</title>
   <desc id="desc">Core implementation and experiment logs for our RL-ATTACK paper, currently under single-blind conference review. Full details will follow upon acceptance. For my current, actively maintained projects, visit my GitHub.</desc>
-  <rect x="0.5" y="0.5" width="799" height="203" rx="12" fill="#F3E8FF" stroke="#D8B4FE"/>
-  <rect x="0" y="12" width="5" height="180" rx="2.5" fill="#8250DF"/>
-  <g font-family="Arial, Helvetica, sans-serif" fill="#35204F">
-    <text x="28" y="39" font-size="20" font-weight="700" fill="#6F42C1">Important</text>
+  <style>
+    .body { fill: #1f2328; }
+    .heading { fill: #8250df; }
+    .border { stroke: #8250df; }
+    @media (prefers-color-scheme: dark) {
+      .body { fill: #e6edf3; }
+      .heading { fill: #bc8cff; }
+      .border { stroke: #a371f7; }
+    }
+  </style>
+  <rect class="border" x="0.75" y="0.75" width="798.5" height="202.5" fill="none" stroke-width="1.5"/>
+  <g class="body" font-family="Arial, Helvetica, sans-serif">
+    <text class="heading" x="28" y="39" font-size="20" font-weight="700">Important</text>
     <text x="28" y="76" font-size="18">Core implementation and experiment logs for our RL-ATTACK paper,</text>
     <text x="28" y="103" font-size="18">currently under <tspan font-weight="700">single-blind conference review.</tspan></text>
     <text x="28" y="130" font-size="18">Full details will follow upon acceptance.</text>
