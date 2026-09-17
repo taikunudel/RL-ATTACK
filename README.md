@@ -4,10 +4,9 @@
 
 
 
-> [!IMPORTANT]
-> Core implementation and experiment logs for our [RL-ATTACK paper](docs/RL_ATTACK_cscloud_091526.pdf), currently under **single-blind conference review**. Full details will follow upon acceptance.
->
-> **For my current, actively maintained projects, visit [my GitHub](https://github.com/taikunudel).**
+[![Important: Core implementation and experiment logs for our RL-ATTACK paper, currently under single-blind conference review. Full details will follow upon acceptance. For my current, actively maintained projects, visit my GitHub.](docs/research-note.svg)](docs/RL_ATTACK_cscloud_091526.pdf)
+
+**[Read the paper (PDF)](docs/RL_ATTACK_cscloud_091526.pdf) · [Explore my actively maintained projects](https://github.com/taikunudel)**
 
 **RL-ATTACK** is a reinforcement-learning framework that trains an *attacker* to **rewrite
 text** so a *victim* model misbehaves — an **LLM is jailbroken into an unsafe response**, or a
