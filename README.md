@@ -4,7 +4,7 @@
 
 
 
-[![Important: Core implementation and experiment logs for our RL-ATTACK paper, currently under single-blind conference review. Full details will follow upon acceptance. For my current, actively maintained projects, visit my GitHub.](docs/research-note.svg?v=2)](docs/RL_ATTACK_cscloud_091526.pdf)
+[![Important: Core implementation and experiment logs for our RL-ATTACK paper, currently under single-blind conference review. Full details will follow upon acceptance. For my current, actively maintained projects, visit my GitHub.](docs/research-note.svg?v=3)](docs/RL_ATTACK_cscloud_091526.pdf)
 
 **[Read the paper (PDF)](docs/RL_ATTACK_cscloud_091526.pdf) · [Explore my actively maintained projects](https://github.com/taikunudel)**
 
