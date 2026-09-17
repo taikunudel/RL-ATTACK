@@ -17,6 +17,6 @@
     <text x="28" y="76" font-size="18">Core implementation and experiment logs for our RL-ATTACK paper,</text>
     <text x="28" y="103" font-size="18">currently under <tspan font-weight="700">single-blind conference review.</tspan></text>
     <text x="28" y="130" font-size="18">Full details will follow upon acceptance.</text>
-    <text x="28" y="176" font-size="18" font-weight="700">For my current, actively maintained projects, visit my GitHub.</text>
+    <text x="28" y="176" font-size="18" font-weight="700" text-decoration="underline">For my current, actively maintained projects, visit my GitHub.</text>
   </g>
 </svg>
